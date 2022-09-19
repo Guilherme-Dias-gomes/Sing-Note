@@ -1,14 +1,18 @@
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Route from './routes.js'
+import Login from "./pages/admin/login/login";
 
-import { Root } from 'react-dom/client';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Route />
+        <BrowserRouter>
+            <Routes>
+                <Route path="/login-ADM" element={< Login />} />
+            </Routes>
+        </BrowserRouter>
   </React.StrictMode>
 );
