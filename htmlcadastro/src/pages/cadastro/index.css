@@ -31,8 +31,8 @@
     .icone-opcoes{
         display:flex;
         flex-direction: row;
-        
-        border: rgb(0, 255, 26) solid 1px;
+
+        border: rgb(68, 0, 255) solid 1px;
     }
 
     .icone-opcoes:hover{
@@ -40,7 +40,7 @@
     }
     
     .nome-icones{
-        font-size: 18px;
+        font-size: 35;
         color: #FFFFFF;
         font-family: Arial, Helvetica, sans-serif;
     
@@ -53,7 +53,7 @@
         align-items: center;
         padding: 0px 10px;
 
-        height: 10vh;
+        height: 80px;
         width: 90vw;
         background-color: #61655f;
     }
@@ -70,12 +70,12 @@
 
     .inicial-nome-usuario{
         font-family: Arial;
-        font-size: 30px;
+        font-size: 15px;
         font-weight: bold;
         color: #FFFFFF;
         margin-right: 20px;
         background-color: #55F27F;
-        padding: 7px 15px;
+        padding: 11px 15px;
         border-radius: 30px;
     }
 
@@ -99,21 +99,31 @@
     }
 
     .titulo-cadastrar{
+        display: flex;
+        flex-direction: row;
         font-family: Arial;
         font-weight: bold;
         font-size: 20px;
-        margin: 20px 0px 0px 20px;
+        margin: 20px 0px 0px 40px;
+        border:rgb(68, 0, 255) solid 1px;
+    }
+    .img-ret{
+        height: 40px;
     }
 
     .formulario-div-1{
         width: 40%;
         border: #0000ff solid 1px;
+       
     }
 
     .caixa-de-texto-div-1{
         display: flex;
         flex-direction: column;
+        justify-content:flex-end;
         margin: 20px 0px;
+        height: 50px;
+        border: #ff00ff solid 1px;
 
     }
     
@@ -123,7 +133,8 @@
         font-size: 12px;
         background-color: #ffffff;
         width:auto;
-        margin: 0px 0px 10px 30px;
+        padding: 0px 3px;
+        margin: 0px 0px 32px 30px;
         position: absolute;    
     }
 
@@ -132,6 +143,7 @@
         border-radius: 10px;
         border-style: none;
         border: #7d7d7d solid 2px;
+        
     }
 
     .caixa-de-texto:focus{
