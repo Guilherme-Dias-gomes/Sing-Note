@@ -2,29 +2,26 @@ import './login.scss'
 
 export default function Login () {
 
-    return(
-        <main className='page-login'>
-                <img className='img-guitarra' src='/image/image-tela-login-adm.png' alt=''></img>
-            <div className='login-adm'>
+    return(     
+            <div className='page-lgoin'>
+                <form method='post' className='formulario'>
 
-                <h1> <span><img src='/image/img-perfilzinho.png' alt='' width='27px' ></img></span> Login ADM</h1>
+                    <h1 className='titulo-form'>Login ADM</h1>
 
-                <div className='informacoes-login'>
-                    <div className='informacoes-email'>
-                        <label className='input-label' fro='email'>Email</label>
-                        <input className='input' type='email' id='email'></input>
-                        <br/> <br/>
+                    <div className='form-group'>
+                        <label className='label-form' htmlFor='email'>Email</label>
+                        <input className='input-form' type='email' id='email' placeholder="" autoComplete='off'></input>
                     </div>
-                    <div className='informacoes-senha'>
-                        <label className='input-label' for='senha'>Senha</label>
-                        <input className='input' type='password' id='senha'></input>
+
+                    <div className='form-group'>
+                        <label className='label-form' htmlFor='senha'>Senha</label>
+                        <input className='input-form' type='password' id='senha' placeholder=""></input>
                     </div>
-                </div>
+                    
+                    <button className='btn-login'>Entrar</button>
 
-                <button className='btn-login'>Entrar</button>
-
+                </form>
             </div>
-
-        </main>
+            
     )
 }
