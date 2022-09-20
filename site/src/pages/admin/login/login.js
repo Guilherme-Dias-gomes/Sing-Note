@@ -6,7 +6,7 @@ export default function Login () {
             <div className='page-login'>
                 <form method='post' className='formulario'>
 
-                    <h1 className='titulo-form'>Login ADM</h1>
+                    <h1 className='titulo-form'><span><img src='/image/img-perfilzinho.png' alt='' width='34px'></img></span>Login ADM</h1>
 
                     <div className='form-group'>
                         <label className='label-form' htmlFor='email'>Email</label>

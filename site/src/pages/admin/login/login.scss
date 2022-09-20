@@ -1,24 +1,3 @@
-//  1 color variables 
-
-// 2 $clr-primary: #9dedff;
-
-// 3 $clr-primary-hover: #8ad6ff;
-
-// 4 $clr-primary-dark: #7bdff6; 5 $clr-primary-light: #c7f5ff;
-
-// 6 $clr-gray100: #f0f7f8;
-
-// 7 $clr-gray200: #cfd8dc;
-
-// 8 $clr-gray300: #a7b7be;
-
-// $clr-gray400: #6b7e86;
-
-// 18 $clr-gray500: #425a65;
-
-// border radius/
-
-// $radius: 1rem;
 
 *,
 *::before,
@@ -47,10 +26,21 @@
 }
 
 .formulario {
+    display: grid;
+    height: 30em;
     width: 24rem;
     padding: 2rem;
     border-radius: 1rem;
     background-color: white;
+    align-items: center;
+    
+
+
+    h1{
+        margin-left: 1.7em;
+        
+    }
+
 
     .titulo-form {
         margin-bottom: 0.5rem;
@@ -71,6 +61,12 @@
         color: inherit;
         padding: 1.25rem;
         background: none;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-end;
+        margin: 20px 0px;
+    
     }
 
     .input-form:hover {
