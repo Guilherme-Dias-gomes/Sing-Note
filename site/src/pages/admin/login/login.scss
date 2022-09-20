@@ -27,8 +27,9 @@
     margin: 0;
     padding: 0;
 }
-
-body {
+//Decidi trocar a body pelo o que está agora, pois aparentemente estava influenciando nas outras páginas
+//Deixei de um jeito em que a config permanecesse apenas nesta página mesmo.
+.page-login {
     font-family: Montserrat, sans-serif;
     font-weight: 500;
     background-color: #55F27F; 

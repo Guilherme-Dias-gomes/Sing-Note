@@ -1,0 +1,44 @@
+
+.aba-lateral {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 150px;
+
+    background-color: #55F27F;
+    height: 100vh;
+
+
+
+.opcoes {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50vh;
+
+    margin-top: 20vh;
+
+    border: red solid 1px;
+}
+
+.icone-opcoes{
+    display:flex;
+    flex-direction: row;
+    height: 40px;
+    border-radius: 10px 0px 0px 10px;
+
+    border: rgb(68, 0, 255) solid 1px;
+}
+
+.icone-opcoes:hover{
+    background-color: #0000ff;
+}
+
+.nome-icones{
+    font-size: 35;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+}

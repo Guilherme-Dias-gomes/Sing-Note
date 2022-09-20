@@ -3,7 +3,7 @@ import './login.scss'
 export default function Login () {
 
     return(     
-            <div className='page-lgoin'>
+            <div className='page-login'>
                 <form method='post' className='formulario'>
 
                     <h1 className='titulo-form'>Login ADM</h1>
