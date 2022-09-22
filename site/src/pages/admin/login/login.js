@@ -1,6 +1,6 @@
-import { login } from '../../../api/adminloginAPI';
+import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
-import {  useRef, useState} from 'react'
+import { useState} from 'react'
 
 
 
@@ -13,61 +13,48 @@ export default function Login () {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [erro, setErro]   = useState('');
-    const[carregando, setCarregando] = useState(false);
 
     const navegar = useNavigate();
-    const ref = useRef();
-
-    // useEffect(() => {
-    //     if(storage('usuario-logado')){
-    //     navegar('/slaa')
-    //     }
-    // }, [])
 
     async function entrarClick(){
-        ref.current.continuousStart();
-        setCarregando(true);
-
         try {
-            const resposta = await login (email, senha);
-            //storage('usuario-logado', resposta)
+            const r = await axios.post('http://localhost:5000/login/admin', {
+                email: email,
+                senha: senha
+            });
+            
+            navegar('/');
 
-            setTimeout(() => {
-                navegar('/slaa');
-            }, 2000);
-
-        } catch (err) {
-            ref.current.complete();
-            setCarregando(false);
-
-            if(err.response.status === 401){
-                setErro(err.response.data.erro);
+        }catch (err) {
+            if (err.response.status === 401) {
+                setErro(err.response.date.erro);
             }
         }
     }
 
     return(     
             <div className='page-login'>
-                <form method='post' className='formulario'>
+                <form className='formulario'>
 
                     <h1 className='titulo-form'><span><img src='/image/img-perfilzinho.png' alt='' width='34px'></img></span>Login ADM</h1>
 
                     <div className='form-group'>
                         <label className='label-form' htmlFor='email'>Email</label>
-                        <input className='input-form' type='email' id='email' placeholder="" autoComplete='off'
+                        <input className='input-form' type='email' id='email' placeholder="Digite o email adiministrativo:" autoComplete='off'
                         value={email} onChange={e => setEmail(e.target.value)}/>
                         
                     </div>
 
                     <div className='form-group'>
                         <label className='label-form' htmlFor='senha'>Senha</label>
-                        <input className='input-form' type='password' id='senha' placeholder=""
+                        <input className='input-form' type='password' id='senha' placeholder="***"
                         value={senha} onChange={e => setSenha(e.target.value)}/>
                     </div>
                     
-                    <button className='btn-login' onClick={entrarClick}
-                 disabled={carregando}>Entrar</button>
-
+                    <button className='btn-login' onClick={entrarClick}>Entrar</button>
+                    <div className='form-entrar-invalido'>
+                        {erro}
+                    </div>
                 </form>
             </div>
             

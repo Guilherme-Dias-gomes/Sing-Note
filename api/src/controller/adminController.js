@@ -3,6 +3,8 @@ import { loginAdmin } from '../repository/adminRepository.js';
 import { Router } from "express";
 const server = Router();
 
+// login do ADM
+
 server.post('/login/admin', async (req, resp)  => {
     try {
         const { email, senha } = req.body;

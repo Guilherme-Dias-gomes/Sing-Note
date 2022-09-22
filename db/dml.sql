@@ -1,13 +1,13 @@
 use singnote;
 
 -- LOGIN ADM
-   insert into tb_usuario_login(ds_email, ds_senha)
+   insert into tb_admin(ds_email, ds_senha)
                          values('admin@gmail.com','1234');
 
 -- VERIFICAR LOGIN ADMIN
 select ds_email            as email,
        ds_senha         as senha
-    from tb_usuario_login
+    from tb_admin
    where ds_email = 'admin@gmail.com'
      and ds_senha = '1234' ;
 
