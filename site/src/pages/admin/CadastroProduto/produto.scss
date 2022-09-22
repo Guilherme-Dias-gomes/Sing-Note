@@ -2,8 +2,6 @@
     display:flex;
     flex-direction: row;
     width: 100vw;
-    border: #ffea00 solid 2px;
-
 
     .container-do-cadastro{
         display: flex;
@@ -13,17 +11,16 @@
         height: 85vh;
         width: 85vw;
         background-color: #f1f1f1;
-        border: #ff00ff solid 3px;
     }
     
     .parte-cadastro{
+        display: flex;
         flex-direction: column;
         border-radius: 20px;
         background-color: #ffffff;
-        align-items: center;
+        justify-content: center;
         width: 80%;
         height: auto;
-        border: #f2ff00 solid 1px;
     }
 
     .titulo-cadastrar{
@@ -34,16 +31,13 @@
         font-weight: bold;
         font-size: 20px;
         margin: 20px 0px 0px 20px;
-        border:rgb(68, 0, 255) solid 1px;
     }
     .imagem-retangulo{
         height: 30px;
     }
 
     .formulario-div-1{
-        width: 40%;
-        border: #ff0000 solid 1px;
-       
+        width: 40%;  
     }
 
     .caixa-de-texto-div-1{
@@ -52,8 +46,6 @@
         justify-content:flex-end;
         margin: 15px 0px;
         height: 45px;
-        border: #ff00ff solid 1px;
-
     }
     
     .titulo-caixa-de-texto{
@@ -86,8 +78,6 @@
         justify-content:flex-end;
         margin: 0px 0px;
         height: 90px;
-        border: #ff00ff solid 1px;
-
     }
 
     .caixa-de-texto-grande{
@@ -113,7 +103,6 @@
         display: flex;
         flex-direction: row;
         height: auto;
-        border: #0000ff solid 1px;
         justify-content: space-around;
     }
 
@@ -123,7 +112,6 @@
     flex-direction: row;
     width: 100%;
     justify-content: space-around;
-    border: #0000ff solid 1px;
 }
 
 .caixa-de-texto-pequena{
@@ -137,7 +125,6 @@
 
 .formulario-div-2{
     width: 40%;
-    border: #ff0000 solid 1px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -151,8 +138,8 @@
     align-items: center;
     border: #7d7d7d solid 2px;
     border-radius: 10px;
-    width: 20vw;
-    height: 30vh;
+    width: 15vw;
+    height: 15vw;
 }
 
 .caixa-add-imagem-menor{
@@ -161,18 +148,18 @@
     align-items: center;
     border: #7d7d7d solid 2px;
     border-radius: 10px;
-    width: 13vh;
-    height: 13vh;
+    width: 10vw;
+    height: 10vw;
 }
 
 .editar-imagem{
-    height: 10vh;
-    width: 10vh;
+    height: 10vw;
+    width: 10vw;
 }
 
 .editar-imagem-menor{
-    height: 5vh;
-    width: 5vh;
+    height: 5vw;
+    width: 5vw;
 }
 
 .container-dos-botoes{
@@ -180,7 +167,6 @@
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
-    border: #7d7d7d solid 1px;
 }
 
 .botao-salvar{

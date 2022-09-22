@@ -15,7 +15,7 @@ root.render(
             <Routes>
                 <Route path="/" element={< CadastrarProduto />} />
                 <Route path="/login/admin" element={< Login />} />
-                <Route path="/login/slaa" element={< Barra />} />
+                <Route path="/admin/produto" element={< CadastrarProduto />} />
             </Routes>
         </BrowserRouter>
   </React.StrictMode>

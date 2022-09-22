@@ -1,4 +1,4 @@
-import { loginAdmin } from '../../../../../api/src/repository/adminRepository';
+import { login } from '../../../api/adminloginAPI';
 import {useNavigate} from 'react-router-dom'
 import {  useRef, useState} from 'react'
 
@@ -29,7 +29,7 @@ export default function Login () {
         setCarregando(true);
 
         try {
-            const resposta = await loginAdmin (email, senha);
+            const resposta = await login (email, senha);
             //storage('usuario-logado', resposta)
 
             setTimeout(() => {
