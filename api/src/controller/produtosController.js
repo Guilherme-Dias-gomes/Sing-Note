@@ -1,34 +1,41 @@
 import { Router } from 'express';
-
-import { salvarProduto, salvarProdutoCategoria } from '../repository/produtoRepository.js';
-import { buscarCategoriaPorId } from '../repository/categoriaRepository.js';
-import { validarProduto } from '../service/produtoValidacao.js';
+import { salvarProduto } from '../repository/produtoRepository.js';
 
 const server = Router();
 
 
 
-server.post('/admin/produto', async (req, resp) => {
+server.post('/login/admin/produto' , async (req, resp) => {
     try {
         const produto = req.body;
 
-        await validarProduto(produto);
+        if(!produto.nome) 
+            throw new Error ('❌Nome do produto do Produto obrigatório');
 
-        const idProduto = await salvarProduto(produto);
-        
-        for (const idCateg of produto.categorias) {
-            const cat = await buscarCategoriaPorId(idCateg);
-            
-            if (cat != undefined)
-                await salvarProdutoCategoria(idProduto, idCateg);
-        }
+        if(!produto.modelo.trim()) 
+            throw new Error ('❌Modelo do produto não foi preenchido');
 
-        resp.status(204).send();
-    }
-    catch (err) {
-        return resp.status(400).send({
-            erro: err.message
+        if(!produto.descricao.trim()) 
+            throw new Error ('❌Nome do plano é obrigatório');
+
+        if(!produto.estoque.trim()) 
+            throw new Error ('❌CPF é obrigatório');
+
+        if(!produto.marca.trim()) 
+            throw new Error ('❌Gênero é obrigatório');
+
+        if(!produto.preco.trim()) 
+            throw new Error ('❌Telefone obrigatório');
+
+        const produtoAdcionado = await salvarProduto(produto);
+        resp.send(produtoAdcionado);
+
+    } catch (err) {
+
+            resp.status(400).send({
+                erro:err.message
         })
+
     }
 })
 

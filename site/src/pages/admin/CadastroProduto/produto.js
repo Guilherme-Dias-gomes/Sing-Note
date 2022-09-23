@@ -24,8 +24,12 @@ export default function CadastrarProduto() {
                             <label className="titulo-caixa-de-texto"> Categorias </label>
                             <select name='categoria' className="caixa-de-texto">
                                 <option value=''> </option>
-                                <option value='Guitarra'> Guitarra </option>
-                                <option value='Bateria'> Bateria </option>
+                                <option value='Cordas'> Cordas </option>
+                                <option value='Sopro'> Sopro </option>
+                                <option value='Percurssao'> Percurssão </option>
+                                <option value='Eletricos'> Elétricos </option>
+                                <option value='Teclas'> Teclas </option>
+                                <option value='Acessorios'> Acessórios </option>
                             </select>
                         </div>
                         <div className="caixa-de-texto-div-1">
@@ -33,7 +37,17 @@ export default function CadastrarProduto() {
                             <select name='categoria' className="caixa-de-texto">
                                 <option value=''> </option>
                                 <option value='Guitarra'> Guitarra </option>
+                                <option value='Bateria'> Violão </option>
                                 <option value='Bateria'> Bateria </option>
+                                <option value='Bateria'> Flauta </option>
+                                <option value='Bateria'> Teclado </option>
+                                <option value='Bateria'> Piano </option>
+                                <option value='Bateria'> Rebolo </option>
+                                <option value='Bateria'> Violino </option>
+                                <option value='Bateria'> Violoncelo </option>
+                                <option value='Bateria'> Saxofone </option>
+                                <option value='Bateria'> Baixo </option>
+                                <option value='Bateria'> Pandeiro </option>
                             </select>
                         </div>
                         
@@ -44,7 +58,7 @@ export default function CadastrarProduto() {
                         <div className="caixa-de-texto-div-1"><label className="titulo-caixa-de-texto"> Marca </label><input type="text" className="caixa-de-texto-pequena"/></div>
                         </div>
 
-                        <div className="caixa-de-texto-div-1"><label className="titulo-caixa-de-texto"> No estoque </label><input type="text" className="caixa-de-texto-pequena"/></div>
+                        <div className="caixa-de-texto-div-1"><label className="titulo-caixa-de-texto"> Preço </label><input type="text" className="caixa-de-texto-pequena"/></div>
 
                     </div>
                     <div className="formulario-div-2">
