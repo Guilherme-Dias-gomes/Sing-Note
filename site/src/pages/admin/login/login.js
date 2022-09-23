@@ -16,25 +16,29 @@ export default function Login () {
 
     const navegar = useNavigate();
 
-    async function entrarClick(){
+    async function entrarClick(e){
+        e.preventDefault()
+
         try {
             const r = await axios.post('http://localhost:5000/login/admin', {
                 email: email,
                 senha: senha
             });
             
-            navegar('/');
+            navegar('/login/admin/produto');
 
         }catch (err) {
             if (err.response.status === 401) {
-                setErro(err.response.date.erro);
+                setErro(err.response.data.erro);
             }
         }
     }
 
     return(     
             <div className='page-login'>
-                <form className='formulario'>
+                <form className='formulario'
+                    onSubmit={entrarClick}
+                >
 
                     <h1 className='titulo-form'><span><img src='/image/img-perfilzinho.png' alt='' width='34px'></img></span>Login ADM</h1>
 
@@ -51,7 +55,7 @@ export default function Login () {
                         value={senha} onChange={e => setSenha(e.target.value)}/>
                     </div>
                     
-                    <button className='btn-login' onClick={entrarClick}>Entrar</button>
+                    <button className='btn-login'>Entrar</button>
                     <div className='form-entrar-invalido'>
                         {erro}
                     </div>
