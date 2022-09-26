@@ -26,8 +26,8 @@ create table TB_PRODUTO(
     FOREIGN KEY (ID_PRODUTO_CATEGORIA) REFERENCES TB_PRODUTO_CATEGORIA(ID_PRODUTO_CATEGORIA)
 );
 
-create table TB_PRODUTO_IMAGE(
-    ID_PRODUTO_IMAGE	    int primary key auto_increment,
+create table TB_PRODUTO_IMAGEM(
+    ID_PRODUTO_IMAGEM	    int primary key auto_increment,
     IMG_PRODUTO		    varchar(800),
     ID_PRODUTO		    int,
     FOREIGN KEY (ID_PRODUTO) REFERENCES TB_PRODUTO(ID_PRODUTO)

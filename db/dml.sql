@@ -20,21 +20,25 @@ insert into tb_produto_categoria(nm_produto_categoria)
                           values('Cordas');
 insert into tb_produto_tipo(nm_produto_tipo)
                           values('Guitarra');
-insert into tb_produto_image(img_produto)
+insert into tb_produto_imagem(img_produto)
                           values('fasdfg');
 
-
--- CADASTRAR IMAGEM
-update tb_produto_imagem
-   set img_produto = 'fdas'
-where id_produto_imagem = 1;
-
+select * from tb_produto_imagem;
  
 -- SELECIONAR TODOS OS PRODUTOS
-select *
+select nm_produto,
+	   ds_modelo,
+       ds_produto,
+       nr_estoque,
+       ds_marca,
+       nr_preco,
+       nm_produto_categoria,
+       nm_produto_tipo,
+       img_produto
  from tb_produto
-inner join tb_produto_tipo on tb_produto_tipo.id_produto_tipo = 
-tb_produto.id_produto_tipo;
+inner join tb_produto_categoria on tb_produto_categoria.id_produto_categoria = tb_produto.id_produto_categoria
+inner join tb_produto_tipo on tb_produto_tipo.id_produto_tipo = tb_produto.id_produto_tipo
+inner join tb_produto_imagem on  tb_produto.id_produto_imagem = tb_produto_imagem.id_produto_imagem;
 
 
 -- SELECIONAR TODAS AS CATEGORIAS
