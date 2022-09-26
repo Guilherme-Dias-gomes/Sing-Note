@@ -1,0 +1,27 @@
+
+.pageHome {
+    display: flex;
+    flex-direction: row;
+    width: 100wh;
+}
+
+.cabecalho {
+    padding: 0%;
+    padding-left: 1em;
+}
+
+.espaco-branco {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    background-image: url(../../../../public/image/fundoLogo.png);
+    background-repeat: no-repeat;
+    background-position: 50% 65%;
+    background-size: 400px;
+    background-color: #f0f0f0;
+}
+
+.aba-lateral {
+    height: 100vh;
+}

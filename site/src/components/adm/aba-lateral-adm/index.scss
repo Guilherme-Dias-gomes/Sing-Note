@@ -1,3 +1,6 @@
+* {
+    text-decoration: none;
+}
 
 .aba-lateral {
     display:flex;
@@ -17,6 +20,9 @@
     margin-top: 20vh;
 }
 
+a {
+    width: 100%;
+}
 .icone-opcoes{
     display:flex;
     flex-direction: row;

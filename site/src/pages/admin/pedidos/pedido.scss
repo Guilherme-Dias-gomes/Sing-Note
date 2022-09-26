@@ -1,0 +1,77 @@
+.pagePedidos {
+    display: flex;
+    flex-direction: row;
+    width: 100Wh;
+}
+
+.cabecalho {
+    padding: 0%;
+    padding-left: 1em;
+}
+
+.elemento-pedidos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    align-items: center;
+
+
+    background-color: #f0f0f0;
+}
+
+.elementos-pesquisa {
+    display: flex;
+    margin-top: 4em;
+    width: 70%;
+    justify-content: space-between;
+}
+
+.input-pesquisa {
+    width: 83%;
+    border: none;
+    border-radius: 0.8rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 14px;
+    background-color: white;
+    font-size: 15px;
+}
+
+.btn-buscar {
+    padding: 10px 30px 10px 30px;
+    background-color: #6AA9E9;
+    border-radius: 0.8rem;
+    color: white;
+    border: none;
+}
+
+.div-table {
+    margin-top: 4em;
+}
+
+thead {
+    background-color: #55F27F;
+    text-align: center;
+    color: white;
+}
+
+tbody {
+    text-align: center;
+}
+
+ td  {
+    border-bottom: 1px solid #dddd;
+}
+
+tr:nth-child(even) {
+    background-color: #dbdbdb;
+}
+
+
+table, th, td {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9;
+    min-width: 190px;
+}

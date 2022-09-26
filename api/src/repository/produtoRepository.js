@@ -1,5 +1,4 @@
-import { conexao } from "./connection.js";
-
+import { conexao } from './conection.js';
 
 export async function salvarProduto(produto) {
     const comando = `
