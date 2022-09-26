@@ -25,7 +25,7 @@ export default function Login () {
                 senha: senha
             });
             
-            navegar('/login/admin/produto');
+            navegar('/admin/produto');
 
         }catch (err) {
             if (err.response.status === 401) {
