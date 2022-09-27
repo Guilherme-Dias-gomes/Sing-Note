@@ -9,7 +9,6 @@ import PageHome from "./pages/admin/home/homeADM";
 import PagePedidos from "./pages/admin/pedidos/pedido";
 
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

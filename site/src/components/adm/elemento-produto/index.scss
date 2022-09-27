@@ -1,0 +1,28 @@
+.page-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100;
+}
+
+.id-imagens {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 16vw;
+}
+
+.espaco-produto {
+    height: 59vh;
+    width: 16vw;
+    border-radius: .3em;
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
