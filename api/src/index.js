@@ -2,6 +2,8 @@ import 'dotenv/config'
 
 import adminController from './controller/adminController.js'
 import produtoController from './controller/produtosController.js'
+import categoriaController from './controller/categoriaController.js' 
+import tipoController from './controller/tipoController.js' 
 
 import express from 'express'
 import cors from 'cors'
@@ -12,6 +14,8 @@ server.use(express.json());
 
 server.use(adminController)
 server.use(produtoController)
+server.use(categoriaController)
+server.use(tipoController)
 
 
 server.listen(process.env.PORT,
