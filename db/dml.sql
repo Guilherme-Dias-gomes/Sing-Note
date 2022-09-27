@@ -6,7 +6,7 @@ use singnote;
 
 -- VERIFICAR LOGIN ADMIN
 select ds_email            as email,
-       ds_senha         as senha
+       ds_senha            as senha
     from tb_admin
    where ds_email = 'admin@gmail.com'
      and ds_senha = '1234' ;

@@ -5,26 +5,26 @@ const server = Router();
 
 
 
-server.post('/login/admin/produto' , async (req, resp) => {
+server.post('/admin/produto' , async (req, resp) => {
     try {
         const produto = req.body;
 
         if(!produto.nome) 
             throw new Error ('❌Nome do produto do Produto obrigatório');
 
-        if(!produto.modelo.trim()) 
-            throw new Error ('❌Modelo do produto não foi preenchido');
+        if(!produto.modelo) 
+            throw new Error ('❌2');
 
-        if(!produto.descricao.trim()) 
+        if(!produto.descricao) 
             throw new Error ('❌Nome do plano é obrigatório');
 
-        if(!produto.estoque.trim()) 
+        if(!produto.estoque) 
             throw new Error ('❌CPF é obrigatório');
 
-        if(!produto.marca.trim()) 
+        if(!produto.marca) 
             throw new Error ('❌Gênero é obrigatório');
 
-        if(!produto.preco.trim()) 
+        if(!produto.preco) 
             throw new Error ('❌Telefone obrigatório');
 
         const produtoAdcionado = await salvarProduto(produto);
