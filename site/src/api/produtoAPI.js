@@ -6,7 +6,21 @@ const api = axios.create({
 })
 
 
-export async function salvarProduto(nome, modelo, categoria, tipo, descricao, estoque, marca, preco) {
-    const r = await api.post('/admin/produto', { nome, modelo, categoria, tipo, descricao, estoque, marca, preco});
+export async function SalvarProduto(nome,
+                                    modelo,
+                                    descricao, 
+                                    estoque, 
+                                    marca, 
+                                    preco,
+                                    categoria,
+                                    tipo) {
+    const r = await api.post('/admin/produto', { nome, 
+                                                 modelo,
+                                                 descricao, 
+                                                 estoque, 
+                                                 marca, 
+                                                 preco,
+                                                 categoria,
+                                                 tipo});
     return r.data;
 }

@@ -16,6 +16,7 @@ export async function BuscarTipoPorID(id) {
     select id_produto_tipo          as id,
            nm_produto_tipo          as tipo
     from tb_produto_tipo
+    where id_produto_tipo = ?
     ` 
 
     const [linhas] = await conexao.query(comando, [id])

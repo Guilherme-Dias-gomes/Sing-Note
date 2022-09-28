@@ -39,6 +39,7 @@ export default function Login () {
                 <form className='formulario'
                     onSubmit={entrarClick}
                 >
+                   <p>  admin@gmail.com</p>
 
                     <h1 className='titulo-form'><span><img src='/image/img-perfilzinho.png' alt='' width='34px'></img></span>Login ADM</h1>
 
