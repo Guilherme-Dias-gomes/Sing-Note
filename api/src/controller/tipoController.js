@@ -1,9 +1,9 @@
 import { listarTipo } from "../repository/tipoRepository.js";
 
 import { Router } from "express";
-const SingNote = Router()
+const server = Router()
 
-SingNote.get('/produto/tipo', async (req, resp) =>{
+server.get('/produto/tipo', async (req, resp) =>{
     try {
         const r = await listarTipo()
         resp.send(r)
@@ -14,4 +14,4 @@ SingNote.get('/produto/tipo', async (req, resp) =>{
     }
 })
 
-export default SingNote;
+export default server;

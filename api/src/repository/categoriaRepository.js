@@ -8,6 +8,7 @@ export async function listarCategoria() {
     ` 
 
     const [linhas] = await conexao.query(comando)
+    
     return linhas;
 }
 

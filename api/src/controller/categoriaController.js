@@ -1,9 +1,9 @@
 import { listarCategoria } from "../repository/categoriaRepository.js";
 
 import { Router } from "express";
-const SingNote = Router()
+const server = Router()
 
-SingNote.get('/produto/categoria', async (req, resp) =>{
+server.get('/produto/categoria', async (req, resp) =>{
     try {
         const r = await listarCategoria()
         resp.send(r)
@@ -14,4 +14,4 @@ SingNote.get('/produto/categoria', async (req, resp) =>{
     }
 })
 
-export default SingNote
+export default server
