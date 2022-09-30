@@ -6,6 +6,6 @@ const SN = axios.create({
 })
 
 export async function listarTipos() {
-    const r = await SN.get('/api/tipo');
+    const r = await SN.get('/produto/tipo');
     return r.data;
 }

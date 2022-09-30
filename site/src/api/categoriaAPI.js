@@ -6,6 +6,6 @@ const SN = axios.create({
 })
 
 export async function listarCategorias() {
-    const r = await SN.get('/api/categoria');
+    const r = await SN.get('/produto/categoria');
     return r.data
 }

@@ -116,16 +116,21 @@ export default function CadastrarProduto() {
                             <div className="caixa-de-texto-div-1">
                                 <label className="titulo-caixa-de-texto"> No estoque </label>
                                 <input type="text" className="caixa-de-texto-pequena"
-                                value={descricao} onChange={e => setDescricao(e.target.value)}/>
+                                value={estoque} onChange={e => setEstoque(e.target.value)}/>
                             </div>
                             <div className="caixa-de-texto-div-1">
                                 <label className="titulo-caixa-de-texto"> Marca </label>
-                                <input type="text" className="caixa-de-texto-pequena"/>
+                                <input type="text" className="caixa-de-texto-pequena"
+                                value={marca} onChange={e => setMarca(e.target.value)}/>
                             </div>
 
                         </div>
 
-                        <div className="caixa-de-texto-div-1"><label className="titulo-caixa-de-texto"> Preço </label><input type="text" className="caixa-de-texto-pequena"/></div>
+                        <div className="caixa-de-texto-div-1">
+                            <label className="titulo-caixa-de-texto"> Preço </label>
+                            <input type="text" className="caixa-de-texto-pequena"
+                            value={preco} onChange={e => setPreco(e.target.value)}/>
+                        </div>
 
                     </div>
                     <div className="formulario-div-2">

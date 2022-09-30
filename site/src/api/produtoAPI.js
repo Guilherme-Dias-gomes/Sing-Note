@@ -12,15 +12,15 @@ export async function SalvarProduto(nome,
                                     estoque, 
                                     marca, 
                                     preco,
-                                    categoria,
-                                    tipo) {
+                                    idCategoria,
+                                    idTipo) {
     const r = await api.post('/admin/produto', { nome, 
                                                  modelo,
                                                  descricao, 
                                                  estoque, 
                                                  marca, 
                                                  preco,
-                                                 categoria,
-                                                 tipo});
+                                                 idCategoria,
+                                                 idTipo});
     return r.data;
 }

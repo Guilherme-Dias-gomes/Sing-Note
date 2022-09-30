@@ -3,8 +3,8 @@ import { conexao } from './conection.js';
 
 export async function salvarProduto(produto) {
     const comando = `
-    insert into tb_produto (nm_produto, ds_modelo, ds_produto, nr_estoque, ds_marca, nr_preco, id_produto_categoria,  id_produto_tipo, img_produto_imagem)
-                     values(?, ?, ?, ?, ?, ?, ?, ?, ? )`
+    insert into tb_produto (nm_produto, ds_modelo, ds_produto, nr_estoque, ds_marca, nr_preco, id_produto_categoria,  id_produto_tipo)
+                     values(?, ?, ?, ?, ?, ?, ?, ? )`
 
     const [resposta] = await conexao.query(comando, [
                             produto.nome,
@@ -14,8 +14,7 @@ export async function salvarProduto(produto) {
                             produto.marca,
                             produto.preco,
                             produto.idCategoria,
-                            produto.idTipo,
-                            produto.idImagem
+                            produto.idTipo
                            ]);
                            
     return resposta.insertId;
