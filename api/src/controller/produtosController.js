@@ -9,11 +9,11 @@ server.post('/admin/produto' , async (req, resp) => {
     try {
         const produto = req.body;
 
-        await validarProduto(produto)
-        console.log(produto)
+         await validarProduto(produto)
 
-        const r = await salvarProduto(produto);
-        resp.status(204).send();
+        const produtoInserido = await salvarProduto(produto);
+
+        resp.send(produtoInserido);
 
     } catch (err) {
             resp.status(400).send({

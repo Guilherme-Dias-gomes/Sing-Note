@@ -17,7 +17,8 @@ export async function salvarProduto(produto) {
                             produto.idTipo
                            ]);
                            
-    return resposta.insertId;
+    produto.id = resposta.insertId
+    return produto;
 }
 
 export async function salvarImagem(idProduto, idImagem) {

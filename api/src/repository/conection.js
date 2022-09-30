@@ -18,7 +18,6 @@ async function createCon() {
     }
 });
 
-
     conexao.on('error', async err => {
         console.log(err.message);
         if (err.message.includes('closed')) {

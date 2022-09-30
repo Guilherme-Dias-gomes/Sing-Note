@@ -43,6 +43,7 @@ export default function CadastrarProduto() {
             const valorProduto = Number(preco.replace('.',','));
 
             const resposta = await SalvarProduto(nome, modelo, descricao, estoque, marca, preco, categoria, tipo);
+            console.log(resposta)
             toast.dark('Produto cadastrado');
         } catch (err){
             toast.error(err.resposte.data.erro)
@@ -102,6 +103,7 @@ export default function CadastrarProduto() {
                                 )}
                             </select>
                         </div>
+                        
                         <div className="caixa-de-texto-div-1">
                             <label className="titulo-caixa-de-texto"> Tipo </label>
                             <select name='categoria' className="caixa-de-texto"

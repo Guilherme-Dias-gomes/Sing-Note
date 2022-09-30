@@ -14,13 +14,15 @@ export async function SalvarProduto(nome,
                                     preco,
                                     idCategoria,
                                     idTipo) {
-    const r = await api.post('/admin/produto', { nome, 
-                                                 modelo,
-                                                 descricao, 
-                                                 estoque, 
-                                                 marca, 
-                                                 preco,
-                                                 idCategoria,
-                                                 idTipo});
-    return r.data;
+    const resposta = await api.post('/admin/produto', { nome, 
+                                                        modelo,
+                                                        descricao, 
+                                                        estoque, 
+                                                        marca, 
+                                                        preco,
+                                                        idCategoria,
+                                                        idTipo});
+    console.log(resposta)
+    
+    return resposta.data;
 }
