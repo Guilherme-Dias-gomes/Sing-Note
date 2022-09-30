@@ -23,15 +23,26 @@ export default function CadastrarProduto() {
     const [tipo, setTipo] = useState([]);
 
     const[descricao, setDescricao] = useState('');
-    const[estoque, setEstoque] = useState(0);
+    const[estoque, setEstoque] = useState();
     const[marca, setMarca] = useState('');
-    const[preco, setPreco] = useState(0);
+    const[preco, setPreco] = useState();
+
+    function Limpar(){
+        setNome('')
+        setModelo('')
+        setDescricao('')
+        setIdCategoria(0)
+        setIdTipo(0)
+        setEstoque()
+        setMarca('')
+        setPreco()
+    }
 
     async function salvar(){
         try{
             const valorProduto = Number(preco.replace('.',','));
 
-            const resposta = await SalvarProduto(nome, modelo, descricao, estoque, marca, preco);
+            const resposta = await SalvarProduto(nome, modelo, descricao, estoque, marca, preco, categoria, tipo);
             toast.dark('Produto cadastrado');
         } catch (err){
             toast.error(err.resposte.data.erro)
@@ -83,21 +94,19 @@ export default function CadastrarProduto() {
                         
                         <div className="caixa-de-texto-div-1">
                             <label className="titulo-caixa-de-texto"> Categorias </label>
-                            <select name='categoria' className="caixa-de-texto">
-                                <option value=''> </option>
-                                <option value='Cordas'> Thawan </option>
-                                <option value='Sopro'> Thawan </option>
-                                <option value='Percurssao'> Thawan </option>
-                                <option value='Eletricos'> Thawan </option>
-                                <option value='Teclas'> Thawan </option>
-                                <option value='Acessorios'> Thawan </option>
+                            <select name='categoria' className="caixa-de-texto"
+                             value={idCategoria} onChange={e => setIdCategoria(e.target.value)}>
+                                <option> </option>
+                                {categoria.map(item =>
+                                    <option value={item.id}>{item.categoria}</option>    
+                                )}
                             </select>
                         </div>
                         <div className="caixa-de-texto-div-1">
                             <label className="titulo-caixa-de-texto"> Tipo </label>
                             <select name='categoria' className="caixa-de-texto"
                                 value={idTipo} onChange={e => setIdTipo(e.target.value)}>
-                                <option select disabled hidden>  </option>
+                                <option>  </option>
 
                                     {tipo.map(item => 
                                         <option value={item.id}> {item.tipo} </option>
@@ -138,7 +147,7 @@ export default function CadastrarProduto() {
                         <div className="caixa-add-imagem-menor"><img src='/image/add-image.png' alt='Add' className='editar-imagem-menor'/></div>
                         <div className='container-dos-botoes'>
                             <button className='botao-salvar' onClick={salvar}>Salvar</button>
-                            <button className='botao-novo'>Novo</button>
+                            <button className='botao-novo' onClick={Limpar}>Novo</button>
                         </div>
 
                     </div>
