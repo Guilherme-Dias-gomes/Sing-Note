@@ -14,7 +14,6 @@
         background-color: #f1f1f1;
     }
 
-    //f1f1f1
     
     .parte-cadastro{
         display: flex;
@@ -24,7 +23,8 @@
         justify-content: center;
         width: 80%;
         height: auto;
-        margin: 2% 0px;
+        margin-bottom: 2%;
+        box-shadow: 5px 5px #888888;
     }
     
     .titulo-cadastrar{
@@ -90,7 +90,7 @@
         border-radius: 10px;
         border-style: none;
         border: #7d7d7d solid 2px;
-        
+        resize: none; 
     }
 
     .titulo-caixa-de-texto-grande{
@@ -101,7 +101,7 @@
         width:auto;
         padding: 0px 3px;
         margin: 0px 0px 52px 30px;
-        position: absolute;    
+        position: absolute; 
     }
 
     .container-formulario{
@@ -112,11 +112,11 @@
     }
 
 
-.container-divs-menores{
+    .container-divs-menores{
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .caixa-de-texto-pequena{
@@ -143,8 +143,8 @@
     align-items: center;
     border: #7d7d7d solid 2px;
     border-radius: 10px;
-    width: 15vw;
-    height: 15vw;
+    width: 16vw;
+    height: 16vw;
 }
 
 .caixa-add-imagem-menor{
@@ -152,19 +152,19 @@
     justify-content: center;
     align-items: center;
     border: #7d7d7d solid 2px;
-    border-radius: 10px;
-    width: 10vw;
-    height: 10vw;
+    border-radius: 10%;
+    width: 6vw;
+    height: 6vw;
 }
 
 .editar-imagem{
-    height: 10vw;
-    width: 10vw;
+    height: 5vw;
+    width: 5vw;
 }
 
 .editar-imagem-menor{
-    height: 5vw;
-    width: 5vw;
+    height: 2vw;
+    width: 2vw;
 }
 
 .container-dos-botoes{
@@ -178,7 +178,7 @@
     background-color: #55f27f;
     border-style: none;
     width: 30%;
-    height: 30px;
+    height: 35px;
     border-radius: 5px;
     color: #ffffff;
 }
@@ -187,9 +187,7 @@
     background-color: #318ce7;
     border-style: none;
     width: 30%;
-    height: 30px;
+    height: 35px;
     border-radius: 5px;
     color: #ffffff;
-}
-
-}
+}}
