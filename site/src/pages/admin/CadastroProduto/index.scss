@@ -2,16 +2,19 @@
     display:flex;
     flex-direction: row;
     width: 100vw;
+    height: 100vh;
+
 
     .container-do-cadastro{
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        height: 85vh;
-        width: 85vw;
+        justify-content: space-between;
+        width: 100%;
         background-color: #f1f1f1;
     }
+
+    //f1f1f1
     
     .parte-cadastro{
         display: flex;
@@ -21,8 +24,9 @@
         justify-content: center;
         width: 80%;
         height: auto;
+        margin: 2% 0px;
     }
-
+    
     .titulo-cadastrar{
         display: flex;
         flex-direction: row;
@@ -32,6 +36,7 @@
         font-size: 20px;
         margin: 20px 0px 0px 20px;
     }
+
     .imagem-retangulo{
         height: 30px;
     }
@@ -77,11 +82,11 @@
         flex-direction: column;
         justify-content:flex-end;
         margin: 0px 0px;
-        height: 90px;
+        height: 70px;
     }
 
     .caixa-de-texto-grande{
-        height: 80px;
+        height: 60px;
         border-radius: 10px;
         border-style: none;
         border: #7d7d7d solid 2px;
@@ -95,7 +100,7 @@
         background-color: #ffffff;
         width:auto;
         padding: 0px 3px;
-        margin: 0px 0px 72px 30px;
+        margin: 0px 0px 52px 30px;
         position: absolute;    
     }
 

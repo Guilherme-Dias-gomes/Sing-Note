@@ -71,11 +71,14 @@ export default function CadastrarProduto() {
     
     <AbaLateralADM/>
 
-    <div> {/*Começo da página*/} 
-        <Cabecalho/>
+    
+        
         <div className="container-do-cadastro"> {/*Container do cadastro*/}
+        <Cabecalho/>
             <div className="parte-cadastro"> {/*Começo da parte do cadastro*/}
-                <div className="titulo-cadastrar"><img src="/image/Rectangle 834.png" alt="cadastrar" className="imagem-retangulo"/><p> Cadastrar Produto </p>
+                <div className="titulo-cadastrar">
+                    <img src="/image/Rectangle 834.png" alt="cadastrar" className="imagem-retangulo"/>
+                    <p> Cadastrar Produto </p>
                 </div>
 
                 <div className="container-formulario"> {/*Container Formulário*/}
@@ -151,12 +154,11 @@ export default function CadastrarProduto() {
                             <button className='botao-salvar' onClick={salvar}>Salvar</button>
                             <button className='botao-novo' onClick={Limpar}>Novo</button>
                         </div>
-
                     </div>
                 </div>
             </div> {/*Fim da parte do cadastro*/}
         </div> {/*Fim do Container do cadastro*/}
-    </div> {/*Fim da página*/}
+    
 </div> 
     )
 }
