@@ -1,10 +1,9 @@
 import './index.scss'
 
-import { toast } from 'react-toastify'
+
 
 import { listarCategorias } from '../../../api/categoriaAPI'
 import { listarTipos } from '../../../api/tipoAPI'
-import { SalvarProduto } from '../../../api/produtoAPI'
 
 import AbaLateralADM from '../../../components/adm/aba-lateral-adm/index.js'
 import Cabecalho from '../../../components/adm/cabecalho-adm/index.js'
@@ -38,17 +37,6 @@ export default function CadastrarProduto() {
         setPreco()
     }
 
-    async function salvar(){
-        try{
-            const valorProduto = Number(preco.replace('.',','));
-
-            const resposta = await SalvarProduto(nome, modelo, descricao, estoque, marca, preco, categoria, tipo);
-            console.log(resposta)
-            toast.dark('Produto cadastrado');
-        } catch (err){
-            toast.error(err.resposte.data.erro)
-        }  
-    }
 
     async function mostrarCategorias(){
         const resposta = await listarCategorias()
@@ -151,7 +139,7 @@ export default function CadastrarProduto() {
                         <div className="caixa-add-imagem"><img src='/image/add-image.png' alt='Add' className='editar-imagem'/></div>
                         <div className="caixa-add-imagem-menor"><img src='/image/add-image.png' alt='Add' className='editar-imagem-menor'/></div>
                         <div className='container-dos-botoes'>
-                            <button className='botao-salvar' onClick={salvar}>Salvar</button>
+                            <button className='botao-salvar' >Salvar</button>
                             <button className='botao-novo' onClick={Limpar}>Novo</button>
                         </div>
                     </div>

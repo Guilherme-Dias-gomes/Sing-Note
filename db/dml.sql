@@ -6,33 +6,82 @@ use singnote;
 
 -- VERIFICAR LOGIN ADMIN
 select ds_email            as email,
-       ds_senha            as senha
+       ds_senha         as senha
     from tb_admin
    where ds_email = 'admin@gmail.com'
      and ds_senha = '1234' ;
 
+
+
 -- CADASTRAR PRODUTO
-insert into tb_produto (nm_produto, ds_modelo, ds_produto, nr_estoque, ds_marca, nr_preco, id_produto_categoria, id_produto_tipo)
-                values('Guitarra', 'Rock Roll', 'Muito Rock', 5, 'aaa', 1000.10, 1, 1);
+insert into tb_produto (nm_produto, ds_modelo, ds_produto, nr_estoque, ds_marca, nr_preco)
+                values('Guitarra', 'Rock Roll', 'Muito Rock', 5, 'aaa', 1000.10);
+insert into tb_produto_categoria(nm_produto_categoria)
+                          values('Cordas');
+insert into tb_produto_categoria(nm_produto_categoria)
+					      values('Sopro');
+                          insert into tb_produto_categoria(nm_produto_categoria)
+                          values('Percução');
+insert into tb_produto_categoria(nm_produto_categoria)
+                          values('Elétricos');
+insert into tb_produto_categoria(nm_produto_categoria)
+                          values('Teclas');
+insert into tb_produto_categoria(nm_produto_categoria)
+                          values('Acessórios');
+                          
+                          
+insert into tb_produto_tipo(nm_produto_tipo)
+                          values('Guitarra');
+insert into tb_produto_tipo(nm_produto_tipo)
+                          values('Violão');
+insert into tb_produto_tipo(nm_produto_tipo)
+                          values('Teclado');
+insert into tb_produto_tipo(nm_produto_tipo)
+                          values('Piano');
+insert into tb_produto_tipo(nm_produto_tipo)
+                          values('Bateria');
+insert into tb_produto_tipo(nm_produto_tipo)
+                          values('Pandeiro');
+insert into tb_produto_tipo(nm_produto_tipo)
+                          values('Rebolo');
+insert into tb_produto_tipo(nm_produto_tipo)
+                          values('Violino');
+insert into tb_produto_tipo(nm_produto_tipo)
+                          values('Violancelo');
+insert into tb_produto_tipo(nm_produto_tipo)
+                          values('Saxofone');
+insert into tb_produto_tipo(nm_produto_tipo)
+                          values('Flauta');
+insert into tb_produto_tipo(nm_produto_tipo)
+                          values('Baixo');
+                          
+                          
+insert into tb_produto_imagem(img_produto)
+                          values('fasdfg');
+
+select * from tb_produto_imagem;
  
+-- SELECIONAR TODOS OS PRODUTOS
+select nm_produto,
+       ds_modelo,
+       ds_produto,
+       nr_estoque,
+       ds_marca,
+       nr_preco,
+       nm_produto_categoria,
+       nm_produto_tipo,
+       img_produto
+ from tb_produto
+inner join tb_produto_categoria on tb_produto_categoria.id_produto_categoria = tb_produto.id_produto_categoria
+inner join tb_produto_tipo on tb_produto_tipo.id_produto_tipo = tb_produto.id_produto_tipo
+inner join tb_produto_imagem on  tb_produto.id_produto_imagem = tb_produto_imagem.id_produto_imagem;
+
+
 -- SELECIONAR TODAS AS CATEGORIAS
-select id_produto_categoria         as id,
-	   nm_produto_categoria          as categoria
-  from tb_produto_categoria;
+select *
+ from tb_produto_categoria;
+
 
 -- SELECIONAR TODAS OS TIPOS
-select id_produto_tipo         as id,
-	   nm_produto_tipo          as categoria
-  from tb_produto_tipo;
-
-  -- BUSCAR CATEGORIAS
-select id_produto_categoria         as id,
-	   nm_produto_categoria         as categoria
-  from tb_produto_categoria
- where id_produto_categoria = 1;
- 
- -- BUSCAR TIPOS
-select id_produto_tipo         as id,
-	   nm_produto_tipo         as categoria
-  from tb_produto_tipo
- where id_produto_tipo = 1;
+select *
+ from tb_produto_tipo;

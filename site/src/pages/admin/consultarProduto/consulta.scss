@@ -1,0 +1,31 @@
+.page-consulta {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+
+}
+
+.elementos-consulta {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #f0f0f0;
+    align-items: center;
+    padding-left: 13.5em;
+}
+
+.elementos-pesquisa {
+    display: flex;
+    margin-top: 4em;
+    width: 70%;
+}
+
+.cards-produto {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 4em;
+    justify-items: space-between;
+    width: 80%;
+    justify-content: space-between;
+}
