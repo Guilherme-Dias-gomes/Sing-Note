@@ -1,5 +1,6 @@
 import 'dotenv/config'
 
+import loginUsuariocontroller from './controller/loginUsuariocontroller.js'
 import adminController from './controller/adminController.js'
 import produtoController from './controller/produtosController.js'
 import categoriaController from './controller/categoriaController.js' 
@@ -16,6 +17,7 @@ server.use(adminController)
 server.use(produtoController)
 server.use(categoriaController)
 server.use(tipoController)
+server.use (loginUsuariocontroller)
 
 
 server.listen(process.env.PORT,
