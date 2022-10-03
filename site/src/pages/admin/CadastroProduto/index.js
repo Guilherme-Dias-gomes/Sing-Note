@@ -1,19 +1,27 @@
 import './index.scss'
 
 
-
+import { ToastContainer, toast } from 'react-toastify';
 import { listarCategorias } from '../../../api/categoriaAPI'
 import { listarTipos } from '../../../api/tipoAPI'
 
 import AbaLateralADM from '../../../components/adm/aba-lateral-adm/index.js'
 import Cabecalho from '../../../components/adm/cabecalho-adm/index.js'
 import { useEffect, useState } from 'react'
+import { SalvarProduto, SalvarImagens } from '../../../api/produtoAPI.js';
 
 
 export default function CadastrarProduto() {
 
     const [nome, setNome] = useState('');
     const [modelo, setModelo] = useState('');
+    const [descricao, setDescricao] = useState('');
+    const [estoque, setEstoque] = useState();
+    const [marca, setMarca] = useState('');
+    const [preco, setPreco] = useState();
+
+    const [imagem1, setImagem1] = useState();
+    const [imagem2, setImagem2] = useState();
 
     const [idCategoria, setIdCategoria] = useState();
     const [categoria, setCategoria] = useState([]);
@@ -21,10 +29,18 @@ export default function CadastrarProduto() {
     const [idTipo, setIdTipo] = useState();
     const [tipo, setTipo] = useState([]);
 
-    const[descricao, setDescricao] = useState('');
-    const[estoque, setEstoque] = useState();
-    const[marca, setMarca] = useState('');
-    const[preco, setPreco] = useState();
+    async function salvar(){
+        try {
+            const precoProduto = Number(preco.replace('.',','));
+
+            const resposta = await SalvarProduto(nome, modelo, descricao, estoque, marca, preco, idCategoria, idTipo)
+            await SalvarImagens(resposta.id, imagem1, imagem2)
+
+        } catch (err) {
+            toast.error(err.response.data.erro)
+        }
+    }
+
 
     function Limpar(){
         setNome('')
@@ -47,6 +63,18 @@ export default function CadastrarProduto() {
         const resposta = await listarTipos()
         setTipo(resposta);
     }    
+
+    function escolherImagem(inputId){
+        document.getElementById(inputId).click
+    }
+
+    function exibirImagem(imagem){
+        if(imagem == undefined){
+            return '/image/add-image.png'
+        } else {
+            return URL.createObjectURL(imagem)
+        }
+    }
 
     useEffect(() => {
         mostrarCategorias()
@@ -136,8 +164,27 @@ export default function CadastrarProduto() {
 
                     </div>
                     <div className="formulario-div-2">
-                        <div className="caixa-add-imagem"><img src='/image/add-image.png' alt='Add' className='editar-imagem'/></div>
-                        <div className="caixa-add-imagem-menor"><img src='/image/add-image.png' alt='Add' className='editar-imagem-menor'/></div>
+
+                        <div className="caixa-add-imagem">
+                            <img src={exibirImagem(imagem1)}
+                                 alt='Add'
+                                 className='editar-imagem'
+                                 onClick={() => escolherImagem('imagem1')}/>
+
+                            <input type='file' 
+                                   onChange={e => setImagem1(e.target.files[0])}/>
+                        </div>
+
+                        <div className="caixa-add-imagem-menor">
+                            <img src={exibirImagem(imagem2)}
+                                 alt='Add' 
+                                 className='editar-imagem-menor'
+                                 onClick={() => escolherImagem('imagem2')}/>
+
+                            <input type='file' 
+                                   onChange={e => setImagem2(e.target.files[0])}/>
+                        </div>
+                        
                         <div className='container-dos-botoes'>
                             <button className='botao-salvar' >Salvar</button>
                             <button className='botao-novo' onClick={Limpar}>Novo</button>

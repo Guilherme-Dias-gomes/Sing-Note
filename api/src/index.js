@@ -5,6 +5,7 @@ import adminController from './controller/adminController.js'
 import produtoController from './controller/produtosController.js'
 import categoriaController from './controller/categoriaController.js' 
 import tipoController from './controller/tipoController.js' 
+import consultaController from './controller/produtosController.js'
 
 import express from 'express'
 import cors from 'cors'
@@ -18,6 +19,7 @@ server.use(produtoController)
 server.use(categoriaController)
 server.use(tipoController)
 server.use (loginUsuariocontroller)
+server.use(consultaController)
 
 
 server.listen(process.env.PORT,
