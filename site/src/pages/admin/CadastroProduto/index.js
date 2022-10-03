@@ -1,7 +1,7 @@
 import './index.scss'
 
+import { toast } from 'react-toastify';
 
-import { ToastContainer, toast } from 'react-toastify';
 import { listarCategorias } from '../../../api/categoriaAPI'
 import { listarTipos } from '../../../api/tipoAPI'
 
@@ -9,7 +9,7 @@ import AbaLateralADM from '../../../components/adm/aba-lateral-adm/index.js'
 import Cabecalho from '../../../components/adm/cabecalho-adm/index.js'
 import { useEffect, useState } from 'react'
 import { SalvarProduto, SalvarImagens } from '../../../api/produtoAPI.js';
-
+import { API_URL } from '../../../api/config'
 
 export default function CadastrarProduto() {
 
@@ -29,13 +29,15 @@ export default function CadastrarProduto() {
     const [idTipo, setIdTipo] = useState();
     const [tipo, setTipo] = useState([]);
 
+
     async function salvar(){
         try {
             const precoProduto = Number(preco.replace('.',','));
 
-            const resposta = await SalvarProduto(nome, modelo, descricao, estoque, marca, precoProduto, idCategoria, idTipo)
-            await SalvarImagens(resposta.id, imagem1, imagem2)
-
+            const r = await SalvarProduto(nome, modelo, descricao, estoque, marca, precoProduto, idCategoria, idTipo)
+            await SalvarImagens(r.id, imagem1, imagem2)
+             
+            toast.dark('Produto cadastrado com sucesso');
         } catch (err) {
             toast.error(err.response.data.erro)
         }
@@ -55,12 +57,12 @@ export default function CadastrarProduto() {
 
 
     async function mostrarCategorias(){
-        const resposta = await listarCategorias()
+        const resposta = await listarCategorias();
         setCategoria(resposta);
     }    
 
     async function mostrarTipo(){
-        const resposta = await listarTipos()
+        const resposta = await listarTipos();
         setTipo(resposta);
     }    
 
@@ -71,7 +73,11 @@ export default function CadastrarProduto() {
     function exibirImagem(imagem){
         if(imagem == undefined){
             return '/image/add-image.png';
-        } else {
+        }        
+        else if (typeof (imagem) == 'string') {
+            return `${API_URL}/${imagem}`
+        } 
+        else {
             return URL.createObjectURL(imagem);
         }
     }
@@ -127,7 +133,7 @@ export default function CadastrarProduto() {
                             <label className="titulo-caixa-de-texto"> Tipo </label>
                             <select name='categoria' className="caixa-de-texto"
                                 value={idTipo} onChange={e => setIdTipo(e.target.value)}>
-                                <option>  </option>
+                                <option> </option>
 
                                     {tipo.map(item => 
                                         <option value={item.id}> {item.tipo} </option>

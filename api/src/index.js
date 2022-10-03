@@ -18,9 +18,10 @@ server.use(adminController)
 server.use(produtoController)
 server.use(categoriaController)
 server.use(tipoController)
-server.use (loginUsuariocontroller)
+server.use(loginUsuariocontroller)
 server.use(consultaController)
 
+server.use('/storage/produto', express.static('storage/produto'));
 
 server.listen(process.env.PORT,
               () => console.log(`API online na porta ${process.env.PORT}`));
