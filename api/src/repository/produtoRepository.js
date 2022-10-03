@@ -23,7 +23,7 @@ export async function salvarProduto(produto) {
 
 export async function salvarProdutoImagem(idProduto, imagemPath) {
     const comando = `
-        insert into tb_produto_imagem (id_produto, img_imagem)
+        insert into tb_produto_imagem (id_produto, img_produto)
                                   values (?, ?)
     `
 

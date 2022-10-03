@@ -33,7 +33,7 @@ export default function CadastrarProduto() {
         try {
             const precoProduto = Number(preco.replace('.',','));
 
-            const resposta = await SalvarProduto(nome, modelo, descricao, estoque, marca, preco, idCategoria, idTipo)
+            const resposta = await SalvarProduto(nome, modelo, descricao, estoque, marca, precoProduto, idCategoria, idTipo)
             await SalvarImagens(resposta.id, imagem1, imagem2)
 
         } catch (err) {
@@ -65,14 +65,14 @@ export default function CadastrarProduto() {
     }    
 
     function escolherImagem(inputId){
-        document.getElementById(inputId).click
+        document.getElementById(inputId).click();
     }
 
     function exibirImagem(imagem){
         if(imagem == undefined){
-            return '/image/add-image.png'
+            return '/image/add-image.png';
         } else {
-            return URL.createObjectURL(imagem)
+            return URL.createObjectURL(imagem);
         }
     }
 
@@ -171,8 +171,7 @@ export default function CadastrarProduto() {
                                  className='editar-imagem'
                                  onClick={() => escolherImagem('imagem1')}/>
 
-                            <input type='file' 
-                                   onChange={e => setImagem1(e.target.files[0])}/>
+                            <input type='file' id='imagem1' onChange={e => setImagem1(e.target.files[0])}/>
                         </div>
 
                         <div className="caixa-add-imagem-menor">
@@ -181,12 +180,11 @@ export default function CadastrarProduto() {
                                  className='editar-imagem-menor'
                                  onClick={() => escolherImagem('imagem2')}/>
 
-                            <input type='file' 
-                                   onChange={e => setImagem2(e.target.files[0])}/>
+                            <input type='file' id='imagem2' onChange={e => setImagem2(e.target.files[0])}/>
                         </div>
                         
                         <div className='container-dos-botoes'>
-                            <button className='botao-salvar' >Salvar</button>
+                            <button className='botao-salvar' onClick={salvar}>Salvar</button>
                             <button className='botao-novo' onClick={Limpar}>Novo</button>
                         </div>
                     </div>

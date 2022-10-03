@@ -6,7 +6,7 @@ import { validarProduto } from '../service/produtoValidacao.js';
 
 const server = Router();
 
-const upload = multer({ dest:'/storage/produto' })
+const upload = multer({ dest:'storage/produto' })
 
 server.post('/admin/produto' , async (req, resp) => {
     try {
@@ -35,12 +35,14 @@ server.put('/admin/produto/:id', upload.array('imagens'), async (req, resp) => {
         for (const imagem of imagens){
             await salvarProdutoImagem(id, imagem.path)
         }
+
+        resp.status(204).send()
         
     } catch (err) {
         resp.status(400).send({
             erro:err.message
     })
-}
+    }
 })
 
 server.get('/admin/produto', async (req, resp) => {
