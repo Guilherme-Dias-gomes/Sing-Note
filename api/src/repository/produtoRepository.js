@@ -38,7 +38,9 @@ export async function ConsultarTodosProdutos(){
                            ds_marca                 Marca,
                            nr_preco                 Preco,
                            img_produto              Imagens
-                      from tb_produto`
+                      from tb_produto
+                inner join tb_produto_imagem 
+                        on tb_produto_imagem.id_produto_imagem = tb_produto.id_produto_imagem  `
  
     const [registros] = await conexao.query(comando);
     return registros;
