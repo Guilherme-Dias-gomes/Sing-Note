@@ -48,6 +48,21 @@ server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, res
     }
 })
 
+// Consultar Todos os Produtos
+server.get('/admin/produto', async (req, resp) => {
+    try {
+        const resposta = await ConsultarTodosProdutos();
+
+        resp.send(resposta);
+        
+    } catch (err) {
+        resp.status(404).send({
+            erro:err.message
+    })
+}
+})
+
+
 // Buscar Produto por Nome
 server.get('/admin/produto', async (req, resp) => {
     try {
@@ -63,19 +78,6 @@ server.get('/admin/produto', async (req, resp) => {
 }
 })
 
-// Consultar Todos os Produtos
-server.get('/admin/produto', async (req, resp) => {
-    try {
-        const resposta = await ConsultarTodosProdutos();
-
-        resp.send(resposta);
-        
-    } catch (err) {
-        resp.status(404).send({
-            erro:err.message
-    })
-}
-})
 
 // Deletar Produto por ID
 server.delete('/admin/produto/:id', async (req, resp) => {
