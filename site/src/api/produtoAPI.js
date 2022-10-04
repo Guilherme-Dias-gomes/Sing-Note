@@ -11,20 +11,25 @@ export async function SalvarProduto(nome, modelo, descricao, estoque, marca, pre
     return resposta.data;
 }
 
+export async function buscarProdutos() {
+    const r = await api.get('/admin/produto');
+    return r.data;
+}
+
 export async function SalvarImagens(id, imagem1, imagem2) {
     let form = new FormData();
     form.append('imagens', imagem1);
     form.append('imagens', imagem2);
 
-    const resposta = await api.put(`/admin/produto/${id}/imagem`, form, {
+    const resposta = await api.put('/admin/produto' + id, form, {
         headers: {
-            'Content-Type': 'multipart/form-data'
+            'content-type': 'multipart/form-data'
         }
     });
     return resposta.data;
 }
 
-export async function deletarProduto(id) {
-    const r = await api.delete('admin/prdouto/' + id);
+export async function removerProduto(id) {
+    const r = await api.delete('/admin/produto/' + id);
     return r.data;
 }

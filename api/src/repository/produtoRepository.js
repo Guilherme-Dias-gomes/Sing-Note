@@ -1,6 +1,6 @@
 import { conexao } from './conection.js';
 
-// Cadastrar Novos produtos
+
 export async function salvarProduto(produto) {
     const comando = `
     insert into tb_produto (nm_produto, ds_modelo, ds_produto, nr_estoque, ds_marca, nr_preco, id_produto_categoria,  id_produto_tipo)
@@ -21,7 +21,6 @@ export async function salvarProduto(produto) {
     return produto;
 }
 
-// Cadastrar as Imagens
 export async function salvarProdutoImagem(idProduto, imagemPath) {
     const comando = `
         insert into tb_produto_imagem (id_produto, img_produto)
@@ -31,41 +30,34 @@ export async function salvarProdutoImagem(idProduto, imagemPath) {
     const [resp] = await conexao.query(comando, [idProduto, imagemPath])
 }
 
-// Consultar todos os produtos
 export async function ConsultarTodosProdutos(){
     const comando = 
-    `	 select tb_produto.id_produto               Id,
+         `select tb_produto.id_produto               Id,
                            nm_produto               Nome,
                            ds_modelo                Modelo,
                            ds_marca                 Marca,
-                           nr_preco                 Preco,
-                           img_produto              Imagem
-                      from tb_produto
-                inner join tb_produto_imagem on tb_produto_imagem.id_produto_imagem = tb_produto.id_produto_imagem`
+                           nr_preco                 Preco
+                      from tb_produto`
  
     const [registros] = await conexao.query(comando);
     return registros;
 }
 
-// Consultar todos os produtos
-export async function BuscarProdutoPorNome(nome){
+export async function ConsultarProdutosPorId(id){
     const comando = 
-    `	 select tb_produto.id_produto               Id,
+         `select tb_produto.id_produto               Id,
                            nm_produto               Nome,
                            ds_modelo                Modelo,
                            ds_marca                 Marca,
-                           nr_preco                 Preco,
-                           img_produto              Imagem
+                           nr_preco                 Preco
                       from tb_produto
-                inner join tb_produto_imagem on tb_produto_imagem.id_produto_imagem = tb_produto.id_produto_imagem
-                where nm_produto like ? `
+                      where id_produto = ?`
  
-    const [registros] = await conexao.query(comando, [`%${nome}%`]);
-    return registros;
-}
+    const [registros] = await conexao.query(comando, [id]);
+    return registros[0];
 
 
-// deletar produto
+// deletar 
 export async function removerProdutoCategorias(idProduto) {
     const comando = `
         DELETE FROM TB_PRODUTO_CATEGORIAS
@@ -86,12 +78,14 @@ export async function removerProdutoImagens(idProduto) {
     return resp.affecteRows;
 }
 
-export async function removerProduto(idProduto) {
-    const comando = `
-        DELETE FROM TB_PRODUTO
-         WHERE ID_PRODUTO = ?    
-    `
+// export async function removerProduto(idProduto) {
+//     const comando = `
+//         DELETE FROM TB_PRODUTO
+//          WHERE ID_PRODUTO = ?    
+//     `
 
-    const [resp] = await conexao.query(comando, [idProduto])
-    return resp.affecteRows;
-}
+//     const [resp] = await conexao.query(comando, [idProduto])
+//     return resp.affecteRows;
+
+// }
+   
