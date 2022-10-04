@@ -1,7 +1,7 @@
 import multer from 'multer'
 import { Router } from 'express';
 
-import { ConsultarTodosProdutos, salvarProduto, salvarProdutoImagem, removerProduto, removerProdutoImagens, removerProdutoCategorias } from '../repository/produtoRepository.js';
+import { ConsultarTodosProdutos, salvarProduto, salvarProdutoImagem, BuscarProdutoPorNome, removerProduto, removerProdutoImagens, removerProdutoCategorias } from '../repository/produtoRepository.js';
 import { validarProduto } from '../service/produtoValidacao.js';
 import { BuscarCategoriaPorID } from '../repository/categoriaRepository.js';
 
@@ -9,6 +9,7 @@ const server = Router();
 
 const upload = multer({ dest:'storage/produto' })
 
+// Cadastrar Produtos
 server.post('/admin/produto' , async (req, resp) => {
     try {
         const produto = req.body;
@@ -28,7 +29,8 @@ server.post('/admin/produto' , async (req, resp) => {
     }
 })
 
-server.put('/admin/produto/:id', upload.array('imagens'), async (req, resp) => {
+// Cadastrar Imagem
+server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, resp) => {
     try {
         const id = req.params.id;
         const imagens = req.files;
@@ -46,9 +48,11 @@ server.put('/admin/produto/:id', upload.array('imagens'), async (req, resp) => {
     }
 })
 
+// Buscar Produto por Nome
 server.get('/admin/produto', async (req, resp) => {
     try {
-        const resposta = ConsultarTodosProdutos();
+        const { nome } = req.query;
+        const resposta = await BuscarProdutoPorNome(nome);
 
         resp.send(resposta);
         
@@ -59,6 +63,21 @@ server.get('/admin/produto', async (req, resp) => {
 }
 })
 
+// Consultar Todos os Produtos
+server.get('/admin/produto', async (req, resp) => {
+    try {
+        const resposta = await ConsultarTodosProdutos();
+
+        resp.send(resposta);
+        
+    } catch (err) {
+        resp.status(404).send({
+            erro:err.message
+    })
+}
+})
+
+// Deletar Produto por ID
 server.delete('/admin/produto/:id', async (req, resp) => {
     try {
        const id = req.params.id;

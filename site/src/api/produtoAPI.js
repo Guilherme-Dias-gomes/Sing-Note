@@ -16,9 +16,9 @@ export async function SalvarImagens(id, imagem1, imagem2) {
     form.append('imagens', imagem1);
     form.append('imagens', imagem2);
 
-    const resposta = await api.put('/admin/produto' + id, form, {
+    const resposta = await api.put(`/admin/produto/${id}/imagem`, form, {
         headers: {
-            'content-type': 'multipart/form-data'
+            'Content-Type': 'multipart/form-data'
         }
     });
     return resposta.data;

@@ -71,16 +71,18 @@ export default function CadastrarProduto() {
     }
 
     function exibirImagem(imagem){
-        if(imagem == undefined){
+        if(imagem === undefined){
             return '/image/add-image.png';
         }        
-        else if (typeof (imagem) == 'string') {
+        else if (typeof (imagem) ==='string') {
             return `${API_URL}/${imagem}`
         } 
         else {
             return URL.createObjectURL(imagem);
         }
     }
+
+
 
     useEffect(() => {
         mostrarCategorias()

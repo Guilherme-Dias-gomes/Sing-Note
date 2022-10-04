@@ -1,3 +1,6 @@
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -14,6 +17,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
         <BrowserRouter>
+        <ToastContainer/>
             <Routes>
                 <Route path="/" element={< PageHome />} />
                 <Route path="/admin/login" element={< Login />} />
