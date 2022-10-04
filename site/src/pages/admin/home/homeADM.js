@@ -1,6 +1,6 @@
 import './home.scss'
 import AbaLateralADM from '../../../components/adm/aba-lateral-adm'
-import Cabecalho from '../../../components/adm/cabecalho-adm'
+import CabecalhoAdm from '../../../components/adm/cabecalho-adm'
 
 
 
@@ -13,8 +13,11 @@ export default function PageHome () {
         <main className='pageHome'>
             <AbaLateralADM/>
             
-            <div className='espaco-branco'>
-                <Cabecalho/>
+            <div className='elementos-home'>
+                <CabecalhoAdm/>
+                <div className='espaco-branco'>
+                    
+                </div>
             </div>
         </main>
     )

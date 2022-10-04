@@ -1,8 +1,9 @@
 import multer from 'multer'
 import { Router } from 'express';
 
-import { ConsultarTodosProdutos, salvarProduto, salvarProdutoImagem } from '../repository/produtoRepository.js';
+import { ConsultarTodosProdutos, salvarProduto, salvarProdutoImagem, removerProduto, removerProdutoImagens, removerProdutoCategorias } from '../repository/produtoRepository.js';
 import { validarProduto } from '../service/produtoValidacao.js';
+import { BuscarCategoriaPorID } from '../repository/categoriaRepository.js';
 
 const server = Router();
 
@@ -58,6 +59,21 @@ server.get('/admin/produto', async (req, resp) => {
 }
 })
 
+server.delete('/admin/produto/:id', async (req, resp) => {
+    try {
+       const id = req.params.id;
+
+       await removerProduto(id);
+       await removerProdutoImagens(id);
+
+       resp.status(204).send();
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 
 export default server;

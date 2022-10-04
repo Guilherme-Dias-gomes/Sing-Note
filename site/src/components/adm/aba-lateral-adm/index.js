@@ -13,7 +13,7 @@ return(
             <p className="nome-icones">Home</p>
         </Link>
 
-        <Link className="icone-opcoes">
+        <Link to={'/admin/consulta'} className="icone-opcoes">
             <img className='img-icone' src="/image/lupa 2.png" alt="opcao"/>
             <p className="nome-icones">Consulta</p>
         </Link>

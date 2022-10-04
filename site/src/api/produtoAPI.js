@@ -11,7 +11,7 @@ export async function SalvarProduto(nome, modelo, descricao, estoque, marca, pre
     return resposta.data;
 }
 
-export async function SalvarImagens(imagem1, imagem2) {
+export async function SalvarImagens(id, imagem1, imagem2) {
     let form = new FormData();
     form.append('imagens', imagem1);
     form.append('imagens', imagem2);
@@ -22,4 +22,9 @@ export async function SalvarImagens(imagem1, imagem2) {
         }
     });
     return resposta.data;
+}
+
+export async function deletarProduto(id) {
+    const r = await api.delete('admin/prdouto/' + id);
+    return r.data;
 }

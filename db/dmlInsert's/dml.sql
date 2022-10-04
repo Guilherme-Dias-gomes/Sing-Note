@@ -103,103 +103,103 @@ insert into TB_USUARIO_LOGIN(ds_email, ds_senha)
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
                          values('Carlos Henrique Souza','76.534.890-9', '194042918/04', 04/04/2000, '11 97625-4673');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Maria Fernanda Lopes','78.365.425-6', '197465378/01', '30/09/1988', '21 97065-7648');
+                         values('Maria Fernanda Lopes','78.365.425-6', '197465378/01', 30/09/1988, '21 97065-7648');
  insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Eduardo Magalhães','09.772.854-4', '801468902/04', '01/01/1989', '11 96754-0987');
+                         values('Eduardo Magalhães','09.772.854-4', '801468902/04', 01/01/1989, '11 96754-0987');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Sara Lima','40.729.502-5', '146890245/68', '02/01/1990', '21 98705-3459');
+                         values('Sara Lima','40.729.502-5', '146890245/68', 02/01/1990, '21 98705-3459');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Fernando Araújo','27.549.739-5', '963524789/16', '03/01/1991', '31 98756-3498');
+                         values('Fernando Araújo','27.549.739-5', '963524789/16', 03/01/1991, '31 98756-3498');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Nicole Ribeiro','56.893.450-1', '857256478/09', '04/01/1992', '64 98756-4586');
+                         values('Nicole Ribeiro','56.893.450-1', '857256478/09', 04/01/1992, '64 98756-4586');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Tiago gonçalves','69.489.346-7', '972546734/27', '05/01/1993', '73 98564-9875');
+                         values('Tiago gonçalves','69.489.346-7', '972546734/27', 05/01/1993, '73 98564-9875');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Larissa Gomes','90.854.783-6', '642849206/62', '06/01/1994', '79 97654-6754');
+                         values('Larissa Gomes','90.854.783-6', '642849206/62', 06/01/1994, '79 97654-6754');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Jennifer de Jesus Silva','09.274.563-7', '7651467893/76', '07/01/1995', '81 98764-9876');
+                         values('Jennifer de Jesus Silva','09.274.563-7', '7651467893/76', 07/01/1995, '81 98764-9876');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Catarina Fernandes','59.639.076-1', '173953678/91', '07/01/1996', '11 98767-7658');
+                         values('Catarina Fernandes','59.639.076-1', '173953678/91', 07/01/1996, '11 98767-7658');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Marcos Alves Ferreira','01.547.689-9', '672483691/72', '08/01/1997', '11 98704-6784');
+                         values('Marcos Alves Ferreira','01.547.689-9', '672483691/72', 08/01/1997, '11 98704-6784');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Luiz Carlos Nóbrega','94.303.267-8', '1073925678/17', '09/01/1998', '11 97956-7845');
+                         values('Luiz Carlos Nóbrega','94.303.267-8', '1073925678/17', 09/01/1998, '11 97956-7845');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Carol Gomes','56.732.409-7', '276489026/98', '10/01/1999', ' 11 96798-6745');
+                         values('Carol Gomes','56.732.409-7', '276489026/98', 10/01/1999, ' 11 96798-6745');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Luiz Miguel Gonçalves','86.897.567-3', '764543176/09', '11/01/2000', '11 98450-6749');
+                         values('Luiz Miguel Gonçalves','86.897.567-3', '764543176/09', 11/01/2000, '11 98450-6749');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Mateus dos Santos Lopes','56.987.678-4', '816389257/65', '12/01/2001', '11 96509-7634');
+                         values('Mateus dos Santos Lopes','56.987.678-4', '816389257/65', 12/01/2001, '11 96509-7634');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Gabriel de Oliveira','54.987.345-5', '648184568/06', '13/01/2002', '21 98645-9845');
+                         values('Gabriel de Oliveira','54.987.345-5', '648184568/06', 13/01/2002, '21 98645-9845');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Shirley de Almeida','56.098.567-3', '675345899/08', '14/01/2003', '21 98365-7835');
+                         values('Shirley de Almeida','56.098.567-3', '675345899/08', 14/01/2003, '21 98365-7835');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Márcia Aparecida','98.896.876-7', '648178925/31', '15/01/2004', '82 96759-8545');
+                         values('Márcia Aparecida','98.896.876-7', '648178925/31', 15/01/2004, '82 96759-8545');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Fátima de Jesus','28.362.927-4', '7635428900/46', '01/04/1988', '84 94567-8756');
+                         values('Fátima de Jesus','28.362.927-4', '7635428900/46', 01/04/1988, '84 94567-8756');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('João Pedro dos Santos','56.743.289-5', '683986543/45', '02/04/1989', '92 98765-4568');
+                         values('João Pedro dos Santos','56.743.289-5', '683986543/45', 02/04/1989, '92 98765-4568');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Yasmin Monteiro','67.432.906-4', '365287655/03', '03/04/1990', '21 95478-5698');
+                         values('Yasmin Monteiro','67.432.906-4', '365287655/03', 03/04/1990, '21 95478-5698');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('André Gustavo','67.432.907-6', '641478926/45', '04/04/1991', '11 96754-8609');
+                         values('André Gustavo','67.432.907-6', '641478926/45', 04/04/1991, '11 96754-8609');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Jaqueline Villa Nova','77.654.398-7', '765438920/67', '05/04/1992', '21 98657-9867');
+                         values('Jaqueline Villa Nova','77.654.398-7', '765438920/67', 05/04/1992, '21 98657-9867');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Marcela Soares','65.397.652-9', '465279037/56', '06/04/1993', '85 98976-9908');
+                         values('Marcela Soares','65.397.652-9', '465279037/56', 07/04/1993, '85 98976-9908');
  insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Luan Fagundes','89.989.676-8', '678134890/23', '06/07/1993', '11 98996-9908');                          
+                         values('Luan Fagundes','89.989.676-8', '678134890/23', 06/07/1993, '11 98996-9908');                          
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Aline Barros','69.540.983-4', '678134890/23', '07/04/1994', '21 98567-8454');
+                         values('Aline Barros','69.540.983-4', '678134890/23', 07/04/1994, '21 98567-8454');
  insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Esther Barreto','88.653.841-4', '681348920/65', '08/04/1995', '11 98675-9834');
+                         values('Esther Barreto','88.653.841-4', '681348920/65', 08/04/1995, '11 98675-9834');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('José Bezerra','98.753.678-9', '6283490289/54', '09/04/1996', '11 97634-8509');
+                         values('José Bezerra','98.753.678-9', '6283490289/54', 09/04/1996, '11 97634-8509');
  insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Lucas Galvão','86.564.638-9', '284845678/65', '10/04/1997', '47 98654-0987');
+                         values('Lucas Galvão','86.564.638-9', '284845678/65', 10/04/1997, '47 98654-0987');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Marcelo Aragão','67.952.678-9', '829365278/08', '11/04/1999', '95 99867-8765');
+                         values('Marcelo Aragão','67.952.678-9', '829365278/08', 11/04/199, '95 99867-8765');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Alex Pietro','78.654.367-8', '372892468/09', '12/04/2000', '11 98976-9760');
+                         values('Alex Pietro','78.654.367-8', '372892468/09', 12/04/2000, '11 98976-9760');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Pietra Vieira','89.765.345-6', '166456209/47', '13/04/2001', '27 98765-0978');
+                         values('Pietra Vieira','89.765.345-6', '166456209/47', 13/04/2001, '27 98765-0978');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Lúcia Mascarenhas','98.864.567-8', '492547284/36', '14/04/2002', '27 98975-9086');
+                         values('Lúcia Mascarenhas','98.864.567-8', '492547284/36', 14/04/2002, '27 98975-9086');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values(' Pedro Aragão','97.389.264-7', '462946782/01', '15/04/2003', '64 99765-9087');
+                         values(' Pedro Aragão','97.389.264-7', '462946782/01', 15/04/2003, '64 99765-9087');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Gustavo Holanda','99.653.678-7', '274835647/18', '16/04/2004', '53 98976-0987');
+                         values('Gustavo Holanda','99.653.678-7', '274835647/18', 16/04/2004, '53 98976-0987');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Arthur da Nóbrega','90.854.368-9', '294619467/37', '01/09/1988', '84 98767-9087');
+                         values('Arthur da Nóbrega','90.854.368-9', '294619467/37', 01/09/1988, '84 98767-9087');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Stephany Ramos','78.954.673-4', '194638268/09', '02/09/1989', '11 98765-0987');
+                         values('Stephany Ramos','78.954.673-4', '194638268/09', 02/09/1989, '11 98765-0987');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Brendha Labela','89.756.467-8', '49237726/32', '03/09/1990', '81 90990-0978');
+                         values('Brendha Labela','89.756.467-8', '49237726/32', 03/09/1990, '81 90990-0978');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Lívia Magalhães','09.874.567-9', '228284390/72', '04/09/1991', '82 98760-0987');
+                         values('Lívia Magalhães','09.874.567-9', '228284390/72', 04/09/1991, '82 98760-0987');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Ketlen Aguiar','78.654.389-7', '739193919/99', '05/09/1992', '11 98767-0994');
+                         values('Ketlen Aguiar','78.654.389-7', '739193919/99', 05/09/1992, '11 98767-0994');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Geovanna Lutero','56.745.698-7', '836128649/64', '06/09/1993', '21 98976-3456');
+                         values('Geovanna Lutero','56.745.698-7', '836128649/64', 06/09/1993, '21 98976-3456');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Rosana da Silva','34.598.765-8', '736193624/83', '07/09/1994', '47 98967-3450');
+                         values('Rosana da Silva','34.598.765-8', '736193624/83', 07/09/1994, '47 98967-3450');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Bruno Assunção','56.394.569-6', '735268499/33', '08/09/1995', '82 98760-5645');
+                         values('Bruno Assunção','56.394.569-6', '735268499/33', 08/09/1995, '82 98760-5645');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Rosália Teixeira','67.943.908-7', '286278725/73', '09/09/1996', '21 98769-0987');
+                         values('Rosália Teixeira','67.943.908-7', '286278725/73', 09/09/1996, '21 98769-0987');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Eduarda Campos','65.789.436-7', '379264891/46', '10/09/1997', '11 99450-8970');
+                         values('Eduarda Campos','65.789.436-7', '379264891/46', 10/09/1997, '11 99450-8970');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Cristiano Ronaldo','98.745.698-3', '29461279/22', '11/09/1998', '31 98976-4509');
+                         values('Cristiano Ronaldo','98.745.698-3', '29461279/22', 11/09/1998, '31 98976-4509');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Guilherme da Conceição','456.987.123-9', '272940154/44', '12/09/1999', '79 98865-0987');
+                         values('Guilherme da Conceição','456.987.123-9', '272940154/44', 12/09/1999, '79 98865-0987');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Isabella Farias','96.254.672-9', '3740174890/55', '13/09/2000', '11 98765-0945');
+                         values('Isabella Farias','96.254.672-9', '3740174890/55', 13/09/2000, '11 98765-0945');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Richard Coqueiro dos Santos','38.458.975-4', '284916389/77', '14/09/2001', '64 90675-3456');
+                         values('Richard Coqueiro dos Santos','38.458.975-4', '284916389/77', 14/09/2001, '64 90675-3456');
 insert into TB_USUARIO(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone )
-                         values('Davi dos Santos Aguiar','67.854.890-8', '37264992/88', '15/09/2002', '21 98645-8765');
+                         values('Davi dos Santos Aguiar','67.854.890-8', '37264992/88',15/09/2002, '21 98645-8765');
                     
                     
 insert into TB_USUARIO_ENDERECO (ds_cep, ds_rua, ds_casa, ds_referencia, ds_complemento, ds_bairro, ds_cidade, ds_uf)

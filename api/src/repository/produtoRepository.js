@@ -48,3 +48,35 @@ export async function ConsultarTodosProdutos(){
     const [resp] = await conexao.query(comando)
     return resp[0]
 }
+
+
+// deletar produto
+export async function removerProdutoCategorias(idProduto) {
+    const comando = `
+        DELETE FROM TB_PRODUTO_CATEGORIAS
+         WHERE ID_PRODUTO = ?    
+    `
+
+    const [resp] = await conexao.query(comando, [idProduto])
+    return resp.affecteRows;
+}
+
+export async function removerProdutoImagens(idProduto) {
+    const comando = `
+        DELETE FROM TB_PRODUTO_IMAGEM
+         WHERE ID_PRODUTO = ?    
+    `
+
+    const [resp] = await conexao.query(comando, [idProduto])
+    return resp.affecteRows;
+}
+
+export async function removerProduto(idProduto) {
+    const comando = `
+        DELETE FROM TB_PRODUTO
+         WHERE ID_PRODUTO = ?    
+    `
+
+    const [resp] = await conexao.query(comando, [idProduto])
+    return resp.affecteRows;
+}
