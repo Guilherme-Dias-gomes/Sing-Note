@@ -1,7 +1,7 @@
 import multer from 'multer'
 import { Router } from 'express';
 
-import { ConsultarTodosProdutos, salvarProduto, salvarProdutoImagem, removerProduto, removerProdutoImagens, removerProdutoCategorias } from '../repository/produtoRepository.js';
+import { ConsultarTodosProdutos, salvarProduto, salvarProdutoImagem, removerProduto, removerProdutoImagens } from '../repository/produtoRepository.js';
 import { validarProduto } from '../service/produtoValidacao.js';
 
 const server = Router();
@@ -17,7 +17,7 @@ server.post('/admin/produto' , async (req, resp) => {
         const produtoInserido = await salvarProduto(produto);
 
         resp.send({
-            id: produtoInserido
+            id: produtoInserido.id
         });
 
     } catch (err) {
@@ -27,7 +27,7 @@ server.post('/admin/produto' , async (req, resp) => {
     }
 })
 
-server.put('/admin/produto/:id', upload.array('imagens'), async (req, resp) => {
+server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, resp) => {
     try {
         const id = req.params.id;
         const imagens = req.files;

@@ -1,7 +1,5 @@
 import './index.scss'
 
-import { toast } from 'react-toastify';
-
 import { listarCategorias } from '../../../api/categoriaAPI'
 import { listarTipos } from '../../../api/tipoAPI'
 
@@ -10,6 +8,8 @@ import Cabecalho from '../../../components/adm/cabecalho-adm/index.js'
 import { useEffect, useState } from 'react'
 import { SalvarProduto, SalvarImagens } from '../../../api/produtoAPI.js';
 import { API_URL } from '../../../api/config'
+
+import { toast } from 'react-toastify';
 
 export default function CadastrarProduto() {
 
@@ -39,7 +39,7 @@ export default function CadastrarProduto() {
              
             toast.dark('Produto cadastrado com sucesso');
         } catch (err) {
-            toast.error(err.response.data.erro)
+            toast.error(err.response.data.erro);
         }
     }
 
@@ -48,13 +48,14 @@ export default function CadastrarProduto() {
         setNome('')
         setModelo('')
         setDescricao('')
-        setIdCategoria(0)
-        setIdTipo(0)
-        setEstoque()
+        setIdCategoria([])
+        setIdTipo([])
+        setEstoque(0)
         setMarca('')
-        setPreco()
+        setPreco(0)
+        setImagem1()
+        setImagem2()
     }
-
 
     async function mostrarCategorias(){
         const resposta = await listarCategorias();
@@ -193,7 +194,7 @@ export default function CadastrarProduto() {
                         
                         <div className='container-dos-botoes'>
                             <button className='botao-salvar' onClick={salvar}>Salvar</button>
-                            <button className='botao-novo' onClick={Limpar}>Novo</button>
+                            <button className='botao-novo'  onClick={Limpar}>Novo</button>
                         </div>
                     </div>
                 </div>

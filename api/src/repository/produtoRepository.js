@@ -36,7 +36,8 @@ export async function ConsultarTodosProdutos(){
                            nm_produto               Nome,
                            ds_modelo                Modelo,
                            ds_marca                 Marca,
-                           nr_preco                 Preco
+                           nr_preco                 Preco,
+                           img_produto              Imagens
                       from tb_produto`
  
     const [registros] = await conexao.query(comando);
@@ -55,10 +56,10 @@ export async function ConsultarProdutosPorId(id){
  
     const [registros] = await conexao.query(comando, [id]);
     return registros[0];
-
+}
 
 // deletar 
-export async function removerProdutoCategorias(idProduto) {
+export async function removerProduto(idProduto) {
     const comando = `
         DELETE FROM TB_PRODUTO_CATEGORIAS
          WHERE ID_PRODUTO = ?    
