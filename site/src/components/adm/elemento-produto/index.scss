@@ -1,30 +1,47 @@
 .page-produto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100;
-    margin-top: 15px;
-}
+    display: inline-block;
+    height: 100%;
+    margin-top: 2%;
+    padding: 1rem;
 
-.id-imagens {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 16vw;
-}
+    .id-imagens {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 33vh;
+        margin-left: 0.2rem;
+    }
 
-.espaco-produto {
-    height: 59vh;
-    width: 16vw;
-    border-radius: .3em;
-    border: 1px solid rgba(0, 0, 0, 0.13);
-    box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: white;
-}
+    .espaco-produto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 59vh;
+        width: 35vh;
+        border-radius: .3em;
+        border: 1px solid rgba(0, 0, 0, 0.13);
+        box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+        background-color: white;
+    }
 
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
 
-button {
-    background: none;
-    border: none;
-    cursor: pointer;
+    .ImagemProduto{
+        width: 80%;
+    }
+
+    .Info-Produto{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .Preco-Produto{
+        color: rgb(3, 202, 3);
+    }
 }

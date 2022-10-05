@@ -1,4 +1,5 @@
 import './consulta.scss'
+
 import { toast } from 'react-toastify';
 import { buscarProdutos, removerProduto } from '../../../api/produtoAPI';
 import CabecalhoAdm from '../../../components/adm/cabecalho-adm'
@@ -34,39 +35,33 @@ export default function ConsultaProduto () {
             <AbaLateralADM/>
             <div className='elementos-consulta'>
                 <CabecalhoAdm/>
-                <div className='elementos-pesquisa'>  
-                    <input className='input-pesquisa' type="search" placeholder='Buscar por nome' ></input>
-                    <button className='btn-buscar'>Buscar</button>
-                </div>
-                <div className='cards-produto'>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Produto</th>
-                                <th>Estoque</th>
-                                <th>Preço</th>
-                                <th>Tipo</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {produtos.map(item =>
-                                <tr>
-                                    <td>{item.Id}</td>
-                                    <td>{item.Nome}</td>
-                                    <td>{item.Modelo}</td>
-                                    <td>{item.Marca}</td>
-                                    <td>{item.Preco}</td>
-                                    <td><span>Editar</span></td>
-                                    <td><button onClick={() => deletarProduto(item.Id)}>Remover</button></td>
-                                </tr>
-                            )}
-                        </tbody>
-                    </table>
-                </div>
+
+                {produtos.map(item =>
+                <div className='Produtos-Info'>
+                    <div className='id-imagens'>
+                        <p>#{item.id}</p>
+                        <div>
+                            <button><img src='/image/lapis.png' alt='lapis'/></button>
+                            <button><img src='/image/lixo.png' alt='Lixeira'/></button>
+                        </div>
+                    </div>
+
+                    <div className='espaco-produto'>
+                        <img src={item.imagem} className='ImagemProduto' alt='img-produto'/>
+
+                        <h3 className='Info-Produto'><span>{item.produto} </span>
+                                                    <span>{item.marca} </span>
+                                                    <span>{item.modelo}</span>
+                        </h3>
+
+                        <h2 className='Preco-Produto'>R$ <span>{item.preco}</span></h2>          
+                    </div>
+                </div>    
+                )}
+                
             </div>
+
+            
             
         </main>
     )

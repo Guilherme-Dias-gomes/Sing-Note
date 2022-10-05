@@ -12,7 +12,11 @@ async function createCon() {
     typeCast: function (field, next) {
         if (field.type === 'TINY' && field.length === 1) {
             return (field.string() === '1');
-        } else {
+        } 
+        else if(field.type.includes('DECIMAL')){
+            return Number(field.string())
+        } 
+        else {
             return next();
         }
     }

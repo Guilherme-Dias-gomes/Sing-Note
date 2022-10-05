@@ -3,29 +3,79 @@
     flex-direction: row;
     width: 100vw;
 
-}
+    .elementos-consulta {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        background-color: #f0f0f0;
+        align-items: center;
+        padding-left: 12.4em;
+    }
 
-.elementos-consulta {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: #f0f0f0;
-    align-items: center;
-    padding-left: 12.4em;
-}
+    .elementos-pesquisa {
+        display: flex;
+        margin-top: 4em;
+        width: 70%;
+    }
 
-.elementos-pesquisa {
-    display: flex;
-    margin-top: 4em;
-    width: 70%;
-}
+    .cards-produto {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin-top: 4em;
+        justify-items: space-between;
+        width: 80%;
+        justify-content: space-between;
+    }
 
-.cards-produto {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin-top: 4em;
-    justify-items: space-between;
-    width: 80%;
-    justify-content: space-between;
+    .Produtos-Info {
+        flex-wrap: wrap;
+        height: 100%;
+        margin-top: 2%;
+        padding: 1rem;
+    }
+    
+        .id-imagens {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 33vh;
+            margin-left: 0.2rem;
+        }
+    
+        .espaco-produto {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 59vh;
+            width: 35vh;
+            border-radius: .3em;
+            border: 1px solid rgba(0, 0, 0, 0.13);
+            box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+            background-color: white;
+        }
+    
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    
+        .ImagemProduto{
+            width: 80%;
+        }
+    
+        .Info-Produto{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+    
+        .Preco-Produto{
+            color: rgb(3, 202, 3);
+        }
+    
+
 }
