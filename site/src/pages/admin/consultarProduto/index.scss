@@ -4,10 +4,10 @@
     width: 100vw;
 
     .elementos-consulta {
+        flex-wrap: wrap;
         display: flex;
-        flex-direction: column;
         width: 100%;
-        height: 100vh;
+        height: 100%;
         background-color: #f0f0f0;
         align-items: center;
         padding-left: 12.4em;
@@ -58,7 +58,6 @@
         }
     
         button {
-            background: none;
             border: none;
             cursor: pointer;
         }
@@ -67,7 +66,7 @@
             width: 80%;
         }
     
-        .Info-Produto{
+        .Info-Nome_Marca_Modelo{
             display: flex;
             flex-direction: column;
             text-align: center;

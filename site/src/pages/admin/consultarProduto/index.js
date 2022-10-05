@@ -1,4 +1,4 @@
-import './consulta.scss'
+import './index.scss'
 
 import { toast } from 'react-toastify';
 import { buscarProdutos, removerProduto } from '../../../api/produtoAPI';
@@ -36,10 +36,15 @@ export default function ConsultaProduto () {
             <div className='elementos-consulta'>
                 <CabecalhoAdm/>
 
+                <div className='elementos-pesquisa'>  
+                    <input className='input-pesquisa' type="search" placeholder='Buscar por nome' ></input>
+                    <button className='btn-buscar'>Buscar</button>
+                </div>
+
                 {produtos.map(item =>
                 <div className='Produtos-Info'>
                     <div className='id-imagens'>
-                        <p>#{item.id}</p>
+                        <p>#{item.Id}</p>
                         <div>
                             <button><img src='/image/lapis.png' alt='lapis'/></button>
                             <button><img src='/image/lixo.png' alt='Lixeira'/></button>
@@ -47,14 +52,13 @@ export default function ConsultaProduto () {
                     </div>
 
                     <div className='espaco-produto'>
-                        <img src={item.imagem} className='ImagemProduto' alt='img-produto'/>
+                        {item.Imagem}
+                        <div className='Info-Nome_Marca_Modelo'><span>{item.Nome} </span>
+                                                                <span>{item.Marca} </span>
+                                                                <span>{item.Modelo}</span>
+                        </div>
 
-                        <h3 className='Info-Produto'><span>{item.produto} </span>
-                                                    <span>{item.marca} </span>
-                                                    <span>{item.modelo}</span>
-                        </h3>
-
-                        <h2 className='Preco-Produto'>R$ <span>{item.preco}</span></h2>          
+                        <h2 className='Preco-Produto'>R$ <span>{item.Preco}</span></h2>          
                     </div>
                 </div>    
                 )}

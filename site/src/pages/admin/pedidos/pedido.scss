@@ -29,7 +29,8 @@
     justify-content: space-between;
 }
 
-.input-pesquisa {
+.input-pesquisa  {
+    flex-wrap: nowrap;
     width: 83%;
     border: none;
     border-radius: 0.8rem;

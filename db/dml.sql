@@ -26,8 +26,8 @@ insert into tb_produto (nm_produto, ds_modelo, ds_produto, nr_estoque, ds_marca,
 insert into tb_produto_categoria(nm_produto_categoria)
                           values('Cordas');
 insert into tb_produto_categoria(nm_produto_categoria)
-					      values('Sopro');
-                          insert into tb_produto_categoria(nm_produto_categoria)
+					                values('Sopro');
+insert into tb_produto_categoria(nm_produto_categoria)
                           values('Percução');
 insert into tb_produto_categoria(nm_produto_categoria)
                           values('Elétricos');

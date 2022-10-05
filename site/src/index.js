@@ -10,7 +10,7 @@ import Login from "./pages/admin/login/login";
 import CadastrarProduto from "./pages/admin/CadastroProduto/index.js";
 import PageHome from "./pages/admin/home/homeADM";
 import PagePedidos from "./pages/admin/pedidos/pedido";
-import ConsultaProduto from "./pages/admin/consultarProduto/consulta";
+import ConsultaProduto from "./pages/admin/consultarProduto/index";
 import ElementoProduto from './components/adm/elemento-produto/index'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
