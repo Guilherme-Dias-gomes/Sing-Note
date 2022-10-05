@@ -11,11 +11,6 @@ export async function SalvarProduto(nome, modelo, descricao, estoque, marca, pre
     return resposta.data;
 }
 
-export async function buscarProdutos() {
-    const r = await api.get('/admin/produto');
-    return r.data;
-}
-
 export async function SalvarImagens(id, imagem1, imagem2) {
     let form = new FormData();
     form.append('imagens', imagem1);
@@ -27,6 +22,16 @@ export async function SalvarImagens(id, imagem1, imagem2) {
         }
     });
     return resposta.data;
+}
+
+export async function buscarProdutoPorNome(nome) {
+    const r = await api.get(`/admin/produto/buscar?nome=${nome}`);
+    return r.data;
+}
+
+export async function buscarProdutos() {
+    const r = await api.get('/admin/produto');
+    return r.data;
 }
 
 export async function removerProduto(id) {

@@ -1,7 +1,7 @@
 import './index.scss'
 
 import { toast } from 'react-toastify';
-import { buscarProdutos, removerProduto } from '../../../api/produtoAPI';
+import { buscarProdutoPorNome, buscarProdutos,  removerProduto } from '../../../api/produtoAPI';
 import CabecalhoAdm from '../../../components/adm/cabecalho-adm'
 import AbaLateralADM from '../../../components/adm/aba-lateral-adm'
 import { useEffect, useState } from 'react';
@@ -9,9 +9,16 @@ import { useEffect, useState } from 'react';
 export default function ConsultaProduto () {
     const [produtos, setProdutos] = useState([]);
 
+    const [buscar, setBuscar] = useState('')
+
     async function carregarProdutos() {
         const r = await buscarProdutos();
         setProdutos(r);
+    }
+
+    async function filtrar(){
+        const resposta = await buscarProdutoPorNome(buscar);
+        setBuscar(resposta);
     }
 
     async function deletarProduto(id) {
@@ -37,8 +44,11 @@ export default function ConsultaProduto () {
                 <CabecalhoAdm/>
 
                 <div className='elementos-pesquisa'>  
-                    <input className='input-pesquisa' type="search" placeholder='Buscar por nome' ></input>
-                    <button className='btn-buscar'>Buscar</button>
+                    <input className='input-pesquisa' 
+                           type="search" 
+                           placeholder='Buscar por nome'
+                           value={buscar} onChange={e => setBuscar(e.target.value)} />
+                    <button className='btn-buscar' onClick={filtrar}>Buscar</button>
                 </div>
 
                 {produtos.map(item =>
