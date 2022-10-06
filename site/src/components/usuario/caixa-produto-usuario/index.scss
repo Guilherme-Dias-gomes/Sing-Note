@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'inter-font';
+    src: url('../../../assets/fonts/inter-font.ttf');
+}
+
+
+
+.caixinha-produto-usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    margin-left: 2%;
+    transition: 0.5s;
+    width: 250px;
+    cursor: pointer;
+}
+
+.caixinha-produto-usuario {
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.caixinha-produto-usuario {
+    transform: scale(1.0);
+    transition: 0.1s;
+}
+
+
+.espaco-produto {
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    width: 250px;
+    border-radius: .3em;
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: white;
+}
+
+.imagem-coracao{
+    height: 20px;
+    width: 20px;
+    margin: 10px 0px 0px 10px;
+    opacity: 0.5;
+}
+
+.imagem-coracao:hover{
+    opacity: 1;
+}
+
+.descricao-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.imagem-produto-card{
+    height: auto;
+    width: auto;
+}
+
+.card-produto-descricao{
+    font-family: 'inter-font';
+    font-size: 16px;
+    width: 70%;
+    margin-top: 60px;
+}
+
+.preco-card{
+    font-size: 20px;
+    color: #01BE01;
+    font-family: 'inter-font';
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.imagem-carrinho{
+    height: 20px;
+    width: 20px;
+}
+
+.botao-comprar{
+    display: flex;
+    justify-content: space-around;
+    font-size: 19px;
+    color: #fff;
+    align-items: center;
+    background-color: #318CE7;
+    border-style: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.botao-comprar:hover{
+    background-color: #fff;
+    color: #318CE7;
+    border: #318CE7 solid 2px;
+    transition: 0.1s;
+    cursor: pointer;
+    .imagem-carrinho{
+    filter: invert(100%);
+}
+}

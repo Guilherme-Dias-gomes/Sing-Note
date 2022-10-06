@@ -1,0 +1,58 @@
+* {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'inter-font';
+    src: url('../../../assets/fonts/inter-font.ttf');
+}
+
+.imagem-aba-usu{
+    height: 40px;
+    opacity: 0.5;
+}
+
+.imagem-aba-usu:hover{
+    opacity: 1;
+}
+
+.aba-lateral-usu {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+
+    background-color: #fff;
+    height: 100vh;
+
+.opcoes-usu {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60vh;
+
+    margin-bottom: 20vh;
+}
+
+.icone-opcoes-usu{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    height:8vh;
+}
+
+
+.nome-icones{
+    font-size: 15px;
+    color: #084D6E;
+    font-family: Arial, Helvetica, sans-;
+    cursor: pointer;
+}
+
+.nome-icones:hover{
+    transform: scale(1.05);
+    transition: 0.2s;
+    color: #00aeff;
+}
+}
