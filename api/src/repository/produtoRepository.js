@@ -59,7 +59,7 @@ export async function ConsultarProdutosPorNome(nome){
                    from tb_produto
              inner join tb_produto_imagem on tb_produto.id_produto = tb_produto_imagem.id_produto
                   where mod(tb_produto_imagem.id_produto_imagem, 2) = 1
-                and nm_produto like ?`
+                    and nm_produto like ?`
      
         const [registros] = await conexao.query(comando, [`%${nome}%`]);
         return registros;

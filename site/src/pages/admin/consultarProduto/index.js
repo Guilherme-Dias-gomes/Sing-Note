@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 export default function ConsultaProduto () {
     const [produtos, setProdutos] = useState([]);
 
+    const [imagem, setImagem] = useState('')
     const [buscar, setBuscar] = useState('')
 
     async function carregarProdutos() {
@@ -18,8 +19,16 @@ export default function ConsultaProduto () {
 
     async function filtrar(){
         const resposta = await buscarProdutoPorNome(buscar);
-        setBuscar(resposta);
+        setProdutos(resposta);
     }
+
+    // // function mostrarImagem(){
+    // //     if(typeof (imagem) == 'object'){ 
+    // //         return URL.createObjectURL(imagem);
+    // //     } else {
+    // //         return buscarImagem(imagem);
+    // //     }
+    // // }
 
     async function deletarProduto(id) {
         try {
@@ -42,41 +51,38 @@ export default function ConsultaProduto () {
             <AbaLateralADM/>
             <div className='elementos-consulta'>
                 <CabecalhoAdm/>
-
                 <div className='elementos-pesquisa'>  
-                    <input className='input-pesquisa' 
-                           type="search" 
-                           placeholder='Buscar por nome'
-                           value={buscar} onChange={e => setBuscar(e.target.value)} />
+                    <input 
+                        className='input-pesquisa' 
+                        type="text" 
+                        placeholder='Buscar por nome'
+                        value={buscar} 
+                        onChange={e => setBuscar(e.target.value)} 
+                        onKeyPress={e => e.key === 'Enter' ? filtrar() : ''}
+                    />
                     <button className='btn-buscar' onClick={filtrar}>Buscar</button>
                 </div>
-
                 {produtos.map(item =>
-                <div className='Produtos-Info'>
-                    <div className='id-imagens'>
-                        <p>#{item.Id}</p>
-                        <div>
-                            <button><img src='/image/lapis.png' alt='lapis'/></button>
-                            <button><img src='/image/lixo.png' alt='Lixeira'/></button>
+                    <div className='Produtos-Info'>
+                        <div className='id-imagens'>
+                            <p>#{item.Id}</p>
+                            <div>
+                                <button><img src='/image/lapis.png' alt='lapis'/></button>
+                                <button><img src='/image/lixo.png' alt='Lixeira'/></button>
+                            </div>
                         </div>
-                    </div>
-
-                    <div className='espaco-produto'>
-                        {item.Imagem}
-                        <div className='Info-Nome_Marca_Modelo'><span>{item.Nome} </span>
-                                                                <span>{item.Marca} </span>
-                                                                <span>{item.Modelo}</span>
+                        <div className='espaco-produto'>
+                            {item.Imagem}
+                            <div className='Info-Nome_Marca_Modelo'>
+                                <span>{item.Nome}</span>
+                                <span>{item.Marca}</span>
+                                <span>{item.Modelo}</span>
+                            </div>
+                            <h2 className='Preco-Produto'>R$ <span>{item.Preco}</span></h2>          
                         </div>
-
-                        <h2 className='Preco-Produto'>R$ <span>{item.Preco}</span></h2>          
-                    </div>
-                </div>    
+                    </div>    
                 )}
-                
             </div>
-
-            
-            
         </main>
     )
 }
