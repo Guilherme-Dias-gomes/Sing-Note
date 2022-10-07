@@ -1,11 +1,16 @@
 import { API_URL } from './config';
 import axios from 'axios'
 
-const SN = axios.create({
+const api = axios.create({
     baseURL : API_URL
 })
 
 export async function listarCategorias() {
-    const r = await SN.get('/produto/categoria');
+    const r = await api.get('/produto/categoria');
     return r.data
+}
+
+export async function buscarProdutoPorCategoria(id){
+    const resp = await api.get(`/usuario/produtos/buscar/categoria?id=${id}`)
+    return resp.data
 }
