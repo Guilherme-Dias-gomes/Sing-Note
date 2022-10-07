@@ -5,6 +5,7 @@ import { buscarProdutoPorNome, buscarProdutos,  removerProduto } from '../../../
 import CabecalhoAdm from '../../../components/adm/cabecalho-adm'
 import AbaLateralADM from '../../../components/adm/aba-lateral-adm'
 import { useEffect, useState } from 'react';
+import { AlterarProduto } from '../../../api/produtoAPI';
 
 export default function ConsultaProduto () {
     const [produtos, setProdutos] = useState([]);
@@ -16,6 +17,7 @@ export default function ConsultaProduto () {
         const r = await buscarProdutos();
         setProdutos(r);
     }
+
 
     async function filtrar(){
         const resposta = await buscarProdutoPorNome(buscar);
@@ -67,7 +69,7 @@ export default function ConsultaProduto () {
                         <div className='id-imagens'>
                             <p>#{item.Id}</p>
                             <div>
-                                <button><img src='/image/lapis.png' alt='lapis'/></button>
+                                <button onClick={AlterarProduto}><img src='/image/lapis.png' alt='lapis'/></button>
                                 <button><img src='/image/lixo.png' alt='Lixeira'/></button>
                             </div>
                         </div>

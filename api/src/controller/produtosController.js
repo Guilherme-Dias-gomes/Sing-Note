@@ -1,7 +1,7 @@
 import multer from 'multer'
 import { Router } from 'express';
 
-import { ConsultarProdutosPorId, ConsultarTodosProdutos, salvarProduto, salvarProdutoImagem, removerProduto, removerProdutoImagens, ConsultarProdutosPorNome } from '../repository/produtoRepository.js';
+import { ConsultarProdutosPorId, ConsultarTodosProdutos, salvarProduto, buscarProdutoImagens, alterarProduto, salvarProdutoImagem, removerProduto, removerProdutoImagens, ConsultarProdutosPorNome } from '../repository/produtoRepository.js';
 import { validarProduto } from '../service/produtoValidacao.js';
 
 const server = Router();
@@ -105,6 +105,45 @@ server.get('/admin/produto/:id', async (req, resp) => {
         })
     }
     catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, resp) => {
+    try {
+        const id = req.params.id;
+        const imagens = req.files;
+        const imagensPermancem = req.body.imagens.filter(item => item != 'undefined');
+
+        await  removerProdutoImagensDiferentesDe(imagensPermancem)
+
+            for (const imagem of imagens ) {
+                await salvarProdutoImagem(id, imagem.path)
+            }
+
+        resp.status(204).send();
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
+server.put('/admin/produto/:id', async (req, resp) => {
+    try {
+        const id = req.params.id
+        const produto = req.body
+
+        await alterarProduto(id, produto);
+        
+
+        resp.status(204).send();
+
+    } catch (err) {
         resp.status(400).send({
             erro: err.message
         })

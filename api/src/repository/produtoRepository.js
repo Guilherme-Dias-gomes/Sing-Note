@@ -47,6 +47,13 @@ export async function ConsultarTodosProdutos(){
     return registros;
 }
 
+export async function buscarProdutoImagens (idProduto) {
+    const comando = `
+        select tb_produto_imagem.id_produto_imagem
+        
+    `
+}
+
 export async function ConsultarProdutosPorNome(nome){
     const comando = 
     ` select tb_produto.id_produto               Id,
@@ -99,6 +106,27 @@ export async function removerProdutoImagens(idProduto) {
 
     const [resp] = await conexao.query(comando, [idProduto])
     return resp.affecteRows;
+}
+
+// alterar produto
+export async function alterarProduto (id, produto) {
+    const comando = `
+    update tb_produto
+	set  NM_PRODUTO = ?,    
+		DS_MODELO   =?,            
+		DS_PRODUTO  =?,           
+		NR_ESTOQUE  =?,          
+		DS_MARCA    =?
+	where id_produto = ${id}`
+
+    const [resp] = await conexao.query(comando, [
+                                 produto.NM_PRODUTO,
+                                 produto.DS_MODELO,
+                                 produto.DS_PRODUTO,
+                                 produto.NR_ESTOQUE,
+                                 produto.DS_MARCA
+    ])
+    return resp.affectedRows;
 }
 
 // export async function removerProduto(idProduto) {

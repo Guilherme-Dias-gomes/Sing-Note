@@ -10,6 +10,10 @@ export async function SalvarProduto(nome, modelo, descricao, estoque, marca, pre
     const resposta = await api.post('/admin/produto', { nome, modelo, descricao, estoque, marca, preco, idCategoria, idTipo});
     return resposta.data;
 }
+export async function AlterarProduto(id, nome, modelo, descricao, estoque, marca, preco, idCategoria, idTipo) {
+    const resposta = await api.put(`/admin/produto/${id}`, { nome, modelo, descricao, estoque, marca, preco, idCategoria, idTipo});
+    return resposta.data;
+}
 
 export async function SalvarImagens(id, imagem1, imagem2) {
     let form = new FormData();

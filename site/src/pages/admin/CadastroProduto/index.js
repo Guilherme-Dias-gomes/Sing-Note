@@ -6,10 +6,11 @@ import { listarTipos } from '../../../api/tipoAPI'
 import AbaLateralADM from '../../../components/adm/aba-lateral-adm/index.js'
 import Cabecalho from '../../../components/adm/cabecalho-adm/index.js'
 import { useEffect, useState } from 'react'
-import { SalvarProduto, SalvarImagens } from '../../../api/produtoAPI.js';
+import { SalvarProduto, SalvarImagens, AlterarProduto } from '../../../api/produtoAPI.js';
 import { API_URL } from '../../../api/config'
 
 import { toast } from 'react-toastify';
+import { useParams } from 'react-router-dom'
 
 export default function CadastrarProduto() {
 
@@ -29,15 +30,24 @@ export default function CadastrarProduto() {
     const [idTipo, setIdTipo] = useState();
     const [tipo, setTipo] = useState([]);
 
+    const { id } = useParams();
 
     async function salvar(){
         try {
             const precoProduto = Number(preco.replace('.',','));
 
-            const r = await SalvarProduto(nome, modelo, descricao, estoque, marca, precoProduto, idCategoria, idTipo)
-            await SalvarImagens(r.id, imagem1, imagem2)
-             
-            toast.dark('Produto cadastrado com sucesso');
+            if(!id) {
+                const r = await SalvarProduto(nome, modelo, descricao, estoque, marca, precoProduto, idCategoria, idTipo)
+                await SalvarImagens(r.id, imagem1, imagem2)
+
+                toast.dark('Produto cadastrado com sucesso');
+            }
+            else {
+                await AlterarProduto(id, nome, modelo, descricao, estoque, marca, precoProduto, idCategoria, idTipo)
+                await SalvarImagens(id, imagem1, imagem2)
+
+                toast.dark('Produto alterado com sucesso');
+            }
         } catch (err) {
             toast.error(err.response.data.erro);
         }
@@ -52,7 +62,7 @@ export default function CadastrarProduto() {
         setIdTipo([])
         setEstoque(0)
         setMarca('')
-        setPreco(0)
+        setPreco(toString)
         setImagem1()
         setImagem2()
     }
