@@ -25,7 +25,8 @@
         .pesquisa-e-busca{
             display: flex;
             flex-direction: row;
-            width: 80%;
+            width: 100%;
+            padding: 0px 15%;
             margin: 20px 0px 0px 0px;
         }
 
@@ -102,10 +103,9 @@
         .elementos-consulta-usu {
             display: flex;
             flex-direction: column;
-            width: auto;
+            width: 100%;
             background-color: #f0f0f0;
             padding-left: 100px;
-            align-items: center;
         }
 
         .input-pesquisa-usu {
