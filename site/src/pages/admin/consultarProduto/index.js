@@ -64,26 +64,26 @@ export default function ConsultaProduto () {
                     />
                     <button className='btn-buscar' onClick={filtrar}>Buscar</button>
                 </div>
-                {produtos.map(item =>
-                    <div className='Produtos-Info'>
-                        <div className='id-imagens'>
-                            <p>#{item.Id}</p>
-                            <div>
-                                <button onClick={AlterarProduto}><img src='/image/lapis.png' alt='lapis'/></button>
-                                <button><img src='/image/lixo.png' alt='Lixeira'/></button>
-                            </div>
-                        </div>
-                        <div className='espaco-produto'>
-                            {item.Imagem}
-                            <div className='Info-Nome_Marca_Modelo'>
-                                <span>{item.Nome}</span>
-                                <span>{item.Marca}</span>
-                                <span>{item.Modelo}</span>
-                            </div>
-                            <h2 className='Preco-Produto'>R$ <span>{item.Preco}</span></h2>          
-                        </div>
-                    </div>    
-                )}
+{produtos.map(item =>
+    <div className='Produtos-Info'>
+        <div className='id-imagens'>
+            <p>#{item.Id}</p>
+            <div>
+                <button onClick={AlterarProduto}><img src='/image/lapis.png' alt='lapis'/></button>
+                <button><img src='/image/lixo.png' alt='Lixeira'/></button>
+            </div>
+        </div>
+        <div className='espaco-produto'>
+            {item.Imagem}
+            <div className='Info-Nome_Marca_Modelo'>
+                <span>{item.Nome}</span>
+                <span>{item.Marca}</span>
+                <span>{item.Modelo}</span>
+            </div>
+            <h2 className='Preco-Produto'>R$ <span>{item.Preco}</span></h2>          
+        </div>
+    </div>    
+)}
             </div>
         </main>
     )

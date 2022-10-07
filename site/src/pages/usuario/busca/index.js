@@ -2,8 +2,29 @@ import './index.scss'
 import CaixaProdutoUsuario from '../../../components/usuario/caixa-produto-usuario'
 import AbaLateralUSU from '../../../components/usuario/aba-lateral-usu'
 import CabecalhoUSU from '../../../components/usuario/cabecalho-usu'
+import { buscarProdutoPorNome, buscarProdutos } from '../../../api/produtoAPI'
+import { useEffect, useState } from 'react'
 
 export default function BuscaUsuario () {
+
+    const [produtos, setProdutos] = useState([]);
+
+    const [buscar, setBuscar] = useState('')
+
+    async function mostrarProdutos(){
+        const resposta = await buscarProdutos()
+        setProdutos(resposta)
+    }
+
+    async function filtrar(){
+        const resposta = await buscarProdutoPorNome(buscar)
+        setProdutos(resposta)
+    }
+
+    useEffect(() => {
+        mostrarProdutos()
+    }, [])
+
     return(
         <main className='page-consulta-usu'>
             <AbaLateralUSU/>
@@ -12,8 +33,14 @@ export default function BuscaUsuario () {
                     <CabecalhoUSU/>
                 </div>
                 <div className='pesquisa-e-busca'>
-                    <input className='input-pesquisa-usu' type="search" placeholder='Buscar por nome' ></input>
-                    <button className='botao-buscar-usu'>Buscar</button>
+                    <input 
+                        className='input-pesquisa-usu' 
+                        type="text" 
+                        placeholder='Buscar por nome'
+                        value={buscar}
+                        onChange={e => setBuscar(e.target.value)}
+                        onKeyPress={e => e.key === 'Enter' ? filtrar() : ''}/>
+                    <button className='botao-buscar-usu' onClick={filtrar}>Buscar</button>
                 </div>
                 <div className='area-da-consulta-usu'>
                     <div className='categoria-e-tipo'>
@@ -46,23 +73,31 @@ export default function BuscaUsuario () {
                     <div className='parte-da-consulta'>
                         <div className='resultados'> 
                             <p>Resultado de busca:
-                            <span className='resultado-valor'> Bateria</span></p>
+                            <span className='resultado-valor'> {buscar}</span></p>
                             <p>produtos: 
                             <span className='resultado-valor'> 10</span></p></div>
 
-                            <hr/>
+                    <hr/>
                         
-                            <div className='cards-produto-usu'>
-                            
-                                <CaixaProdutoUsuario/>
-                                <CaixaProdutoUsuario/>
-                                <CaixaProdutoUsuario/>
-                                <CaixaProdutoUsuario/>
-                                <CaixaProdutoUsuario/>
-                                <CaixaProdutoUsuario/>
-                                <CaixaProdutoUsuario/>
-                                <CaixaProdutoUsuario/>
-                            </div>
+                        <div className='cards-produto-usu'>
+{produtos.map(item => 
+    <div className='espaco-produto'>
+        <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
+        <div className='descricao-card'>
+        {item.Imagem}
+            <h1 className='card-produto-descricao'>{item.Nome} {item.Marca} {item.Modelo}</h1>
+            <h1 className='preco-card'>R$ {item.Preco}</h1>
+            <button className='botao-comprar'>
+                Comprar
+            <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card'/>
+            </button>
+        </div>
+    </div>
+)}
+
+                        
+                    
+                        </div>
                         </div>
                     </div>
             </div>
