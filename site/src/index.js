@@ -26,7 +26,7 @@ root.render(
                 <Route path="/admin/pedidos" element={< PagePedidos />} />
                 <Route path="/admin/consulta" element={< ConsultaProduto />} />
                 <Route path="/ElementoProduto" element={< ElementoProduto />} />
-                <Route path='/admin/produto/:id' element={< CadastrarProduto />} />
+                <Route path='/admin/alterar/:id' element={< CadastrarProduto />} />
                 <Route path="/usuario/busca" element={< BuscaUsuario />} />
             </Routes>
         </BrowserRouter>

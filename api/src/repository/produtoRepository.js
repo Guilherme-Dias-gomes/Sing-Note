@@ -47,13 +47,6 @@ export async function ConsultarTodosProdutos(){
     return registros;
 }
 
-export async function buscarProdutoImagens (idProduto) {
-    const comando = `
-        select tb_produto_imagem.id_produto_imagem
-        
-    `
-}
-
 export async function ConsultarProdutosPorNome(nome){
     const comando = 
     ` select tb_produto.id_produto               Id,
@@ -75,16 +68,38 @@ export async function ConsultarProdutosPorNome(nome){
 
 export async function ConsultarProdutosPorId(id){
     const comando = 
-         `select tb_produto.id_produto               Id,
-                           nm_produto               Nome,
-                           ds_modelo                Modelo,
-                           ds_marca                 Marca,
-                           nr_preco                 Preco
-                      from tb_produto
-                      where id_produto = ?`
+         `select tb_produto.id_produto                    as Id, 
+         nm_produto                                as Nome, 
+         ds_modelo                                as Modelo,
+         ds_produto                                as EspecificaçõesTecnicas,
+         nr_estoque                                as Estoque,
+         ds_marca                                    as Marca,
+         nr_preco                                    as Preço,
+         tb_produto.id_produto_categoria          as Categoria,
+         tb_produto.id_produto_tipo               as Tipo,
+         tb_produto_imagem.id_produto_imagem      as Imagem
+   from tb_produto
+  inner join tb_produto_tipo      
+          on tb_produto_tipo.id_produto_tipo = tb_produto.id_produto_tipo
+  inner join tb_produto_categoria
+          on tb_produto_categoria.id_produto_categoria = tb_produto.id_produto_categoria
+  inner join tb_produto_imagem
+          on tb_produto.id_produto = tb_produto_imagem.id_produto
+       where tb_produto.id_produto = ?`
  
     const [registros] = await conexao.query(comando, [id]);
     return registros[0];
+}
+
+export async function buscarProdutoImagens (idProduto) {
+    const comando = `
+        select tb_produto.id_produto               Id,
+                tb_produto_imagem.id_produto_imagem        idImagem
+                from tb_produto
+                inner join tb_produto_imagem on tb_produto.id_produto = tb_produto_imagem.id_produto
+            `
+    const [resp] = await conexao.query(comando, [idProduto]);
+    return resp;
 }
 
 // deletar 
