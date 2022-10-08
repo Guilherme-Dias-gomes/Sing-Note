@@ -13,6 +13,7 @@ import PagePedidos from "./pages/admin/pedidos/pedido";
 import ConsultaProduto from "./pages/admin/consultarProduto/index";
 import ElementoProduto from './components/adm/elemento-produto/index';
 import BuscaUsuario from './pages/usuario/busca';
+import LoginUsuario from './pages/usuario/loginUsuario';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -28,6 +29,7 @@ root.render(
                 <Route path="/ElementoProduto" element={< ElementoProduto />} />
                 <Route path='/admin/alterar/:id' element={< CadastrarProduto />} />
                 <Route path="/usuario/busca" element={< BuscaUsuario />} />
+                <Route path="/usuario/login" element={< LoginUsuario />} />
             </Routes>
         </BrowserRouter>
   </React.StrictMode>

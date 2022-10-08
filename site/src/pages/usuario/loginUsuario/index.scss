@@ -1,0 +1,114 @@
+*,
+*::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.page-login-usuario {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    background-color: #55F27F; 
+    background-image: linear-gradient(
+        315deg,
+        #318CE7 0%,
+        #bffce7 67%,
+        #6fdcf0
+
+    );
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario {
+    display: grid;
+    height: 30em;
+    width: 24rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: white;
+    align-items: center;
+}
+
+h1{
+        margin-left: 3em;
+    }
+
+
+    .titulo-form {
+        margin-bottom: 0.5rem;
+    }
+
+    .form-group{
+        position: relative;
+        height: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .input-form {
+        width: 100%;
+        height: 100%;
+        border: 2px solid black;
+        border-radius: 0.5rem;
+        font-family: inherit;
+        color: inherit;
+        padding: 1.25rem;
+        background: none;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-end;
+        margin: 20px 0px;
+    
+    }
+
+    .input-form:hover {
+        border-color: #9dedff;
+    }
+
+    input:focus {
+        border-color: #318CE7;
+    }
+    
+    .label-form {
+        position: absolute;
+        left: 1rem;
+        top: 0.9rem;
+        padding: 0 0.5rem;
+        background-color: white;
+        transition: 
+            top 200ms ease-in,
+            left 200ms ease-in,
+            font-size 200ms ease-in;
+    }
+
+    .btn-login {
+        display: block;
+        margin-left: auto;
+        padding: 0.75rem 2rem;
+        background-color: #318CE7;
+        font-family: inherit;
+        font-weight: inherit;
+        border-radius: 0.5rem;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        transition: 200ms ease-in;
+    }
+
+    .btn-login:hover {
+        background-color: #2165a8;
+    }
+    
+    .input-form:focus + .label-form,
+    .input-form:not(:placeholder-shown).input-form:not(:focus) + .label-form {
+    top: -0.5rem;
+    left: 0.8rem;
+    font-size: 0.8rem;
+}
+.form-entrar-invalido{
+    color: red;
+}

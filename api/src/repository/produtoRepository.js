@@ -106,10 +106,10 @@ export async function buscarProdutoImagens (idProduto) {
 }
 
 // deletar 
-export async function removerProduto(idProduto) {
+export async function removerProduto(id) {
     const comando = `
-        DELETE FROM TB_PRODUTO_CATEGORIA
-         WHERE ID_PRODUTO = ?    
+        delete from tb_produto
+         where id_produto = ?    
     `
 
     const [resp] = await conexao.query(comando, [idProduto])
@@ -119,7 +119,7 @@ export async function removerProduto(idProduto) {
 export async function removerProdutoImagens(idProduto) {
     const comando = `
         DELETE FROM TB_PRODUTO_IMAGEM
-         WHERE ID_PRODUTO = ?    
+         where id_produto = ?    
     `
 
     const [resp] = await conexao.query(comando, [idProduto])

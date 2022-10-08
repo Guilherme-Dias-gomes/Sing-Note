@@ -5,7 +5,7 @@ const server = Router();
 
 // login do usuario
 
-server.post('/login/usuario', async (req, resp)  => {
+server.post('/usuario/login', async (req, resp)  => {
     try {
         const { email, senha } = req.body;
         const resposta = await loginUsuario(email, senha);

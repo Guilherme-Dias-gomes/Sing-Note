@@ -9,7 +9,7 @@ const api = axios.create({
 
 
 export async function loginUsuario(email, senha){
-    const resposta = await api.post('/login/usuario', {
+    const resposta = await api.post('/usuario/login', {
         email:email,
         senha:senha
     });
