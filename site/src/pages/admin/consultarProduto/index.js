@@ -70,7 +70,7 @@ export default function ConsultaProduto () {
             <p>#{item.Id}</p>
             <div>
                 <button onClick={AlterarProduto}><img src='/image/lapis.png' alt='lapis'/></button>
-                <button><img src='/image/lixo.png' alt='Lixeira'/></button>
+                <button onClick={deletarProduto}><img src='/image/lixo.png' alt='Lixeira'/></button>
             </div>
         </div>
         <div className='espaco-produto'>

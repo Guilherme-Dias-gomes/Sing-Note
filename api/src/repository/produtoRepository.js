@@ -1,6 +1,6 @@
 import { conexao } from './conection.js';
 
-
+//Cadastrar Produto
 export async function salvarProduto(produto) {
     const comando = `
     insert into tb_produto (nm_produto, ds_modelo, ds_produto, nr_estoque, ds_marca, nr_preco, id_produto_categoria,  id_produto_tipo)
@@ -21,6 +21,7 @@ export async function salvarProduto(produto) {
     return produto;
 }
 
+// Salvar Imagem
 export async function salvarProdutoImagem(idProduto, imagemPath) {
     const comando = `
         insert into tb_produto_imagem (id_produto, img_produto)
@@ -30,6 +31,7 @@ export async function salvarProdutoImagem(idProduto, imagemPath) {
     const [resp] = await conexao.query(comando, [idProduto, imagemPath])
 }
 
+//Consultar Todos os Produtos
 export async function ConsultarTodosProdutos(){
     const comando = 
        ` select tb_produto.id_produto               Id,
@@ -47,6 +49,7 @@ export async function ConsultarTodosProdutos(){
     return registros;
 }
 
+// Consultar produto por nome
 export async function ConsultarProdutosPorNome(nome){
     const comando = 
     ` select tb_produto.id_produto               Id,
@@ -65,7 +68,7 @@ export async function ConsultarProdutosPorNome(nome){
         return registros;
 }
 
-
+// Consultar produtos por ID
 export async function ConsultarProdutosPorId(id){
     const comando = 
          `select tb_produto.id_produto                    as Id, 
@@ -105,7 +108,7 @@ export async function buscarProdutoImagens (idProduto) {
 // deletar 
 export async function removerProduto(idProduto) {
     const comando = `
-        DELETE FROM TB_PRODUTO_CATEGORIAS
+        DELETE FROM TB_PRODUTO_CATEGORIA
          WHERE ID_PRODUTO = ?    
     `
 
