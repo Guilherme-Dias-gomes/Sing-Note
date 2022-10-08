@@ -11,6 +11,6 @@ export async function listarCategorias() {
 }
 
 export async function buscarProdutoPorCategoria(id){
-    const resp = await api.get(`/usuario/produtos/buscar/categoria?id=${id}`)
+    const resp = await api.get(`/usuario/produtos/buscar/categoira?id=${id}`)
     return resp.data
 }

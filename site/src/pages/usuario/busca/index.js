@@ -147,7 +147,8 @@ export default function BuscaUsuario () {
                             <p>Resultado de busca:
                             <span className='resultado-valor'> {buscar}</span></p>
                             <p>produtos: 
-                            <span className='resultado-valor'> 10</span></p></div>
+                            <span className='resultado-valor'> </span></p>
+                        </div>
 
                     <hr/>
                         
