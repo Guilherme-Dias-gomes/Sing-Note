@@ -6,6 +6,7 @@ import { buscarProdutoPorNome, buscarProdutos } from '../../../api/produtoAPI'
 import { useEffect, useState } from 'react'
 import { buscarProdutoPorCategoria } from '../../../api/categoriaAPI'
 import { buscarProdutoPorTipo } from '../../../api/tipoAPI'
+import { API_URL } from '../../../api/config'
 
 export default function BuscaUsuario () {
 
@@ -63,27 +64,27 @@ export default function BuscaUsuario () {
         setProdutos(resposta);
     }
 //////////////////////////////////////////////////////////////
-    async function filtrarCategoriaCorda(){
+    async function filtrarCordaCategoria(){
         const resposta = await buscarProdutoPorCategoria(1);
         setProdutos(resposta);
     }
-    async function filtrarCategoriaSopro(){
+    async function filtrarSoproCategoria(){
         const resposta = await buscarProdutoPorCategoria(2);
         setProdutos(resposta);
     }
-    async function filtrarCategoriaPercurcao(){
+    async function filtrarPercurcaoCategoria(){
         const resposta = await buscarProdutoPorCategoria(3);
         setProdutos(resposta);
     }
-    async function filtrarCategoriaEletrico(){
+    async function filtrarEletricoCategoria(){
         const resposta = await buscarProdutoPorCategoria(4);
         setProdutos(resposta);
     }
-    async function filtrarCategoriaTeclas(){
+    async function filtrarTeclasCategoria(){
         const resposta = await buscarProdutoPorCategoria(5);
         setProdutos(resposta);
     }
-    async function filtrarCategoriaAcessorios(){
+    async function filtrarAcessoriosCategoria(){
         const resposta = await buscarProdutoPorCategoria(6);
         setProdutos(resposta);
     }
@@ -91,6 +92,18 @@ export default function BuscaUsuario () {
     async function filtrar(){
         const resposta = await buscarProdutoPorNome(buscar);
         setProdutos(resposta);
+    }
+
+    function exibirImagem(imagem) {
+        if (imagem == undefined) {
+            return '/image/add-image.png';
+        }
+        else if (typeof (imagem) == 'string') {
+            return `${API_URL}/${imagem}`
+        }
+        else {
+            return URL.createObjectURL(imagem);
+        }
     }
 
     useEffect(() => {
@@ -118,12 +131,12 @@ export default function BuscaUsuario () {
                     <div className='categoria-e-tipo'>
                         <h1 className='titulo-categoria'>Categorias</h1>
                         <div className='opcao-tipo-categoria'>
-                            <p className='cada-titulo' onClick={filtrarCategoriaCorda}>Cordas</p>
-                            <p className='cada-titulo' onClick={filtrarCategoriaSopro}>Sopro</p>
-                            <p className='cada-titulo' onClick={filtrarCategoriaPercurcao}>Percurção</p>
-                            <p className='cada-titulo' onClick={filtrarCategoriaEletrico}>Elétricos</p>
-                            <p className='cada-titulo' onClick={filtrarCategoriaTeclas}>Teclas</p>
-                            <p className='cada-titulo' onClick={filtrarCategoriaAcessorios}>Acessórios</p>
+                            <p className='cada-titulo' onClick={filtrarCordaCategoria}>Cordas</p>
+                            <p className='cada-titulo' onClick={filtrarSoproCategoria}>Sopro</p>
+                            <p className='cada-titulo' onClick={filtrarPercurcaoCategoria}>Percurção</p>
+                            <p className='cada-titulo' onClick={filtrarEletricoCategoria}>Elétricos</p>
+                            <p className='cada-titulo' onClick={filtrarTeclasCategoria}>Teclas</p>
+                            <p className='cada-titulo' onClick={filtrarAcessoriosCategoria}>Acessórios</p>
                         </div>
                         
                         <h1 className='titulo-tipo'>Tipos</h1>
@@ -157,7 +170,7 @@ export default function BuscaUsuario () {
     <div className='espaco-produto'>
         <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
         <div className='descricao-card'>
-        {item.Imagem}
+        <img src={exibirImagem(item.Imagem)} className="ImagemProduto" alt='teste'/>
             <h1 className='card-produto-descricao'>{item.Nome} {item.Marca} {item.Modelo}</h1>
             <h1 className='preco-card'>R$ {item.Preco}</h1>
             <button className='botao-comprar'>

@@ -29,29 +29,25 @@ server.post('/admin/produto' , async (req, resp) => {
 })
 
 // Cadastrar Imagens
-server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, resp) => {
+server.put('/admin/produto/:id/imagens', upload.array('imagens'), async (req, resp) => {
     try {
         const id = req.params.id;
         const imagens = req.files;
-        const imagensPermanecem = req.body.imagens.filter(item => item != 'undefined')
+        // const imagensPermanecem = req.body.imagens.filter(item => item != 'undefined');
 
-        console.log(id)
-        console.log(imagens)
-        console.log(imagensPermanecem)
+        // if (imagensPermanecem.length > 0)
+        //     await removerProdutoImagensDiferentesDe(imagensPermanecem);
+        // else
+        //     await removerProdutoImagens(id);
 
-        if (imagensPermanecem.length > 0)
-            await removerProdutoImagensDiferentesDe(imagensPermanecem);
-        else
-            await removerProdutoImagens(id);
-
-        await removerProdutoImagensDiferentesDe(imagensPermanecem)
+        // await removerProdutoImagensDiferentesDe(imagensPermanecem)
 
         for (const imagem of imagens){
             await salvarProdutoImagem(id, imagem.path)
         }
 
         resp.status(204).send()
-        
+
     } catch (err) {
         resp.status(400).send({
             erro:err.message
@@ -64,7 +60,7 @@ server.get('/admin/produto', async (req, resp) => {
         try {
             const resposta =  await ConsultarTodosProdutos();
             resp.send(resposta);
-            
+
         } catch (err) {
             resp.status(404).send({
                 erro:err.message
@@ -78,7 +74,7 @@ server.get('/admin/produto/buscar', async (req, resp) => {
         const { nome } = req.query;
         const resposta = await ConsultarProdutosPorNome(nome)
         resp.send(resposta);
-        
+
     } catch (err) {
         resp.status(404).send({
             erro:err.message
@@ -93,7 +89,7 @@ server.delete('/admin/produto/:id', async (req, resp) => {
 
        await removerProdutoImagens(id);
        await removerProduto(id);
-       
+
        resp.status(204).send();
 
     } catch (err) {

@@ -5,8 +5,9 @@ import { buscarProdutoPorNome, buscarProdutos,  removerProduto } from '../../../
 import CabecalhoAdm from '../../../components/adm/cabecalho-adm'
 import AbaLateralADM from '../../../components/adm/aba-lateral-adm'
 import { useEffect, useState } from 'react';
-import { AlterarProduto } from '../../../api/produtoAPI';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../../../api/config'
+
 
 export default function ConsultaProduto () {
     const [produtos, setProdutos] = useState([]);
@@ -27,13 +28,17 @@ export default function ConsultaProduto () {
         setProdutos(resposta);
     }
 
-    // // function mostrarImagem(){
-    // //     if(typeof (imagem) == 'object'){ 
-    // //         return URL.createObjectURL(imagem);
-    // //     } else {
-    // //         return buscarImagem(imagem);
-    // //     }
-    // // }
+    function exibirImagem(imagem) {
+        if (imagem == undefined) {
+            return '/image/add-image.png';
+        }
+        else if (typeof (imagem) == 'string') {
+            return `${API_URL}/${imagem}`
+        }
+        else {
+            return URL.createObjectURL(imagem);
+        }
+    }
 
     function editar(id){
         navegar(`/admin/alterar/${id}`)
@@ -81,7 +86,7 @@ export default function ConsultaProduto () {
                             </div>
                         </div>
                         <div className='espaco-produto'>
-                            {item.Imagem}
+                            <img src={exibirImagem(item.Imagem)} className="ImagemProduto" alt='teste'/>
                             <div className='Info-Nome_Marca_Modelo'>
                                 <span>{item.Nome}</span>
                                 <span>{item.Marca}</span>

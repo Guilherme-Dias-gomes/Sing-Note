@@ -98,17 +98,6 @@ export async function buscarProdutoImagens (idProduto) {
     return registros.map(item => item.imagem);
 }
 
-// Deletar Produtos 
-export async function removerProduto(idProduto) {
-    const comando = `
-        delete from tb_produto
-              where id_produto = ?    
-    `
-
-    const [resp] = await conexao.query(comando, [idProduto])
-    return resp.affecteRows;
-}
-
 // Deletar Imagens dos produtos
 export async function removerProdutoImagens(idProduto) {
     const comando = `
@@ -119,17 +108,26 @@ export async function removerProdutoImagens(idProduto) {
     return resp.affecteRows;
 }
 
+// Deletar Produtos 
+export async function removerProduto(idProduto) {
+    const comando = `
+        delete from tb_produto
+              where id_produto = ?    
+    `
+
+    const [resp] = await conexao.query(comando, [idProduto])
+    return resp.affecteRows;
+}
 // Alterar Imagem
-export async function removerProdutoImagensDiferentesDe(imagem) {
+export async function removerProdutoImagensDiferentesDe(imagens) {
     const comando = `
        delete from tb_produto_imagem
              where img_produto NOT IN(?)    
     `
 
-    const [resp] = await conexao.query(comando, [imagem])
+    const [resp] = await conexao.query(comando, [imagens])
     return resp.affecteRows;
 }
-
 // alterar produto
 export async function alterarProduto (id, produto) {
     const comando = `

@@ -140,7 +140,7 @@ export default function CadastrarProduto() {
             <div className="parte-cadastro"> {/*Começo da parte do cadastro*/}
                 <div className="titulo-cadastrar">
                     <img src="/image/Rectangle 834.png" alt="cadastrar" className="imagem-retangulo"/>
-                    <p> Cadastrar Produto </p>
+                    <p> {id ? 'Alterar Produto' : 'Cadastrar Produto'} </p>
                 </div>
 
                 <div className="container-formulario"> {/*Container Formulário*/}
@@ -204,7 +204,7 @@ export default function CadastrarProduto() {
 
                         <div className="caixa-de-texto-div-1">
                             <label className="titulo-caixa-de-texto"> Preço </label>
-                            <input type="number" className="caixa-de-texto-pequena"
+                            <input type="text" className="caixa-de-texto-pequena"
                             value={preco} onChange={e => setPreco(e.target.value)}/>
                         </div>
 

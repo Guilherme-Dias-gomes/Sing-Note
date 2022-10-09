@@ -11,8 +11,8 @@ export async function SalvarProduto(nome, modelo, descricao, estoque, marca, pre
     return resposta.data;
 }
 export async function AlterarProduto(id, nome, modelo, descricao, estoque, marca, preco, idCategoria, idTipo) {
-    const resposta = await api.put('/admin/produto/' + id, { nome, modelo, descricao, estoque, marca, preco, idCategoria, idTipo});
-    return resposta.data;
+    await api.put('/admin/produto/' + id, { nome, modelo, descricao, estoque, marca, preco, idCategoria, idTipo});
+
 }
 
 export async function SalvarImagens(id, imagem1, imagem2) {
@@ -20,7 +20,7 @@ export async function SalvarImagens(id, imagem1, imagem2) {
     form.append('imagens', imagem1);
     form.append('imagens', imagem2);
 
-    const resposta = await api.put(`/admin/produto/${id}/imagem`, form, {
+    const resposta = await api.put(`/admin/produto/${id}/imagens`, form, {
         headers: {
             'content-type': 'multipart/form-data'
         }
