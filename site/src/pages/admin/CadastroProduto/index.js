@@ -6,13 +6,15 @@ import { listarTipos } from '../../../api/tipoAPI'
 import AbaLateralADM from '../../../components/adm/aba-lateral-adm/index.js'
 import Cabecalho from '../../../components/adm/cabecalho-adm/index.js'
 import { useEffect, useState } from 'react'
-import { SalvarProduto, SalvarImagens, AlterarProduto } from '../../../api/produtoAPI.js';
+import { SalvarProduto, SalvarImagens, AlterarProduto, buscarProdutoPorId } from '../../../api/produtoAPI.js';
 import { API_URL } from '../../../api/config'
 
 import { toast } from 'react-toastify';
 import { useParams } from 'react-router-dom'
 
 export default function CadastrarProduto() {
+
+    const [idProduto, setIdProduto] = useState()
 
     const [nome, setNome] = useState('');
     const [modelo, setModelo] = useState('');
@@ -62,9 +64,32 @@ export default function CadastrarProduto() {
         setIdTipo([])
         setEstoque(0)
         setMarca('')
-        setPreco(toString)
+        setPreco(0)
         setImagem1()
         setImagem2()
+    }
+
+    async function carregarProduto(){
+        if(!id){ 
+            return;
+        }
+        
+        const resposta = await buscarProdutoPorId(id)
+        setNome(resposta.info.Nome)
+        setModelo(resposta.info.Modelo)
+        setDescricao(resposta.info.EspecificacoesTecnicas)
+        setEstoque(resposta.info.Estoque)
+        setMarca(resposta.info.Marca)
+        setPreco(resposta.info.Preco.toString())
+        setIdCategoria(resposta.info.IdCategoria)
+        setIdTipo(resposta.info.IdTipo)
+        
+        if(resposta.imagens.length > 0){
+            setImagem1(resposta.imagens[0])
+        }
+        if(resposta.imagens.length > 1){
+            setImagem2(resposta.imagens[1])
+        }
     }
 
     async function mostrarCategorias(){
@@ -83,9 +108,9 @@ export default function CadastrarProduto() {
 
     function exibirImagem(imagem){
         if(imagem === undefined){
-            return '/image/add-image.png';
+            return '../../../../public/image/add-image.png';
         }        
-        else if (typeof (imagem) ==='string') {
+        else if (typeof (imagem) === 'string') {
             return `${API_URL}/${imagem}`
         } 
         else {
@@ -98,6 +123,7 @@ export default function CadastrarProduto() {
     useEffect(() => {
         mostrarCategorias()
         mostrarTipo()
+        carregarProduto()
     },[])
 
 

@@ -11,7 +11,7 @@ export async function SalvarProduto(nome, modelo, descricao, estoque, marca, pre
     return resposta.data;
 }
 export async function AlterarProduto(id, nome, modelo, descricao, estoque, marca, preco, idCategoria, idTipo) {
-    const resposta = await api.put(`/admin/produto/${id}`, { nome, modelo, descricao, estoque, marca, preco, idCategoria, idTipo});
+    const resposta = await api.put('/admin/produto/' + id, { nome, modelo, descricao, estoque, marca, preco, idCategoria, idTipo});
     return resposta.data;
 }
 
@@ -35,6 +35,11 @@ export async function buscarProdutoPorNome(nome) {
 
 export async function buscarProdutos() {
     const r = await api.get('/admin/produto');
+    return r.data;
+}
+
+export async function buscarProdutoPorId(id) {
+    const r = await api.get('/admin/produto/' + id);
     return r.data;
 }
 

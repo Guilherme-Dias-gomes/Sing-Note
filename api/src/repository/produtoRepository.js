@@ -25,7 +25,7 @@ export async function salvarProduto(produto) {
 export async function salvarProdutoImagem(idProduto, imagemPath) {
     const comando = `
         insert into tb_produto_imagem (id_produto, img_produto)
-                                  values (?, ?)
+                               values (?, ?)
     `
 
     const [resp] = await conexao.query(comando, [idProduto, imagemPath])
@@ -68,61 +68,65 @@ export async function ConsultarProdutosPorNome(nome){
         return registros;
 }
 
-// Consultar produtos por ID
-export async function ConsultarProdutosPorId(id){
+// Consultar produtos por ID(Para fazer alterações)
+export async function BuscarProdutoPorId(id){
     const comando = 
-         `select tb_produto.id_produto                    as Id, 
-         nm_produto                                as Nome, 
-         ds_modelo                                as Modelo,
-         ds_produto                                as EspecificaçõesTecnicas,
-         nr_estoque                                as Estoque,
-         ds_marca                                    as Marca,
-         nr_preco                                    as Preço,
-         tb_produto.id_produto_categoria          as Categoria,
-         tb_produto.id_produto_tipo               as Tipo,
-         tb_produto_imagem.id_produto_imagem      as Imagem
-   from tb_produto
-  inner join tb_produto_tipo      
-          on tb_produto_tipo.id_produto_tipo = tb_produto.id_produto_tipo
-  inner join tb_produto_categoria
-          on tb_produto_categoria.id_produto_categoria = tb_produto.id_produto_categoria
-  inner join tb_produto_imagem
-          on tb_produto.id_produto = tb_produto_imagem.id_produto
-       where tb_produto.id_produto = ?`
+            `select id_produto                       as Id, 
+                    nm_produto                       as Nome, 
+                    ds_modelo                        as Modelo,
+                    ds_produto                       as EspecificacoesTecnicas,
+                    nr_estoque                       as Estoque,
+                    ds_marca                         as Marca,
+                    nr_preco                         as Preco,
+                    id_produto_categoria             as IdCategoria,
+                    id_produto_tipo                  as IdTipo
+               from tb_produto
+              where id_produto = ?`
  
     const [registros] = await conexao.query(comando, [id]);
     return registros[0];
 }
 
+// Consultar Imagem do produtos por ID(Para fazer alterações)
 export async function buscarProdutoImagens (idProduto) {
     const comando = `
-        select tb_produto.id_produto               Id,
-                tb_produto_imagem.id_produto_imagem        idImagem
-                from tb_produto
-                inner join tb_produto_imagem on tb_produto.id_produto = tb_produto_imagem.id_produto
+        select img_produto              as imagem
+          from tb_produto_imagem
+         where id_produto = ?
             `
-    const [resp] = await conexao.query(comando, [idProduto]);
-    return resp;
+    const [registros] = await conexao.query(comando, [idProduto]);
+    return registros.map(item => item.imagem);
 }
 
-// deletar 
-export async function removerProduto(id) {
+// Deletar Produtos 
+export async function removerProduto(idProduto) {
     const comando = `
         delete from tb_produto
-         where id_produto = ?    
+              where id_produto = ?    
     `
 
     const [resp] = await conexao.query(comando, [idProduto])
     return resp.affecteRows;
 }
 
+// Deletar Imagens dos produtos
 export async function removerProdutoImagens(idProduto) {
     const comando = `
-        DELETE FROM TB_PRODUTO_IMAGEM
-         where id_produto = ?    
+        delete from tb_produto_imagem
+              where id_produto = ?    
+    `
+    const [resp] = await conexao.query(comando, [idProduto])
+    return resp.affecteRows;
+}
+
+// Alterar Imagem
+export async function removerProdutoImagensDiferentesDe(imagem) {
+    const comando = `
+       delete from tb_produto_imagem
+             where img_produto NOT IN(?)    
     `
 
-    const [resp] = await conexao.query(comando, [idProduto])
+    const [resp] = await conexao.query(comando, [imagem])
     return resp.affecteRows;
 }
 
@@ -130,31 +134,27 @@ export async function removerProdutoImagens(idProduto) {
 export async function alterarProduto (id, produto) {
     const comando = `
     update tb_produto
-	set  NM_PRODUTO = ?,    
-		DS_MODELO   =?,            
-		DS_PRODUTO  =?,           
-		NR_ESTOQUE  =?,          
-		DS_MARCA    =?
-	where id_produto = ${id}`
+	   set nm_produto             = ?,    
+		   ds_modelo              = ?,            
+		   ds_produto             = ?,           
+		   nr_estoque             = ?,          
+		   ds_marca               = ?,
+           nr_preco               = ?,
+           id_produto_categoria   = ?,
+           id_produto_tipo        = ?
+	 where id_produto             = ?`
 
     const [resp] = await conexao.query(comando, [
-                                 produto.NM_PRODUTO,
-                                 produto.DS_MODELO,
-                                 produto.DS_PRODUTO,
-                                 produto.NR_ESTOQUE,
-                                 produto.DS_MARCA
+                                        produto.nome,
+                                        produto.modelo,
+                                        produto.descricao,
+                                        produto.estoque,
+                                        produto.marca,
+                                        produto.preco,
+                                        produto.idCategoria,
+                                        produto.idTipo,
+                                        id
     ])
     return resp.affectedRows;
 }
-
-// export async function removerProduto(idProduto) {
-//     const comando = `
-//         DELETE FROM TB_PRODUTO
-//          WHERE ID_PRODUTO = ?    
-//     `
-
-//     const [resp] = await conexao.query(comando, [idProduto])
-//     return resp.affecteRows;
-
-// }
    
