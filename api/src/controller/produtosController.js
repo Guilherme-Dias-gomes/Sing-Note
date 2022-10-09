@@ -32,12 +32,12 @@ server.post('/admin/produto' , async (req, resp) => {
 server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, resp) => {
     try {
         const id = req.params.id;
-        const imagens = req.files;
+        const imgs = req.files;
         const imagensPermanecem = req.body.imagens.filter(item => item != 'undefined')
 
         await removerProdutoImagensDiferentesDe(imagensPermanecem)
 
-        for (const imagem of imagens){
+        for (const imagem of imgs){
             await salvarProdutoImagem(id, imagem.path)
         }
 

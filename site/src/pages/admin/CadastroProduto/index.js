@@ -107,8 +107,8 @@ export default function CadastrarProduto() {
     }
 
     function exibirImagem(imagem){
-        if(imagem === undefined){
-            return '../../../../public/image/add-image.png';
+        if(typeof(imagem) === undefined){
+            return '/image/add-image.png';
         }        
         else if (typeof (imagem) === 'string') {
             return `${API_URL}/${imagem}`
