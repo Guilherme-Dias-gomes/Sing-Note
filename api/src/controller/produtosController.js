@@ -32,12 +32,21 @@ server.post('/admin/produto' , async (req, resp) => {
 server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, resp) => {
     try {
         const id = req.params.id;
-        const imgs = req.files;
+        const imagens = req.files;
         const imagensPermanecem = req.body.imagens.filter(item => item != 'undefined')
+
+        console.log(id)
+        console.log(imagens)
+        console.log(imagensPermanecem)
+
+        if (imagensPermanecem.length > 0)
+            await removerProdutoImagensDiferentesDe(imagensPermanecem);
+        else
+            await removerProdutoImagens(id);
 
         await removerProdutoImagensDiferentesDe(imagensPermanecem)
 
-        for (const imagem of imgs){
+        for (const imagem of imagens){
             await salvarProdutoImagem(id, imagem.path)
         }
 
@@ -95,7 +104,7 @@ server.delete('/admin/produto/:id', async (req, resp) => {
 })
 
 // Carregar Informações do produto por ID(Para alteração)
-server.get('/admin/produto/:id', async (req, resp) => {
+server.get('/admin/produto/:id', upload.array('imagens'), async (req, resp) => {
     try {
         const id = req.params.id;
 

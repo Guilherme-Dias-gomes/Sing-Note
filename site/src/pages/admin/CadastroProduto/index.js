@@ -75,6 +75,7 @@ export default function CadastrarProduto() {
         }
         
         const resposta = await buscarProdutoPorId(id)
+        setIdProduto(resposta.info.Id)
         setNome(resposta.info.Nome)
         setModelo(resposta.info.Modelo)
         setDescricao(resposta.info.EspecificacoesTecnicas)
@@ -106,13 +107,13 @@ export default function CadastrarProduto() {
         document.getElementById(inputId).click();
     }
 
-    function exibirImagem(imagem){
-        if(typeof(imagem) === undefined){
+    function exibirImagem(imagem) {
+        if (imagem == undefined) {
             return '/image/add-image.png';
-        }        
-        else if (typeof (imagem) === 'string') {
+        }
+        else if (typeof (imagem) == 'string') {
             return `${API_URL}/${imagem}`
-        } 
+        }
         else {
             return URL.createObjectURL(imagem);
         }
