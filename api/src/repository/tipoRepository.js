@@ -39,7 +39,7 @@ export async function BuscarProdutoPorTipo(id){
                       on tb_produto.id_produto = tb_produto_imagem.id_produto
               inner join tb_produto_tipo
                       on tb_produto.id_produto_tipo = tb_produto_tipo.id_produto_tipo
-                   where mod(tb_produto_imagem.id_produto_imagem, 2) = 1
+                   where mod(tb_produto_imagem.id_produto_imagem, 2) = 0
                      and tb_produto_tipo.id_produto_tipo = ?`
 
     const [registros] = await conexao.query(comando, [id]);
