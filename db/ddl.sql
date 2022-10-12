@@ -43,9 +43,9 @@ create table TB_USUARIO(
 
 create table TB_USUARIO_LOGIN(
     ID_USUARIO_LOGIN		int primary key auto_increment,
-    DS_EMAIL			varchar(100),
-    DS_SENHA			varchar(40),
-    ID_USUARIO			int,
+    DS_EMAIL			    varchar(100),
+    DS_SENHA			    varchar(40),
+    ID_USUARIO			    int,
     FOREIGN KEY (ID_USUARIO) REFERENCES TB_USUARIO(ID_USUARIO)
 );
 

@@ -1,4 +1,4 @@
-import { loginUsuario } from '../repository/usuariorepository.js'; 
+import { loginUsuario, QuantificarTodosProdutos } from '../repository/usuarioRepository.js'; 
 
 import { Router } from "express";
 const server = Router();
@@ -17,6 +17,19 @@ server.post('/usuario/login', async (req, resp)  => {
         resp.status(400).send({
             erro: err.message
         });
+    }
+})
+
+server.get('/usuario/contar/produto', async (req, resp) => {
+    try {
+        
+        const resposta = await QuantificarTodosProdutos();
+        resp.send(resposta);
+        
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
     }
 })
 

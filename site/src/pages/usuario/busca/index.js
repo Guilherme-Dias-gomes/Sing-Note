@@ -1,17 +1,18 @@
 import './index.scss'
-import CaixaProdutoUsuario from '../../../components/usuario/caixa-produto-usuario'
 import AbaLateralUSU from '../../../components/usuario/aba-lateral-usu'
 import CabecalhoUSU from '../../../components/usuario/cabecalho-usu'
 import { buscarProdutoPorNome, buscarProdutos } from '../../../api/produtoAPI'
 import { useEffect, useState } from 'react'
 import { buscarProdutoPorCategoria } from '../../../api/categoriaAPI'
 import { buscarProdutoPorTipo } from '../../../api/tipoAPI'
+import { ContarProdutos } from '../../../api/usuarioLoginAPI'
 import { API_URL } from '../../../api/config'
 
 export default function BuscaUsuario () {
 
     const [produtos, setProdutos] = useState([]);
-    const [buscar, setBuscar] = useState('')
+    const [buscar, setBuscar] = useState('');
+    const [quantidade, setQuantidade] = useState([]);
 
     async function mostrarProdutos(){
         const resposta = await buscarProdutos();
@@ -106,6 +107,15 @@ export default function BuscaUsuario () {
         }
     }
 
+    async function mostrarQuantidade(){
+        const respota = await ContarProdutos()
+        setQuantidade(respota)
+    }
+
+    useEffect(() => {
+        mostrarQuantidade()
+    }, [])
+
     useEffect(() => {
         mostrarProdutos();
     }, [])
@@ -157,10 +167,17 @@ export default function BuscaUsuario () {
                     </div>
                     <div className='parte-da-consulta'>
                         <div className='resultados'> 
-                            <p>Resultado de busca:
-                            <span className='resultado-valor'> {buscar}</span></p>
-                            <p>produtos: 
-                            <span className='resultado-valor'> </span></p>
+                            <p>
+                                Resultado de busca:
+                                <span className='resultado-valor'> {buscar}</span>
+                            </p>
+
+                            {quantidade.map( item =>
+                                <p>
+                                    produtos: 
+                                    <span className='resultado-valor'> {item.Quantidade}</span>
+                                </p>    
+                            )}
                         </div>
 
                     <hr/>
@@ -168,6 +185,7 @@ export default function BuscaUsuario () {
                         <div className='cards-produto-usu'>
 {produtos.map(item => 
     <div className='espaco-produto'>
+        {item.Id}
         <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
         <div className='descricao-card'>
         <img src={exibirImagem(item.Imagem)} className="ImagemProduto" alt='teste'/>
