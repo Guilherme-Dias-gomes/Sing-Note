@@ -1,8 +1,24 @@
 import './index.scss'
 import { Link } from 'react-router-dom'
+import storage from 'local-storage'
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export default function AbaLateralADM() {
 
+    const navegar = useNavigate();
+
+    function sairClick () {
+        storage.remove('usuario-logado');
+        navegar('/admin/login')
+    }
+
+    useEffect(() => {
+        if(!storage('usuario-logado')){
+            navegar('/admin/login');
+        }
+        
+    }, [])
 return(
 
 <div className="aba-lateral"> {/*Começo da aba lateral*/} 
@@ -29,10 +45,10 @@ return(
         </Link>
     </div> {/*Fim das opções*/}
     
-    <Link className="icone-opcoes">
+    <div onClick={sairClick} className="icone-opcoes">
         <img className='img-icone' src="/image/Vector.png" alt="opcao"/>
         <p className="nome-icones">Sair</p>
-    </Link> 
+    </div> 
 
 </div> /*Fim da aba lateral*/
 )}

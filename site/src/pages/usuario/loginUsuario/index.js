@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { loginUsuario } from '../../../api/usuarioLoginAPI';
 import './index.scss'
 
 export default function LoginUsuario() {
@@ -12,10 +12,7 @@ export default function LoginUsuario() {
 
 
     async function entrarClick() {
-        const r = await axios.post('http://localhost:5000/usuario/login', {
-            email: email,
-            senha: senha
-        })
+        const r = await loginUsuario(email, senha)
         if(r.status === (401)) {
             setErro(r.data.erro);
         }else {
@@ -28,6 +25,8 @@ export default function LoginUsuario() {
         >
 
             <h1 className='titulo-form'><span><img src='/src/assets/images/usu.png' alt='' width='34px'></img></span>Login</h1>
+            <p>email: carloshenrique@gmail.com</p>
+            <p>senha: @carloshenriquesouza#*456&</p>
 
             <div className='form-group'>
                 <label className='label-form' htmlFor='email'>Email</label>

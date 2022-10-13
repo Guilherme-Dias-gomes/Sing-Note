@@ -7,8 +7,6 @@ import CabecalhoAdm from '../../../components/adm/cabecalho-adm'
 export default function PageHome () {
 
 
-
-
     return(
         <main className='pageHome'>
             <AbaLateralADM/>

@@ -1,8 +1,8 @@
-import axios from 'axios';
+import { login } from '../../../api/adminloginAPI'
 import {useNavigate} from 'react-router-dom'
-import {useState} from 'react'
-
-
+import {useState, useRef, useEffect} from 'react'
+import LoadingBar from 'react-top-loading-bar'
+import storage from 'local-storage'
 
 import './login.scss'
 
@@ -13,21 +13,35 @@ export default function Login () {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [erro, setErro]   = useState('');
+    const [carregando, setCarregando]   = useState(false);
 
     const navegar = useNavigate();
+    const ref = useRef();
+    
+    useEffect(() => {
+        if(storage('usuario-logado')){
+            navegar('/');
+        }
+        
+    }, [])
 
     async function entrarClick(e){
+        setCarregando(true)
         e.preventDefault()
+        ref.current.continuousStart()
 
         try {
-            const r = await axios.post('http://localhost:5000/login/admin', {
-                email: email,
-                senha: senha
-            });
+            const r = await login(email, senha);
+            storage('usuario-logado', r)
+
+                setTimeout(() => {
+                    navegar('/')
+                }, 3000);
             
-            navegar('/admin/produto');
 
         }catch (err) {
+            setCarregando(false )
+            ref.current.complete();
             if (err.response.status === 401) {
                 setErro(err.response.data.erro);
             }
@@ -36,6 +50,7 @@ export default function Login () {
 
     return(     
             <div className='page-login'>
+                <LoadingBar color='#f11946' ref={ref} />
                 <form className='formulario'
                     onSubmit={entrarClick}
                 >
@@ -56,7 +71,7 @@ export default function Login () {
                         value={senha} onChange={e => setSenha(e.target.value)}/>
                     </div>
                     
-                    <button className='btn-login'>Entrar</button>
+                    <button className='btn-login' disabled={carregando}>Entrar</button>
                     <div className='form-entrar-invalido'>
                         {erro}
                     </div>

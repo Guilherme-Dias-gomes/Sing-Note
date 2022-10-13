@@ -6,12 +6,12 @@ const api = axios.create({
 })
 
 export async function loginUsuario(email, senha){
-    const resposta = await api.post('/usuario/login', {
+    const r = await api.post('/usuario/login', {
         email:email,
         senha:senha
     });
 
-    return resposta.data
+    return r.data
 }
 
 export async function ContarProdutos(){
