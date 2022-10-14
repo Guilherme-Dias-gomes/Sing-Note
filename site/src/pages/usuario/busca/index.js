@@ -96,7 +96,7 @@ export default function BuscaUsuario () {
     }
 
     function exibirImagem(imagem) {
-        if (imagem == undefined) {
+        if (imagem === undefined) {
             return '/image/add-image.png';
         }
         else if (typeof (imagem) == 'string') {

@@ -3,19 +3,21 @@
     flex-direction: row;
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
 
 
     .container-do-cadastro{
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         width: 100%;
+        height: 100vh;
         background-color: #f1f1f1;
         padding-left: 12.4em;
     }
 
-    
     .parte-cadastro{
         display: flex;
         flex-direction: column;
@@ -23,9 +25,10 @@
         background-color: #ffffff;
         justify-content: center;
         width: 80%;
-        height: auto;
-        margin-bottom: 2%;
+        height: 85vh;
         box-shadow: 5px 5px #888888;
+        margin-top:2%;
+        padding: 1%;
     }
     
     .titulo-cadastrar{
@@ -34,7 +37,7 @@
         align-items: center;
         font-family: Arial;
         font-weight: bold;
-        font-size: 20px;
+        font-size: 2.5vmin;
         margin: 20px 0px 0px 20px;
     }
 
@@ -43,6 +46,10 @@
     }
 
     .formulario-div-1{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: auto;
         width: 40%;  
     }
 
@@ -57,16 +64,16 @@
     .titulo-caixa-de-texto{
         font-family: Arial;
         color:#7d7d7d;
-        font-size: 12px;
+        font-size: 2vmin;
         background-color: #ffffff;
         width:auto;
-        padding: 0px 3px;
-        margin: 0px 0px 31px 30px;
+        padding: 0px 0.1%;
+        margin: 0px 0px 4vh 1%;
         position: absolute;    
     }
 
     .caixa-de-texto{
-        height: 40px;
+        height: 5vh;
         border-radius: 10px;
         border-style: none;
         border: #7d7d7d solid 2px;
@@ -87,7 +94,7 @@
     }
 
     .caixa-de-texto-grande{
-        height: 60px;
+        height: 10vh;
         border-radius: 10px;
         border-style: none;
         border: #7d7d7d solid 2px;
@@ -97,18 +104,18 @@
     .titulo-caixa-de-texto-grande{
         font-family: Arial;
         color:#7d7d7d;
-        font-size: 12px;
+        font-size: 2vmin;
         background-color: #ffffff;
         width:auto;
         padding: 0px 3px;
-        margin: 0px 0px 52px 30px;
+        margin: 0px 0px 7vh 1%;
         position: absolute; 
     }
 
     .container-formulario{
         display: flex;
         flex-direction: row;
-        height: auto;
+        height: 70vh;
         justify-content: space-around;
     }
 
@@ -121,7 +128,7 @@
 }
 
 .caixa-de-texto-pequena{
-    height: 35px;
+    height: 5vh;
     width: 100%;
     border-radius: 10px;
     border-style: none;
@@ -140,6 +147,7 @@
 
 .caixa-add-imagem{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border: #7d7d7d solid 2px;
@@ -159,13 +167,15 @@
 }
 
 .editar-imagem{
-    height: 5vw;
-    width: 5vw;
+    width: 100%;
+    height:100%;
+    border-radius: 5%;
 }
 
 .editar-imagem-menor{
-    height: 2vw;
-    width: 2vw;
+    width: 102%;
+    height:102%;
+    border-radius: 10%;
 }
 
 .container-dos-botoes{

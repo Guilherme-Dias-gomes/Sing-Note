@@ -109,7 +109,7 @@ export default function CadastrarProduto() {
 
     function exibirImagem(imagem) {
         if (imagem == undefined) {
-            return '/image/add-image.png';
+            return '/image/add-button-maior.png';
         }
         else if (typeof (imagem) == 'string') {
             return `${API_URL}/${imagem}`
@@ -204,7 +204,7 @@ export default function CadastrarProduto() {
 
                         <div className="caixa-de-texto-div-1">
                             <label className="titulo-caixa-de-texto"> Preço </label>
-                            <input type="text" className="caixa-de-texto-pequena"
+                            <input type="text" className="caixa-de-texto"
                             value={preco} onChange={e => setPreco(e.target.value)}/>
                         </div>
 
