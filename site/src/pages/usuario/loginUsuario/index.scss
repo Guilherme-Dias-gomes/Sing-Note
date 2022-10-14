@@ -33,12 +33,6 @@
     align-items: center;
 }
 
-
-    .titulo-form {
-        margin-bottom: 0.5rem;
-        margin-left: 3em;
-    }
-
     .form-group{
         position: relative;
         height: 3rem;
@@ -82,7 +76,7 @@
             font-size 200ms ease-in;
     }
 
-    .btn-login {
+    .btn-login-usuario {
         display: block;
         margin-left: auto;
         padding: 0.75rem 2rem;
@@ -96,7 +90,7 @@
         transition: 200ms ease-in;
     }
 
-    .btn-login:hover {
+    .btn-login-usuario:hover {
         background-color: #2165a8;
     }
     

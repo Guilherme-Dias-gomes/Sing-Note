@@ -40,7 +40,7 @@ export default function Login () {
             
 
         }catch (err) {
-            setCarregando(false )
+            setCarregando(false)
             ref.current.complete();
             if (err.response.status === 401) {
                 setErro(err.response.data.erro);
