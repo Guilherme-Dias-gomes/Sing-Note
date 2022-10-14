@@ -185,7 +185,7 @@ export default function BuscaUsuario () {
                         <div className='cards-produto-usu'>
 {produtos.map(item => 
     <div className='espaco-produto'>
-        {item.Id}
+        {/* {item.Id} */}
         <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
         <div className='descricao-card'>
         <img src={exibirImagem(item.Imagem)} className="ImagemProduto" alt='teste'/>

@@ -1,11 +1,16 @@
+
 .pagina-principal {
     display:flex;
     flex-direction: row;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height:auto;
     overflow-x: hidden;
     overflow-y: hidden;
+    
 
+    .icone-opcoes-adm-cadastro{
+        background-color: #084D6E;
+    }
 
     .container-do-cadastro{
         display: flex;
@@ -13,7 +18,7 @@
         align-items: center;
         justify-content: flex-start;
         width: 100%;
-        height: 100vh;
+        height: auto;
         background-color: #f1f1f1;
         padding-left: 12.4em;
     }
@@ -25,10 +30,11 @@
         background-color: #ffffff;
         justify-content: center;
         width: 80%;
-        height: 85vh;
-        box-shadow: 5px 5px #888888;
+        height: 600px;
+        box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
         margin-top:2%;
         padding: 1%;
+        margin-bottom: 5%;
     }
     
     .titulo-cadastrar{
@@ -37,12 +43,16 @@
         align-items: center;
         font-family: Arial;
         font-weight: bold;
-        font-size: 2.5vmin;
+        font-size: 18px;
         margin: 20px 0px 0px 20px;
     }
 
     .imagem-retangulo{
         height: 30px;
+    }
+
+    .titulo-cadastrar-e-alterar{
+        margin-left: 10px;
     }
 
     .formulario-div-1{
@@ -56,27 +66,42 @@
     .caixa-de-texto-div-1{
         display: flex;
         flex-direction: column;
-        justify-content:flex-end;
+        justify-content:center;
         margin: 15px 0px;
         height: 45px;
+        padding: 0px 5px;
     }
     
     .titulo-caixa-de-texto{
         font-family: Arial;
         color:#7d7d7d;
-        font-size: 2vmin;
+        font-size: 10px;
+        font-weight: bold;
         background-color: #ffffff;
         width:auto;
         padding: 0px 0.1%;
-        margin: 0px 0px 4vh 1%;
+        margin: 0px 0px 40px 1%;
+        position: absolute;    
+    }
+
+    .titulo-caixa-de-texto-pequena{
+        font-family: Arial;
+        color:#7d7d7d;
+        font-size: 10px;
+        font-weight: bold;
+        background-color: #ffffff;
+        width:auto;
+        padding: 0px 0.1%;
+        margin: 0px 0px 40px 1%;
         position: absolute;    
     }
 
     .caixa-de-texto{
-        height: 5vh;
+        height: 40px;
         border-radius: 10px;
         border-style: none;
         border: #7d7d7d solid 2px;
+        padding: 0px 10px;
         
     }
     
@@ -91,31 +116,34 @@
         justify-content:flex-end;
         margin: 0px 0px;
         height: 70px;
+        padding: 0px 5px;
     }
 
     .caixa-de-texto-grande{
-        height: 10vh;
+        height: 100px;
         border-radius: 10px;
         border-style: none;
         border: #7d7d7d solid 2px;
-        resize: none; 
+        resize: none;
+        
     }
 
     .titulo-caixa-de-texto-grande{
         font-family: Arial;
         color:#7d7d7d;
-        font-size: 2vmin;
+        font-size: 10px;
+        font-weight: bold;
         background-color: #ffffff;
         width:auto;
         padding: 0px 3px;
-        margin: 0px 0px 7vh 1%;
+        margin: 0px 0px 64px 1%;
         position: absolute; 
     }
 
     .container-formulario{
         display: flex;
         flex-direction: row;
-        height: 70vh;
+        height: 90%;
         justify-content: space-around;
     }
 
@@ -128,7 +156,7 @@
 }
 
 .caixa-de-texto-pequena{
-    height: 5vh;
+    height: 40px;
     width: 100%;
     border-radius: 10px;
     border-style: none;

@@ -140,7 +140,7 @@ export default function CadastrarProduto() {
             <div className="parte-cadastro"> {/*Começo da parte do cadastro*/}
                 <div className="titulo-cadastrar">
                     <img src="/image/Rectangle 834.png" alt="cadastrar" className="imagem-retangulo"/>
-                    <p> {id ? 'Alterar Produto' : 'Cadastrar Produto'} </p>
+                    <p className='titulo-cadastrar-e-alterar'> {id ? 'Alterar Produto' : 'Cadastrar Produto'} </p>
                 </div>
 
                 <div className="container-formulario"> {/*Container Formulário*/}
@@ -190,12 +190,12 @@ export default function CadastrarProduto() {
                         <div className='container-divs-menores'>
 
                             <div className="caixa-de-texto-div-1">
-                                <label className="titulo-caixa-de-texto"> No estoque </label>
+                                <label className="titulo-caixa-de-texto-pequena"> No estoque </label>
                                 <input type="number" className="caixa-de-texto-pequena"
                                 value={estoque} onChange={e => setEstoque(e.target.value)}/>
                             </div>
                             <div className="caixa-de-texto-div-1">
-                                <label className="titulo-caixa-de-texto"> Marca </label>
+                                <label className="titulo-caixa-de-texto-pequena"> Marca </label>
                                 <input type="text" className="caixa-de-texto-pequena"
                                 value={marca} onChange={e => setMarca(e.target.value)}/>
                             </div>

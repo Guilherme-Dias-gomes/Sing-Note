@@ -1,8 +1,14 @@
+
+
 .pageHome {
     display: flex;
     flex-direction: row;
     width: 100vw;
     padding-left: 12.7;
+    
+    .icone-opcoes-adm-home{
+    background-color: #084D6E;
+    }
 }
 
 .cabecalho {

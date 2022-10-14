@@ -22,16 +22,64 @@ a {
     width: 100%;
 }
 
+.icone-opcoes-adm-home{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    height: 60px;
+    text-decoration: none;
+}
+
+.icone-opcoes-adm-consulta{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    height: 60px;
+    text-decoration: none;
+}
+
+.icone-opcoes-adm-cadastro{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    height: 60px;
+    text-decoration: none;
+}
+
+.icone-opcoes-adm-pedidos{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    height: 60px;
+    text-decoration: none;
+}
+
 .icone-opcoes{
     display:flex;
     flex-direction: row;
     align-items: center;
-    height:8vh;
+    height: 60px;
     text-decoration: none;
 }
 
 .img-icone{
     margin-left: 10%;
+}
+
+.icone-opcoes-adm-home:hover{
+    background-color: #084D6E;
+}
+
+.icone-opcoes-adm-consulta:hover{
+    background-color: #084D6E;
+}
+
+.icone-opcoes-adm-cadastro:hover{
+    background-color: #084D6E;
+}
+
+.icone-opcoes-adm-pedidos:hover{
+    background-color: #084D6E;
 }
 
 .icone-opcoes:hover{

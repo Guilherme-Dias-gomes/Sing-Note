@@ -76,6 +76,7 @@ export default function ConsultaProduto () {
                     />
                     <button className='btn-buscar' onClick={filtrar}>Buscar</button>
                 </div>
+                <div className='area-cards-adm'>
                 {produtos.map(item =>
                     <div className='Produtos-Info'>
                         <div className='id-imagens'>
@@ -95,7 +96,7 @@ export default function ConsultaProduto () {
                             <h2 className='Preco-Produto'>R$ <span>{item.Preco}</span></h2>          
                         </div>
                     </div>    
-                )}
+                )}</div>
             </div>
         </main>
     )
