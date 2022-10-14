@@ -1,0 +1,57 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    background-color: #318CE7;
+    color: #ffffff;
+    padding: 110px;
+    }
+    .textos{
+        display: flex;
+        flex-direction: column;
+        padding-left: 80px;
+        padding-left: px;
+    }
+    .primeira-coluna{
+    display: flex;
+    flex-direction: column;
+    }
+    .titulo{
+        display: flex;
+        flex-direction: column;
+    }
+    .primeira-parte{
+        display: flex;
+        flex-direction: row;
+    }
+    .coluna1{
+    display: flex;
+    flex-direction: column;
+    padding-right: 50px;
+    }
+    .coluna2{
+    display: flex;
+    flex-direction:column;
+    
+    padding-right: 160px;
+    }
+    .segunda-coluna{
+    padding-left: 70px;
+    padding-right: 160px;
+    }
+    .terceira-coluna{
+        padding-left: 70px;
+        padding-right: 160px;
+    }
+    .quarta-coluna{
+        padding-left: 70px;
+    }
+    // @font-face {
+    //     font-family: Titulo;
+    //     src: url(../assets/fonts/TheStudentsTeacher-Regular.ttf);
+    //   }
+    //   h1{
+    //     font-family: Titulo;
+    //   }
+    //   p{
+    //     font-family: Arial, Helvetica, sans-serif;
+    //   }

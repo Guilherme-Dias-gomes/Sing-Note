@@ -14,6 +14,7 @@ import ConsultaProduto from "./pages/admin/consultarProduto/index";
 import ElementoProduto from './components/adm/elemento-produto/index';
 import BuscaUsuario from './pages/usuario/busca';
 import LoginUsuario from './pages/usuario/loginUsuario';
+import RodapeUsuario from './components/usuario/rodape-usuario';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -30,6 +31,7 @@ root.render(
                 <Route path='/admin/alterar/:id' element={< CadastrarProduto />} />
                 <Route path="/usuario/busca" element={< BuscaUsuario />} />
                 <Route path="/usuario/login" element={< LoginUsuario />} />
+                <Route path="/usuario/rodape" element={< RodapeUsuario />} />
             </Routes>
         </BrowserRouter>
   </React.StrictMode>
