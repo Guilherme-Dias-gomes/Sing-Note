@@ -122,6 +122,9 @@ export default function BuscaUsuario () {
 
     return(
         <main className='page-consulta-usu'>
+            <div className='bola1'></div>
+            <div className='bola2'></div>
+            <div className='bola3'></div>
             <AbaLateralUSU/>
             <div className='elementos-consulta-usu'>
                 <div className='elemento-cabecalho'>
