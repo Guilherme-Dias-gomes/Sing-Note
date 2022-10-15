@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { buscarProdutoPorNome, buscarProdutos,  removerProduto } from '../../../api/produtoAPI';
 import CabecalhoAdm from '../../../components/adm/cabecalho-adm'
 import AbaLateralADM from '../../../components/adm/aba-lateral-adm'
+import CaixaProdutoUsuario from '../../../components/usuario/caixa-produto-usuario';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../../../api/config'
@@ -31,7 +32,7 @@ export default function ConsultaProduto () {
 
     function exibirImagem(imagem) {
         if (imagem === undefined) {
-            return '/image/add-image.png';
+            return '/image/imagespadrao.png';
         }
         else if (typeof (imagem) == 'string') {
             return `${API_URL}/${imagem}`
@@ -95,6 +96,7 @@ export default function ConsultaProduto () {
                     <button className='btn-buscar' onClick={filtrar}>Buscar</button>
                 </div>
                 <div className='area-cards-adm'>
+
                 {produtos.map(item =>
                     <div className='Produtos-Info'>
                         <div className='id-imagens'>
@@ -114,7 +116,9 @@ export default function ConsultaProduto () {
                             <h2 className='Preco-Produto'>R$ <span>{item.Preco}</span></h2>          
                         </div>
                     </div>    
-                )}</div>
+                )}
+                
+                </div>
             </div>
         </main>
     )

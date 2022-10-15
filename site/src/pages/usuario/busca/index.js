@@ -97,7 +97,7 @@ export default function BuscaUsuario () {
 
     function exibirImagem(imagem) {
         if (imagem === undefined) {
-            return '/image/add-image.png';
+            return '/image/imagespadrao.png';
         }
         else if (typeof (imagem) == 'string') {
             return `${API_URL}/${imagem}`
