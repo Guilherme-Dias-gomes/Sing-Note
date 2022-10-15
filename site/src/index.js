@@ -1,4 +1,5 @@
 import { ToastContainer } from 'react-toastify';
+import 'react-confirm-alert/src/react-confirm-alert.css'; 
 import 'react-toastify/dist/ReactToastify.css';
 
 import {BrowserRouter, Routes, Route} from "react-router-dom";

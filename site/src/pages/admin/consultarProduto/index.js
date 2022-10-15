@@ -7,6 +7,7 @@ import AbaLateralADM from '../../../components/adm/aba-lateral-adm'
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../../../api/config'
+import { confirmAlert } from 'react-confirm-alert';
 
 
 export default function ConsultaProduto () {
@@ -29,7 +30,7 @@ export default function ConsultaProduto () {
     }
 
     function exibirImagem(imagem) {
-        if (imagem == undefined) {
+        if (imagem === undefined) {
             return '/image/add-image.png';
         }
         else if (typeof (imagem) == 'string') {
@@ -44,14 +45,31 @@ export default function ConsultaProduto () {
         navegar(`/admin/alterar/${id}`)
     }
 
-    async function deletarProduto(id) {
-        try {
-            await removerProduto(id);
-            await carregarProdutos();
-            toast.dark('Produto Removido com sucesso 🎶')
-        } catch (err) {
-            toast.error(err.response.data.erro);
-        }
+    async function deletarProduto(id, nome) {
+
+        confirmAlert({
+            title: 'Remover Produto',
+            message: `Deseja remover o Produto ${nome}?`,
+            buttons: [
+                {
+                    label: 'Sim',
+                    onClick: async () => {
+                        try {
+                            await removerProduto(id, nome);
+                            await carregarProdutos();
+                            toast.dark('Produto Removido com sucesso 🎶')
+                        } catch (err) {
+                            toast.error(err.response.data.erro);
+                        }
+                    }
+                },
+                {
+                    label: 'Não'
+                }
+                
+            ]
+        })
+        
     }
 
     useEffect(() => {
@@ -83,7 +101,7 @@ export default function ConsultaProduto () {
                             <p>#{item.Id}</p>
                             <div>
                                 <button onClick={() => editar(item.Id)}><img src='/image/lapis.png' alt='lapis'/></button>
-                                <button onClick={() => deletarProduto(item.Id)}><img src='/image/lixo.png' alt='Lixeira'/></button>
+                                <button onClick={() => deletarProduto(item.Id, item.Nome)}><img src='/image/lixo.png' alt='Lixeira'/></button>
                             </div>
                         </div>
                         <div className='espaco-produto'>
