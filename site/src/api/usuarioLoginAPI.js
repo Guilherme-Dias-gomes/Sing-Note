@@ -1,16 +1,12 @@
 import { API_URL } from './config'
-import axios from 'axios'
 
+import axios from 'axios'
 const api = axios.create({
     baseURL: API_URL
 })
 
-export async function LoginUsu(email, senha){
-    const r = await api.post('/usuario/login', {
-        email:email,
-        senha:senha
-    });
-
+export async function Logar(email, senha){
+    const r = await api.post('/login', { email, senha });
     return r.data
 }
 

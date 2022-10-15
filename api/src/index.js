@@ -1,6 +1,7 @@
 import 'dotenv/config'
 
-import Usuariocontroller from './controller/usuarioController.js'
+import Usuariocontroller from './controller/usuarioLoginController.js'
+
 import adminController from './controller/adminController.js'
 import produtoController from './controller/produtosController.js'
 import categoriaController from './controller/categoriaController.js' 

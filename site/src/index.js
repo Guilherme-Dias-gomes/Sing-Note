@@ -30,8 +30,9 @@ root.render(
                 <Route path="/admin/consulta" element={< ConsultaProduto />} />
                 <Route path="/ElementoProduto" element={< ElementoProduto />} />
                 <Route path='/admin/alterar/:id' element={< CadastrarProduto />} />
+
                 <Route path="/usuario/busca" element={< BuscaUsuario />} />
-                <Route path="/usuario/login" element={< LoginUsuario />} />
+                <Route path="/login" element={< LoginUsuario />} />
                 <Route path="/usuario/rodape" element={< RodapeUsuario />} />
             </Routes>
         </BrowserRouter>

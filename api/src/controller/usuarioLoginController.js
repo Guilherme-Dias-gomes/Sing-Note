@@ -1,18 +1,22 @@
-import { loginUsuario, QuantificarTodosProdutos } from '../repository/usuarioRepository.js'; 
+import { loginUsuario, QuantificarTodosProdutos } from '../repository/usuarioLoginRepository.js'; 
 
 import { Router } from "express";
 const server = Router();
 
 // login do usuario
 
-server.post('/usuario/login', async (req, resp)  => {
+server.post('/login', async (req, resp)  => {
     try {
         const { email, senha } = req.body;
         const resposta = await loginUsuario(email, senha);
-        if (!resposta)
-        throw new Error ('Credenciais inválidas');
 
-        resp.send(resposta)
+        if (!resposta)
+            throw new Error ('Credenciais inválidas');
+
+        resp.send({
+            id: resposta.id,
+            nome: resposta.nome
+        })
     } catch (err) {
         resp.status(400).send({
             erro: err.message
