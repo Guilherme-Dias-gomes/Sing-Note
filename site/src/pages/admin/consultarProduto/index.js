@@ -84,9 +84,9 @@ export default function ConsultaProduto () {
             <AbaLateralADM/>
             <div className='elementos-consulta'>
                 <CabecalhoAdm/>
-                <div className='elementos-pesquisa'>  
+                <div className='elementos-pesquisa-consulta-adm'>  
                     <input 
-                        className='input-pesquisa' 
+                        className='input-pesquisa-adm-consulta' 
                         type="text" 
                         placeholder='Buscar por nome'
                         value={buscar} 
@@ -94,6 +94,7 @@ export default function ConsultaProduto () {
                         onKeyPress={e => e.key === 'Enter' ? filtrar() : ''}
                     />
                     <button className='btn-buscar' onClick={filtrar}>Buscar</button>
+                    <p className='produto-total-adm'>Produtos no total: <span className='produto-total-adm-qtd'>10</span></p>
                 </div>
                 <div className='area-cards-adm'>
 

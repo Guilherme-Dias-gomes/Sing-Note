@@ -217,16 +217,16 @@ export default function CadastrarProduto() {
                                  className='editar-imagem'
                                  onClick={() => escolherImagem('imagem1')}/>
 
-                            <input type='file' id='imagem1' onChange={e => setImagem1(e.target.files[0])}/>
+                            <input className='botao-de-add-img' type='file' id='imagem1' onChange={e => setImagem1(e.target.files[0])}/>
                         </div>
 
                         <div className="caixa-add-imagem-menor">
                             <img src={exibirImagem(imagem2)}
                                  alt='Add' 
                                  className='editar-imagem-menor'
-                                 onClick={() => escolherImagem('imagem2')}/>
+                                 onClick={() => escolherImagem('imagem2')}onChange={e => setImagem2(e.target.files[0])}/>
 
-                            <input type='file' id='imagem2' onChange={e => setImagem2(e.target.files[0])}/>
+                            <input className='botao-de-add-img' type='file' id='imagem2' onChange={e => setImagem2(e.target.files[0])}/>
                         </div>
                         
                         <div className='container-dos-botoes'>

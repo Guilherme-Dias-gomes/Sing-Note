@@ -190,8 +190,12 @@ export default function BuscaUsuario () {
     <div className='espaco-produto'>
         {/* {item.Id} */}
         <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
+        <div className='formatacao-img-produto'>
+            <img src={exibirImagem(item.Imagem)} className="ImagemProdutoUsu" alt='teste'/>
+        </div>
+
         <div className='descricao-card'>
-        <img src={exibirImagem(item.Imagem)} className="ImagemProduto" alt='teste'/>
+        
             <h1 className='card-produto-descricao'>{item.Nome} {item.Marca} {item.Modelo}</h1>
             <h1 className='preco-card'>R$ {item.Preco}</h1>
             <button className='botao-comprar'>
@@ -199,6 +203,7 @@ export default function BuscaUsuario () {
             <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card'/>
             </button>
         </div>
+
     </div>
 )}
 

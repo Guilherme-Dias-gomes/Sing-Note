@@ -12,8 +12,8 @@
         .bola1{
             position: absolute;
             display: block;
-            width: 25vw;
-            height: 50vw;
+            width: 300px;
+            height: 550px;
             background-color: #007BF1;
             border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
             margin: 100px 0px 0px 3vw;
@@ -71,7 +71,7 @@
             flex-direction: column;
             
             background-color: #fff;
-            width: 20%;
+            width: 250px;
             height: max-content;
             margin: 20px 0px 0px 20px;
             border-radius: 10px;
@@ -80,12 +80,12 @@
 
         .titulo-categoria{
             font-family: 'inter-font';
-            font-size: 2vw;
+            font-size: 25px;
             font-weight: bolder;
         }
 
         .titulo-tipo{
-            margin-top: 20px;
+            margin-top: 25px;
             font-family: 'inter-font';
             font-size: 2vw;
             font-weight: bolder;
@@ -105,6 +105,7 @@
             color: #000;
             cursor: pointer;
             width: auto;
+            font-size: 19px;
         }
 
         .cada-titulo:hover{
@@ -229,9 +230,11 @@
         .espaco-produto {
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             margin-top: 2rem;
             height: 400px;
             width: 230px;
+            padding-bottom: 10px;
             border-radius: .3em;
             border: 1px solid rgba(0, 0, 0, 0.13);
             box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -256,9 +259,15 @@
             margin-top: 10px;
         }
 
-        .ImagemProduto{
+        .formatacao-img-produto{
             width: 80%;
-            height: 43%;
+            height: 40%;
+            align-self: center;
+        }
+
+        .ImagemProdutoUsu{
+            width: 100%;
+            height: 100%;
         }
 
         .card-produto-descricao{

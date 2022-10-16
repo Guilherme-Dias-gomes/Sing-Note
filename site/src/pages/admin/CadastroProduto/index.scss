@@ -1,4 +1,12 @@
+@font-face {
+    font-family: 'inter-font';
+    src: url('../../../assets/fonts/inter-font.ttf');
+}
 
+@font-face {
+    font-family: 'right-font';
+    src: url('../../../assets/fonts/Righteous-Regular.ttf');
+}
 .pagina-principal {
     display:flex;
     flex-direction: row;
@@ -19,7 +27,7 @@
         justify-content: flex-start;
         width: 100%;
         height: auto;
-        background-color: #f1f1f1;
+        background-color: #fafafb;
         padding-left: 12.4em;
     }
 
@@ -30,7 +38,7 @@
         background-color: #ffffff;
         justify-content: center;
         width: 80%;
-        height: 600px;
+        height: 650px;
         box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
         margin-top:2%;
         padding: 1%;
@@ -115,17 +123,23 @@
         flex-direction: column;
         justify-content:flex-end;
         margin: 0px 0px;
-        height: 70px;
+        height: 160px;
         padding: 0px 5px;
     }
 
     .caixa-de-texto-grande{
-        height: 100px;
+        height: 150px;
         border-radius: 10px;
         border-style: none;
         border: #7d7d7d solid 2px;
         resize: none;
-        
+        padding: 10px 10px;
+        font-family: "inter-font";
+        font-size: 12px;
+    }
+
+    .caixa-de-texto-grande:focus{
+        outline-width: 0px;
     }
 
     .titulo-caixa-de-texto-grande{
@@ -136,7 +150,7 @@
         background-color: #ffffff;
         width:auto;
         padding: 0px 3px;
-        margin: 0px 0px 64px 1%;
+        margin: 0px 0px 145px 1%;
         position: absolute; 
     }
 
@@ -161,16 +175,28 @@
     border-radius: 10px;
     border-style: none;
     border: #7d7d7d solid 2px;
-    
+    padding: 0px 10px;
+}
+
+.caixa-de-texto-pequena:focus{
+    outline-width: 0px;
 }
 
 .formulario-div-2{
     width: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
    
+}
+
+.parte-das-imagens{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 65%
 }
 
 .caixa-add-imagem{
@@ -206,6 +232,11 @@
     border-radius: 10%;
 }
 
+.botao-de-add-img{
+    height: 0%;
+    width: 0%;
+}
+
 .container-dos-botoes{
     display: flex;
     flex-direction: row;
@@ -216,18 +247,23 @@
 .botao-salvar{
     background-color: #55f27f;
     border-style: none;
-    width: 30%;
-    height: 35px;
+    width: 35%;
+    height: 40px;
+    font-family: 'right-font';
+    font-size: 15px;
     border-radius: 5px;
     color: #ffffff;
     cursor: pointer;
+    
 }
 
 .botao-novo{
     background-color: #318ce7;
     border-style: none;
-    width: 30%;
-    height: 35px;
+    width: 35%;
+    height: 40px;
+    font-family: "right-font";
+    font-size: 15px;
     border-radius: 5px;
     color: #ffffff;
     cursor: pointer;
