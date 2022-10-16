@@ -15,6 +15,7 @@ import ConsultaProduto from "./pages/admin/consultarProduto/index";
 import ElementoProduto from './components/adm/elemento-produto/index';
 import BuscaUsuario from './pages/usuario/busca';
 import LoginUsuario from './pages/usuario/loginUsuario';
+import ProdutosDetalhes from './pages/usuario/detalhesProduto'
 import RodapeUsuario from './components/usuario/rodape-usuario';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -31,6 +32,7 @@ root.render(
                 <Route path="/ElementoProduto" element={< ElementoProduto />} />
                 <Route path='/admin/alterar/:id' element={< CadastrarProduto />} />
 
+                <Route path='/produto/:id/detalhes' element={< ProdutosDetalhes />} />
                 <Route path="/usuario/busca" element={< BuscaUsuario />} />
                 <Route path="/login" element={< LoginUsuario />} />
                 <Route path="/usuario/rodape" element={< RodapeUsuario />} />

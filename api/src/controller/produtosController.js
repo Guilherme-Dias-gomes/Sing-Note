@@ -82,7 +82,7 @@ server.get('/admin/produto/buscar', async (req, resp) => {
     }
 })
 
-// Deletar Produto p/ ID
+// Deletar Produto
 server.delete('/admin/produto/:id', async (req, resp) => {
     try {
        const id = req.params.id;

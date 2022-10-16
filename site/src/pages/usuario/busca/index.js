@@ -7,12 +7,15 @@ import { buscarProdutoPorCategoria } from '../../../api/categoriaAPI'
 import { buscarProdutoPorTipo } from '../../../api/tipoAPI'
 import { ContarProdutos } from '../../../api/usuarioLoginAPI'
 import { API_URL } from '../../../api/config'
+import { useNavigate } from 'react-router-dom'
 
 export default function BuscaUsuario () {
 
     const [produtos, setProdutos] = useState([]);
     const [buscar, setBuscar] = useState('');
     const [quantidade, setQuantidade] = useState([]);
+
+    const navegar = useNavigate();
 
     async function mostrarProdutos(){
         const resposta = await buscarProdutos();
@@ -112,6 +115,10 @@ export default function BuscaUsuario () {
         setQuantidade(respota)
     }
 
+    function abrirDetalhes(id){
+        navegar('/produto/' + id + '/detalhes' )
+    }
+
     useEffect(() => {
         mostrarQuantidade()
     }, [])
@@ -186,26 +193,26 @@ export default function BuscaUsuario () {
                     <hr/>
                         
                         <div className='cards-produto-usu'>
-{produtos.map(item => 
-    <div className='espaco-produto'>
-        {/* {item.Id} */}
-        <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
-        <div className='formatacao-img-produto'>
-            <img src={exibirImagem(item.Imagem)} className="ImagemProdutoUsu" alt='teste'/>
-        </div>
+                            {produtos.map(item => 
+                                <div className='espaco-produto' onClick={() => abrirDetalhes(item.Id)}>
+                                    {/* {item.Id} */}
+                                    <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
+                                    <div className='formatacao-img-produto'>
+                                        <img src={exibirImagem(item.Imagem)} className="ImagemProdutoUsu" alt='teste'/>
+                                    </div>
 
-        <div className='descricao-card'>
-        
-            <h1 className='card-produto-descricao'>{item.Nome} {item.Marca} {item.Modelo}</h1>
-            <h1 className='preco-card'>R$ {item.Preco}</h1>
-            <button className='botao-comprar'>
-                Comprar
-            <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card'/>
-            </button>
-        </div>
+                                    <div className='descricao-card'>
+                                    
+                                        <h1 className='card-produto-descricao'>{item.Nome} {item.Marca} {item.Modelo}</h1>
+                                        <h1 className='preco-card'>R$ {item.Preco}</h1>
+                                        <button className='botao-comprar'>
+                                            Comprar
+                                        <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card'/>
+                                        </button>
+                                    </div>
 
-    </div>
-)}
+                                </div>
+                            )}
 
                         
                     
