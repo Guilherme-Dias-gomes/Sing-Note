@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { API_URL } from '../../../api/config.js';
 import { buscarProdutoPorId } from '../../../api/usuarioProdutoAPI.js'
+import Storage from 'local-storage'
 import './index.scss'
 import CabecalhoUSU from '../../../components/usuario/cabecalho-usu'
 import AbaLateralUSU from '../../../components/usuario/aba-lateral-usu'
 import RodapeUsuario from '../../../components/usuario/rodape-usuario/index.js';
+import { toast } from 'react-toastify';
 
 
 export default function ProdutosDetalhes(){
@@ -35,9 +37,28 @@ export default function ProdutosDetalhes(){
         return API_URL + '/' + imagem
     }
 
+
+    function addNoCarrinho () {
+        let carrinho = [];
+        if(Storage('carrinho')) {
+            carrinho = Storage('carrinho');
+        }
+        if(!carrinho.find(item => item.id === id)) {
+            carrinho.push({
+                id: id,
+                qtd: 1
+            })
+        Storage('carrinho', carrinho);
+        }
+        toast.dark('Produto adicionado ao carrinho✌️🎶');
+    }
+
+
     useEffect(() => {
         carregarPagina()
     }, [])
+
+    
     return(
         <div className='Pagina-detalhes-produto-usu'>
             <AbaLateralUSU/>
@@ -63,7 +84,7 @@ export default function ProdutosDetalhes(){
                         </div>
                         <div className='preco-botao'>
                             <h2 className='preco-detalhe-usu'>R$ {produto.info.Preco}</h2>
-                            <button className='botao-add-carrinho-detalhe-usu'>Adicionar ao carrinho <img src='/image/carrinho-card.png' alt='img-carrinho'/></button>
+                            <button className='botao-add-carrinho-detalhe-usu' onClick={addNoCarrinho}>Adicionar ao carrinho <img src='/image/carrinho-card.png' alt='img-carrinho'/></button>
                         </div>
                     </div>
                 </div>
