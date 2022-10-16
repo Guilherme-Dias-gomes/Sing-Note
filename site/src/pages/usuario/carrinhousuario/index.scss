@@ -1,0 +1,114 @@
+
+.page-carrinho-usu {
+    display: flex;
+    flex-direction: row;
+    width: auto;border:red solid 1px;
+
+        .bola1carrinho{
+            position: absolute;
+            display: block;
+            width: 300px;
+            height: 550px;
+            background-color: #007BF1;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            margin: 100px 0px 0px 3vw;
+        }
+
+        .bola2carrinho{
+            position: absolute;
+            display: block;
+            width: 10vw;
+            height: 50vw;
+            background-color: #007BF1;
+            border-radius: 400% 0px 0px 500% / 50% 0% 0% 60%;
+            margin: 200px 0px 0px 88vw;
+        }
+
+        .bola3carrinho{
+            position: absolute;
+            display: block;
+            width: 45vw;
+            height: 40vw;
+            background-color: #007BF1;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            margin: 800px 0px 0px 10vw;
+        }
+
+        .elementos-carrinho-usu {
+            display: flex;
+            flex-direction: column;
+            align-content:center;
+            width: 100%;
+            background-color: #f0f0f000;
+            padding-left: 100px;
+            z-index: 1;
+
+            
+        }
+
+        .elemento-cabecalho-carrinho{
+            width: 100%;
+        }
+
+        .procedimentos-carrinho{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            
+            width: 100%;
+            height: auto;
+            
+            border: red solid 1px;
+            
+        }
+
+        .Circulo-porcento1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            
+            width: 100px;
+            height: 100px;
+            background-color: #d9d9d9;
+
+        }
+
+        .Circulo-porcento3{
+            width: 70px;
+            height: 70px;
+            background-color: #ffffff;
+            border-radius: 100%;
+            z-index: 2;
+        }
+
+        .Circulo-porcento2{
+            width: 50px;
+            height: 50px;
+            background-color: #084D6E;
+            margin-left: 50px;
+            margin-bottom: 50px;
+
+            position: absolute;
+
+            border-top-right-radius: 150px;
+
+        }
+
+        .setinha-procedimento{
+            height: 20px;
+        }
+
+        .icones-procedimento{
+            height: 30px;
+        }
+    }
+
+    .aba-lateral-usu {
+        position: fixed;
+    }
+
+    .cabecalho-usuario{
+        width: 100%;
+    }
