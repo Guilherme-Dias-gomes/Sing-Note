@@ -4,7 +4,7 @@ import "./index.scss"
 
 export default function RodapeUsuario(){
     return (
-            <main className="main">
+            <main className="main-rodape-usu">
             <div className="textos">
             <div className="primeira-coluna">
                 

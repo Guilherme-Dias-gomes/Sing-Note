@@ -1,11 +1,202 @@
-.teste{
-    background-color: aqua;
-    padding: 3em;
+@font-face {
+    font-family: 'inter-font';
+    src: url('../../../assets/fonts/inter-font.ttf');
 }
 
+.Pagina-detalhes-produto-usu{
+    display: flex;
+    flex-direction: row;
+    width: auto;
 
-    img{
-        width: 20%;
-        margin: 2em;
+    .Parte-dos-detalhes-produto-usu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding-left: 100px;
+        width: 100%;
+        background-color: #fafafb;
     }
 
+    .Caixa-produto-imagens-descricoes-usu{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        
+        width: 90%;
+        height: auto;
+        padding: 20px;
+        border-radius: 20px;
+        margin-top: 2%;
+        box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .div-imagens-detalhes-usu{
+        width: 35%;
+        height: 70%;
+    }
+
+    .imagem1-produto{
+        position: absolute;
+        width: 10%;
+        height: 25%;
+        border: #bfbfbf solid 2px;
+        margin: 1% 0px 0px 1%;
+    }
+
+    .imagem2-produto{
+        width: 100%;
+        height: 100%;
+        border: #bfbfbf solid 2px;
+    }
+
+    .div-descricao-detalhes-usu{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        height: 70%;
+        width: 45%;
+    }
+    
+    .origem-e-coracao{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .coracao-detalhe-usu{
+        height: 30px;
+        opacity: 50%;
+    }
+
+    .origem-descricao{
+        font-family: 'inter-font';
+        font-size: 18px;
+        font-weight: bolder;
+        color: #000;
+        opacity: 50%;
+        margin-left: 8%;
+    }
+
+    .origem-descricao-verde{
+        color: #55F27F;
+        opacity: 75%;
+    }
+    
+    
+    .descricao-do-produto-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        height: 40%;
+    }
+
+    .descricao-tipo{
+        color: #808080;
+        font-family: 'inter-font';
+        font-size: 20px;
+    }
+
+    .descricao-tipo-resultado{
+        color: #000;
+        font-size: 18px;
+    }
+
+    .preco-botao{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 18%;
+    }
+
+    .preco-detalhe-usu{
+        color: #01BE01;
+        font-family: 'inter-font';
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .botao-add-carrinho-detalhe-usu{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+
+        height: 50px;
+        border-style: none;
+        background-color: #007BF1;
+        border-radius: 5px;
+        font-family: 'inter-font';
+        font-size: 17px;
+        font-weight: bolder;
+        color: #fff;
+    }
+
+    .Caixa-produto-especificacoes-tecnicas-usu{
+        display: flex;
+        flex-direction: column;
+
+        
+        width: 90%;
+        height: auto;
+        padding: 20px;
+        border-radius: 20px;
+        margin-top: 2%;
+        box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .titulo-informacoes-tecnicas-usu{
+        font-family: 'inter-font';
+        font-weight: bolder;
+        font-size: 30px;
+    }
+
+    .informacoes-tecnicas-usu{
+        font-family: 'inter-font';
+        font-weight: bold;
+        font-size: 20px;
+        margin-top: 10px;
+        color: #404040;
+    }
+
+    .Caixa-voce-tambem-pode-gostar{
+        display: flex;
+        flex-direction: column;
+        
+        width: 90%;
+        height: auto;
+        padding: 20px;
+        margin-top: 2%;
+    }
+
+    .titulo-voce-tambem-pode-gostar{
+        font-family: 'inter-font';
+        font-size: 30px;
+    }
+
+    .items-que-pode-gostar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        
+        width: 100%;
+        height: auto;
+        margin-top: 40px;
+    }
+    
+}
+    
+.cabecalho-usuario{
+    width: 100%;
+}
+
+.aba-lateral-usu {
+    position: fixed;
+}
+
+.main-rodape-usu{
+    width: 100%;
+}
