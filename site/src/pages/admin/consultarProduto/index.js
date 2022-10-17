@@ -1,7 +1,7 @@
 import './index.scss'
 
 import { toast } from 'react-toastify';
-import { buscarProdutoPorNome, buscarProdutos,  removerProduto } from '../../../api/produtoAPI';
+import { buscarProdutoPorNome, buscarProdutos,  removerProduto } from '../../../api/admin/produtoAPI';
 import CabecalhoAdm from '../../../components/adm/cabecalho-adm'
 import AbaLateralADM from '../../../components/adm/aba-lateral-adm'
 import CaixaProdutoUsuario from '../../../components/usuario/caixa-produto-usuario';

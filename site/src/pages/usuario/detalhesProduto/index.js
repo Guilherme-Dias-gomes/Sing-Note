@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { API_URL } from '../../../api/config.js';
-import { buscarProdutoPorId } from '../../../api/usuarioProdutoAPI.js'
+import { buscarProdutoPorId } from '../../../api/usuario/usuarioProdutoAPI.js'
 import Storage from 'local-storage'
 import './index.scss'
 import CabecalhoUSU from '../../../components/usuario/cabecalho-usu'

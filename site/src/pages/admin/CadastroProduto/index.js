@@ -1,12 +1,12 @@
 import './index.scss'
 
-import { listarCategorias } from '../../../api/categoriaAPI'
-import { listarTipos } from '../../../api/tipoAPI'
+import { listarCategorias } from '../../../api/admin/categoriaAPI'
+import { listarTipos } from '../../../api/admin/tipoAPI'
 
 import AbaLateralADM from '../../../components/adm/aba-lateral-adm/index.js'
 import Cabecalho from '../../../components/adm/cabecalho-adm/index.js'
 import { useEffect, useState } from 'react'
-import { SalvarProduto, SalvarImagens, AlterarProduto, buscarProdutoPorId } from '../../../api/produtoAPI.js';
+import { SalvarProduto, SalvarImagens, AlterarProduto, buscarProdutoPorId } from '../../../api/admin/produtoAPI.js';
 import { API_URL } from '../../../api/config'
 
 import { toast } from 'react-toastify';

@@ -1,4 +1,4 @@
-import { login } from '../../../api/adminloginAPI'
+import { login } from '../../../api/admin/adminloginAPI'
 import {useNavigate} from 'react-router-dom'
 import {useState, useRef, useEffect} from 'react'
 import LoadingBar from 'react-top-loading-bar'

@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { Logar } from '../../../api/usuarioLoginAPI';
+import { Logar } from '../../../api/usuario/usuarioLoginAPI';
 import { toast } from 'react-toastify'
 
 import storage from 'local-storage';
