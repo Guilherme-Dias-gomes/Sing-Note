@@ -1,13 +1,13 @@
 import 'dotenv/config'
 
-import Usuariocontroller from './controller/usuarioLoginController.js'
-import UsuarioProdutoController from './controller/usuarioProdutoController.js'
+import Usuariocontroller from './controller/usuario/usuarioLoginController.js'
+import UsuarioProdutoController from './controller/usuario/usuarioProdutoController.js'
 
-import adminController from './controller/adminController.js'
-import produtoController from './controller/produtosController.js'
-import categoriaController from './controller/categoriaController.js' 
-import tipoController from './controller/tipoController.js' 
-import consultaController from './controller/produtosController.js'
+import adminController from './controller/admin/adminController.js'
+import produtoController from './controller/admin/produtosController.js'
+import categoriaController from './controller/admin/categoriaController.js' 
+import tipoController from './controller/admin/tipoController.js' 
+import consultaController from './controller/admin/produtosController.js'
 
 import express from 'express'
 import cors from 'cors'

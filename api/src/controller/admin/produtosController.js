@@ -1,8 +1,8 @@
 import multer from 'multer'
 import { Router } from 'express';
 
-import { ConsultarTodosProdutos, salvarProduto, buscarProdutoImagens, alterarProduto, salvarProdutoImagem, removerProduto, removerProdutoImagens, ConsultarProdutosPorNome, BuscarProdutoPorId, removerProdutoImagensDiferentesDe } from '../repository/produtoRepository.js';
-import { validarProduto } from '../service/produtoValidacao.js';
+import { ConsultarTodosProdutos, salvarProduto, buscarProdutoImagens, alterarProduto, salvarProdutoImagem, removerProduto, removerProdutoImagens, ConsultarProdutosPorNome, BuscarProdutoPorId, removerProdutoImagensDiferentesDe } from '../../repository/admin/produtoRepository.js';
+import { validarProduto } from '../../service/produtoValidacao.js';
 
 const server = Router();
 

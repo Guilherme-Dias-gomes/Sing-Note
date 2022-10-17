@@ -1,4 +1,4 @@
-import { conexao } from './conection.js';
+import { conexao } from '../conection.js';
 
 //Cadastrar Produto
 export async function salvarProduto(produto) {
@@ -118,6 +118,7 @@ export async function removerProduto(idProduto) {
     const [resp] = await conexao.query(comando, [idProduto])
     return resp.affecteRows;
 }
+
 // Alterar Imagem
 export async function removerProdutoImagensDiferentesDe(imagens) {
     const comando = `
@@ -128,6 +129,7 @@ export async function removerProdutoImagensDiferentesDe(imagens) {
     const [resp] = await conexao.query(comando, [imagens])
     return resp.affecteRows;
 }
+
 // alterar produto
 export async function alterarProduto (id, produto) {
     const comando = `

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { buscarProdutoImagens, BuscarProdutoPorId } from "../repository/produtoRepository.js";
+import { buscarProdutoImagens, BuscarProdutoPorId } from "../../repository/admin/produtoRepository.js";
 const server = Router()
 
 import multer from 'multer'

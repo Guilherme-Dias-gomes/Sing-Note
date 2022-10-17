@@ -1,5 +1,5 @@
-import { BuscarTipoPorID } from "../repository/tipoRepository.js";
-import { BuscarCategoriaPorID } from "../repository/categoriaRepository.js";
+import { BuscarTipoPorID } from "../repository/admin/tipoRepository.js";
+import { BuscarCategoriaPorID } from "../repository/admin/categoriaRepository.js";
 
 export async function validarProduto(produto) {
     if (produto.nome == undefined || produto.nome == '') {

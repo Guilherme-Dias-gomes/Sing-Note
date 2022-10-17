@@ -1,4 +1,4 @@
-import { conexao } from './conection.js'
+import { conexao } from '../conection.js'
 
 // Logar Usuario
 export async function loginUsuario (email, senha) {

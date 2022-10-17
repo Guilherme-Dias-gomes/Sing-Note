@@ -1,4 +1,4 @@
-import { BuscarProdutoPorTipo, listarTipo } from "../repository/tipoRepository.js";
+import { BuscarProdutoPorTipo, listarTipo } from "../../repository/admin/tipoRepository.js";
 
 import { Router } from "express";
 const server = Router()

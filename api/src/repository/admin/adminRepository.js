@@ -1,4 +1,4 @@
-import { conexao } from './conection.js';
+import { conexao } from '../conection.js';
 
 export async function loginAdmin(email, senha) {
     const comando = `

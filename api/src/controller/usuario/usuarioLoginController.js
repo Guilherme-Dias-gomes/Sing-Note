@@ -1,4 +1,4 @@
-import { loginUsuario, QuantificarTodosProdutos } from '../repository/usuarioLoginRepository.js'; 
+import { loginUsuario } from '../../repository/usuario/usuarioLoginRepository.js'; 
 
 import { Router } from "express";
 const server = Router();

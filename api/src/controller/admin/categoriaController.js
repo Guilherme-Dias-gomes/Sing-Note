@@ -1,4 +1,4 @@
-import { BuscarProdutoPorCategoria, listarCategoria } from "../repository/categoriaRepository.js";
+import { BuscarProdutoPorCategoria, listarCategoria } from "../../repository/admin/categoriaRepository.js";
 
 import { Router } from "express";
 const server = Router()
