@@ -66,10 +66,16 @@ export default function ProdutosDetalhes(){
                 <CabecalhoUSU/>
                 <div className='Caixa-produto-imagens-descricoes-usu'>
                     <div className='div-imagens-detalhes-usu'>
-                        <img src={exibirImagemPrincipal()} className='imagem1-produto' alt='img-produto'/>
-                        {produto.imagens.map((item, pos) =>
-                            <img className='imagem2-produto' src={exibirImagenProdutos(item)} onClick={() => setImagemPrincipal(pos)} alt='img-produto2'/>
-                    )}</div>
+                        <div className='container-imagens-seletoras'>
+                            {produto.imagens.map((item, pos) =>
+                                <img className='imagem2-produto' src={exibirImagenProdutos(item)} onClick={() => setImagemPrincipal(pos)} alt='img-produto2'/>
+                            )}
+                        </div>
+                        <div className='imagem-selecionada-principal-carrinho-usu'>
+                            <img src={exibirImagemPrincipal()} className='imagem1-produto' alt='img-produto'/>
+                        </div>
+                    </div>
+                        
                     <div className='div-descricao-detalhes-usu'>
                         <div className='origem-e-coracao'>
                             <img src='/image/core-usu.png' className='coracao-detalhe-usu' alt='imagem-coracao'/>

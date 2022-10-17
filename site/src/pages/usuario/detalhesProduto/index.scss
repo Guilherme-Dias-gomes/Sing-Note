@@ -33,22 +33,36 @@
     }
 
     .div-imagens-detalhes-usu{
-        width: 35%;
-        height: 70%;
-    }
+        display: flex;
+        flex-direction: row;
+        border: red solid 1px;
 
-    .imagem1-produto{
-        position: absolute;
-        width: 10%;
-        height: 25%;
-        border: #bfbfbf solid 2px;
-        margin: 1% 0px 0px 1%;
+        width: 35%;
+        height: 400px;
     }
 
     .imagem2-produto{
         width: 100%;
+        height: 20%;
+        border: #bfbfbf solid 2px;
+        margin: 1% 0px 0px 1%;
+    }
+
+    .container-imagens-seletoras{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .imagem1-produto{
+        width: 100%;
         height: 100%;
         border: #bfbfbf solid 2px;
+        margin-left: 1%;
+    }
+
+    .imagem-selecionada-principal-carrinho-usu{
+        height: 100%;
+
     }
 
     .div-descricao-detalhes-usu{
