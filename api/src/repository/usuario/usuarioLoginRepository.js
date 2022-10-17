@@ -15,6 +15,35 @@ export async function loginUsuario (email, senha) {
     return registros [0];
 }
 
+//Cadastrar Novo Usuario
+export async function cadastrarUsuario (usuario) {
+    const comando = 
+    ` insert into tb_usuario(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone) 
+                      values(?, ?, ?, ?, ?)`
+
+    const [resposta] = await conexao.query(comando,[
+                                        usuario.nomeUsuario,
+                                        usuario.rg,
+                                        usuario.cpf,
+                                        usuario.nascimento,
+                                        usuario.telefone])
+    usuario.id = resposta.insertId
+    return usuario;
+}
+
+export async function cadastrarUsuarioLogin(idUsuario, perfil){
+    const comando = 
+    `insert into tb_usuario_login(ds_email, ds_senha)
+                           values(?, ?)` 
+
+    const [resposta] = await conexao.query(comando,[
+                                            idUsuario,
+                                            perfil.email,
+                                            perfil.senha])
+    perfil.id = resposta.insertId
+    return perfil;
+}
+
 // Contar Produtos
 export async function QuantificarTodosProdutos(){
     const comando =
