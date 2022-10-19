@@ -8,6 +8,7 @@ import produtoController from './controller/admin/produtosController.js'
 import categoriaController from './controller/admin/categoriaController.js' 
 import tipoController from './controller/admin/tipoController.js' 
 import consultaController from './controller/admin/produtosController.js'
+import enderecoController from './controller/usuario/endereçoUsuarioController.js'
 
 import express from 'express'
 import cors from 'cors'
@@ -18,12 +19,14 @@ server.use(express.json());
 
 server.use(Usuariocontroller)
 server.use(UsuarioProdutoController)
+server.use (enderecoController)
 
 server.use(adminController)
 server.use(produtoController)
 server.use(categoriaController)
 server.use(tipoController)
 server.use(consultaController)
+
 
 server.use('/storage/produto', express.static('storage/produto'));
 
