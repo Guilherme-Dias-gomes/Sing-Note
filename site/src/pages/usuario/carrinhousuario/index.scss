@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'inter-font';
+    src: url('../../../assets/fonts/inter-font.ttf');
+}
+
+@font-face {
+    font-family: 'right-font';
+    src: url('../../../assets/fonts/Righteous-Regular.ttf');
+}
 
 .page-carrinho-usu {
     display: flex;
@@ -48,9 +57,13 @@
 
         .elemento-cabecalho-carrinho{
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .procedimentos-carrinho{
+        .procedimentos-carrinho-formatacao{
+            margin-top: 20px;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
@@ -62,32 +75,55 @@
             
         }
 
+        .procedimentos-carrinho{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            
+            width: 70%;
+            height: auto;
+            
+            
+        }
+
         .Circulo-porcento1{
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 100%;
             
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             background-color: #d9d9d9;
+            
+        }
 
+        .percentual-bolinha-carrinho{
+            font-size:14px;
+            color: #084D6E;
+            font-family: "inter-font";
         }
 
         .Circulo-porcento3{
-            width: 70px;
-            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
             background-color: #ffffff;
             border-radius: 100%;
             z-index: 2;
+            padding-bottom: 4px;
         }
 
         .Circulo-porcento2{
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             background-color: #084D6E;
-            margin-left: 50px;
-            margin-bottom: 50px;
+            margin-left: 40px;
+            margin-bottom: 40px;
 
             position: absolute;
 
@@ -96,12 +132,163 @@
         }
 
         .setinha-procedimento{
-            height: 20px;
+            height: 2vw;
         }
 
         .icones-procedimento{
-            height: 30px;
+            height: 3vw;
         }
+        
+        .card-itens-do-carrinho-e-resultados{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            width: 100%;
+            height: max-content;
+
+            padding: 20px;
+
+        }
+
+        .formatacao-btn-remover{
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .botao-remover{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 5px;
+            font-family: 'inter-font';
+            font-size: 15px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            margin-bottom: 10px;
+
+            border-style:none;
+            background-color: #f00;
+            height: 50px;
+            width: 300px;            
+        }
+        
+        .itens-do-carrinho-e-remover{
+            display: flex;
+            flex-direction: column;
+            width: 75%;
+            
+            padding: 20px;    
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+
+        .itens-carrinho{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            width: 95%;
+            align-self: center;
+            height: 100px;
+            margin: 0px 10px;
+
+        }
+
+        .imagem-produto-no-carrinho{
+            width: 10%;
+            height: auto;
+        }
+
+        .item-nome-e-detalhes{
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+
+        }
+
+        .nome-produto-carrinho{
+            font-family: 'inter-font';
+            font-size: 21px;
+            color: #808080;
+            
+        }
+
+        .descricao-produto-carrinho{
+            font-family: 'inter-font';
+            font-size: 18px;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .linha-azul-carrinho{
+            color: #C0FBFF;
+            margin: 5px;
+        }
+
+        .card-resumo{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 500px;
+            
+            width: 22.5%;
+            height: max-content;
+            background-color: #fff;
+            border-radius:10px;
+            padding: 20px;
+            box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .titulo-resumo-carrinho{
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .tit-resumo{
+            color:#404040;
+            font-family: 'inter-font';
+
+        }
+        
+        .valor-total-carrinho{
+            font-family: 'inter-font';
+            color: #a3a3a3;
+        }
+
+        .valor-mostrado-carrinho{
+            font-family: 'inter-font';
+            color: #000;
+            
+        }
+
+        .botao-comprar-carrinho{
+            font-family: 'right-font';
+            font-size: 1.1vw;
+            color: #fff;
+            border-style: none;
+            border-radius:10px;
+            background-color: #007BF1;
+            height: 50px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .botao-comprando-carrinho{
+            font-family: 'right-font';
+            font-size: 1.1vw;
+            color: #fff;
+            border-style: none;
+            border-radius:10px;
+            background-color: #55F27F;
+            height: 50px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        
     }
 
     .aba-lateral-usu {
