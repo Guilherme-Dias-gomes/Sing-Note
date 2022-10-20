@@ -24,6 +24,7 @@ export default function CarrinhoUsuario() {
                     qtd: produto.qtd
                 })
             }
+            console.log(temp)
             setItens(temp)
         }
     }
@@ -49,58 +50,25 @@ export default function CarrinhoUsuario() {
                                 <div className='Circulo-porcento3'><h1 className='percentual-bolinha-carrinho'>25%</h1></div>
                                 <div className='Circulo-porcento2'></div>
                             </div>
-                            <img src='/image/carrinho-procedimento.png' className='icones-procedimento' alt='icn-carrinhos'/>
-                            <img src='/image/setinha.png' className='setinha-procedimento' alt='icn-carrinho-setas'/>
-                            <img src='/image/user-usu.png' className='icones-procedimento' alt='icn-carrinhos'/>
-                            <img src='/image/setinha.png' className='setinha-procedimento' alt='icn-carrinho-setas'/>
-                            <img src='/image/cartao-do-banco.png' className='icones-procedimento' alt='icn-carrinhos'/>
-                            <img src='/image/setinha.png' className='setinha-procedimento' alt='icn-carrinho-setas'/>
-                            <img src='/image/olho-visivel.png' className='icones-procedimento' alt='icn-carrinhos'/>
-                            <img src='/image/setinha.png' className='setinha-procedimento' alt='icn-carrinho-setas'/>
-                            <img src='/image/simbolo-verificado.png' className='icones-procedimento' alt='icn-carrinhos'/>
+                            <img src='/image/carrinho-procedimento.png' className='icones-procedimento' alt='icn-carrinhos' />
+                            <img src='/image/setinha.png' className='setinha-procedimento' alt='icn-carrinho-setas' />
+                            <img src='/image/user-usu.png' className='icones-procedimento' alt='icn-carrinhos' />
+                            <img src='/image/setinha.png' className='setinha-procedimento' alt='icn-carrinho-setas' />
+                            <img src='/image/cartao-do-banco.png' className='icones-procedimento' alt='icn-carrinhos' />
+                            <img src='/image/setinha.png' className='setinha-procedimento' alt='icn-carrinho-setas' />
+                            <img src='/image/olho-visivel.png' className='icones-procedimento' alt='icn-carrinhos' />
+                            <img src='/image/setinha.png' className='setinha-procedimento' alt='icn-carrinho-setas' />
+                            <img src='/image/simbolo-verificado.png' className='icones-procedimento' alt='icn-carrinhos' />
                         </div>
                     </div>
 
-                    <div className='card-itens-do-carrinho-e-resultados'>
-                        <div className='itens-do-carrinho-e-remover'>
-                            <div className='formatacao-btn-remover'>
-                                <button className='botao-remover'><img src='/image/lixeira.png'/>REMOVER TODOS OS PRODUTOS</button>
-                            </div>
-                            <div className='itens-carrinho'>
-                                <img src='/image/imagespadrao.png' className='imagem-produto-no-carrinho' alt='img-produto-carrinho'/>
-                                <div className='item-nome-e-detalhes'>
-                                    <h1 className='nome-produto-carrinho'>Colocar nome aqui</h1>
-                                    <p className='descricao-produto-carrinho'>Colocar descrições do produto</p>    
-                                </div>
-                               
-                            </div> 
-                            
-                            <hr className='linha-azul-carrinho'/>
+                    {itens.map(item =>
+                        <ItemCarrinho item={item} />
+                    )}
 
-
-                        </div>
-
-                        <div className='card-resumo'>
-                            <div className='titulo-resumo-carrinho'>
-                                <img src='/image/img-resumo.png'/>
-                                <h1 className='tit-resumo'>Resumo</h1>
-                            </div>
-                            <div className='valor-total-carrinho'>Valor total: <span className='valor-mostrado-carrinho'> R$ valor aqui</span></div>
-                            <hr/>
-                            <button className='botao-comprar-carrinho'>
-                                EFETUAR COMPRA
-                            </button>
-                            <button className='botao-comprando-carrinho'>
-                                EFETUAR COMPRA
-                            </button>
-                        </div>
-
-                    </div>
                 </div>
-                {itens.map(item =>
-                    <ItemCarrinho item={item} />
-                )}
             </div>
+
         </div>
     )
 }

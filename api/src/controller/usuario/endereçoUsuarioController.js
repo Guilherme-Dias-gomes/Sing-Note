@@ -13,15 +13,13 @@ try {
 
 
 
- }
- catch (err) {
-    resp.status (400).send ({
-        erro : err.menssage
-     })
-
+ } catch (err) {
+        resp.status (400).send ({
+            erro : err.menssage
+        })
     }
 
-}
+} )
 
 server.get ('/api/usuario/:id/endereco', async (req, resp)=> {
     try {
@@ -43,8 +41,6 @@ server.get ('/api/usuario/:id/endereco', async (req, resp)=> {
     
     }
     
-    
+)
 
-
-
-
+export default server;
