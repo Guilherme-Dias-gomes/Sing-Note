@@ -11,6 +11,23 @@ import ItemCarrinho from '../../../components/usuario/itemCarrinho'
 export default function CarrinhoUsuario() {
     const [itens, setItens] = useState([]);
 
+
+    function calcValorTotal () {
+        let total = 0;
+        for(let item of itens) {
+            total = total + item.produto.info.Preco * item.qtd
+        }
+        return total;
+    }
+
+    function removerItem (id) {
+        let carrinho = Storage('carrinho');
+        carrinho = carrinho.filter(item => item.id != id);
+
+        Storage('carrinho', carrinho);
+        carregarCarrinho(); 
+    }
+
     async function carregarCarrinho() {
         let carrinho = Storage('carrinho');
         if (carrinho) {
@@ -71,7 +88,7 @@ export default function CarrinhoUsuario() {
                                 </button>
                             </div>
                             {itens.map(item =>
-                                <ItemCarrinho item={item} />
+                                <ItemCarrinho item={item} removerItem={removerItem} carregarCarrinho={carregarCarrinho}/>
                             )}
                         </div>
                         <div className='card-resumo'>
@@ -81,7 +98,7 @@ export default function CarrinhoUsuario() {
                             </div>
                         <div className='valor-total-div'>
                             <div className='valor-total-carrinho'>
-                                Valor total: <span className='valor-mostrado-carrinho'> R$ valor aqui</span>
+                                Valor total: <span className='valor-mostrado-carrinho'> R${calcValorTotal()}</span>
                             </div>
                             <hr className='linha-abaixo-de-valor-carrinho'/>
                         </div>
