@@ -1,0 +1,111 @@
+.component-item-carrinho {
+    background-color: bisque;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.itens-carrinho{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+
+    padding: 20px;
+
+    width: 100%;
+    align-self: center;
+    height: 120px;
+    margin: 0px 0px;
+    border-bottom: rgba(3, 240, 255, 0.25) solid 2px;
+    border-bottom-width: 5%;
+}
+
+.imagem-produto-no-carrinho{
+    width: auto;
+    height: 100%;
+}
+
+.item-nome-e-detalhes-e-preco{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.botao-e-lixo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 15%;
+
+
+}
+
+.botao-comprar-favorito{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 15px;
+    color: #fff;
+    align-items: center;
+    background-color: #318CE7;
+    border-style: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.botao-comprar-favorito:hover{
+    background-color: #fff;
+    color: #318CE7;
+    border: #318CE7 solid 2px;
+    transition: 0.1s;
+    cursor: pointer;
+    .imagem-carrinho{
+    filter: invert(100%);
+}}
+
+.comprar-e-config-img{
+    display: flex;
+    flex-direction: row;
+    
+    align-items: center;
+}
+
+.lixo-favorito{
+    height: auto;
+    width: 20%;
+}
+
+.sobre-produto-favorito{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+
+}
+
+.nome-produto-carrinho{
+    font-family: 'inter-font';
+    font-size: 21px;
+    color: #808080;
+    
+}
+
+.descricao-produto-carrinho{
+    font-family: 'inter-font';
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+}
+
+.linha-azul-carrinho{
+    color: #C0FBFF;
+    margin: 5px;
+}

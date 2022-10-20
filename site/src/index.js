@@ -18,6 +18,7 @@ import LoginUsuario from './pages/usuario/loginUsuario';
 import ProdutosDetalhes from './pages/usuario/detalhesProduto'
 import RodapeUsuario from './components/usuario/rodape-usuario';
 import CarrinhoUsuario from './pages/usuario/carrinhousuario';
+import FavoritosUsuario from './pages/usuario/favoritos-usuario';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -38,6 +39,7 @@ root.render(
                 <Route path="/login" element={< LoginUsuario />} />
                 <Route path="/usuario/rodape" element={< RodapeUsuario />} />
                 <Route path="/carrinho" element={< CarrinhoUsuario />} />
+                <Route path="/favoritos" element={< FavoritosUsuario />} />
             </Routes>
         </BrowserRouter>
   </React.StrictMode>

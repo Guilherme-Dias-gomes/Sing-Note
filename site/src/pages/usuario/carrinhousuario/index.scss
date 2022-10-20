@@ -12,6 +12,8 @@
     display: flex;
     flex-direction: row;
     width: auto;
+    height: 1500px;
+    
 
         .bola1carrinho{
             position: absolute;
@@ -51,8 +53,7 @@
             background-color: #f0f0f000;
             padding-left: 100px;
             z-index: 1;
-
-            
+            border:red solid 1px;
         }
 
         .elemento-cabecalho-carrinho{
@@ -60,6 +61,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            height: auto;
         }
 
         .procedimentos-carrinho-formatacao{
@@ -232,10 +234,10 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            height: 500px;
+            height: 400px;
+            
             
             width: 22.5%;
-            height: max-content;
             background-color: #fff;
             border-radius:10px;
             padding: 20px;
@@ -250,7 +252,17 @@
         .tit-resumo{
             color:#404040;
             font-family: 'inter-font';
+        }
 
+        .valor-total-div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .linha-abaixo-de-valor-carrinho{
+            width: 100%;
         }
         
         .valor-total-carrinho{
@@ -274,6 +286,7 @@
             height: 50px;
             margin: 5px;
             cursor: pointer;
+            width: 100%;
         }
 
         .botao-comprando-carrinho{
@@ -285,16 +298,39 @@
             background-color: #55F27F;
             height: 50px;
             margin: 5px;
+            width: 100%;
             cursor: pointer;
         }
 
+        .efetuar-compra{
+            font-size: 90%;
+        }
+
+        .continuar-comprando{
+            font-size: 90%;
+        }
+
+        .div-botoes{
+            height: 120px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
         
     }
 
     .aba-lateral-usu {
         position: fixed;
+        z-index: 2;
     }
 
     .cabecalho-usuario{
         width: 100%;
+    }
+
+    .principal-rodape-usu{
+        justify-self: flex-end;
+        align-self: flex-end;
     }

@@ -1,6 +1,7 @@
 import './index.scss'
 import AbaLateralUSU from '../../../components/usuario/aba-lateral-usu'
 import CabecalhoUSU from '../../../components/usuario/cabecalho-usu'
+import RodapeUsuario from '../../../components/usuario/rodape-usuario'
 import { buscarProdutoPorNome, buscarProdutos } from '../../../api/admin/produtoAPI'
 import { useEffect, useState } from 'react'
 import { buscarProdutoPorCategoria } from '../../../api/admin/categoriaAPI'
@@ -219,6 +220,7 @@ export default function BuscaUsuario () {
                         </div>
                         </div>
                     </div>
+                    <RodapeUsuario/>
             </div>
             
         </main>

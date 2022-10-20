@@ -13,13 +13,6 @@ export default function ItemCarrinho({ item: {produto: { info, imagens }, qtd } 
     }
 
     return (
-        <div className='card-itens-do-carrinho-e-resultados'>
-            <div className='itens-do-carrinho-e-remover'>
-                <div className='formatacao-btn-remover'>
-                    <button className='botao-remover'>
-                        <img src='/image/lixeira.png' alt='a'/>REMOVER TODOS OS PRODUTOS
-                    </button>
-                </div>
                 <div className='itens-carrinho'>
                     <img src={exibirImagem} className='imagem-produto-no-carrinho' alt='img-produto-carrinho' />
                     <div className='item-nome-e-detalhes'>
@@ -38,27 +31,5 @@ export default function ItemCarrinho({ item: {produto: { info, imagens }, qtd } 
                     </div>
                     <h3>R${info.Preco}</h3>
                 </div>
-
-                <hr className='linha-azul-carrinho' />
-
-
-            </div>
-
-            <div className='card-resumo'>
-                <div className='titulo-resumo-carrinho'>
-                    <img src='/image/img-resumo.png' alt=''/>
-                    <h1 className='tit-resumo'>Resumo</h1>
-                </div>
-                <div className='valor-total-carrinho'>Valor total: <span className='valor-mostrado-carrinho'> R$ valor aqui</span></div>
-                <hr />
-                <button className='botao-comprar-carrinho'>
-                    EFETUAR COMPRA
-                </button>
-                <button className='botao-comprando-carrinho'>
-                    EFETUAR COMPRA
-                </button>
-            </div>
-
-        </div>
     )
 }

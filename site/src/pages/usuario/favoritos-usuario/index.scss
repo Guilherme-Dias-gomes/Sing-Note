@@ -1,0 +1,155 @@
+@font-face {
+    font-family: 'inter-font';
+    src: url('../../../assets/fonts/inter-font.ttf');
+}
+
+@font-face {
+    font-family: 'right-font';
+    src: url('../../../assets/fonts/Righteous-Regular.ttf');
+}
+
+.page-favorito-usu {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+
+        .bola1favorito{
+            position: absolute;
+            display: block;
+            width: 300px;
+            height: 550px;
+            background-color: #007BF1;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            margin: 200px 0px 0px 3vw;
+        }
+
+        .bola2favorito{
+            position: absolute;
+            display: block;
+            width: 20vw;
+            height: 50vw;
+            background-color: #007BF1;
+            border-radius: 50% 50% 50% 50% / 50% 50% 50% 60%;
+            margin: 200px 0px 0px 78vw;
+        }
+
+        .bola3favorito{
+            position: absolute;
+            display: block;
+            width: 45vw;
+            height: 40vw;
+            background-color: #007BF1;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            margin: 800px 0px 0px 10vw;
+        }
+
+        .elementos-favorito-usu {
+            display: flex;
+            flex-direction: column;
+            align-content:center;
+            width: 100%;
+            background-color: #f0f0f000;
+            padding-left: 100px;
+            z-index: 1;
+
+        }
+
+        .elemento-cabecalho-favorito{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .titulo-e-barra-de-itens-favoritos{
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            width: 90%;
+            
+
+        }
+
+        .titulo-e-coracao{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 0px 10px 10px;
+            font-weight: bolder;
+            font-family: "inter-font";
+            font-size: 25px;
+            width: 150px;
+        }
+
+        .card-itens-do-favorito{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            width: 100%;
+            height: max-content;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+        }
+
+        .itens-do-favorito{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            width: 95%;
+            align-self: center;
+            height: max-content;
+            margin: 0px 10px;
+            
+        }
+
+        .imagem-produto-no-carrinho{
+            width: 10%;
+            height: auto;
+        }
+
+        .item-nome-e-detalhes{
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+
+        }
+
+        .nome-produto-carrinho{
+            font-family: 'inter-font';
+            font-size: 21px;
+            color: #808080;
+            
+        }
+
+        .descricao-produto-carrinho{
+            font-family: 'inter-font';
+            font-size: 18px;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .linha-azul-carrinho{
+            color: #C0FBFF;
+            margin: 5px;
+        }
+
+
+
+        
+    }
+
+    .aba-lateral-usu {
+        position: fixed;
+        z-index: 2;
+    }
+
+    .cabecalho-usuario{
+        width: 100%;
+    }

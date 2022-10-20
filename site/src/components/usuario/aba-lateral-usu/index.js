@@ -30,7 +30,7 @@ return(
             <Link className="icone-opcoes-usu"><img className='imagem-aba-usu' src="/image/casa-usu.png" alt="opcao-usu"/></Link> 
             <Link to={"/usuario/busca"} className="icone-opcoes-usu"><img className='imagem-aba-usu' src="/image/lupa-usu.png" alt="opcao-usu"/></Link>
             <Link className="icone-opcoes-usu"><img className='imagem-aba-usu' src="/image/user-usu.png" alt="opcao-usu"/></Link>
-            <Link className="icone-opcoes-usu"><img className='imagem-aba-usu' src="/image/cesta-usu.png" alt="opcao-usu"/></Link>
+            <Link to={"/carrinho"} className="icone-opcoes-usu"><img className='imagem-aba-usu' src="/image/cesta-usu.png" alt="opcao-usu"/></Link>
             <Link className="icone-opcoes-usu"><img className='imagem-aba-usu' src="/image/core-usu.png" alt="opcao-usu"/></Link>
             <Link className="icone-opcoes-usu"><img className='imagem-aba-usu' src="/image/caminhao-usu.png" alt="opcao-usu"/></Link>
         </div> {/*Fim das opções*/}

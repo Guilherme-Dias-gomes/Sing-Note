@@ -1,6 +1,7 @@
 import './index.scss'
 import AbaLateralUSU from '../../../components/usuario/aba-lateral-usu'
 import CabecalhoUSU from '../../../components/usuario/cabecalho-usu'
+import RodapeUsuario from '../../../components/usuario/rodape-usuario'
 
 import Storage from 'local-storage'
 import { useState, useEffect } from 'react'
@@ -42,7 +43,7 @@ export default function CarrinhoUsuario() {
             <div className='bola3carrinho'></div>
             <AbaLateralUSU />
             <div className='elementos-carrinho-usu'>
-                <div className='elemento-cabecalho-carro'>
+                <div className='elemento-cabecalho-carrinho'>
                     <CabecalhoUSU />
                     <div className='procedimentos-carrinho-formatacao'>
                         <div className='procedimentos-carrinho'>
@@ -61,14 +62,42 @@ export default function CarrinhoUsuario() {
                             <img src='/image/simbolo-verificado.png' className='icones-procedimento' alt='icn-carrinhos' />
                         </div>
                     </div>
-
-                    {itens.map(item =>
-                        <ItemCarrinho item={item} />
-                    )}
-
+                    
+                    <div className='card-itens-do-carrinho-e-resultados'>
+                        <div className='itens-do-carrinho-e-remover'>
+                            <div className='formatacao-btn-remover'>
+                                <button className='botao-remover'>
+                                    <img src='/image/lixeira.png' alt='a'/>REMOVER TODOS OS PRODUTOS
+                                </button>
+                            </div>
+                            {itens.map(item =>
+                                <ItemCarrinho item={item} />
+                            )}
+                        </div>
+                        <div className='card-resumo'>
+                            <div className='titulo-resumo-carrinho'>
+                                <img src='/image/img-resumo.png' alt=''/>
+                                <h1 className='tit-resumo'>Resumo</h1>
+                            </div>
+                        <div className='valor-total-div'>
+                            <div className='valor-total-carrinho'>
+                                Valor total: <span className='valor-mostrado-carrinho'> R$ valor aqui</span>
+                            </div>
+                            <hr className='linha-abaixo-de-valor-carrinho'/>
+                        </div>
+                        <div className='div-botoes'>
+                            <button className='botao-comprar-carrinho'>
+                                <p className='efetuar-compra'>EFETUAR COMPRA</p>
+                            </button>
+                            <button className='botao-comprando-carrinho'>
+                                <p className='continuar-comprando'>CONTINUAR COMPRANDO</p>
+                            </button>
+                        </div>
+                        </div>
+                    </div><RodapeUsuario/>
                 </div>
+                
             </div>
-
         </div>
     )
 }
