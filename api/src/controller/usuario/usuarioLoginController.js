@@ -47,21 +47,7 @@ server.post('/usuario/perfil', async (req, resp) =>{
 
 //Cadastrar Perfil(Email, Senha, ...)
 server.post('/usuario/login/:id', async (req, resp) =>{
-
-    // try {
-        
-
-    //     const produtos = await BuscarProdutoPorId(id);
-    //     const imagens = await buscarProdutoImagens(id);
-
-    //     resp.send({
-    //         info: produtos,
-    //         imagens: imagens
-    //     })
-    // }
-
     try{ 
-
         const id = req.params.id;
         const login = req.body
 

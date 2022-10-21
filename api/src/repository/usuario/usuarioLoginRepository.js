@@ -31,19 +31,13 @@ export async function cadastrarUsuario (usuario) {
     return usuario;
 }
 
-// export async function buscarUsuarioPerfil(id){
-//     const comando = 
-//     ``
-// }
-
-
 // Cadastrar Login do usuario
 export async function cadastrarUsuarioLogin(login, idUsuario){
     const comando = 
     `insert into tb_usuario_login(ds_email, ds_senha, id_usuario)
                            values(?, ?, ?)` 
 
-    const [resposta] = await conexao.query(comando,[login.email, login.senha, idUsuario,])
+    const [resposta] = await conexao.query(comando,[login.email, login.senha, idUsuario])
 
 }
 
