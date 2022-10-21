@@ -15,7 +15,7 @@ export async function loginUsuario (email, senha) {
     return registros [0];
 }
 
-//Cadastrar Novo Usuario
+//Cadastrar Usuario
 export async function cadastrarUsuario (usuario) {
     const comando = 
     ` insert into tb_usuario(nm_usuario, ds_rg, ds_cpf, dt_nascimento, ds_telefone) 
@@ -31,14 +31,22 @@ export async function cadastrarUsuario (usuario) {
     return usuario;
 }
 
-export async function cadastrarUsuarioLogin(idUsuario, email, senha){
+// export async function buscarUsuarioPerfil(id){
+//     const comando = 
+//     ``
+// }
+
+
+// Cadastrar Login do usuario
+export async function cadastrarUsuarioLogin(login, idUsuario){
     const comando = 
-    `insert into tb_usuario_login(id_produto ,ds_email, ds_senha)
+    `insert into tb_usuario_login(ds_email, ds_senha, id_usuario)
                            values(?, ?, ?)` 
 
-    const [resposta] = await conexao.query(comando,[idUsuario, email, senha])
+    const [resposta] = await conexao.query(comando,[login.email, login.senha, idUsuario,])
 
 }
+
 
 // Contar Produtos
 export async function QuantificarTodosProdutos(){

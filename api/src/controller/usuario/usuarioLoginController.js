@@ -1,7 +1,7 @@
 import { cadastrarUsuario, cadastrarUsuarioLogin, loginUsuario } from '../../repository/usuario/usuarioLoginRepository.js'; 
 
 import { Router } from "express";
-import { validarPerfilCliente } from '../../service/perfilClienteValidacao.js';
+import { validarPerfilCliente, validarLoginCliente } from '../../service/perfilClienteValidacao.js';
 const server = Router();
 
 // login do usuari
@@ -47,13 +47,27 @@ server.post('/usuario/perfil', async (req, resp) =>{
 
 //Cadastrar Perfil(Email, Senha, ...)
 server.post('/usuario/login/:id', async (req, resp) =>{
+
+    // try {
+        
+
+    //     const produtos = await BuscarProdutoPorId(id);
+    //     const imagens = await buscarProdutoImagens(id);
+
+    //     resp.send({
+    //         info: produtos,
+    //         imagens: imagens
+    //     })
+    // }
+
     try{ 
 
-        const { id } = req.params
-        const perfil = req.body
+        const id = req.params.id;
+        const login = req.body
 
-        const respota = await cadastrarUsuarioLogin(id, perfil)
+        await validarLoginCliente(login)
 
+        const respota = await cadastrarUsuarioLogin(login, id)
         resp.send(respota)
 
     } catch (err) {

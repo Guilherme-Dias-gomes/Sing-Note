@@ -1,10 +1,10 @@
 import { conexao } from '../conection.js'
 
 
-export async function listar (idUsuario) {
+export async function listar(cepUsuario) {
     const comando = 
     ` 
-    select id_usuario_endereco   id, 
+    select cep_usuario_endereco   id, 
          DS_CEP		            cep,
         DS_RUA		            rua,
         DS_CASA		            casa,
@@ -14,9 +14,9 @@ export async function listar (idUsuario) {
         DS_CIDADE		        cidade,
     
     from tb_usuario_endereco
-    where id_usuario= ? `
+    where cep_usuario= ? `
 
-    const [registros] = await conexao.query(comando,[idUsuario])
+    const [registros] = await conexao.query(comando,[cepUsuario])
     return registros;
 }
 
@@ -27,5 +27,8 @@ export async function salvar (cep, rua, casa, referencia, complemento, bairro, c
     values ( ?, ?, ? , ?, ?, ?, ?, ?);  `
 
     const [endereco] = await conexao.query(comando,[cep, rua, casa, referencia, complemento, bairro, cidade])
-    return endereco.insertId; 
+    return endereco.insertcep; 
 }
+
+
+//inserir os endereços nas tabelas depois

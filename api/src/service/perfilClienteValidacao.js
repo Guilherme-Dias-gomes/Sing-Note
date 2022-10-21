@@ -8,10 +8,19 @@ export async function validarPerfilCliente(usuario){
     else if (usuario.cpf == undefined || usuario.cpf == '') {
         throw new Error('❌CPF é obrigatório!');
     }
-    else if (usuario.nascimento == '//') {
+    else if (usuario.nascimento == null) {
         throw new Error('❌Data de Nascimento é obrigatório!');
     }
     else if (usuario.telefone == undefined || usuario.telefone == '') {
         throw new Error('❌Telefone obrigatório!');
+    }
+}
+
+export async function validarLoginCliente(login){
+    if (login.email == undefined || login.email == '') {
+        throw new Error('❌ Email inválido!');
+    }
+    else if (login.senha == undefined || login.senha  == '') {
+        throw new Error('❌ Senha inválida!');
     }
 }

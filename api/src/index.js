@@ -8,7 +8,7 @@ import produtoController from './controller/admin/produtosController.js'
 import categoriaController from './controller/admin/categoriaController.js' 
 import tipoController from './controller/admin/tipoController.js' 
 import consultaController from './controller/admin/produtosController.js'
-import enderecoController from './controller/usuario/endereçoUsuarioController.js'
+import enderecoController from './controller/usuario/enderecoUsuarioController.js'
 
 import express from 'express'
 import cors from 'cors'

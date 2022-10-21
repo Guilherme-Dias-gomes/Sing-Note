@@ -57,6 +57,8 @@ server.put('/admin/produto/:id/imagens', upload.array('imagens'), async (req, re
             await salvarProdutoImagem(id, imagem.path)
         }
 
+        
+
         resp.status(204).send()
 
     } catch (err) {
