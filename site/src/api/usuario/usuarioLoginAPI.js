@@ -11,7 +11,7 @@ export async function cadastarPerfil(nomeUsuario, rg, cpf, nascimento, telefone)
 }
 
 export async function cadastarLogin(email, senha, id){
-    const resposta = await api.post('/usuario/login/' + id, { email, senha, id }) 
+    const resposta = await api.post('/login/' + id, { email, senha, id }) 
     return resposta.data;
 }
 

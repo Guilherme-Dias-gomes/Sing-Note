@@ -46,7 +46,7 @@ server.post('/usuario/perfil', async (req, resp) =>{
 } )
 
 //Cadastrar Perfil(Email, Senha, ...)
-server.post('/usuario/login/:id', async (req, resp) =>{
+server.post('/login/:id', async (req, resp) =>{
     try{ 
         const id = req.params.id;
         const login = req.body

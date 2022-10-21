@@ -9,13 +9,13 @@ export default function AbaLateralUSU() {
     const navegar = useNavigate();
 
     function sairClick () {
-        storage.remove('usuario-logado');
-        navegar('/admin/login')
+        storage.remove('Cliente-Logado');
+        navegar('/login')
     }
     
     useEffect(() => {
         if(!storage('usuario-logado')){
-            navegar('/usuario/login');
+            navegar('/usuario/busca');
         }
         
     }, [])
@@ -24,7 +24,7 @@ return(
 
 <div className="aba-lateral-usu"> {/*Começo da aba lateral*/} 
     <div className="icone-opcoes-usu" onClick={sairClick}>
-        <p className="nome-icones"> &lt; Voltar</p>
+        <p className="nome-icones" > &lt; Voltar</p>
     </div> 
         <div className="opcoes-usu"> {/*Começo das opções*/}
             <Link className="icone-opcoes-usu"><img className='imagem-aba-usu' src="/image/casa-usu.png" alt="opcao-usu"/></Link> 

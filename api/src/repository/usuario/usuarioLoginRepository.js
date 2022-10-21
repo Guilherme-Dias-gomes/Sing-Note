@@ -3,16 +3,15 @@ import { conexao } from '../conection.js'
 // Logar Usuario
 export async function loginUsuario (email, senha) {
     const comando = 
-    `  select tb_usuario.id_usuario         as id,
-                         nm_usuario         as nome
+    `  select tb_usuario.id_usuario                  id,
+                         nm_usuario     			 nome
          from tb_usuario
-   inner join tb_usuario_login
-           on tb_usuario_login.id_usuario = tb_usuario.id_usuario
+        inner join tb_usuario_login on tb_usuario_login.id_usuario = tb_usuario.id_usuario
         where ds_email = ?
-          and ds_senha = md5(?) `
+          and ds_senha = md5(?)`
 
-    const [registros] = await conexao.query(comando,[email, senha])
-    return registros [0];
+    const [registros] = await conexao.query(comando,[email, senha]);
+    return registros[0];
 }
 
 //Cadastrar Usuario
