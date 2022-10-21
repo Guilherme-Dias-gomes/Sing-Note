@@ -33,15 +33,26 @@ server.put('/admin/produto/:id/imagens', upload.array('imagens'), async (req, re
     try {
         const id = req.params.id;
         const imagens = req.files;
-        // const imagensPermanecem = req.body.imagens.filter(item => item != 'undefined');
 
-        // if (imagensPermanecem.length > 0)
-        //     await removerProdutoImagensDiferentesDe(imagensPermanecem);
-        // else
-        //     await removerProdutoImagens(id);
 
-        // await removerProdutoImagensDiferentesDe(imagensPermanecem)
+        let imagensPermanecem = [];
 
+        // pega as imagens que não foram alteradas
+        if (Array.isArray(req.body.imagens)) {
+            imagensPermanecem = req.body.imagens.filter(item => item != 'undefined');
+        }
+        else if (typeof(req.body.imagens) == 'string') {
+            imagensPermanecem = [req.body.imagens];
+        }
+
+
+        // apaga todas imagens do BD menos as que não foram alteradas
+        if (imagensPermanecem.length > 0)
+            await removerProdutoImagensDiferentesDe(imagensPermanecem);
+        else
+            await removerProdutoImagens(id);
+
+        // insere as novas imagens
         for (const imagem of imagens){
             await salvarProdutoImagem(id, imagem.path)
         }

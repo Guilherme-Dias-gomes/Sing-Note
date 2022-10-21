@@ -31,17 +31,13 @@ export async function cadastrarUsuario (usuario) {
     return usuario;
 }
 
-export async function cadastrarUsuarioLogin(idUsuario, perfil){
+export async function cadastrarUsuarioLogin(idUsuario, email, senha){
     const comando = 
-    `insert into tb_usuario_login(ds_email, ds_senha)
-                           values(?, ?)` 
+    `insert into tb_usuario_login(id_produto ,ds_email, ds_senha)
+                           values(?, ?, ?)` 
 
-    const [resposta] = await conexao.query(comando,[
-                                            idUsuario,
-                                            perfil.email,
-                                            perfil.senha])
-    perfil.id = resposta.insertId
-    return perfil;
+    const [resposta] = await conexao.query(comando,[idUsuario, email, senha])
+
 }
 
 // Contar Produtos

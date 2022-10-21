@@ -31,7 +31,7 @@ export default function ConsultaProduto () {
     }
 
     function exibirImagem(imagem) {
-        if (imagem === undefined) {
+        if (!imagem) {
             return '/image/imagespadrao.png';
         }
         else if (typeof (imagem) == 'string') {
