@@ -1,8 +1,8 @@
 import { ToastContainer } from 'react-toastify';
-import 'react-confirm-alert/src/react-confirm-alert.css'; 
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import 'react-toastify/dist/ReactToastify.css';
 
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -19,28 +19,30 @@ import ProdutosDetalhes from './pages/usuario/detalhesProduto'
 import RodapeUsuario from './components/usuario/rodape-usuario';
 import CarrinhoUsuario from './pages/usuario/carrinhousuario';
 import FavoritosUsuario from './pages/usuario/favoritos-usuario';
+import PedidoDetalhes from './pages/usuario/pedidoDetalhes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-        <BrowserRouter>
-        <ToastContainer/>
-            <Routes>
-                <Route path="/" element={< PageHome />} />
-                <Route path="/admin/login" element={< Login />} />
-                <Route path="/admin/produto" element={<  CadastrarProduto/>} />
-                <Route path="/admin/pedidos" element={< PagePedidos />} />
-                <Route path="/admin/consulta" element={< ConsultaProduto />} />
-                <Route path="/ElementoProduto" element={< ElementoProduto />} />
-                <Route path='/admin/alterar/:id' element={< CadastrarProduto />} />
+    <BrowserRouter>
+      <ToastContainer />
+      <Routes>
+        <Route path="/" element={< PageHome />} />
+        <Route path="/admin/login" element={< Login />} />
+        <Route path="/admin/produto" element={<  CadastrarProduto />} />
+        <Route path="/admin/pedidos" element={< PagePedidos />} />
+        <Route path="/admin/consulta" element={< ConsultaProduto />} />
+        <Route path="/ElementoProduto" element={< ElementoProduto />} />
+        <Route path='/admin/alterar/:id' element={< CadastrarProduto />} />
 
-                <Route path='/produto/:id/detalhes' element={< ProdutosDetalhes />} />
-                <Route path="/usuario/busca" element={< BuscaUsuario />} />
-                <Route path="/login" element={< LoginUsuario />} />
-                <Route path="/usuario/rodape" element={< RodapeUsuario />} />
-                <Route path="/carrinho" element={< CarrinhoUsuario />} />
-                <Route path="/favoritos" element={< FavoritosUsuario />} />
-            </Routes>
-        </BrowserRouter>
+        <Route path='/produto/:id/detalhes' element={< ProdutosDetalhes />} />
+        <Route path="/usuario/busca" element={< BuscaUsuario />} />
+        <Route path="/login" element={< LoginUsuario />} />
+        <Route path="/usuario/rodape" element={< RodapeUsuario />} />
+        <Route path="/carrinho" element={< CarrinhoUsuario />} />
+        <Route path="/favoritos" element={< FavoritosUsuario />} />
+        <Route path="/pagamento" element={< PedidoDetalhes />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
