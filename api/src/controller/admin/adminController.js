@@ -5,7 +5,7 @@ const server = Router();
 
 // login do ADM
 
-server.post('/login/admin', async (req, resp)  => {
+server.post('/admin/login', async (req, resp)  => {
     try {
         const { email, senha } = req.body;
         const resposta = await loginAdmin(email, senha);

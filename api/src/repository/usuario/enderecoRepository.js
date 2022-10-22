@@ -1,34 +1,33 @@
 import { conexao } from '../conection.js'
 
 
-export async function listar(cepUsuario) {
+export async function listar(idUsuario) {
     const comando = 
     ` 
-    select cep_usuario_endereco   id, 
-         DS_CEP		            cep,
-        DS_RUA		            rua,
-        DS_CASA		            casa,
-        DS_REFERENCIA	        referencia,
-        DS_COMPLEMENTO	        complemento,
-        DS_BAIRRO		        bairro,
-        DS_CIDADE		        cidade,
-    
-    from tb_usuario_endereco
-    where cep_usuario= ? `
+    select  id_usuario_endereco  id,
+            ds_cep				 cep,
+            ds_rua				 rua,
+            ds_casa              numero,
+            ds_referencia        referencia,
+            ds_bairro			 bairro,
+            ds_cidade			 cidade,
+            ds_uf			 	 uf,
+            ds_complemento		 complemento
+      from tb_usuario_endereco
+     where ID_USUARIO = ?`
 
-    const [registros] = await conexao.query(comando,[cepUsuario])
+    const [registros] = await conexao.query(comando, [idUsuario])
     return registros;
 }
 
 
-export async function salvar (cep, rua, casa, referencia, complemento, bairro, cidade) {
+export async function salvar (idUsuario, endereco) {
     const comando = 
-    ` insert into TB_USUARIO_ENDERECO (ds_cep, ds_rua, ds_casa, ds_referencia, ds_complemento, ds_bairro, ds_cidade, ds_uf)
-    values ( ?, ?, ? , ?, ?, ?, ?, ?);  `
+    ` insert into TB_USUARIO_ENDERECO (ds_cep, ds_rua, ds_casa, ds_referencia, ds_complemento, ds_bairro, ds_cidade, ds_uf, id_usuario)
+                               values (?, ?, ? , ?, ?, ?, ?, ?, ?) `
 
-    const [endereco] = await conexao.query(comando,[cep, rua, casa, referencia, complemento, bairro, cidade])
-    return endereco.insertcep; 
+    const [info] = await conexao.query(comando,[idUsuario, endereco.cep, endereco.rua, endereco.casa, endereco.referencia, endereco.bairro, endereco.cidade, endereco.uf, endereco.complemento])
+    return info.insertId; 
 }
 
 
-//inserir os endereços nas tabelas depois

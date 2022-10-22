@@ -2,10 +2,19 @@ import './index.scss'
 import AbaLateralUSU from '../../../components/usuario/aba-lateral-usu'
 import CabecalhoUSU from '../../../components/usuario/cabecalho-usu'
 import RodapeUsuario from '../../../components/usuario/rodape-usuario'
+import { listar } from '../../../api/usuario/enderecoClienteAPI.js'
+import { useEffect, useState } from 'react'
 
-export default function PedidoDetalhes() {
+export default function Pagamento() {
+    const [endereco, setEndereco] = useState([]);
 
+    async function carregarEndereco() {
+        const r = await listar();
+    }
 
+    useEffect(() => {
+        carregarEndereco();
+    }, [])
 
     return (
         <div className='page-pagamento-usu'>
@@ -82,7 +91,7 @@ export default function PedidoDetalhes() {
                     <div>
                         <div>
                             <div>
-                                <h2>Pagamento</h2>
+                                <h2>Finalizar Compra</h2>
                                 <div>
                                     nome:<input></input>
                                     número:<input></input>

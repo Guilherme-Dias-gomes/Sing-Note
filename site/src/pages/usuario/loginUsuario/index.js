@@ -52,8 +52,8 @@ export default function LoginUsuario() {
         <div className='page-login-usuario'>
             <LoadingBar color='#f11946' ref={ref} />
             <form className='formulario'>
-                <p>thawann.silva34@gmail.com</p>
-                <p>1234</p>
+                <p>  carloshenrique@gmail.com</p>
+                <p>  @carloshenriquesouza#*456&</p>
 
                 <h1 className='titulo-form'><span><img src='/image/img-perfilzinho.png' alt='' width='34px'></img></span>Login</h1>
 
