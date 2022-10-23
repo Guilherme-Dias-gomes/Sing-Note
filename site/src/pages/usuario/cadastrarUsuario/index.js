@@ -1,3 +1,4 @@
+import './index.scss'
 import { useState } from "react"
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -18,7 +19,7 @@ export default function CadastroUsuario(){
     async function salvarUsuario(){
         try{
             if (!id){
-                const r = await cadastarPerfil(nome, rg, cpf, telefone, nascimento);
+                const r = await cadastarPerfil(nome, rg, cpf, nascimento, telefone);
                 await cadastarLogin(email, senha, r.id);
 
                 toast.dark('Você está cadastrado!');
@@ -51,39 +52,39 @@ export default function CadastroUsuario(){
     // }
 
     return(
-        <div>
-            nome:
-            <input
+        <div className="teste">
+            
+            Nome:<input
                 type="text"
                 value={nome}
                 onChange={e => setNome(e.target.value)}/>
-            RG:
-            <input
+            
+            RG:<input
                 type="text"
                 value={rg}
                 onChange={e => setRg(e.target.value)}/>
-            CPF:
-            <input
+            
+            CPF:<input
                 type="text"
                 value={cpf}
                 onChange={e => setCpf(e.target.value)}/>
-            Telefone:
-            <input
+            
+            Telefone:<input
                 type="text"
                 value={telefone}
                 onChange={e => setTelefone(e.target.value)}/>
-            Nascimento:
-            <input
+            
+            Nascimento:<input
                 type="text"
                 value={nascimento}
                 onChange={e => setNascimento(e.target.value)}/>
-            email:
-            <input
+            
+            email:<input
                 type="text"
                 value={email}
                 onChange={e => setEmail(e.target.value)}/>
-            senha:
-            <input
+            
+            senha:<input
                 type="text"
                 value={senha}
                 onChange={e => setSenha(e.target.value)}/>
