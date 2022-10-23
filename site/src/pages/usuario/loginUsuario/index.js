@@ -1,16 +1,16 @@
-import { useState, useRef, useEffect } from 'react'
 import { Logar } from '../../../api/usuario/usuarioLoginAPI';
-import { toast } from 'react-toastify'
-
-import storage from 'local-storage';
 import { useNavigate } from 'react-router-dom'
+import { useState, useRef, useEffect } from 'react'
+import { toast } from 'react-toastify'
 import LoadingBar from 'react-top-loading-bar';
+import storage from 'local-storage';
 
 import './index.scss'
 
 export default function LoginUsuario() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
+    const [ erro, setErro ] = useState('')
     const [carregando, setCarregando] = useState(false);
 
     const navegar = useNavigate();
@@ -23,18 +23,15 @@ export default function LoginUsuario() {
     }, [])
 
     async function LogarCliente(e) {
-
         setCarregando(true)
         e.preventDefault()
         ref.current.continuousStart()
 
         try {
             const r = await Logar(email, senha);
-
             storage('Cliente-Logado', r)
 
             toast.dark('Cliente-Logado', { autoClose: 400, hideProgressBar: true });
-
             setTimeout(() => {
                 navegar('/usuario/busca');
             }, 1500);
@@ -43,7 +40,7 @@ export default function LoginUsuario() {
             ref.current.complete();
             setCarregando(false)
             if (err.response.status === 401){
-                toast.error(err.response.data.erro) 
+                setErro(err.response.data.erro) 
             }
         }
     }

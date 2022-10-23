@@ -26,23 +26,28 @@ export async function BuscarCategoriaPorID(id) {
 
 export async function BuscarProdutoPorCategoria(id) {
     const comando =
-    ` 
-    select tb_produto.id_produto               Id,
-                      nm_produto               Nome,
-                      ds_modelo                Modelo,
-                      ds_marca                 Marca,
-                      nr_preco                 Preco,
-                      img_produto              Imagem,
-                      nm_produto_categoria	   Categoria,
-    tb_produto_imagem.id_produto_imagem        idImagem
-                 from tb_produto
-           inner join tb_produto_imagem 
-                   on tb_produto.id_produto = tb_produto_imagem.id_produto
-           inner join tb_produto_categoria 
-                   on tb_produto.id_produto_categoria = tb_produto_categoria.id_produto_categoria
-                where mod(tb_produto_imagem.id_produto_imagem, 2) = 0
-                  and tb_produto_categoria.id_produto_categoria = ?;
-    `
+
+ 
+    ` select tb_produto.id_produto               Id,
+                        nm_produto               Nome,
+                        ds_modelo                Modelo,
+                        ds_marca                 Marca,
+                        nr_preco                 Preco,
+                    max(img_produto)             Imagem,
+  max(tb_produto_imagem.id_produto_imagem)       idImagem
+        from tb_produto
+   left join tb_produto_imagem 
+          on tb_produto.id_produto = tb_produto_imagem.id_produto
+  inner join tb_produto_categoria
+          on tb_produto_categoria.id_produto_categoria = tb_produto.id_produto_categoria
+       where tb_produto_categoria.id_produto_categoria = ?
+       group by tb_produto.id_produto,
+                           nm_produto,
+                           ds_modelo,
+                           ds_marca,
+                           nr_preco
+        `
+   
     const [registros] = await conexao.query(comando, [id])
     return registros
 }

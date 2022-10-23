@@ -34,7 +34,7 @@ export async function cadastrarUsuario (usuario) {
 export async function cadastrarUsuarioLogin(login, idUsuario){
     const comando = 
     `insert into tb_usuario_login(ds_email, ds_senha, id_usuario)
-                           values(?, ?, ?)` 
+                           values(?, md5(?), ?)` 
 
     const [resposta] = await conexao.query(comando,[login.email, login.senha, idUsuario])
 

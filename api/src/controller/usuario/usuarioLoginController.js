@@ -4,7 +4,7 @@ import { Router } from "express";
 import { validarPerfilCliente, validarLoginCliente } from '../../service/perfilClienteValidacao.js';
 const server = Router();
 
-// login do usuari
+// login do usuario
 server.post('/login', async (req, resp)  => {
     try {
         const { email, senha } = req.body;

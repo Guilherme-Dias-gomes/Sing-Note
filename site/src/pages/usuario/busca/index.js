@@ -23,7 +23,7 @@ export default function BuscaUsuario () {
         setProdutos(resposta);
     }
 
-///////////////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////////
     async function filtrarTipoGuitarra(){
         const resposta = await buscarProdutoPorTipo(1);
         setProdutos(resposta);
@@ -41,7 +41,7 @@ export default function BuscaUsuario () {
         setProdutos(resposta);
     }
     async function filtrarTipoBateria(){
-        const resposta = await buscarProdutoPorTipo(5);
+       const resposta = await buscarProdutoPorTipo(5);
         setProdutos(resposta);
     }
     async function filtrarTipoPadeiro(){
@@ -68,7 +68,7 @@ export default function BuscaUsuario () {
         const resposta = await buscarProdutoPorTipo(11);
         setProdutos(resposta);
     }
-//////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
     async function filtrarCordaCategoria(){
         const resposta = await buscarProdutoPorCategoria(1);
         setProdutos(resposta);
@@ -100,7 +100,7 @@ export default function BuscaUsuario () {
     }
 
     function exibirImagem(imagem) {
-        if (imagem === undefined) {
+        if (!imagem) {
             return '/image/imagespadrao.png';
         }
         else if (typeof (imagem) == 'string') {
@@ -173,7 +173,7 @@ export default function BuscaUsuario () {
                             <p className='cada-titulo' onClick={filtrarTipoViolancelo}>Violancelo</p>
                             <p className='cada-titulo' onClick={filtrarTipoSaxofone}>Saxofone</p>
                             <p className='cada-titulo' onClick={filtrarTipoFlauta}>Flauta</p>
-                        </div>
+                        </div> 
 
                     </div>
                     <div className='parte-da-consulta'>

@@ -204,7 +204,7 @@ export default function CadastrarProduto() {
 
                         <div className="caixa-de-texto-div-1">
                             <label className="titulo-caixa-de-texto"> Preço </label>
-                            <input type="text" className="caixa-de-texto"
+                            <input type="number" className="caixa-de-texto"
                             value={preco} onChange={e => setPreco(e.target.value)}/>
                         </div>
 

@@ -21,7 +21,7 @@ export default function CadastroUsuario(){
                 const r = await cadastarPerfil(nome, rg, cpf, telefone, nascimento);
                 await cadastarLogin(email, senha, r.id);
 
-                toast.dark('Você está cadastrado');
+                toast.dark('Você está cadastrado!');
             }
 
         } catch (err) {
@@ -52,30 +52,37 @@ export default function CadastroUsuario(){
 
     return(
         <div>
+            nome:
             <input
                 type="text"
                 value={nome}
                 onChange={e => setNome(e.target.value)}/>
+            RG:
             <input
                 type="text"
                 value={rg}
                 onChange={e => setRg(e.target.value)}/>
+            CPF:
             <input
                 type="text"
                 value={cpf}
                 onChange={e => setCpf(e.target.value)}/>
+            Telefone:
             <input
                 type="text"
                 value={telefone}
                 onChange={e => setTelefone(e.target.value)}/>
+            Nascimento:
             <input
                 type="text"
                 value={nascimento}
                 onChange={e => setNascimento(e.target.value)}/>
+            email:
             <input
                 type="text"
                 value={email}
                 onChange={e => setEmail(e.target.value)}/>
+            senha:
             <input
                 type="text"
                 value={senha}

@@ -132,6 +132,7 @@ server.get('/admin/produto/:id', upload.array('imagens'), async (req, resp) => {
     }
 })
 
+// Alterar produto
 server.put('/admin/produto/:id', async (req, resp) => {
     try {
         const id = req.params.id;
