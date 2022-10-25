@@ -25,4 +25,4 @@ export async function validarenderecoCliente(usuario){
     }
 }
 
-// Se não me engano falta algum async no controller ou repository, mas não coloquei pois não me recordo onde é  
+// Se não me engano falta algum async no controller ou repository, mas não coloquei pois não me recordo onde é https://github.com/Guilherme-Dias-gomes/Sing-Note.git 
