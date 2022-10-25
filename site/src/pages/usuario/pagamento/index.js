@@ -4,12 +4,16 @@ import CabecalhoUSU from '../../../components/usuario/cabecalho-usu'
 import RodapeUsuario from '../../../components/usuario/rodape-usuario'
 import { listar } from '../../../api/usuario/enderecoClienteAPI.js'
 import { useEffect, useState } from 'react'
+import Storage from 'local-storage'
+import CardEndereco from '../../../components/usuario/cardEndereco'
 
 export default function Pagamento() {
-    const [endereco, setEndereco] = useState([]);
+    const [endereco, setEndereco] = useState();
 
     async function carregarEndereco() {
-        const r = await listar();
+        const id = Storage('Clinte-Logado').id
+        const r = await listar(id);
+        setEndereco(r)
     }
 
     useEffect(() => {
@@ -46,30 +50,11 @@ export default function Pagamento() {
                             <div className='formatacao-btn-remover'>
                                 <h1>Informações do seu pedido</h1>
                             </div>
-                            <div className='card-dados-e-endereco'>
-                                <div className='card-dados-pessoais'>
-                                    <h2>Dados Pessoias</h2>
-                                    <hr></hr>
-                                    <div>
-                                        <h3>Guilherme Dias Gomes</h3>
-                                        <h4>CPF:</h4>
-                                        <h4>RG:</h4>
-                                        <h4>Telefone:</h4>
-                                        <h4>Email:</h4>
-                                    </div>
-                                </div>
-                                <div className='card-endereco'>
-                                    <h2>Endereço de entrega</h2>
-                                    <hr></hr>
-                                    <div>
-                                        <h3>Rua Condi Tamadare Lopes Aguiar</h3>
-                                        <h4>Número:</h4>
-                                        <h4>Baírro:</h4>
-                                        <h4>CEP:</h4>
-                                        <h4>Cidade:</h4>
-                                        <h4>Complemento:</h4>
-                                    </div>
-                                </div>
+                            <div className='Endereco'>
+
+                                {endereco.map(item =>
+                                    <CardEndereco item={item} />
+                                )}
                             </div>
                         </div>
                         <div className='card-resumo'>

@@ -1,0 +1,27 @@
+.card-endereco {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    color: #6e6e6e;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    width: 350px;
+    height: 170;
+
+    .tipo {
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .end,
+    .cep {
+        font-size: 16px;
+    }
+
+    .cep {
+        margin-bottom: 10px;
+        font-weight: 500;
+    }
+}

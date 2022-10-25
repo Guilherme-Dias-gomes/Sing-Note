@@ -11,6 +11,6 @@ export async function salvar (cepUsuario, cep, rua, casa, referencia, complement
 }
 
 export async function listar (cepUsuario){
-    const r = await api.get('/api/usuario/' +  cepUsuario  + '/endereco', {cep, rua, casa, referencia, complemento, bairro, cidade, uf });
+    const r = await api.get('/api/usuario/' +  cepUsuario  + '/endereco');
     return r.data;
 }
