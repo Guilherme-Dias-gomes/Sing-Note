@@ -131,10 +131,7 @@ export default function CadastrarProduto() {
     return(
         <div className="pagina-principal"> {/*Começo da div mãe*/} 
     
-    <AbaLateralADM/>
-
-    
-        
+    <AbaLateralADM/>        
         <div className="container-do-cadastro"> {/*Container do cadastro*/}
         <Cabecalho/>
             <div className="parte-cadastro"> {/*Começo da parte do cadastro*/}

@@ -1,46 +1,57 @@
-
 import "./index.scss"
 
 
 export default function RodapeUsuario(){
     return (
-            <div className="principal-rodape-usu">
-                <div className="departamentos-div">
-                    <h1 className="titulos-divs-rodape">Departamentos</h1>
-                    <div className='div-colunas-departamentos'>
-                        <div className='coluna-mini-descricao-rodape'>
-                            <p className='mini-descricao-rodape'>Violão</p>
-                            <p className='mini-descricao-rodape'>Guitarra</p>
-                            <p className='mini-descricao-rodape'>Baterias</p>
-                            <p className='mini-descricao-rodape'>Baixo</p>
-
-                        </div>
-                        <div>
-                        <p className='mini-descricao-rodape'>Piano</p>
-                        <p className='mini-descricao-rodape'>Percursão</p>
-                        <p className='mini-descricao-rodape'>Flauta</p>
-                        </div>
-                    </div>
+        <main className="main-rodape-usu">
+            <div className="primeira-coluna">
+                <h1 className="titulo-colunas-rodape-usu">Departamentos</h1>
+                <div className="primeira-parte">
+                    <p className="descricao-colunas-rodape-usu">Violão</p>
+                    <p className="descricao-colunas-rodape-usu">Guitarra</p>
+                    <p className="descricao-colunas-rodape-usu">Bateria</p>
+                    <p className="descricao-colunas-rodape-usu">Baixo</p>
+                    <p className="descricao-colunas-rodape-usu">Piano</p>
+                    <p className="descricao-colunas-rodape-usu">Percussão</p>
+                    <p className="descricao-colunas-rodape-usu">Flauta</p>
                 </div>
-
-                <div className="departamentos-div">
-                    <h1 className="titulos-divs-rodape">Departamentos</h1>
-                    <div className='div-colunas-departamentos'>
-                        <div>
-                            <p className='mini-descricao-rodape'>Violão</p>
-                            <p className='mini-descricao-rodape'>Guitarra</p>
-                            <p className='mini-descricao-rodape'>Baterias</p>
-                            <p className='mini-descricao-rodape'>Baixo</p>
-
-                        </div>
-                        <div>
-                        <p className='mini-descricao-rodape'>Piano</p>
-                        <p className='mini-descricao-rodape'>Percursão</p>
-                        <p className='mini-descricao-rodape'>Flauta</p>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
+            <div className="segunda-coluna">
+                <h1 className="titulo-colunas-rodape-usu"> Institucional</h1>
+                <p className="descricao-colunas-rodape-usu"> Sobre a Sing Note</p>
+                <p className="descricao-colunas-rodape-usu">Políticas do Site e Marketplace</p>
+                <div className="parte-minha-conta">
+                    <h1 className="titulo-colunas-rodape-usu">Minha Conta</h1>
+                    <p className="descricao-colunas-rodape-usu"> Meus Pedidos</p>
+                </div>
+            </div>
+            <div className="terceira-coluna">
+                <h1 className="titulo-colunas-rodape-usu"> Atendimento</h1>
+                <p className="descricao-colunas-rodape-usu"> Horário de Atendimento:</p> 
+                <p className="descricao-colunas-rodape-usu"> 08:00 às 20:00 -</p> 
+                <p className="descricao-colunas-rodape-usu"> Segunda à Sábado, </p> 
+                <p className="descricao-colunas-rodape-usu"> horário de Brasília</p> 
+                <p className="descricao-colunas-rodape-usu">(Exceto domingo e feriados)</p>
+            </div>
+            <div className="quarta-coluna">
+                <h1 className="titulo-colunas-rodape-usu">Mídias sociais</h1>
+                <div className="redes-rodape-usu">
+                    <div className="bolinha-midias-sociais"> 
+                        <img src="/image/midia-facebook.png"/>
+                    </div>
+                    <div className="bolinha-midias-sociais">
+                        <img src="/image/midia-twitter.png"/>
+                    </div>
+                    <div className="bolinha-midias-sociais"> 
+                        <img src="/image/midia-insta.png"/>
+                    </div>
+                </div>    
+                <div className="parte-fale-conosco">
+                    <h1 className="titulo-colunas-rodape-usu">Email</h1>
+                    <p className="descricao-colunas-rodape-usu">faleconosco@sgn.com.br</p>
+                </div>
+            </div>
+           
+        </main>
     )
 }

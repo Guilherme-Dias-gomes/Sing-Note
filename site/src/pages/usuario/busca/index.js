@@ -139,14 +139,22 @@ export default function BuscaUsuario () {
                     <CabecalhoUSU/>
                 </div>
                 <div className='pesquisa-e-busca'>
-                    <input 
-                        className='input-pesquisa-usu' 
-                        type="text" 
-                        placeholder='Buscar por nome'
-                        value={buscar}
-                        onChange={e => setBuscar(e.target.value)}
-                        onKeyPress={e => e.key === 'Enter' ? filtrar() : ''}/>
+                    <div className='busca-e-lupa'>
+                        <input 
+                            className='input-pesquisa-usu' 
+                            type="search" 
+                            placeholder='Buscar por nome'
+                            value={buscar}
+                            onChange={e => setBuscar(e.target.value)}
+                            onKeyPress={e => e.key === 'Enter' ? filtrar() : ''}
+                            
+                        />
+                        <button className='botao-input-buscar'> 
+                            <img src='/image/lupa-usu-busca.png' className='lupa-busca-usu'/>
+                        </button>
+                    </div>
                     <button className='botao-buscar-usu' onClick={filtrar}>Buscar</button>
+                   
                 </div>
                 <div className='area-da-consulta-usu'>
                     <div className='categoria-e-tipo'>
@@ -195,16 +203,27 @@ export default function BuscaUsuario () {
                         
                         <div className='cards-produto-usu'>
                             {produtos.map(item => 
-                                <div className='espaco-produto' onClick={() => abrirDetalhes(item.Id)}>
+                                <div className='espaco-produto-busca-usu' onClick={() => abrirDetalhes(item.Id)}>
                                     {/* {item.Id} */}
-                                    <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
+                                    <div className='coracao-e-unidades'>
+                                        <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
+                                        <div className='quadrado-unidades'>
+                                            <p className='quadrado-texto'>Restam</p>
+                                            <p className='quadrado-qtd-unidade'>3</p>
+                                            <p className='quadrado-texto'>Unid.</p>
+                                        </div>
+                                    </div>
                                     <div className='formatacao-img-produto'>
                                         <img src={exibirImagem(item.Imagem)} className="ImagemProdutoUsu" alt='teste'/>
                                     </div>
 
                                     <div className='descricao-card'>
                                     
-                                        <h1 className='card-produto-descricao'>{item.Nome} {item.Marca} {item.Modelo}</h1>
+                                        <div className='card-produto-descricao'>
+                                            <p className='descricao-produto-card-usu'>{item.Nome}</p>
+                                            <p className='descricao-produto-card-usu'>{item.Marca}</p>
+                                            <p className='descricao-produto-card-usu'>{item.Modelo}</p>
+                                        </div>
                                         <h1 className='preco-card'>R$ {item.Preco}</h1>
                                         <button className='botao-comprar'>
                                             Comprar

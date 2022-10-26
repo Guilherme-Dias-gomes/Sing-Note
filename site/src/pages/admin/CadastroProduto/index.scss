@@ -267,4 +267,25 @@
     border-radius: 5px;
     color: #ffffff;
     cursor: pointer;
+}
+
+@media (min-width:100px) and (max-width:1000px){
+    .parte-cadastro{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        width: 80%;
+        height: 1050px;
+    }
+    
+    
+    .container-formulario{
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        justify-content: space-around;
+    }
+
+
 }}

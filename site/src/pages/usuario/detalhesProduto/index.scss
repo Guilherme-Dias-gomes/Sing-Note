@@ -36,12 +36,12 @@
         display: flex;
         flex-direction: row;
 
-        width: 35%;
+        width: 400px;
         height: 400px;
     }
 
     .imagem2-produto{
-        width: 100%;
+        width: auto;
         height: 20%;
         border: #bfbfbf solid 2px;
         margin: 1% 0px 0px 1%;
@@ -57,10 +57,12 @@
         height: 100%;
         border: #bfbfbf solid 2px;
         margin-left: 1%;
+        
     }
 
     .imagem-selecionada-principal-carrinho-usu{
         height: 100%;
+        width: 100%;
         
     }
 
@@ -69,7 +71,7 @@
         flex-direction: column;
         justify-content: space-between;
 
-        height: 70%;
+        height: 100%;
         width: 45%;
     }
     
@@ -128,7 +130,7 @@
     .preco-detalhe-usu{
         color: #01BE01;
         font-family: 'inter-font';
-        font-size: 22px;
+        font-size: 20px;
         font-weight: bold;
     }
 
@@ -138,7 +140,8 @@
         align-items: center;
         justify-content: space-evenly;
 
-        height: 50px;
+        height: 60px;
+        width: 100%;
         border-style: none;
         background-color: #007BF1;
         border-radius: 5px;
@@ -146,6 +149,17 @@
         font-size: 17px;
         font-weight: bolder;
         color: #fff;
+    }
+
+    .botao-add-carrinho-detalhe-usu:hover{
+        background-color: #fff;
+        color: #318CE7;
+        border: #318CE7 solid 2px;
+        transition: 0.1s;
+        cursor: pointer;
+        .img-carrinho{
+        filter: invert(100%);
+    }
     }
 
     .Caixa-produto-especificacoes-tecnicas-usu{
@@ -165,6 +179,7 @@
         font-family: 'inter-font';
         font-weight: bolder;
         font-size: 30px;
+        column-span: all;
     }
 
     .informacoes-tecnicas-usu{
@@ -173,6 +188,10 @@
         font-size: 20px;
         margin-top: 10px;
         color: #404040;
+        -webkit-columns-: 200px 2;
+        -moz-columns: 200px 2;
+        columns:200px 2;
+        column-gap: 25px;
     }
 
     .Caixa-voce-tambem-pode-gostar{
@@ -199,6 +218,107 @@
         height: auto;
         margin-top: 40px;
     }
+
+    /////////////////////////////////////////////////////////////
+    //css dos cards
+
+    .espaco-produto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 450px;
+        width: 250px;
+        border-radius: .3em;
+        border: 1px solid rgba(0, 0, 0, 0.13);
+        box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+        background-color: white;
+    }
+    
+    .imagem-coracao{
+        align-self: flex-start;
+
+        height: 20px;
+        width: 20px;
+        margin: 10px 0px 0px 10px;
+        opacity: 0.5;
+    }
+    
+    .imagem-coracao:hover{
+        opacity: 1;
+    }
+
+    .formatacao-img-produto{
+        height: 200px;
+        width: 200px;
+        margin-top: 10px;
+        
+    }
+    
+    .descricao-card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .ImagemProdutoUsu{
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+    }
+    
+    .card-produto-descricao{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        font-family: 'inter-font';
+        font-size: 15px;
+        width: 120%;
+        height: 80px;
+    }
+    
+    .preco-card{
+        font-size: 20px;
+        color: #01BE01;
+        font-family: 'inter-font';
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    
+    .imagem-carrinho{
+        height: 20px;
+        width: 20px;
+    }
+    
+    .botao-comprar{
+        display: flex;
+        justify-content: space-around;
+        font-size: 19px;
+        color: #fff;
+        align-items: center;
+        background-color: #318CE7;
+        border-style: none;
+        width: 150px;
+        height: 40px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+    
+    .botao-comprar:hover{
+        background-color: #fff;
+        color: #318CE7;
+        border: #318CE7 solid 2px;
+        transition: 0.1s;
+        cursor: pointer;
+        
+        .imagem-carrinho{
+        filter: invert(100%);
+    }
+    }
+
+
     
 }
     

@@ -1,44 +1,79 @@
-@font-face {
-    font-family: 'inter-font';
-    src: url('../../../assets/fonts/inter-font.ttf');
-}
-
-
-.principal-rodape-usu{
+.main-rodape-usu{
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
     justify-content: space-around;
-
     background-color: #318CE7;
+    color: #ffffff;
     width: 100%;
-    height: 30vh;
-
-    .departamentos-div{
-        display: flex;
-        flex-direction: column;
+    height: max-content;
+    padding: 2vh 1vw;
+    z-index: 3;
+    padding-bottom:10vh;
     }
 
-    .titulos-divs-rodape{
-        font-family: "inter-font";
-        font-size: 25px;
-        font-weight: bolder;
-        color: #fff;
+    .primeira-coluna{
+    display: flex;
+    flex-direction: column;
+    width: 24%;
+    }
+
+    .primeira-parte{
+
+        column-count: 2;
+
+    }
+    .coluna1{
+    display: flex;
+    flex-direction: column;
+
+    }
+    .coluna2{
+    display: flex;
+    flex-direction:column;
+
+    }
+    .segunda-coluna{
+    width: 24%;
+    padding-right: 5px;
+    }
+    .terceira-coluna{
+    width:24%;
+
+    }
+    .quarta-coluna{
+        width:24%;
 
     }
 
-    .div-colunas-departamentos{
+    .titulo-colunas-rodape-usu{
+        font-size: 2.2vw;
+    }
+
+    .descricao-colunas-rodape-usu{
+        font-size: 1.2vw;
+    }
+
+    .redes-rodape-usu{
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        width: 70%;
     }
 
-    .mini-descricao-rodape{
-        font-family: "inter-font";
-        font-size: 15px;
-        color: #fff;
+    .bolinha-midias-sociais{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba($color: #000000, $alpha: 0.3);
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
     }
 
-    .coluna-mini-descricao-rodape{
-
+    .parte-minha-conta{
+        margin-top: 5%;
     }
-}
+
+    .parte-fale-conosco{
+        margin-top: 5%;
+    }

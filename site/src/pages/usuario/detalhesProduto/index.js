@@ -90,7 +90,9 @@ export default function ProdutosDetalhes(){
                         </div>
                         <div className='preco-botao'>
                             <h2 className='preco-detalhe-usu'>R$ {produto.info.Preco}</h2>
-                            <button className='botao-add-carrinho-detalhe-usu' onClick={addNoCarrinho}>Adicionar ao carrinho <img src='/image/carrinho-card.png' alt='img-carrinho'/></button>
+                            <button className='botao-add-carrinho-detalhe-usu' onClick={addNoCarrinho}>Adicionar ao carrinho
+                                <img src='/image/carrinho-card.png' alt='img-carrinho' className='img-carrinho'/>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -108,12 +110,38 @@ export default function ProdutosDetalhes(){
                         <div className='espaco-produto'>
                             <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
                             <div className='formatacao-img-produto'>
-                                <img src='/image/imagespadrao.png' className="ImagemProdutoUsu" alt='teste'/>
+                                <img src='/image/guitar 1.png' className="ImagemProdutoUsu" alt='teste'/>
                             </div>
 
                             <div className='descricao-card'>
                             
-                                <h1 className='card-produto-descricao'></h1>
+                                <h1 className='card-produto-descricao'>
+                                {<span>{/* props.item.Nome*/} Guitarra solador</span> }
+                                <span>{/* props.item.Marca*/} Spamuscular</span>
+                                <span>{/* props.item.Modelo*/}terceiro elemento</span>
+                                </h1>
+                                <h1 className='preco-card'>R$ 7878</h1>
+                                <button className='botao-comprar'>
+                                    Comprar
+                                <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card'/>
+                                </button>
+                            </div>
+
+                        </div> 
+
+                        <div className='espaco-produto'>
+                            <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
+                            <div className='formatacao-img-produto'>
+                                <img src='/image/bateria.png' className="ImagemProdutoUsu" alt='teste'/>
+                            </div>
+
+                            <div className='descricao-card'>
+                            
+                                <h1 className='card-produto-descricao'>
+                                {<span>{/* props.item.Nome*/} Guitarra solador</span> }
+                                <span>{/* props.item.Marca*/} Spamuscular</span>
+                                <span>{/* props.item.Modelo*/}terceiro elemento</span>
+                                </h1>
                                 <h1 className='preco-card'>R$ 7878</h1>
                                 <button className='botao-comprar'>
                                     Comprar
@@ -131,25 +159,11 @@ export default function ProdutosDetalhes(){
 
                             <div className='descricao-card'>
                             
-                                <h1 className='card-produto-descricao'></h1>
-                                <h1 className='preco-card'>R$ 7878</h1>
-                                <button className='botao-comprar'>
-                                    Comprar
-                                <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card'/>
-                                </button>
-                            </div>
-
-                        </div> 
-
-                        <div className='espaco-produto'>
-                            <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
-                            <div className='formatacao-img-produto'>
-                                <img src='/image/imagespadrao.png' className="ImagemProdutoUsu" alt='teste'/>
-                            </div>
-
-                            <div className='descricao-card'>
-                            
-                                <h1 className='card-produto-descricao'></h1>
+                                <h1 className='card-produto-descricao'>
+                                {<span>{/* props.item.Nome*/} Guitarra solador</span> }
+                                <span>{/* props.item.Marca*/} Spamuscular</span>
+                                <span>{/* props.item.Modelo*/}terceiro elemento</span>
+                                </h1>
                                 <h1 className='preco-card'>R$ 7878</h1>
                                 <button className='botao-comprar'>
                                     Comprar

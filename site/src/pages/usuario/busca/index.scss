@@ -80,7 +80,7 @@
 
         .titulo-categoria{
             font-family: 'inter-font';
-            font-size: 25px;
+            font-size: 2vw;
             font-weight: bolder;
         }
 
@@ -104,12 +104,13 @@
             opacity: 0.5;
             color: #000;
             cursor: pointer;
-            width: auto;
             font-size: 19px;
         }
 
         .cada-titulo:hover{
             color: #81BFFA;
+            color: #007BF1;
+            opacity: 1;
         }
 
         .parte-da-consulta{
@@ -120,6 +121,7 @@
             background-color: #fff;
             border-radius: 10px;
             width: 70%;
+            margin-bottom: 10px;
         }
 
         .resultados{
@@ -144,10 +146,31 @@
             padding-left: 100px;
         }
 
+        .busca-e-lupa{
+            display: flex;
+            width: 80%;
+            height: 45px;
+            
+        }
+
+        .botao-input-buscar{
+            height: 45px;
+            border-style: none;
+            background-color: #fff;
+            border-radius: 0px 0.8em 0.8em 0px;
+            padding-right: 10px;
+        }
+
+        .lupa-busca-usu{
+            object-fit: cover;
+            width: 20px;
+
+        }
+
         .input-pesquisa-usu {
-            width: 83%;
+            width: 100%;
             border: none;
-            border-radius: 0.8rem;
+            border-radius: 0.8rem 0px 0px 0.8em;
             font-family: inherit;
             color: inherit;
             padding: 14px;
@@ -227,56 +250,105 @@
         }
 
 
-        .espaco-produto {
+        .espaco-produto-busca-usu {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            margin-top: 2rem;
-            height: 400px;
-            width: 230px;
-            padding-bottom: 10px;
+            align-items: center;
+            height: 500px;
+            width: 250px;
             border-radius: .3em;
             border: 1px solid rgba(0, 0, 0, 0.13);
             box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
             background-color: white;
+            margin: 10px 0px;
         }
 
+        .coracao-e-unidades{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .quadrado-unidades{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 3px 3px 0px 0px;
+
+            border: #007BF1 solid 2px;
+            border-radius: 15px;
+            width: 70px;
+            height: 70px;
+            color: #007BF1;
+        }
+        
         .imagem-coracao{
-            height: 5%;
-            width: 8.5%;
-            margin: 10px 0px 0px 10px;
+            align-self: flex-start;
+            justify-self: left;
+    
+            height: 25px;
+            width: 25px;
+            margin: 5px 0px 0px 5px;
             opacity: 0.5;
         }
 
+        .quadrado-texto{
+            font-weight: bolder;
+            font-family: "inter-font";
+            font-size: 14px;
+        }
+
+        .quadrado-qtd-unidade{
+            font-weight: bolder;
+            font-family: "inter-font";
+            font-size: 16px;
+        }
+        
         .imagem-coracao:hover{
             opacity: 1;
         }
-
+    
+        .formatacao-img-produto{
+            height: 200px;
+            width: 200px;
+            margin-top: 10px;
+            
+        }
+        
         .descricao-card{
             display: flex;
             flex-direction: column;
             align-items: center;
             margin-top: 10px;
         }
-
-        .formatacao-img-produto{
-            width: 80%;
-            height: 40%;
-            align-self: center;
-        }
-
+        
         .ImagemProdutoUsu{
-            width: 100%;
             height: 100%;
+            width: 100%;
+            border-radius: 5px;
         }
-
+        
         .card-produto-descricao{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+    
             font-family: 'inter-font';
-            font-size: 16px;
-            width: 70%;
-            margin-top: 60px;
+            font-size: 15px;
+            width: 120%;
+            height: 80px;
         }
 
+        .descricao-produto-card-usu{
+            font-family: "inter-font";
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
         .preco-card{
             font-size: 20px;
             color: #01BE01;
@@ -284,12 +356,12 @@
             font-weight: bold;
             margin-top: 10px;
         }
-
+        
         .imagem-carrinho{
             height: 20px;
             width: 20px;
         }
-
+        
         .botao-comprar{
             display: flex;
             justify-content: space-around;
@@ -303,15 +375,17 @@
             border-radius: 10px;
             margin-top: 20px;
         }
-
+        
         .botao-comprar:hover{
             background-color: #fff;
             color: #318CE7;
             border: #318CE7 solid 2px;
             transition: 0.1s;
             cursor: pointer;
+            
             .imagem-carrinho{
             filter: invert(100%);
         }
-    }
+        }
+    
 }

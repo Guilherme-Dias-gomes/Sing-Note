@@ -13,15 +13,16 @@
     }
 
     .input-pesquisa-adm-consulta  {
-
         width: 70%;
         border: none;
         border-radius: 0.8rem;
-        font-family: inherit;
+        font-family: "inter-font";
         color: inherit;
         padding: 14px;
         background-color: white;
         font-size: 15px;
+        box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+        outline: none;
     }
 
     .elementos-consulta {
@@ -52,7 +53,6 @@
     }
 
     .area-cards-adm{
-        
         width: 80%;
         display: flex;
         flex-wrap: wrap;
@@ -70,7 +70,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            width: 33vh;
+            width: 100%;
             margin-left: 0.2rem;
         }
     
@@ -108,13 +108,31 @@
         }
     
         .btn-buscar {
-            padding: 10px 30px 10px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             background-color: #6AA9E9;
             border-radius: 0.8rem;
             color: white;
             border: none;
             height: 40px;
-            width: 100px;
+            width: 10%;
+        }
+
+        .btn-buscar:hover {
+            border: #6AA9E9 solid 2px;
+            background-color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0px 0px 40px #6AA9E9, 0px 0px -10px #6AA9E9;
+            background-color: #fff;
+            color: #000;
+            transition: 0.3s;
+        }
+
+        .btn-buscar:active{
+            transform: scale(0.99);
+            transition: 0s;
         }
 
         .produto-total-adm{
@@ -129,5 +147,6 @@
         .produto-total-adm-qtd{
             color: #000;
         }
+
 
 }
