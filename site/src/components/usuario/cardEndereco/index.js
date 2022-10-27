@@ -1,14 +1,14 @@
 import './index.scss'
 
-export default function CardEndereco () {
+export default function CardEndereco ({ item: { referencia, rua, cep, bairro, cidade, casa, complemento,  uf } }) {
       
     
     return(
         <div className='card-endereco'>
-            <div className='tipo'>casa</div>
+            <div className='tipo'>{referencia}</div>
             <div>
-                <div className='endereco'>avenida do krai 333 - ponsddaadddzfn</div>
-                <div className='cep'>0000000 - sao paulo/sp</div>
+                <div className='endereco'>{rua}, {casa} - {complemento}</div>
+                <div className='cep'>{cep} - {bairro}, {cidade}/{uf}</div>
             </div>
         </div>
     )

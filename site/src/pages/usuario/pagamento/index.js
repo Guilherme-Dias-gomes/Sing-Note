@@ -2,22 +2,45 @@ import './index.scss'
 import AbaLateralUSU from '../../../components/usuario/aba-lateral-usu'
 import CabecalhoUSU from '../../../components/usuario/cabecalho-usu'
 import RodapeUsuario from '../../../components/usuario/rodape-usuario'
-import { listar } from '../../../api/usuario/enderecoClienteAPI.js'
+import { listarEnderecoUsuario } from '../../../api/usuario/enderecoClienteAPI.js'
 import { useEffect, useState } from 'react'
 import Storage from 'local-storage'
 import CardEndereco from '../../../components/usuario/cardEndereco'
+import { buscarProdutoPorId } from '../../../api/admin/produtoAPI'
 
 export default function Pagamento() {
-    const [endereco, setEndereco] = useState();
+    const [ endereco, setEndereco ] = useState([]);
+    const [ itens, setItens ] = useState([])
+
+    console.log(itens)
 
     async function carregarEndereco() {
         const id = Storage('Clinte-Logado').id
-        const r = await listar(id);
+        const r = await listarEnderecoUsuario(id);
         setEndereco(r)
+    }
+
+    async function carregarItens() {
+        let carrinho = Storage('carrinho');
+        if (carrinho) {
+
+            let temp = [];
+
+            for (let produto of carrinho) {
+                let p = await buscarProdutoPorId(produto.id);
+
+                temp.push({
+                    produto: p,
+                    qtd: produto.qtd
+                })
+            }
+            setItens(temp)
+        }
     }
 
     useEffect(() => {
         carregarEndereco();
+        carregarItens();
     }, [])
 
     return (

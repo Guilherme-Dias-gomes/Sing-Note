@@ -31,7 +31,7 @@ export default function LoginUsuario() {
             const r = await Logar(email, senha);
             storage('Cliente-Logado', r)
 
-            toast.dark('Cliente-Logado', { autoClose: 400, hideProgressBar: true });
+            toast.dark('Vamos as Compras!', { autoClose: 400, hideProgressBar: true });
             setTimeout(() => {
                 navegar('/usuario/busca');
             }, 1500);

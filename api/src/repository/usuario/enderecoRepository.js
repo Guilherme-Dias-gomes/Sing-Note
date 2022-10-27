@@ -1,7 +1,7 @@
 import { conexao } from '../conection.js'
 
 
-export async function listar(idUsuario) {
+export async function listarEnderecoUsuario(idUsuario) {
     const comando = 
     ` 
     select  id_usuario_endereco  id,
@@ -21,12 +21,12 @@ export async function listar(idUsuario) {
 }
 
 
-export async function salvar (idUsuario, endereco) {
+export async function  salvarEnderecoUsuario(idUsuario, endereco) {
     const comando = 
-    ` insert into TB_USUARIO_ENDERECO (ds_cep, ds_rua, ds_casa, ds_referencia, ds_complemento, ds_bairro, ds_cidade, ds_uf, id_usuario)
-                               values (?, ?, ? , ?, ?, ?, ?, ?, ?) `
+        ` insert into TB_USUARIO_ENDERECO (id_usuario, ds_cep, ds_rua, ds_casa, ds_referencia, ds_complemento, ds_bairro, ds_cidade, ds_uf)
+                               values (?, ?, ?, ?, ?, ?, ?, ?, ?) `
 
-    const [info] = await conexao.query(comando,[idUsuario, endereco.cep, endereco.rua, endereco.casa, endereco.referencia, endereco.bairro, endereco.cidade, endereco.uf, endereco.complemento])
+    const [info] = await conexao.query(comando,[idUsuario, endereco.cep, endereco.rua, endereco.casa, endereco.referencia, endereco.complemento, endereco.bairro, endereco.cidade, endereco.uf])
     return info.insertId; 
 }
 

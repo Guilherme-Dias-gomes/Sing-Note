@@ -1,4 +1,4 @@
-import './index.scss'
+    import './index.scss'
 import AbaLateralUSU from '../../../components/usuario/aba-lateral-usu'
 import CabecalhoUSU from '../../../components/usuario/cabecalho-usu'
 import RodapeUsuario from '../../../components/usuario/rodape-usuario'

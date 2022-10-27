@@ -2,22 +2,22 @@ import { BuscarTipoPorID } from "../repository/admin/tipoRepository.js";
 import { BuscarCategoriaPorID } from "../repository/admin/categoriaRepository.js";
 
 export async function validarProduto(produto) {
-    if (produto.nome == undefined || produto.nome == '') {
+    if (produto.nome == undefined || produto.nome.trim() == '') {
         throw new Error('❌Nome do produto é obrigatório!');
     }
-    else if (produto.modelo == undefined || produto.modelo  == '') {
+    else if (produto.modelo == undefined || produto.modelo.trim()  == '') {
         throw new Error('❌Molode do produto é obrigatório!');
     }
-    else if (produto.descricao == undefined || produto.descricao == '') {
+    else if (produto.descricao == undefined || produto.descricao.trim() == '') {
         throw new Error('❌Descrição do produto é obrigatório!');
     }
-    else if (isNaN(produto.estoque) || produto.estoque <= 0) {
+    else if (isNaN(produto.estoque) || produto.estoque.trim() <= 0) {
         throw new Error('❌Valor do estoque do produto é obrigatório!');
     }
-    else if (produto.marca == undefined || produto.marca == '') {
+    else if (produto.marca == undefined || produto.marca.trim() == '') {
         throw new Error('❌Marca do produto é obrigatório!');
     }
-    else if (isNaN(produto.preco) || produto.preco <= 0) {
+    else if (isNaN(produto.preco) || produto.preco.trim() <= 0) {
         throw new Error('❌Preço do produto é obrigatório!');
     }
     const categoria = await BuscarCategoriaPorID(produto.idCategoria);
