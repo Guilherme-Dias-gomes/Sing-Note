@@ -35,7 +35,6 @@ root.render(
         <Route path="/admin/consulta" element={< ConsultaProduto />} />
         <Route path="/ElementoProduto" element={< ElementoProduto />} />
         <Route path='/admin/alterar/:id' element={< CadastrarProduto />} />
-
         <Route path='/produto/:id/detalhes' element={< ProdutosDetalhes />} />
         <Route path="/usuario/busca" element={< BuscaUsuario />} />
         <Route path="/login" element={< LoginUsuario />} />

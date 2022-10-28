@@ -10,22 +10,22 @@ import RodapeUsuario from '../../../components/usuario/rodape-usuario/index.js';
 import { toast } from 'react-toastify';
 
 
-export default function ProdutosDetalhes(){
+export default function ProdutosDetalhes() {
 
-    const [produto, setProduto] = useState({imagens:[], info:{} });
+    const [produto, setProduto] = useState({ imagens: [], info: {} });
 
     const [imagemPrincipal, setImagemPrincipal] = useState(0)
 
-    const { id } = useParams( )
+    const { id } = useParams()
 
-    async function carregarPagina(){
+    async function carregarPagina() {
         const resposta = await buscarProdutoPorId(id)
         console.log(resposta)
         setProduto(resposta)
     }
 
-    function exibirImagemPrincipal(){
-        if(produto.imagens.length > 0){
+    function exibirImagemPrincipal() {
+        if (produto.imagens.length > 0) {
             return API_URL + '/' + produto.imagens[imagemPrincipal]
         }
         else {
@@ -33,22 +33,22 @@ export default function ProdutosDetalhes(){
         }
     }
 
-    function exibirImagenProdutos(imagem){
+    function exibirImagenProdutos(imagem) {
         return API_URL + '/' + imagem
     }
 
 
-    function addNoCarrinho () {
+    function addNoCarrinho() {
         let carrinho = [];
-        if(Storage('carrinho')) {
+        if (Storage('carrinho')) {
             carrinho = Storage('carrinho');
         }
-        if(!carrinho.find(item => item.id === id)) {
+        if (!carrinho.find(item => item.id === id)) {
             carrinho.push({
                 id: id,
                 qtd: 1
             })
-        Storage('carrinho', carrinho);
+            Storage('carrinho', carrinho);
         }
         toast.dark('Produto adicionado ao carrinho✌️🎶');
     }
@@ -58,27 +58,27 @@ export default function ProdutosDetalhes(){
         carregarPagina()
     }, [])
 
-    
-    return(
+
+    return (
         <div className='Pagina-detalhes-produto-usu'>
-            <AbaLateralUSU/>
+            <AbaLateralUSU />
             <div className='Parte-dos-detalhes-produto-usu'>
-                <CabecalhoUSU/>
+                <CabecalhoUSU />
                 <div className='Caixa-produto-imagens-descricoes-usu'>
                     <div className='div-imagens-detalhes-usu'>
                         <div className='container-imagens-seletoras'>
                             {produto.imagens.map((item, pos) =>
-                                <img className='imagem2-produto' src={exibirImagenProdutos(item)} onClick={() => setImagemPrincipal(pos)} alt='img-produto2'/>
+                                <img className='imagem2-produto' src={exibirImagenProdutos(item)} onClick={() => setImagemPrincipal(pos)} alt='img-produto2' />
                             )}
                         </div>
                         <div className='imagem-selecionada-principal-carrinho-usu'>
-                            <img src={exibirImagemPrincipal()} className='imagem1-produto' alt='img-produto'/>
+                            <img src={exibirImagemPrincipal()} className='imagem1-produto' alt='img-produto' />
                         </div>
                     </div>
-                        
+
                     <div className='div-descricao-detalhes-usu'>
                         <div className='origem-e-coracao'>
-                            <img src='/image/core-usu.png' className='coracao-detalhe-usu' alt='imagem-coracao'/>
+                            <img src='/image/core-usu.png' className='coracao-detalhe-usu' alt='imagem-coracao' />
                             <p className='origem-descricao'>Vendido por: <span className='origem-descricao-verde'>SingNote</span></p>
                         </div>
                         <div className='descricao-do-produto-card'>
@@ -86,12 +86,12 @@ export default function ProdutosDetalhes(){
                             <h2 className='descricao-tipo'>Modelo: <span className='descricao-tipo-resultado'>{produto.info.Modelo}</span></h2>
                             <h2 className='descricao-tipo'>Marca: <span className='descricao-tipo-resultado'>{produto.info.Marca}</span></h2>
                             <h2 className='descricao-tipo'>Em Estoque: <span className='descricao-tipo-resultado'>{produto.info.Estoque} unidades</span></h2>
-                            
+
                         </div>
                         <div className='preco-botao'>
                             <h2 className='preco-detalhe-usu'>R$ {produto.info.Preco}</h2>
                             <button className='botao-add-carrinho-detalhe-usu' onClick={addNoCarrinho}>Adicionar ao carrinho
-                                <img src='/image/carrinho-card.png' alt='img-carrinho' className='img-carrinho'/>
+                                <img src='/image/carrinho-card.png' alt='img-carrinho' className='img-carrinho' />
                             </button>
                         </div>
                     </div>
@@ -103,80 +103,80 @@ export default function ProdutosDetalhes(){
                 <div className='Caixa-voce-tambem-pode-gostar'>
                     <h1 className='titulo-voce-tambem-pode-gostar'>você também pode gostar disso:</h1>
 
-                    <div className='items-que-pode-gostar'> 
-                    
-                    {/* cards dos itens */}
+                    <div className='items-que-pode-gostar'>
+
+                        {/* cards dos itens */}
 
                         <div className='espaco-produto'>
-                            <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
+                            <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card' />
                             <div className='formatacao-img-produto'>
-                                <img src='/image/guitar 1.png' className="ImagemProdutoUsu" alt='teste'/>
+                                <img src='/image/guitar 1.png' className="ImagemProdutoUsu" alt='teste' />
                             </div>
 
                             <div className='descricao-card'>
-                            
+
                                 <h1 className='card-produto-descricao'>
-                                {<span>{/* props.item.Nome*/} Guitarra solador</span> }
-                                <span>{/* props.item.Marca*/} Spamuscular</span>
-                                <span>{/* props.item.Modelo*/}terceiro elemento</span>
+                                    {<span>{/* props.item.Nome*/} Guitarra solador</span>}
+                                    <span>{/* props.item.Marca*/} Spamuscular</span>
+                                    <span>{/* props.item.Modelo*/}terceiro elemento</span>
                                 </h1>
                                 <h1 className='preco-card'>R$ 7878</h1>
                                 <button className='botao-comprar'>
                                     Comprar
-                                <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card'/>
+                                    <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card' />
                                 </button>
                             </div>
 
-                        </div> 
+                        </div>
 
                         <div className='espaco-produto'>
-                            <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
+                            <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card' />
                             <div className='formatacao-img-produto'>
-                                <img src='/image/bateria.png' className="ImagemProdutoUsu" alt='teste'/>
+                                <img src='/image/bateria.png' className="ImagemProdutoUsu" alt='teste' />
                             </div>
 
                             <div className='descricao-card'>
-                            
+
                                 <h1 className='card-produto-descricao'>
-                                {<span>{/* props.item.Nome*/} Guitarra solador</span> }
-                                <span>{/* props.item.Marca*/} Spamuscular</span>
-                                <span>{/* props.item.Modelo*/}terceiro elemento</span>
+                                    {<span>{/* props.item.Nome*/} Guitarra solador</span>}
+                                    <span>{/* props.item.Marca*/} Spamuscular</span>
+                                    <span>{/* props.item.Modelo*/}terceiro elemento</span>
                                 </h1>
                                 <h1 className='preco-card'>R$ 7878</h1>
                                 <button className='botao-comprar'>
                                     Comprar
-                                <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card'/>
+                                    <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card' />
                                 </button>
                             </div>
 
-                        </div> 
+                        </div>
 
                         <div className='espaco-produto'>
-                            <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
+                            <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card' />
                             <div className='formatacao-img-produto'>
-                                <img src='/image/imagespadrao.png' className="ImagemProdutoUsu" alt='teste'/>
+                                <img src='/image/imagespadrao.png' className="ImagemProdutoUsu" alt='teste' />
                             </div>
 
                             <div className='descricao-card'>
-                            
+
                                 <h1 className='card-produto-descricao'>
-                                {<span>{/* props.item.Nome*/} Guitarra solador</span> }
-                                <span>{/* props.item.Marca*/} Spamuscular</span>
-                                <span>{/* props.item.Modelo*/}terceiro elemento</span>
+                                    {<span>{/* props.item.Nome*/} Guitarra solador</span>}
+                                    <span>{/* props.item.Marca*/} Spamuscular</span>
+                                    <span>{/* props.item.Modelo*/}terceiro elemento</span>
                                 </h1>
                                 <h1 className='preco-card'>R$ 7878</h1>
                                 <button className='botao-comprar'>
                                     Comprar
-                                <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card'/>
+                                    <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card' />
                                 </button>
                             </div>
 
-                        </div> 
+                        </div>
                         {/* fim dos cards dos itens */}
                     </div>
 
                 </div>
-                <RodapeUsuario/>
+                <RodapeUsuario />
             </div>
         </div>
     )
