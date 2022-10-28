@@ -150,7 +150,7 @@ export default function BuscaUsuario () {
                             
                         />
                         <button className='botao-input-buscar'> 
-                            <img src='/image/lupa-usu-busca.png' className='lupa-busca-usu'/>
+                            <img src='/image/lupa-usu-busca.png' alt='' className='lupa-busca-usu'/>
                         </button>
                     </div>
                     <button className='botao-buscar-usu' onClick={filtrar}>Buscar</button>

@@ -141,7 +141,7 @@
             height: 3vw;
         }
         
-        .card-itens-do-carrinho-e-resultados{
+        .div-elementos-pagamento{
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -153,22 +153,15 @@
 
         }
 
-        .formatacao-btn-remover{
-            display: flex;
-            justify-content: flex-end;
-        }
+        // .titulo-informacoes-pedido{
+
+        // }
 
 
-        .endereco {
+        .enderecos {
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
             margin-top: 3em;
-        }
-
-        .card-dados-pessoais {
-            background-color: #b4afaf;
-            padding: 2em;
         }
 
         .card-endereco {
@@ -194,10 +187,10 @@
             width: 300px;            
         }
         
-        .itens-do-carrinho-e-remover{
+        .div-endereco-pagamento{
             display: flex;
             flex-direction: column;
-            width: 75%;
+            width: 100%;
             
             padding: 20px;    
             background-color: #fff;

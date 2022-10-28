@@ -88,7 +88,7 @@ export default function CarrinhoUsuario() {
                                 </button>
                             </div>
                             {itens.map(item =>
-                                <ItemCarrinho item={item} removerItem={removerItem} carregarCarrinho={carregarCarrinho}/>
+                                <ItemCarrinho item={item} removerItem={removerItem} carregarCarrinho={carregarCarrinho()}/>
                             )}
                         </div>
                         <div className='card-resumo'>

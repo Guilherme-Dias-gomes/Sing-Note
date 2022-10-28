@@ -26,7 +26,7 @@ export async function  salvarEnderecoUsuario(idUsuario, endereco) {
         ` insert into TB_USUARIO_ENDERECO (id_usuario, ds_cep, ds_rua, ds_casa, ds_referencia, ds_complemento, ds_bairro, ds_cidade, ds_uf)
                                values (?, ?, ?, ?, ?, ?, ?, ?, ?) `
 
-    const [info] = await conexao.query(comando,[idUsuario, endereco.cep, endereco.rua, endereco.casa, endereco.referencia, endereco.complemento, endereco.bairro, endereco.cidade, endereco.uf])
+    const [info] = await conexao.query(comando, [idUsuario, endereco.cep, endereco.rua, endereco.casa, endereco.referencia, endereco.complemento, endereco.bairro, endereco.cidade, endereco.uf])
     return info.insertId; 
 }
 
