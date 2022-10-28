@@ -9,7 +9,6 @@ export async function buscarCupom(cod) {
            FROM cupom 
           WHERE cod_cupom = ?
     `
-
     const [linhas] = await conexao.query(comando, [cod]);
     return linhas[0];
 }
