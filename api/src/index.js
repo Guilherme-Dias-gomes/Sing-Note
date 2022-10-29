@@ -9,7 +9,7 @@ import categoriaController from './controller/admin/categoriaController.js'
 import tipoController from './controller/admin/tipoController.js' 
 import consultaController from './controller/admin/produtosController.js'
 import enderecoController from './controller/usuario/enderecoController.js'
-
+import pedidoController from './controller/usuario/pedidoController.js'
 
 import express from 'express'
 import cors from 'cors'
@@ -27,6 +27,7 @@ server.use(produtoController)
 server.use(categoriaController)
 server.use(tipoController)
 server.use(consultaController)
+server.use(pedidoController)
 
 
 
