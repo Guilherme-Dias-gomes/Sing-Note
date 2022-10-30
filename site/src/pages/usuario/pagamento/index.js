@@ -63,24 +63,31 @@ export default function Pagamento() {
             <div className='elementos-pagamento-usu'>
                 <div className='elemento-cabecalho-carrinho'>
                     <CabecalhoUSU />
-                    <div className='procedimentos-carrinho-formatacao'>
-                        <div className='procedimentos-carrinho'>
-                            <div className='Circulo-porcento1'>
-                                <div className='Circulo-porcento3'><h1 className='percentual-bolinha-carrinho'>80%</h1></div>
-                                <div className='Circulo-porcento2'></div>
+                    <div className='procedimentos-pagamento-formatacao'>
+                        <div className='procedimentos-pagamento'>
+
+                            {/* La disgreta de la config de la buela percentuar*/}
+                            <div className='Circulo-pagamento-porcento1'>
+                                <div className='Circulo-pagamento-porcento3'><h1 className='percentual-bolinha-carrinho'>80%</h1></div>
+                                <div className='Circulo-pagamento-porcento2e2'></div>
+                                <div className='Circulo-pagamento-porcento2e3'></div>
                             </div>
+
                             <img src='/image/carrinho-procedimento.png' className='icones-procedimento' alt='icn-carrinhos' />
                             <img src='/image/setinha.png' className='setinha-procedimento' alt='icn-carrinho-setas' />
                             <img src='/image/user-usu.png' className='icones-procedimento' alt='icn-carrinhos' />
                             <img src='/image/setinha.png' className='setinha-procedimento' alt='icn-carrinho-setas' />
                             <img src='/image/cartao-do-banco.png' className='icones-procedimento' alt='icn-carrinhos' />
                             <img src='/image/setinha.png' className='setinha-procedimento' alt='icn-carrinho-setas' />
-                            <img src='/image/olho-visivel.png' className='icones-procedimento' alt='icn-carrinhos' />
+                            <img src='/image/olho-visivel.png' className='icones-procedimento-trans' alt='icn-carrinhos' />
                             <img src='/image/setinha.png' className='setinha-procedimento' alt='icn-carrinho-setas' />
-                            <img src='/image/simbolo-verificado.png' className='icones-procedimento' alt='icn-carrinhos' />
+                            <img src='/image/simbolo-verificado.png' className='icones-procedimento-trans' alt='icn-carrinhos' />
                         </div>
                     </div>
-                    <div className='div-elementos-pagamento'>
+
+                    {/*------------------------------------------------------------------------------------------------------------------------------------------*/}
+
+                    <div className='div-elementos-pagamento'> {/*Referente a pagamento*/}
                         <div className='div-endereco-pagamento'>
                             <div className='formatacao-btn-remover'>
                                 <h1>Informações do seu pedido</h1>
@@ -92,36 +99,74 @@ export default function Pagamento() {
                                     <CardEndereco item={item} />
                                 )}
                             </div>
-                            <div>
-                                <h2>Finalizar Compra</h2>
-                                <div>
-                                    nome:<input></input>
-                                    número:<input></input>
-                                    validade:<input></input>
-                                    cvv:<input></input>
-                                    Tipo do Pagamento:<select>
-                                                        <option></option>
-                                                        <option>Crédito</option>
-                                                        <option>Débito</option>
-                                                      </select>
-                                    Parcelas<select>
+                        </div>
+                        
+                        <div className='div-forma-de-pagamento'>
+                            <h2 className='titulo-forma-de-pagamento'>Forma de pagamento</h2>
+
+                            <div className='informacoes-forma-de-pagamento'>
+                                <div className='informacoes-cartao'>
+
+                                    <div className="formatacao-input-informacao-cartao">
+                                        <label className='titulo-input-pagamento'>Nome impresso no cartão</label>
+                                        <input className='input-pagamento' />
+                                    </div>
+                                    <div className="formatacao-input-informacao-cartao">
+                                        <label className='titulo-input-pagamento'>Número do cartão</label>
+                                        <input className='input-pagamento' />
+                                    </div>
+                                    <div className='formatacao-input-informacao-cartao-pequeno'>
+                                        <div className="formatacao-input-informacao-cartao">
+                                            <label className='titulo-input-pagamento'>Validade</label>
+                                            <input className='input-pagamento' />
+                                        </div>
+                                        <div className="formatacao-input-informacao-cartao">
+                                            <label className='titulo-input-pagamento'>CVV</label>
+                                            <input className='input-pagamento' />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                <div className='informacoes-pagamento'>
+                                    <div className='formatacao-input-informacao-cartao-pequeno'>
+                                        <div className='formatacao-input-informacao-cartao'>
+                                            <label className='titulo-input-pagamento'>Tipo do Pagamento</label>
+                                            <select className='input-pagamento'>
+                                                <option></option>
+                                                <option>Crédito</option>
+                                                <option>Débito</option>
+                                            </select>
+                                        </div>
+                                        <div className='formatacao-input-informacao-cartao'>
+                                            <label className='titulo-input-pagamento'>Parcelas</label>
+                                            <select className='input-pagamento'>
                                                 <option></option>
                                                 <option value='1'>1X á vista</option>
                                                 <option value='1'>1X sem juros</option>
                                                 <option value='2'>2X sem juros</option>
                                                 <option value='3'>3X sem juros</option>
                                             </select>
-                                            Cupon: <input></input>
-                                            Frete: <select>
-                                                        <option></option>
-                                                        <option value='normal'>Normal - R$10.00</option>
-                                                        <option value='sedex'>Sedex - R$25.00</option>
-                                                   </select>
+                                        </div>
+                                    </div>
+                                    <div className='formatacao-input-informacao-cartao'>
+                                        <label className='titulo-input-pagamento'>Cupon</label>
+                                        <input className='input-pagamento' />
+                                    </div>
+                                    <div className='formatacao-input-informacao-cartao'>
+                                        <label className='titulo-input-pagamento'>Frete</label>
+                                        <select className='input-pagamento'>
+                                            <option></option>
+                                            <option value='normal'>Normal - R$10.00</option>
+                                            <option value='sedex'>Sedex - R$25.00</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <button>Finalizar Compra</button>
                             </div>
+                            <button>Finalizar Compra</button>
                         </div>
-                    </div>
+                    </div> {/*Referente a pagamento*/}
+
                     <div>
                         <div>
                             <table>

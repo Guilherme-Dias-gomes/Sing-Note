@@ -14,35 +14,38 @@ export default function pagePedidos () {
         <div className='elemento-pedidos'>
             <Cabecalho/>
             <div className='elementos-pesquisa'>  
-                <input className='input-pesquisa' type="search" placeholder='Buscar por nome' ></input>
+                <div className='barra-de-pesquisa'>
+                    <input className='input-pesquisa' type="search" placeholder='Buscar por nome' ></input>
+                    <button className='botao-barra-busca-adm'><img src='/image/lupa-usu-busca.png' alt='lupa-botao'/></button>
+                </div>
                 <button className='btn-buscar'>Buscar</button>
             </div>
             <div className='div-table'>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Usuário</th>
-                            <th>CPF</th>
-                            <th>Status</th>
-                            <th>Data</th>
+                <table className='tabela-pedidos-adm'>
+                    <thead className='cabecalho-tabela-pedido'>
+                        <tr className='linha-titulos-cabecalho-tabela'>
+                            <th className='titulo-cabecalho-tabela-id'>ID</th>
+                            <th className='titulo-cabecalho-tabela-usuario'>Usuário</th>
+                            <th className='titulo-cabecalho-tabela-cpf'>CPF</th>
+                            <th className='titulo-cabecalho-tabela-status'>Status</th>
+                            <th className='titulo-cabecalho-tabela-data'>Data</th>
                         </tr>
                     </thead>
                     
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Maria</td>
-                            <td>756.267.821.14</td>
-                            <td>Status</td>
-                            <td>Data</td>
+                        <tr className='linha-descricao-cabecalho-tabela'>
+                            <td className='linha-cabecalho-tabela-id'>1</td>
+                            <td className='linha-cabecalho-tabela-usuario'>Maria</td>
+                            <td className='linha-cabecalho-tabela-cpf'>756.267.821.14</td>
+                            <td className='linha-cabecalho-tabela-status'>Status</td>
+                            <td className='linha-cabecalho-tabela-id-data'>Data</td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Pedro</td>
-                            <td>528.928.182.11</td>
-                            <td>Status</td>
-                            <td>Data</td>
+                        <tr className='linha-descricao-cabecalho-tabela'>
+                            <td className='linha-cabecalho-tabela-id'>2</td>
+                            <td className='linha-cabecalho-tabela-usuario'>Pedro</td>
+                            <td className='linha-cabecalho-tabela-cpf'>528.928.182.11</td>
+                            <td className='linha-cabecalho-tabela-status'>Status</td>
+                            <td className='linha-cabecalho-tabela-id-data'>Data</td>
                         </tr>
                     </tbody>
                 </table>

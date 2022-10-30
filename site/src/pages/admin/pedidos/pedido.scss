@@ -1,7 +1,13 @@
+@font-face {
+    font-family: 'inter-font';
+    src: url('../../../assets/fonts/inter-font.ttf');
+}
+
 .pagePedidos {
     display: flex;
     flex-direction: row;
-    width: 100Wh;
+    width: 100vw;
+    
 
     .icone-opcoes-adm-pedidos{
         background-color: #084D6E;
@@ -33,11 +39,25 @@
     justify-content: space-between;
 }
 
+.barra-de-pesquisa{
+    display: flex;
+    width: 90%;
+    height: 45px;
+}
+
+.botao-barra-busca-adm{
+    height: 45px;
+    border-style: none;
+    background-color: #fff;
+    border-radius: 0px 0.8em 0.8em 0px;
+    padding-right: 10px;
+}
+
 .input-pesquisa  {
     flex-wrap: nowrap;
     width: 83%;
     border: none;
-    border-radius: 0.8rem;
+    border-radius: 0.8rem 0px 0px 0.8em;
     font-family: inherit;
     color: inherit;
     padding: 14px;
@@ -55,12 +75,71 @@
 
 .div-table {
     margin-top: 4em;
+    width: 90%;
 }
 
-thead {
+.tabela-pedidos-adm{
+    width: 100%;
+}
+
+.titulo-cabecalho-tabela-id{
+    width: 20%;
+}
+
+.titulo-cabecalho-tabela-usuario{
+    width: 30%;
+}
+
+.titulo-cabecalho-tabela-cpf{
+    width: 20%;
+}
+
+.titulo-cabecalho-tabela-status{
+    width: 10%;
+}
+
+.titulo-cabecalho-tabela-data{
+    width: 20%;
+}
+
+.linha-cabecalho-tabela-id{
+    width: 20%;
+}
+
+.linha-cabecalho-tabela-usuario{
+    width: 30%;
+}
+
+.linha-cabecalho-tabela-cpf{
+    width: 20%;
+}
+
+.linha-cabecalho-tabela-status{
+    width: 10%;
+}
+
+.linha-cabecalho-tabela-data{
+    width: 20%;
+}
+
+
+.cabecalho-tabela-pedido {
     background-color: #55F27F;
     text-align: center;
     color: white;
+    height: 40px;
+}
+
+.linha-titulos-cabecalho-tabela{
+    font-family: "inter-font";
+    font-size: 1.2vw;
+    width: 100%;
+}
+
+.linha-descricao-cabecalho-tabela{
+    font-family: "inter-font";
+    font-size: 1.2vw;
+    width: 100%;
 }
 
 tbody {
@@ -69,10 +148,12 @@ tbody {
 
  td  {
     border-bottom: 1px solid #dddd;
+    height: 40px;
 }
 
 tr:nth-child(even) {
     background-color: #dbdbdb;
+    height: 40px;
 }
 
 
@@ -80,5 +161,5 @@ table, th, td {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9;
-    min-width: 190px;
+
 }

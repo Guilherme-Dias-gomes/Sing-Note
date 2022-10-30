@@ -141,16 +141,11 @@ export default function BuscaUsuario () {
                 <div className='pesquisa-e-busca'>
                     <div className='busca-e-lupa'>
                         <input 
-                            className='input-pesquisa-usu' 
-                            type="search" 
-                            placeholder='Buscar por nome'
-                            value={buscar}
-                            onChange={e => setBuscar(e.target.value)}
-                            onKeyPress={e => e.key === 'Enter' ? filtrar() : ''}
-                            
-                        />
+                            className='input-pesquisa-usu' type="search" placeholder='Buscar por nome'
+                            value={buscar}onChange={e => setBuscar(e.target.value)}
+                            onKeyPress={e => e.key === 'Enter' ? filtrar() : ''}/>
                         <button className='botao-input-buscar'> 
-                            <img src='/image/lupa-usu-busca.png' alt='' className='lupa-busca-usu'/>
+                            <img src='/image/lupa-usu-busca.png' alt='lupa-botao' className='lupa-busca-usu'/>
                         </button>
                     </div>
                     <button className='botao-buscar-usu' onClick={filtrar}>Buscar</button>
@@ -203,7 +198,7 @@ export default function BuscaUsuario () {
                         
                         <div className='cards-produto-usu'>
                             {produtos.map(item => 
-                                <div className='espaco-produto-busca-usu' onClick={() => abrirDetalhes(item.Id)}>
+                                <div className='espaco-produto-busca-usu' >
                                     {/* {item.Id} */}
                                     <div className='coracao-e-unidades'>
                                         <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
@@ -225,7 +220,7 @@ export default function BuscaUsuario () {
                                             <p className='descricao-produto-card-usu'>{item.Modelo}</p>
                                         </div>
                                         <h1 className='preco-card'>R$ {item.Preco}</h1>
-                                        <button className='botao-comprar'>
+                                        <button className='botao-comprar' onClick={() => abrirDetalhes(item.Id)}>
                                             Comprar
                                         <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card'/>
                                         </button>

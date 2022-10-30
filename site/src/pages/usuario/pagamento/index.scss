@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: row;
     width: auto;
-    height: 1500px;
+    height: max-content;
     
 
         .bola1Pagamento{
@@ -40,7 +40,7 @@
             position: absolute;
             display: block;
             width: 45vw;
-            height: 40vw;
+            height: 70vh;
             background-color: #007BF1;
             border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
             margin: 800px 0px 0px 10vw;
@@ -64,7 +64,7 @@
             height: auto;
         }
 
-        .procedimentos-carrinho-formatacao{
+        .procedimentos-pagamento-formatacao{
             margin-top: 20px;
             display: flex;
             flex-direction: row;
@@ -77,7 +77,7 @@
             
         }
 
-        .procedimentos-carrinho{
+        .procedimentos-pagamento{
             margin-top: 20px;
             display: flex;
             flex-direction: row;
@@ -90,7 +90,7 @@
             
         }
 
-        .Circulo-porcento1{
+        .Circulo-pagamento-porcento1{
             display: flex;
             justify-content: center;
             align-items: center;
@@ -108,7 +108,7 @@
             font-family: "inter-font";
         }
 
-        .Circulo-porcento3{
+        .Circulo-pagamento-porcento3{
             display: flex;
             align-items: center;
             justify-content: center;
@@ -120,7 +120,7 @@
             padding-bottom: 4px;
         }
 
-        .Circulo-porcento2{
+        .Circulo-pagamento-porcento2{
             width: 40px;
             height: 40px;
             background-color: #084D6E;
@@ -130,8 +130,39 @@
             position: absolute;
 
             border-top-right-radius: 150px;
-
         }
+
+
+        .Circulo-pagamento-porcento2e2{
+            width: 0px;
+            height: 0px;
+            border-right: 40px solid transparent;
+            border-top: 40px solid #084D6E;
+            border-left: 40px solid #084D6E;
+            border-bottom: 40px solid #084D6E;
+            border-top-left-radius: 60px;
+            border-top-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+            position: absolute;
+            rotate: 243deg;
+        }
+
+        .Circulo-pagamento-porcento2e3{
+            width: 0px;
+            height: 0px;
+            border-right: 40px solid transparent;
+            border-top: 40px solid #084D6E;
+            border-left: 40px solid #084D6E;
+            border-bottom: 40px solid #084D6E;
+            border-top-left-radius: 60px;
+            border-top-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+            position: absolute;
+            rotate: 225deg;
+        }
+
 
         .setinha-procedimento{
             height: 2vw;
@@ -140,10 +171,15 @@
         .icones-procedimento{
             height: 3vw;
         }
+
+        .icones-procedimento-trans{
+            height: 3vw;
+            opacity: 50%;
+        }
         
         .div-elementos-pagamento{
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: space-between;
 
             width: 100%;
@@ -169,24 +205,7 @@
             padding: 2em;
         }
 
-        .botao-remover{
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            border-radius: 5px;
-            font-family: 'inter-font';
-            font-size: 15px;
-            font-weight: bold;
-            color: #fff;
-            cursor: pointer;
-            margin-bottom: 10px;
 
-            border-style:none;
-            background-color: #f00;
-            height: 50px;
-            width: 300px;            
-        }
-        
         .div-endereco-pagamento{
             display: flex;
             flex-direction: column;
@@ -329,7 +348,82 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
+        .div-forma-de-pagamento{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: red solid 1px;
+            align-self: flex-start;
+            width: 70%;
+            background-color: #fff;
+            border-radius:10px;
+            padding: 20px;
+            margin: 10px 0px;
+            box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .titulo-forma-de-pagamento{
+            align-self: flex-start;
+        }
+
+        .informacoes-forma-de-pagamento{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            border: red solid 1px;
+        }
+
+        .formatacao-input-informacao-cartao{
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            margin: 15px 0px;
+            height: 45px;
+            padding: 0px 5px;
+            width: 100%;border: red solid 1px;
+        }
+
+        .titulo-input-pagamento{
+            font-family: Arial;
+            color:#7d7d7d;
+            font-size: 10px;
+            font-weight: bold;
+            background-color: #ffffff;
+            width:auto;
+            padding: 0px 0.1%;
+            margin: 0px 0px 40px 1%;
+            position: absolute;    
+        }
+
+        .input-pagamento{
+            height: 40px;
+            width: 100%;
+            border-radius: 10px;
+            border-style: none;
+            border: #7d7d7d solid 2px;
+            padding: 0px 10px;
+            
+        }
+
+        .formatacao-input-informacao-cartao-pequeno{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .informacoes-cartao{
+            display: flex;
+            flex-direction: column;border: red solid 1px;
+            width: 47%;
+        }
+
+        .informacoes-pagamento{
+            display: flex;
+            flex-direction: column;border: red solid 1px;
+            width: 47%;
+        }
+
     }
 
     .aba-lateral-usu {
