@@ -1,4 +1,4 @@
-import { cadastrarUsuario, cadastrarUsuarioLogin, loginUsuario } from '../../repository/usuario/usuarioLoginRepository.js'; 
+import { buscarLoginPorId, buscarPerfilPorId, cadastrarUsuario, cadastrarUsuarioLogin, loginUsuario } from '../../repository/usuario/usuarioLoginRepository.js'; 
 
 import { Router } from "express";
 import { validarPerfilCliente, validarLoginCliente } from '../../service/perfilClienteValidacao.js';
@@ -63,7 +63,25 @@ server.post('/login/:id', async (req, resp) =>{
     }
 
 } )
+ 
+server.get('/usuario/perfil/:id', async (req, resp) => {
+    try {
+        const id = req.params.id;
 
+        const usuario = await buscarPerfilPorId(id);
+        const login = await buscarLoginPorId(id);
+
+        resp.send({
+            infoUsuario: usuario,
+            login: login
+        })
+        
+    } catch (err) {
+        resp.status(400).send({
+            erro:err.message
+        })
+    }
+})
 
 // Quantificar Todos os produtos
 server.get('/usuario/contar/produto', async (req, resp) => {

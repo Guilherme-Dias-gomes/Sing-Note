@@ -36,6 +36,7 @@ root.render(
         <Route path="/ElementoProduto" element={< ElementoProduto />} />
         <Route path='/admin/alterar/:id' element={< CadastrarProduto />} />
         <Route path='/produto/:id/detalhes' element={< ProdutosDetalhes />} />
+
         <Route path="/usuario/busca" element={< BuscaUsuario />} />
         <Route path="/login" element={< LoginUsuario />} />
         <Route path="/usuario/rodape" element={< RodapeUsuario />} />
@@ -43,6 +44,7 @@ root.render(
         <Route path="/favoritos" element={< FavoritosUsuario />} />
         <Route path="/pagamento" element={< Pagamento />} />
         <Route path="/cadastro" element={< CadastroUsuario />} />
+        <Route path="/alterar/:id" element={< CadastroUsuario />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

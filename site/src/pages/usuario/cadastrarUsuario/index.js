@@ -1,10 +1,12 @@
 import './index.scss'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import { cadastarLogin, cadastarPerfil } from "../../../api/usuario/usuarioLoginAPI";
+import { buscarUsuarioPorId, cadastarLogin, cadastarPerfil } from "../../../api/usuario/usuarioLoginAPI";
 
 export default function CadastroUsuario(){
+
+    const [ idUsuario, setIdUsuario ] = useState( )
 
     const [nome, setNome] = useState('');
     const [rg, setRg] = useState('');
@@ -18,38 +20,39 @@ export default function CadastroUsuario(){
 
     async function salvarUsuario(){
         try{
-            if (!id){
+           
                 const r = await cadastarPerfil(nome, rg, cpf, nascimento, telefone);
                 await cadastarLogin(email, senha, r.id);
 
                 toast.dark('Você está cadastrado!');
-            }
+            
 
         } catch (err) {
             toast.error(err.response.data.erro);
         }
     } 
 
-    // async function salvar(){
-    //     try {
-    //         const precoProduto = Number(preco.replace('.',','));
+    async function carregarUsuario(){
 
-    //         if(!id) {
-    //             const r = await SalvarProduto(nome, modelo, descricao, estoque, marca, precoProduto, idCategoria, idTipo)
-    //             await SalvarImagens(r.id, imagem1, imagem2)
+        if(!id)
+            return;
+    
+        const r = await buscarUsuarioPorId(id);
 
-    //             toast.dark('Produto cadastrado com sucesso');
-    //         }
-    //         else {
-    //             await AlterarProduto(id, nome, modelo, descricao, estoque, marca, precoProduto, idCategoria, idTipo)
-    //             await SalvarImagens(id, imagem1, imagem2)
+        setIdUsuario(r.infoUsuario.id);
+        setNome(r.infoUsuario.nome);
+        setRg(r.infoUsuario.rg);
+        setCpf(r.infoUsuario.cpf);
+        setNascimento(r.infoUsuario.nascimento);
+        setTelefone(r.infoUsuario.telefone);
+        setEmail(r.login.email);
+        setSenha(r.login.senha);
 
-    //             toast.dark('Produto alterado com sucesso');
-    //         }
-    //     } catch (err) {
-    //         toast.error(err.response.data.erro);
-    //     }
-    // }
+    }
+
+    useEffect(() => {
+        carregarUsuario()
+    }, [])
 
     return(
         <div className="teste">

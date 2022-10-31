@@ -15,6 +15,10 @@ export async function cadastarLogin(email, senha, id){
     return resposta.data;
 }
 
+export async function buscarUsuarioPorId(id){
+    const resposta = await api.get('/usuario/perfil/' + id) 
+    return resposta.data;
+}
 
 
 export async function Logar(email, senha){

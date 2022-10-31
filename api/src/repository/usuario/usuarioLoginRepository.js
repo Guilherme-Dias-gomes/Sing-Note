@@ -40,6 +40,33 @@ export async function cadastrarUsuarioLogin(login, idUsuario){
 
 }
 
+// Buscar Perfil do Usuario
+export async function buscarPerfilPorId(id){
+    const comando = 
+    `select id_usuario              as id,
+            nm_usuario              as nome,
+            ds_rg                   as rg,
+            ds_cpf                  as cpf,
+            dt_nascimento           as nascimento,
+            ds_telefone             as telefone
+       from tb_usuario
+      where id_usuario = ?`
+
+      const resposta = await conexao.query(comando, [id])
+      return resposta[0]
+}
+
+// Buscar Login do Usuario
+export async function buscarLoginPorId(idUsuario){
+    const comando = 
+    `select ds_email                as email,
+            ds_senha                as senha
+       from tb_usuario_login
+      where id_usuario = ?`
+
+      const resposta = await conexao.query(comando, [idUsuario])
+      return resposta[0]
+}
 
 // Contar Produtos
 export async function QuantificarTodosProdutos(){
