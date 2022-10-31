@@ -17,7 +17,7 @@ export async function validarProduto(produto) {
     else if (produto.marca == undefined || produto.marca.trim() == '') {
         throw new Error('❌Marca do produto é obrigatório!');
     }
-    else if (isNaN(produto.preco) || produto.preco.trim() <= 0) {
+    else if (isNaN(produto.preco) || produto.preco <= 0) {
         throw new Error('❌Preço do produto é obrigatório!');
     }
     const categoria = await BuscarCategoriaPorID(produto.idCategoria);

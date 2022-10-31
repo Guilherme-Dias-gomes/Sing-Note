@@ -7,6 +7,9 @@ import { useEffect, useState } from 'react'
 import Storage from 'local-storage'
 import CardEndereco from '../../../components/usuario/cardEndereco'
 import { buscarProdutoPorId } from '../../../api/admin/produtoAPI'
+import { salvarNovoPedido } from '../../../api/usuario/pedidoAPI'
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -14,8 +17,21 @@ export default function Pagamento() {
     const [enderecos, setEnderecos] = useState([]);
     const [itens, setItens] = useState([])
 
-    console.log(enderecos)
-    console.log(itens)
+    const [idEndereco, setIdEndereco] = useState()
+
+    const [cupom, setCupom] = useState('');
+    const [frete, setFrete] = useState('');
+
+    const [nome, setNome] = useState('');
+    const [numero, setNumero] = useState('');
+    const [vencimento, setVencimento] = useState('');
+    const [cvv, setCvv] = useState('');
+    const [tipo, setTipo] = useState('');
+    const [parcela, setParcela] = useState('');
+
+    const navegar = useNavigate();
+
+
 
     async function carregarEnderecos() {
         const id = Storage('Cliente-Logado').id
@@ -49,6 +65,41 @@ export default function Pagamento() {
         return total;
     }
 
+    async function salvarPedido() {
+
+
+        try {
+
+            let produtos = Storage('carrinho')
+            let id = Storage('Cliente-Logado')
+
+            let pedido =
+            {
+                cupom: cupom,
+                frete: frete,
+                idEndereco: 1,
+                tipoPagameno: 'Cartão',
+                cartao: {
+                    nome: nome,
+                    numero: numero,
+                    vencimento: vencimento,
+                    codSeguranca: cvv,
+                    formaPagamento: parcela,
+                    parcelas: 3
+                },
+                produtos: produtos
+            }
+
+            const r = await salvarNovoPedido(id, pedido);
+            toast.dark('Pedido Salvo com Sucesso')
+            Storage('carrinho', []);
+            navegar('/usuario/busca')
+
+        } catch (err) {
+            toast.error(err.response.data.erro)
+        }
+
+    }
 
     useEffect(() => {
         carregarEnderecos();
@@ -96,11 +147,11 @@ export default function Pagamento() {
                             <div className='enderecos'>
 
                                 {enderecos.map(item =>
-                                    <CardEndereco item={item} />
+                                    <CardEndereco item={item} selecionar={setIdEndereco} selecionado={item.id == idEndereco}/>
                                 )}
                             </div>
                         </div>
-                        
+
                         <div className='div-forma-de-pagamento'>
                             <h2 className='titulo-forma-de-pagamento'>Forma de pagamento</h2>
 
@@ -109,30 +160,30 @@ export default function Pagamento() {
 
                                     <div className="formatacao-input-informacao-cartao">
                                         <label className='titulo-input-pagamento'>Nome impresso no cartão</label>
-                                        <input className='input-pagamento' />
+                                        <input className='input-pagamento' value={nome} onChange={e => setNome(e.target.value)} />
                                     </div>
                                     <div className="formatacao-input-informacao-cartao">
                                         <label className='titulo-input-pagamento'>Número do cartão</label>
-                                        <input className='input-pagamento' />
+                                        <input className='input-pagamento' value={numero} onChange={e => setNumero(e.target.value)} />
                                     </div>
                                     <div className='formatacao-input-informacao-cartao-pequeno'>
                                         <div className="formatacao-input-informacao-cartao">
                                             <label className='titulo-input-pagamento'>Validade</label>
-                                            <input className='input-pagamento' />
+                                            <input className='input-pagamento' value={vencimento} onChange={e => setVencimento(e.target.value)} />
                                         </div>
                                         <div className="formatacao-input-informacao-cartao">
                                             <label className='titulo-input-pagamento'>CVV</label>
-                                            <input className='input-pagamento' />
+                                            <input className='input-pagamento' value={cvv} onChange={e => setCvv(e.target.value)} />
                                         </div>
                                     </div>
                                 </div>
 
-                                
+
                                 <div className='informacoes-pagamento'>
                                     <div className='formatacao-input-informacao-cartao-pequeno'>
                                         <div className='formatacao-input-informacao-cartao'>
                                             <label className='titulo-input-pagamento'>Tipo do Pagamento</label>
-                                            <select className='input-pagamento'>
+                                            <select className='input-pagamento' value={tipo} onChange={e => setTipo(e.target.value)}>
                                                 <option></option>
                                                 <option>Crédito</option>
                                                 <option>Débito</option>
@@ -140,7 +191,7 @@ export default function Pagamento() {
                                         </div>
                                         <div className='formatacao-input-informacao-cartao'>
                                             <label className='titulo-input-pagamento'>Parcelas</label>
-                                            <select className='input-pagamento'>
+                                            <select className='input-pagamento' value={parcela} onChange={e => setParcela(e.target.value)}>
                                                 <option></option>
                                                 <option value='1'>1X á vista</option>
                                                 <option value='1'>1X sem juros</option>
@@ -151,11 +202,11 @@ export default function Pagamento() {
                                     </div>
                                     <div className='formatacao-input-informacao-cartao'>
                                         <label className='titulo-input-pagamento'>Cupon</label>
-                                        <input className='input-pagamento' />
+                                        <input className='input-pagamento' value={cupom} onChange={e => setCupom(e.target.value)} />
                                     </div>
                                     <div className='formatacao-input-informacao-cartao'>
                                         <label className='titulo-input-pagamento'>Frete</label>
-                                        <select className='input-pagamento'>
+                                        <select className='input-pagamento' value={frete} onChange={e => setFrete(e.target.value)}>
                                             <option></option>
                                             <option value='normal'>Normal - R$10.00</option>
                                             <option value='sedex'>Sedex - R$25.00</option>
@@ -163,7 +214,7 @@ export default function Pagamento() {
                                     </div>
                                 </div>
                             </div>
-                            <button>Finalizar Compra</button>
+                            <button onClick={salvarPedido}>Finalizar Compra</button>
                         </div>
                     </div> {/*Referente a pagamento*/}
 
@@ -171,10 +222,12 @@ export default function Pagamento() {
                         <div>
                             <table>
                                 <thead>
-                                    <th>Item</th>
-                                    <th>Quantidade</th>
-                                    <th>Preço </th>
-                                    <th>Total</th>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Quantidade</th>
+                                        <th>Preço </th>
+                                        <th>Total</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
 
