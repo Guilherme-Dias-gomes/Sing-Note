@@ -6,9 +6,10 @@ import { buscarUsuarioPorId, cadastarLogin, cadastarPerfil } from "../../../api/
 
 export default function CadastroUsuario(){
 
-    const [ idUsuario, setIdUsuario ] = useState( )
 
-    const [nome, setNome] = useState('');
+    const [ idUsuario, setIdUsuario ] = useState()
+
+    const [nomeUsuario, setNomeUsuario] = useState('');
     const [rg, setRg] = useState('');
     const [cpf, setCpf] = useState('') ;
     const [telefone, setTelefone] = useState('');
@@ -16,12 +17,11 @@ export default function CadastroUsuario(){
     const [email, setEmail] = useState('') ;
     const [senha, setSenha] = useState(''); 
 
-    const { id } = useParams()
-
+    const { id } = useParams();
     async function salvarUsuario(){
         try{
            
-                const r = await cadastarPerfil(nome, rg, cpf, nascimento, telefone);
+                const r = await cadastarPerfil(nomeUsuario, rg, cpf, nascimento, telefone);
                 await cadastarLogin(email, senha, r.id);
 
                 toast.dark('Você está cadastrado!');
@@ -37,16 +37,16 @@ export default function CadastroUsuario(){
         if(!id)
             return;
     
-        const r = await buscarUsuarioPorId(id);
-
-        setIdUsuario(r.infoUsuario.id);
-        setNome(r.infoUsuario.nome);
-        setRg(r.infoUsuario.rg);
-        setCpf(r.infoUsuario.cpf);
-        setNascimento(r.infoUsuario.nascimento);
-        setTelefone(r.infoUsuario.telefone);
-        setEmail(r.login.email);
-        setSenha(r.login.senha);
+        const resposta = await buscarUsuarioPorId(id)
+        console.log(resposta.info[0].Telefone)
+        setIdUsuario(resposta.info[0].IdUsuario)
+        setNomeUsuario(resposta.info[0].NomeUsuario)
+        setRg(resposta.info[0].Rg)
+        setCpf(resposta.info[0].Cpf)
+        setNascimento(resposta.info[0].Nascimento)
+        setTelefone(resposta.info[0].Telefone)
+        setEmail(resposta.login[0].Email)
+        setSenha(resposta.login[0].Senha)
 
     }
 
@@ -57,37 +57,44 @@ export default function CadastroUsuario(){
     return(
         <div className="teste">
             
-            Nome:<input
+            <label>Nome:</label>
+            <input
                 type="text"
-                value={nome}
-                onChange={e => setNome(e.target.value)}/>
+                value={nomeUsuario}
+                onChange={e => setNomeUsuario(e.target.value)}/>
             
-            RG:<input
+            <label>RG:</label>
+            <input
                 type="text"
                 value={rg}
                 onChange={e => setRg(e.target.value)}/>
             
-            CPF:<input
+            <label>CPF:</label>
+            <input
                 type="text"
                 value={cpf}
                 onChange={e => setCpf(e.target.value)}/>
             
-            Telefone:<input
+            <label>Telefone:</label>
+            <input
                 type="text"
                 value={telefone}
                 onChange={e => setTelefone(e.target.value)}/>
             
-            Nascimento:<input
-                type="text"
+            <label>Nascimento:</label>
+            <input
+                type="date"
                 value={nascimento}
                 onChange={e => setNascimento(e.target.value)}/>
             
-            email:<input
+            <label>Email:</label>
+            <input
                 type="text"
                 value={email}
                 onChange={e => setEmail(e.target.value)}/>
             
-            senha:<input
+            <label>Senha:</label>
+            <input
                 type="text"
                 value={senha}
                 onChange={e => setSenha(e.target.value)}/>

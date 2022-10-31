@@ -43,12 +43,12 @@ export async function cadastrarUsuarioLogin(login, idUsuario){
 // Buscar Perfil do Usuario
 export async function buscarPerfilPorId(id){
     const comando = 
-    `select id_usuario              as id,
-            nm_usuario              as nome,
-            ds_rg                   as rg,
-            ds_cpf                  as cpf,
-            dt_nascimento           as nascimento,
-            ds_telefone             as telefone
+    `select id_usuario              as IdUsuario,
+            nm_usuario              as NomeUsuario,
+            ds_rg                   as Rg,
+            ds_cpf                  as Cpf,
+            dt_nascimento           as Nascimento,
+            ds_telefone             as Telefone
        from tb_usuario
       where id_usuario = ?`
 
@@ -59,13 +59,56 @@ export async function buscarPerfilPorId(id){
 // Buscar Login do Usuario
 export async function buscarLoginPorId(idUsuario){
     const comando = 
-    `select ds_email                as email,
-            ds_senha                as senha
+    `select ds_email                as Email,
+            ds_senha                as Senha
        from tb_usuario_login
       where id_usuario = ?`
 
       const resposta = await conexao.query(comando, [idUsuario])
       return resposta[0]
+}
+
+// Alterar Usuario
+export async function alterarUsuarioPerfil(idUsuario, usuario){
+    const comando = 
+    ` update tb_usuario
+         set nm_usuario    = ?,
+             ds_rg         = ?,
+             ds_cpf        = ?,
+             dt_nascimento = ?,
+             ds_telefone   = ?
+       where id_usuario    = ?`
+    const [resposta] = await conexao.query(comando,[ idUsuario,
+                                                      usuario.nomeUsuario,
+                                                      usuario.rg,
+                                                      usuario.cpf,
+                                                      usuario.nascimento,
+                                                      usuario.telefone])
+    return resposta.affectedRows;
+}
+
+// export async function removerUsuarioLogin(idUsuario) {
+//     const comando = `
+//         delete from tb_usuario_login 
+//               where id_usuario = ?
+//     `
+
+//     const [resp] = await conexao.query(comando, [idUsuario])
+//     return resp.affectedRows;
+// }
+
+// Alterar Login do usuario
+export async function alterarUsuarioLogin(idUsuario, login){
+    const comando = 
+    ` update tb_usuario_login
+         set ds_email    = ?,
+             ds_senha    = md5(?)
+       where id_usuario  = ?`
+    const [resposta] = await conexao.query(comando,[ idUsuario,
+                                                      login.email,
+                                                      login.senha])
+                                                      
+    return resposta.affectedRows;
 }
 
 // Contar Produtos

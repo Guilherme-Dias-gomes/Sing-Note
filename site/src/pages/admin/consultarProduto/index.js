@@ -42,7 +42,7 @@ export default function ConsultaProduto () {
     }
 
     function editar(id){
-        navegar(`/admin/alterar/${id}`)
+        navegar(`/admin/produto/${id}`)
     }
 
     async function deletarProduto(id, nome) {
@@ -93,7 +93,7 @@ export default function ConsultaProduto () {
                         onKeyPress={e => e.key === 'Enter' ? filtrar() : ''}
                     />
                     <button className='btn-buscar' onClick={filtrar}>Buscar</button>
-                    <p className='produto-total-adm'>Produtos no total: <span className='produto-total-adm-qtd'>10</span></p>
+                    {/* <p className='produto-total-adm'>Produtos no total: <span className='produto-total-adm-qtd'>10</span></p> */}
                 </div>
                 <div className='area-cards-adm'>
 

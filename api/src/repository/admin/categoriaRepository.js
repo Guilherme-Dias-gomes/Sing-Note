@@ -33,6 +33,7 @@ export async function BuscarProdutoPorCategoria(id) {
                         ds_modelo                Modelo,
                         ds_marca                 Marca,
                         nr_preco                 Preco,
+                        nr_estoque               Estoque,
                     max(img_produto)             Imagem,
   max(tb_produto_imagem.id_produto_imagem)       idImagem
         from tb_produto

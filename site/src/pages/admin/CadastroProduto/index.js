@@ -1,16 +1,17 @@
 import './index.scss'
-
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { toast } from 'react-toastify';
 import { listarCategorias } from '../../../api/admin/categoriaAPI'
 import { listarTipos } from '../../../api/admin/tipoAPI'
 
 import AbaLateralADM from '../../../components/adm/aba-lateral-adm/index.js'
 import Cabecalho from '../../../components/adm/cabecalho-adm/index.js'
-import { useEffect, useState } from 'react'
+
 import { SalvarProduto, SalvarImagens, AlterarProduto, buscarProdutoPorId } from '../../../api/admin/produtoAPI.js';
 import { API_URL } from '../../../api/config'
 
-import { toast } from 'react-toastify';
-import { useParams } from 'react-router-dom'
+
 
 export default function CadastrarProduto() {
 
@@ -118,8 +119,6 @@ export default function CadastrarProduto() {
             return URL.createObjectURL(imagem);
         }
     }
-
-
 
     useEffect(() => {
         mostrarCategorias()

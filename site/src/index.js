@@ -34,7 +34,7 @@ root.render(
         <Route path="/admin/pedidos" element={< PagePedidos />} />
         <Route path="/admin/consulta" element={< ConsultaProduto />} />
         <Route path="/ElementoProduto" element={< ElementoProduto />} />
-        <Route path='/admin/alterar/:id' element={< CadastrarProduto />} />
+        <Route path='/admin/produto/:id' element={< CadastrarProduto />} />
         <Route path='/produto/:id/detalhes' element={< ProdutosDetalhes />} />
 
         <Route path="/usuario/busca" element={< BuscaUsuario />} />
@@ -44,7 +44,7 @@ root.render(
         <Route path="/favoritos" element={< FavoritosUsuario />} />
         <Route path="/pagamento" element={< Pagamento />} />
         <Route path="/cadastro" element={< CadastroUsuario />} />
-        <Route path="/alterar/:id" element={< CadastroUsuario />} />
+        <Route path="/cadastro/:id" element={< CadastroUsuario />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
