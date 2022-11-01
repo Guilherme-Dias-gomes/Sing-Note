@@ -42,7 +42,7 @@
 .barra-de-pesquisa{
     display: flex;
     width: 90%;
-    height: 45px;
+    height: 45px; 
 }
 
 .botao-barra-busca-adm{
@@ -63,6 +63,10 @@
     padding: 14px;
     background-color: white;
     font-size: 15px;
+}
+
+.input-pesquisa:focus  {
+    outline: none;
 }
 
 .btn-buscar {

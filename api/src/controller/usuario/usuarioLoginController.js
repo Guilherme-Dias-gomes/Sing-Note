@@ -95,12 +95,12 @@ server.put('/login/:id', async (req, resp) => {
 
         await validarLoginCliente(login)
 
-        const r = await alterarUsuarioLogin(id, login);
+        const r = await alterarUsuarioLogin(login,id);
 
-        if(resposta != 1)
+        if(r != 1)
             throw new Error('❌Usuario não encontrado')
         else 
-        resp.status(204).send();
+            resp.status(204).send();
         
 
     } catch (err) {
@@ -119,12 +119,12 @@ server.put('/usuario/perfil/:id', async (req, resp) =>{
 
         await validarPerfilCliente(usuario)
 
-        const resposta = await alterarUsuarioPerfil(id, usuario);
+        const r = await alterarUsuarioPerfil(usuario, id);
 
-        // if(resposta != 1)
-        //     throw new Error('❌Usuario não encontrado')
-        // else 
-            resp.status(204).send(resposta);
+        if(r != 1)
+            throw new Error('❌Usuario não encontrado')
+        else 
+            resp.status(204).send();
         
 
     } catch (err) {

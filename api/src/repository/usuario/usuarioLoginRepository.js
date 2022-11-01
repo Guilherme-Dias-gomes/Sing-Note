@@ -69,7 +69,7 @@ export async function buscarLoginPorId(idUsuario){
 }
 
 // Alterar Usuario
-export async function alterarUsuarioPerfil(idUsuario, usuario){
+export async function alterarUsuarioPerfil(usuario, idUsuario){
     const comando = 
     ` update tb_usuario
          set nm_usuario    = ?,
@@ -78,12 +78,13 @@ export async function alterarUsuarioPerfil(idUsuario, usuario){
              dt_nascimento = ?,
              ds_telefone   = ?
        where id_usuario    = ?`
-    const [resposta] = await conexao.query(comando,[ idUsuario,
+    const [resposta] = await conexao.query(comando,[ 
                                                       usuario.nomeUsuario,
                                                       usuario.rg,
                                                       usuario.cpf,
                                                       usuario.nascimento,
-                                                      usuario.telefone])
+                                                      usuario.telefone,
+                                                      idUsuario])
     return resposta.affectedRows;
 }
 
@@ -98,15 +99,16 @@ export async function alterarUsuarioPerfil(idUsuario, usuario){
 // }
 
 // Alterar Login do usuario
-export async function alterarUsuarioLogin(idUsuario, login){
+export async function alterarUsuarioLogin(login, idUsuario){
     const comando = 
     ` update tb_usuario_login
          set ds_email    = ?,
              ds_senha    = md5(?)
        where id_usuario  = ?`
-    const [resposta] = await conexao.query(comando,[ idUsuario,
+    const [resposta] = await conexao.query(comando,[ 
                                                       login.email,
-                                                      login.senha])
+                                                      login.senha,
+                                                      idUsuario])
                                                       
     return resposta.affectedRows;
 }

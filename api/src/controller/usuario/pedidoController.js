@@ -6,9 +6,9 @@ import { Router } from 'express';
 const server = Router();
 
 
-server.post('/api/pedido/:idUsario/', async (req, resp) => {
+server.post('/api/pedido/:idUsario', async (req, resp) => {
     try {
-        const { idUsuario } = req.params;
+        const { idUsuario } = req.params.id;
         const info = req.body;
 
         const idCupom = await acharCupom(info.cupom)

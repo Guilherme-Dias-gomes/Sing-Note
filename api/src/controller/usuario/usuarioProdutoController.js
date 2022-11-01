@@ -25,4 +25,6 @@ server.get('/api/produto/:id', upload.array('imagens'), async (req, resp) => {
     }
 })
 
+server.get
+
 export default server
