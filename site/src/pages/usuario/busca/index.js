@@ -157,7 +157,7 @@ export default function BuscaUsuario () {
                         <div className='opcao-tipo-categoria'>
                             <p className='cada-titulo' onClick={filtrarCordaCategoria}>Cordas</p>
                             <p className='cada-titulo' onClick={filtrarSoproCategoria}>Sopro</p>
-                            <p className='cada-titulo' onClick={filtrarPercurcaoCategoria}>Percurção</p>
+                            <p className='cada-titulo' onClick={filtrarPercurcaoCategoria}>Percurssão</p>
                             <p className='cada-titulo' onClick={filtrarEletricoCategoria}>Elétricos</p>
                             <p className='cada-titulo' onClick={filtrarTeclasCategoria}>Teclas</p>
                             <p className='cada-titulo' onClick={filtrarAcessoriosCategoria}>Acessórios</p>
@@ -204,7 +204,7 @@ export default function BuscaUsuario () {
                                         <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
                                         <div className='quadrado-unidades'>
                                             <p className='quadrado-texto'>Restam</p>
-                                            <p className='quadrado-qtd-unidade'>3</p>
+                                            <p className='quadrado-qtd-unidade'> {item.Estoque}</p>
                                             <p className='quadrado-texto'>Unid.</p>
                                         </div>
                                     </div>

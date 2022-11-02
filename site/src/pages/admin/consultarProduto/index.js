@@ -100,11 +100,17 @@ export default function ConsultaProduto () {
                 {produtos.map(item =>
                     <div className='Produtos-Info'>
                         <div className='id-imagens'>
-                            <p>#{item.Id}</p>
+                        <div className='quadrado-unidades'>
+                            <p className='quadrado-texto'>Restam</p>
+                                            <p className='quadrado-qtd-unidade'>{item.Estoque}</p>
+                                            <p className='quadrado-texto'>Unid.</p>
+                                            </div>
+                            
                             <div>
                                 <button onClick={() => editar(item.Id)}><img src='/image/lapis.png' alt='lapis'/></button>
                                 <button onClick={() => deletarProduto(item.Id, item.Nome)}><img src='/image/lixo.png' alt='Lixeira'/></button>
-                            </div>
+                    
+                              </div>
                         </div>
                         <div className='espaco-produto'>
                             <img src={exibirImagem(item.Imagem)} className="ImagemProduto" alt='teste'/>
@@ -123,3 +129,4 @@ export default function ConsultaProduto () {
         </main>
     )
 }
+
