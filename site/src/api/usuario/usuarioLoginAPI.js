@@ -20,6 +20,15 @@ export async function buscarUsuarioPorId(id){
     return resposta.data;
 }
 
+export async function alterarPerfil(nomeUsuario, rg, cpf, nascimento, telefone, id){
+    const resposta = await api.put('/usuario/perfil/' + id, { nomeUsuario, rg, cpf, nascimento, telefone, id }) 
+    //return resposta.data;
+}
+
+export async function alterarLogin(email, senha, id){
+    const resposta = await api.put('/login/' + id, { email, senha, id }) 
+    //return resposta.data;
+}
 
 export async function Logar(email, senha){
     const r = await api.post('/login', { email, senha });

@@ -43,12 +43,12 @@ export async function cadastrarUsuarioLogin(login, idUsuario){
 // Buscar Perfil do Usuario
 export async function buscarPerfilPorId(id){
     const comando = 
-    `select id_usuario              as IdUsuario,
-            nm_usuario              as NomeUsuario,
-            ds_rg                   as Rg,
-            ds_cpf                  as Cpf,
-            dt_nascimento           as Nascimento,
-            ds_telefone             as Telefone
+    `select id_usuario                   as IdUsuario,
+            nm_usuario                   as NomeUsuario,
+            ds_rg                        as Rg,
+            ds_cpf                       as Cpf,
+date_format(dt_nascimento, '%d/%m/%Y')   as Nascimento,
+            ds_telefone                  as Telefone
        from tb_usuario
       where id_usuario = ?`
 

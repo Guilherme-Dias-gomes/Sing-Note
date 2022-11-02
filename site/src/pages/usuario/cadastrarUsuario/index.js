@@ -2,7 +2,7 @@ import './index.scss'
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import { buscarUsuarioPorId, cadastarLogin, cadastarPerfil } from "../../../api/usuario/usuarioLoginAPI";
+import { alterarLogin, alterarPerfil, buscarUsuarioPorId, cadastarLogin, cadastarPerfil } from "../../../api/usuario/usuarioLoginAPI";
 
 export default function CadastroUsuario(){
 
@@ -20,12 +20,17 @@ export default function CadastroUsuario(){
     const { id } = useParams();
     async function salvarUsuario(){
         try{
-           
+           if(!id){ 
                 const r = await cadastarPerfil(nomeUsuario, rg, cpf, nascimento, telefone);
                 await cadastarLogin(email, senha, r.id);
 
                 toast.dark('Você está cadastrado!');
-            
+            } else {
+                await alterarPerfil(nomeUsuario, rg, cpf, nascimento, telefone, id);
+                await alterarLogin(email, senha, id);
+
+                toast.dark('Informações alteradas com sucesso!');
+            }
 
         } catch (err) {
             toast.error(err.response.data.erro);
