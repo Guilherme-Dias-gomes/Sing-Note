@@ -3,8 +3,14 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { alterarLogin, alterarPerfil, buscarUsuarioPorId, cadastarLogin, cadastarPerfil } from "../../../api/usuario/usuarioLoginAPI";
+import storage from 'local-storage'
 
 export default function CadastroUsuario(){
+
+    const infoStorage = storage('Cliente-Logado')
+
+    
+
 
 
     const [ idUsuario, setIdUsuario ] = useState()
@@ -54,7 +60,7 @@ export default function CadastroUsuario(){
         setSenha(resposta.login[0].Senha)
 
     }
-
+ 
     useEffect(() => {
         carregarUsuario()
     }, [])

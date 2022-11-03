@@ -10,6 +10,7 @@ import tipoController from './controller/admin/tipoController.js'
 import consultaController from './controller/admin/produtosController.js'
 import enderecoController from './controller/usuario/enderecoController.js'
 import pedidoController from './controller/usuario/pedidoController.js'
+import favoritosController from './controller/usuario/favoritosController.js'
 
 import express from 'express'
 import cors from 'cors'
@@ -28,8 +29,7 @@ server.use(categoriaController)
 server.use(tipoController)
 server.use(consultaController)
 server.use(pedidoController)
-
-
+server.use(favoritosController)
 
 server.use('/storage/produto', express.static('storage/produto'));
 
