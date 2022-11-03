@@ -9,7 +9,7 @@ export default function CadastroUsuario(){
 
     const infoStorage = storage('Cliente-Logado')
 
-    
+
 
 
 
