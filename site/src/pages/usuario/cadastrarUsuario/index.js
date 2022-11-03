@@ -91,7 +91,7 @@ export default function CadastroUsuario(){
                 type="text"
                 value={telefone}
                 onChange={e => setTelefone(e.target.value)}/>
-            
+            {/* aaa */}
             <label>Nascimento:</label>
             <input
                 type="date"
