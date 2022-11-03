@@ -153,8 +153,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            align-self: flex-start;
             justify-content: center;
-            margin: 3px 3px 0px 0px;
+            margin-left: 20px;
             border: #007BF1 solid 1px;
             border-radius: 10px;
             width: 50px;

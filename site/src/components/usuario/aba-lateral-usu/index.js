@@ -23,9 +23,7 @@ export default function AbaLateralUSU() {
 return(
 
 <div className="aba-lateral-usu"> {/*Começo da aba lateral*/} 
-    <div className="icone-opcoes-usu" onClick={sairClick}>
-        <p className="nome-icones" > &lt; Voltar</p>
-    </div> 
+    
         <div className="opcoes-usu"> {/*Começo das opções*/}
             <Link className="icone-opcoes-usu"><img className='imagem-aba-usu' src="/image/casa-usu.png" alt="opcao-usu"/></Link> 
             <Link to={"/usuario/busca"} className="icone-opcoes-usu"><img className='imagem-aba-usu' src="/image/lupa-usu.png" alt="opcao-usu"/></Link>
@@ -34,5 +32,8 @@ return(
             <Link to={"/favoritos"} className="icone-opcoes-usu"><img className='imagem-aba-usu' src="/image/core-usu.png" alt="opcao-usu"/></Link>
             <Link className="icone-opcoes-usu"><img className='imagem-aba-usu' src="/image/caminhao-usu.png" alt="opcao-usu"/></Link>
         </div> {/*Fim das opções*/}
+        <div className="botao-sair-aba-usu" onClick={sairClick}>
+            SAIR <img alt='botaosair' src="/image/Vector.png" className='img-botao-sair-aba-usu'/>
+        </div> 
 </div> /*Fim da aba lateral*/
 )}
