@@ -47,7 +47,7 @@ export async function buscarPerfilPorId(id){
             nm_usuario                   as NomeUsuario,
             ds_rg                        as Rg,
             ds_cpf                       as Cpf,
-date_format(dt_nascimento, '%d/%m/%Y')   as Nascimento,
+            dt_nascimento                as Nascimento,
             ds_telefone                  as Telefone
        from tb_usuario
       where id_usuario = ?`
@@ -59,8 +59,7 @@ date_format(dt_nascimento, '%d/%m/%Y')   as Nascimento,
 // Buscar Login do Usuario
 export async function buscarLoginPorId(idUsuario){
     const comando = 
-    `select ds_email                as Email,
-            ds_senha                as Senha
+    `select ds_email                as Email
        from tb_usuario_login
       where id_usuario = ?`
 
