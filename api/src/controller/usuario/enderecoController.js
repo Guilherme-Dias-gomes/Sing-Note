@@ -19,7 +19,7 @@ server.get('/api/usuario/:id/endereco', async (req, resp)  => {
 // Cadastrado endereços de um usuario
 server.post('/api/usuario/:idUsuario/endereco', async (req, resp)  => {
     try {
-        const id = req.params.id;
+        const id = req.params.idUsuario;
         const endereco = req.body;
 
         const r = await salvarEnderecoUsuario(id, endereco)
