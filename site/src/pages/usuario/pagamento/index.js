@@ -10,12 +10,14 @@ import { buscarProdutoPorId } from '../../../api/admin/produtoAPI'
 import { salvarNovoPedido } from '../../../api/usuario/pedidoAPI'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
+import ModalEndereco from '../../../components/usuario/modal-endereco'
 
 
 
 export default function Pagamento() {
     const [enderecos, setEnderecos] = useState([]);
     const [itens, setItens] = useState([])
+    const [exibirEndereco, SetExibirEndereco] = useState(false)
 
     const [idEndereco, setIdEndereco] = useState()
 
@@ -37,6 +39,15 @@ export default function Pagamento() {
         const id = Storage('Cliente-Logado').id
         const r = await listarEnderecoUsuario(id);
         setEnderecos(r)
+    }
+
+    function exibirNovoEndereco() {
+        SetExibirEndereco(true);
+    }
+
+    function fecharNovoEndereco () {
+        SetExibirEndereco(false);
+        carregarEnderecos();
     }
 
     async function carregarItens() {
@@ -108,6 +119,7 @@ export default function Pagamento() {
 
     return (
         <div className='page-pagamento-usu'>
+            <ModalEndereco exibir={exibirEndereco} fechar={fecharNovoEndereco}/>
             <div className='bola2Pagamento'></div>
             <div className='bola3Pagamento'></div>
             <AbaLateralUSU />
@@ -143,6 +155,7 @@ export default function Pagamento() {
                             <div className='formatacao-btn-remover'>
                                 <h1>Informações do seu pedido</h1>
                                 <h3>valor final: {carregarTotal()}</h3>
+                                <button onClick={exibirNovoEndereco}>Novo Endereço</button>
                             </div>
                             <div className='enderecos'>
 
