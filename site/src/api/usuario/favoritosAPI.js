@@ -6,5 +6,6 @@ const api = axios.create({
 })
 
 export async function addFavoritos(idProduto, idUsuario){
-    const r = await api.post('/favoritos')
+    const r = await api.post(`/favoritos?idProduto=${idProduto}&idUsuario=${idUsuario}`)
+    return r.data
 }

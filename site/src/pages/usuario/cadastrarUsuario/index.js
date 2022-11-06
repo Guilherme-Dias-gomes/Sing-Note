@@ -54,7 +54,7 @@ export default function CadastroUsuario(){
         setNomeUsuario(resposta.info[0].NomeUsuario)
         setRg(resposta.info[0].Rg)
         setCpf(resposta.info[0].Cpf)
-        setNascimento(resposta.info[0].Nascimento)
+        setNascimento(resposta.info[0].Nascimento.substr(0, 10))
         setTelefone(resposta.info[0].Telefone)
         setEmail(resposta.login[0].Email)
         setSenha(resposta.login[0].Senha)

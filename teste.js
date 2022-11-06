@@ -1,3 +1,10 @@
-let x = new Date()
+function bbb(contador){
 
-console.log(typeof(x))
+    while (contador <= 5){
+        console.print(contador);
+        contador++;
+    }
+
+}
+
+console.log(bbb(5))

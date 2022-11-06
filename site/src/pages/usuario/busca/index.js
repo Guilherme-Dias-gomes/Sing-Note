@@ -4,11 +4,14 @@ import CabecalhoUSU from '../../../components/usuario/cabecalho-usu'
 import RodapeUsuario from '../../../components/usuario/rodape-usuario'
 import { buscarProdutoPorNome, buscarProdutos } from '../../../api/admin/produtoAPI'
 import { useEffect, useState } from 'react'
+import { toast } from "react-toastify";
 import { buscarProdutoPorCategoria } from '../../../api/admin/categoriaAPI'
 import { buscarProdutoPorTipo } from '../../../api/admin/tipoAPI'
 import { ContarProdutos } from '../../../api/usuario/usuarioLoginAPI'
+import { addFavoritos } from '../../../api/usuario/favoritosAPI'
 import { API_URL } from '../../../api/config'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import storage from 'local-storage';
 
 export default function BuscaUsuario () {
 
@@ -16,12 +19,19 @@ export default function BuscaUsuario () {
     const [buscar, setBuscar] = useState('');
     const [quantidade, setQuantidade] = useState([]);
 
+    const [ idProduto, setIdProduto ] = useState();
+
     const navegar = useNavigate();
+
+    const id = useParams()
+
+    const lerStorage = storage('Cliente-Logado');
 
     async function mostrarProdutos(){
         const resposta = await buscarProdutos();
         setProdutos(resposta);
     }
+
 
 // ///////////////////////////////////////////////////////////////////
     async function filtrarTipoGuitarra(){
@@ -110,6 +120,38 @@ export default function BuscaUsuario () {
             return URL.createObjectURL(imagem);
         }
     }
+
+    // async function salvarUsuario(){
+    //     try{
+    //        if(!id){ 
+    //             const r = await cadastarPerfil(nomeUsuario, rg, cpf, nascimento, telefone);
+    //             await cadastarLogin(email, senha, r.id);
+
+    //             toast.dark('Você está cadastrado!');
+    //         } else {
+    //             await alterarPerfil(nomeUsuario, rg, cpf, nascimento, telefone, id);
+    //             await alterarLogin(email, senha, id);
+
+    //             toast.dark('Informações alteradas com sucesso!');
+    //         }
+
+    //     } catch (err) {
+    //         toast.error(err.response.data.erro);
+    //     }
+    // } 
+
+    async function salvarFavoritos(){
+        try {
+
+            if(!id){
+                const r = await addFavoritos(idProduto ,lerStorage.id)
+            }
+            
+        } catch (err) {
+            toast.error(err.response.data.erro)
+        } 
+    }
+
 
     async function mostrarQuantidade(){
         const respota = await ContarProdutos()
@@ -201,7 +243,7 @@ export default function BuscaUsuario () {
                                 <div className='espaco-produto-busca-usu' >
                                     {/* {item.Id} */}
                                     <div className='coracao-e-unidades'>
-                                        <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
+                                        <img onClick={salvarFavoritos()} className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
                                         <div className='quadrado-unidades'>
                                             <p className='quadrado-texto'>Restam</p>
                                             <p className='quadrado-qtd-unidade'> {item.Estoque}</p>
