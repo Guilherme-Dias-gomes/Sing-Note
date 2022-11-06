@@ -6,7 +6,7 @@ import { Router } from 'express';
 const server = Router();
 
 
-server.post('/api/pedido/:idUsario', async (req, resp) => {
+server.post('/api/pedido/:idUsuario', async (req, resp) => {
     try {
         const { idUsuario } = req.params;
         const info = req.body;
