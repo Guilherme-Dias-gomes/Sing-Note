@@ -6,7 +6,7 @@ export async function buscarCupom(cod) {
                 cod_cupom        cod,
                 vl_cupom         valor,
                 qtd_restante     restante
-           FROM cupom 
+           FROM tb_cupom 
           WHERE cod_cupom = ?
     `
     const [linhas] = await conexao.query(comando, [cod]);
@@ -16,7 +16,7 @@ export async function buscarCupom(cod) {
 
 export async function atualizarCupom(cod) {
     const comando = `
-        UPDATE cupom
+        UPDATE tb_cupom
            SET qtd_restante = qtd_restante - 1
          WHERE cod_cupom = ?
     `

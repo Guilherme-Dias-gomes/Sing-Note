@@ -82,7 +82,7 @@ export default function Pagamento() {
         try {
 
             let produtos = Storage('carrinho')
-            let id = Storage('Cliente-Logado')
+            let id = Storage('Cliente-Logado').id
 
             let pedido =
             {
@@ -100,7 +100,6 @@ export default function Pagamento() {
                 },
                 produtos: produtos
             }
-
             const r = await salvarNovoPedido(id, pedido);
             toast.dark('Pedido Salvo com Sucesso')
             Storage('carrinho', []);
