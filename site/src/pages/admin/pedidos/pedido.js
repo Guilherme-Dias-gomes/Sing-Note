@@ -1,11 +1,28 @@
 import './pedido.scss'
 import AbaLateralADM from '../../../components/adm/aba-lateral-adm'
 import Cabecalho from '../../../components/adm/cabecalho-adm'
+import { useEffect, useState } from 'react'
+import { buscarTodosPedidos, buscarPedidosPorNome } from '../../../api/admin/statusPedidoAPI'
 
 
-export default function pagePedidos () {
+export default function PagePedidos() {
 
+    const [ pedido, setPedido ] = useState([]);
+    const [ buscar, setBuscar ] = useState('')
 
+    async function carregarPedidos(){
+        const r = await buscarTodosPedidos();
+        setPedido(r);
+    }
+
+    async function filtrarPedido(){
+        const r = await buscarPedidosPorNome(buscar)
+        setPedido(r)
+    }
+
+    useEffect(() => {
+        carregarPedidos()
+    }, []);
 
     return(
         <main className='pagePedidos'>
@@ -15,10 +32,18 @@ export default function pagePedidos () {
             <Cabecalho/>
             <div className='elementos-pesquisa'>  
                 <div className='barra-de-pesquisa'>
-                    <input className='input-pesquisa' type="search" placeholder='Buscar por nome' ></input>
-                    <button className='botao-barra-busca-adm'><img src='/image/lupa-usu-busca.png' alt='lupa-botao'/></button>
+                    <input 
+                        className='input-pesquisa' 
+                        type="search" 
+                        placeholder='Buscar por nome'
+                        value={buscar}
+                        onChange={e => setBuscar(e.target.value)}
+                        onKeyPress={e => e.key == 'Enter' ? filtrarPedido() : ''}></input>
+                    <button 
+                        className='botao-barra-busca-adm'
+                        onClick={filtrarPedido}><img src='/image/lupa-usu-busca.png' alt='lupa-botao'/></button>
                 </div>
-                <button className='btn-buscar'>Buscar</button>
+                <button className='btn-buscar' onClick={filtrarPedido}>Buscar</button>
             </div>
             <div className='div-table'>
                 <table className='tabela-pedidos-adm'>
@@ -32,22 +57,20 @@ export default function pagePedidos () {
                         </tr>
                     </thead>
                     
-                    <tbody>
-                        <tr className='linha-descricao-cabecalho-tabela'>
-                            <td className='linha-cabecalho-tabela-id'>1</td>
-                            <td className='linha-cabecalho-tabela-usuario'>Maria</td>
-                            <td className='linha-cabecalho-tabela-cpf'>756.267.821.14</td>
-                            <td className='linha-cabecalho-tabela-status'>Status</td>
-                            <td className='linha-cabecalho-tabela-id-data'>Data</td>
-                        </tr>
-                        <tr className='linha-descricao-cabecalho-tabela'>
-                            <td className='linha-cabecalho-tabela-id'>2</td>
-                            <td className='linha-cabecalho-tabela-usuario'>Pedro</td>
-                            <td className='linha-cabecalho-tabela-cpf'>528.928.182.11</td>
-                            <td className='linha-cabecalho-tabela-status'>Status</td>
-                            <td className='linha-cabecalho-tabela-id-data'>Data</td>
-                        </tr>
-                    </tbody>
+                    {pedido.map(item =>
+                        <tbody>
+                            <tr className='linha-descricao-cabecalho-tabela'>
+                                <td className='linha-cabecalho-tabela-id'>{item.ID}</td>
+                                <td className='linha-cabecalho-tabela-usuario'>{item.Nome}</td>
+                                <td className='linha-cabecalho-tabela-cpf'>{item.CPF}</td>
+                                <td className='linha-cabecalho-tabela-status'>{item.Situacao_do_Pedido}</td>
+                                <td className='linha-cabecalho-tabela-id-data'>
+                                    {item.Data_do_Pedido.substr(0, 10)} 
+                                    <img src='/image/lapis.png' alt='lapis'/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    )}
                 </table>
             </div>
         </div>

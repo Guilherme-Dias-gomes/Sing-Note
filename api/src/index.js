@@ -2,15 +2,16 @@ import 'dotenv/config'
 
 import Usuariocontroller from './controller/usuario/usuarioLoginController.js'
 import UsuarioProdutoController from './controller/usuario/usuarioProdutoController.js'
+import enderecoController from './controller/usuario/enderecoController.js'
+import pedidoController from './controller/usuario/pedidoController.js'
+import favoritosController from './controller/usuario/favoritosController.js'
 
 import adminController from './controller/admin/adminController.js'
 import produtoController from './controller/admin/produtosController.js'
 import categoriaController from './controller/admin/categoriaController.js' 
 import tipoController from './controller/admin/tipoController.js' 
 import consultaController from './controller/admin/produtosController.js'
-import enderecoController from './controller/usuario/enderecoController.js'
-import pedidoController from './controller/usuario/pedidoController.js'
-import favoritosController from './controller/usuario/favoritosController.js'
+import adminStatusController from './controller/admin/adminStatusController.js'
 
 import express from 'express'
 import cors from 'cors'
@@ -23,6 +24,7 @@ server.use(Usuariocontroller)
 server.use(UsuarioProdutoController)
 server.use (enderecoController)
 
+server.use(adminStatusController)
 server.use(adminController)
 server.use(produtoController)
 server.use(categoriaController)
