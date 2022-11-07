@@ -23,6 +23,7 @@ import CarrinhoUsuario from './pages/usuario/carrinhousuario';
 import FavoritosUsuario from './pages/usuario/favoritos-usuario';
 import Pagamento from './pages/usuario/pagamento';
 import CadastroUsuario from './pages/usuario/cadastrarUsuario';
+import HomeUsuario from './pages/usuario/home';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -40,6 +41,7 @@ root.render(
         <Route path='/admin/produto/:id' element={< CadastrarProduto />} />
         <Route path='/produto/:id/detalhes' element={< ProdutosDetalhes />} />
 
+        <Route path="/lp" element={< HomeUsuario />} />
         <Route path="/usuario/busca" element={< BuscaUsuario />} />
         <Route path="/login" element={< LoginUsuario />} />
         <Route path="/usuario/rodape" element={< RodapeUsuario />} />

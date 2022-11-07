@@ -103,7 +103,7 @@ create table tb_pedido (
     tp_pagamento		varchar(200),
     foreign key (id_usuario) references tb_usuario (id_usuario),
     foreign key (id_usuario_endereco) references tb_usuario_endereco (id_usuario_endereco),
-    foreign key (id_cupom) references cupom (id_cupom)
+    foreign key (id_cupom) references tb_cupom (id_cupom)
 );
 
 create table tb_pedido_item (
