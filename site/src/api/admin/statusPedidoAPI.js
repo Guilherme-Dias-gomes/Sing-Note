@@ -11,6 +11,11 @@ export async function buscarTodosPedidos(){
 }
 
 export async function buscarPedidosPorNome(nome) {
-    const r = await api.get(`/buscar/pedido/buscar?nome=${nome}`);
+    const r = await api.get(`/pedido/buscar?nome=${nome}`);
+    return r.data;
+}
+
+export async function buscarPedidosPorId(id) {
+    const r = await api.get(`/buscar/pedido/${id}`);
     return r.data;
 }

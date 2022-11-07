@@ -13,6 +13,8 @@ import PageHome from "./pages/admin/home/homeADM";
 import PagePedidos from "./pages/admin/pedidos/pedido";
 import ConsultaProduto from "./pages/admin/consultarProduto/index";
 import ElementoProduto from './components/adm/elemento-produto/index';
+import AlterarStatus from './pages/admin/alterarStatus/index'
+
 import BuscaUsuario from './pages/usuario/busca';
 import LoginUsuario from './pages/usuario/loginUsuario';
 import ProdutosDetalhes from './pages/usuario/detalhesProduto'
@@ -32,6 +34,7 @@ root.render(
         <Route path="/admin/login" element={< Login />} />
         <Route path="/admin/produto" element={<  CadastrarProduto />} />
         <Route path="/admin/pedidos" element={< PagePedidos />} />
+        <Route path="/admin/pedidos/status/:id" element={< AlterarStatus />} />
         <Route path="/admin/consulta" element={< ConsultaProduto />} />
         <Route path="/ElementoProduto" element={< ElementoProduto />} />
         <Route path='/admin/produto/:id' element={< CadastrarProduto />} />

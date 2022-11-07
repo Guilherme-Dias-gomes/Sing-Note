@@ -3,6 +3,7 @@ import AbaLateralADM from '../../../components/adm/aba-lateral-adm'
 import Cabecalho from '../../../components/adm/cabecalho-adm'
 import { useEffect, useState } from 'react'
 import { buscarTodosPedidos, buscarPedidosPorNome } from '../../../api/admin/statusPedidoAPI'
+import { useNavigate } from 'react-router-dom'
 
 
 export default function PagePedidos() {
@@ -10,9 +11,15 @@ export default function PagePedidos() {
     const [ pedido, setPedido ] = useState([]);
     const [ buscar, setBuscar ] = useState('')
 
+    const navegar = useNavigate()
+
     async function carregarPedidos(){
         const r = await buscarTodosPedidos();
         setPedido(r);
+    }
+
+    async function alterarStatus(id){
+        navegar(`/admin/pedidos/status/${id}`)
     }
 
     async function filtrarPedido(){
@@ -49,7 +56,7 @@ export default function PagePedidos() {
                 <table className='tabela-pedidos-adm'>
                     <thead className='cabecalho-tabela-pedido'>
                         <tr className='linha-titulos-cabecalho-tabela'>
-                            <th className='titulo-cabecalho-tabela-id'>ID</th>
+                            <th className='titulo-cabecalho-tabela-id'>Nº Pedido</th>
                             <th className='titulo-cabecalho-tabela-usuario'>Usuário</th>
                             <th className='titulo-cabecalho-tabela-cpf'>CPF</th>
                             <th className='titulo-cabecalho-tabela-status'>Status</th>
@@ -66,7 +73,7 @@ export default function PagePedidos() {
                                 <td className='linha-cabecalho-tabela-status'>{item.Situacao_do_Pedido}</td>
                                 <td className='linha-cabecalho-tabela-id-data'>
                                     {item.Data_do_Pedido.substr(0, 10)} 
-                                    <img src='/image/lapis.png' alt='lapis'/>
+                                    <img src='/image/lapis.png' onClick={() => alterarStatus(item.ID)} alt='lapis'/>
                                 </td>
                             </tr>
                         </tbody>
