@@ -20,7 +20,9 @@ date_format(dt_pedido, "%d/%m/%Y") as Data_do_Pedido,
  inner join tb_usuario 
          on tb_usuario.id_usuario = tb_pedido.id_usuario
  inner join tb_usuario_endereco 
-         on tb_usuario_endereco.id_usuario_endereco = tb_pedido.id_usuario_endereco`
+         on tb_usuario_endereco.id_usuario_endereco = tb_pedido.id_usuario_endereco
+      Order 
+         by dt_pedido`
 
       const [resp] = await conexao.query(comando)
       return resp

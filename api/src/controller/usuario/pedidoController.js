@@ -11,17 +11,22 @@ server.post('/api/pedido/:idUsuario', async (req, resp) => {
         const { idUsuario } = req.params;
         const info = req.body;
 
+        console.log(info);
+
+        //throw new Error('pq eu quis...');
+
         const idCupom = await acharCupom(info.cupom)
 
         const novoPedido = criarNovoPedido(idUsuario, idCupom, info)
 
         const idPedidoCriado = await inserirPedido(novoPedido)
-        const idPagCriado = await inserirPagamento(idPedidoCriado, info.cartao);
+        await inserirPagamento(idPedidoCriado, info.cartao);
 
         for (let item of info.produtos) {
             const prod = await BuscarProdutoPorId(item.id);
-            const idPedidoItemCriado = await inserirPedidoItem(idPedidoCriado, prod.id, item.qtd, prod.Preco)
+            await inserirPedidoItem(idPedidoCriado, prod.id, item.qtd, prod.Preco)
         }
+
         resp.status(204).send();
 
     } catch (err) {

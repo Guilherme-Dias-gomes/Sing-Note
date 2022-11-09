@@ -7,6 +7,7 @@ import Storage from 'local-storage'
 import { useState, useEffect } from 'react'
 import { buscarProdutoPorId } from '../../../api/admin/produtoAPI'
 import ItemCarrinho from '../../../components/usuario/itemCarrinho'
+import { Link } from 'react-router-dom'
 
 export default function CarrinhoUsuario() {
     const [itens, setItens] = useState([]);
@@ -105,10 +106,10 @@ export default function CarrinhoUsuario() {
                         </div>
                         <div className='div-botoes'>
                             <button className='botao-comprar-carrinho'>
-                                <p className='efetuar-compra'>EFETUAR COMPRA</p>
+                                <Link to={'/pagamento'} className='efetuar-compra'>EFETUAR COMPRA</Link>
                             </button>
                             <button className='botao-comprando-carrinho'>
-                                <p className='continuar-comprando'>CONTINUAR COMPRANDO</p>
+                                <Link to={'/usuario/busca'} className='continuar-comprando'>CONTINUAR COMPRANDO</Link>
                             </button>
                         </div>
                         </div>

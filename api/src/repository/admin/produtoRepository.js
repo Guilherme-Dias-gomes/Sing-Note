@@ -87,7 +87,7 @@ export async function ConsultarProdutosPorNome(nome){
 // Consultar produtos por ID(Para fazer alterações)
 export async function BuscarProdutoPorId(id){
     const comando = 
-            `select id_produto                       as Id, 
+            `select id_produto                       as id, 
                     nm_produto                       as Nome, 
                     ds_modelo                        as Modelo,
                     ds_produto                       as EspecificacoesTecnicas,
