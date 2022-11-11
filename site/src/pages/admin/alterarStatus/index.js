@@ -7,27 +7,35 @@ import './index.scss'
 
 export default function AlterarStatus(){
 
-    const [ nome, setNome ] = useState('')
+    const [ produto, setProduto ] = useState('')
+    const [ imagem , setImagem ]   = useState('')
+    const [ nomeUsuario, setNomeUsuario ] = useState('')
+    const [ cpf, setCpf ] = useState('')
+    const [ dataPedido, setDataPedido ] = useState()
+    const [ pedido, setPedido ] = useState([]);
 
-    const [ pedido, setPedido ] = useState([])
-
-    const id = useParams()
+    const id = useParams();
 
     async function carregarPedidos(){
+        if(!id)
+            return
+
         const r = await buscarPedidosPorId(id);
         console.log(r)
-        setPedido(r);
+        setProduto(r[0].produto);
     }
 
     useEffect(() => {
-        carregarPedidos()
+        carregarPedidos();
     }, [])
 
     return(
         <main>
+            <h1>Produto:</h1>
+            <input value={produto} onChange={e => setProduto(e.target.value)}/>
             {pedido.map( item =>
                 <div>
-                    {item.Nome}
+                    {item.id}
                 </div>    
             )}
             hello
