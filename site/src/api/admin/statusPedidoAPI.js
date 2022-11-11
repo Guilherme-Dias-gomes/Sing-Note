@@ -17,6 +17,6 @@ export async function buscarPedidosPorNome(nome) {
 
 export async function buscarPedidosPorId(id) {
     const r = await api.get(`/buscar/pedido/${id}`);
-    console.log(r.id)
+    console.log(r.produto)
     return r.data;
 }

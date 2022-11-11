@@ -79,3 +79,4 @@ export async function inserirPedidoItem(idPedido, idProduto, qtd, preco) {
     const [info] = await conexao.query(comando, [idPedido, idProduto, qtd, preco]);
     return info.affectedRows;
 }
+

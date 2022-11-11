@@ -13,7 +13,7 @@ import PageHome from "./pages/admin/home/homeADM";
 import PagePedidos from "./pages/admin/pedidos/pedido";
 import ConsultaProduto from "./pages/admin/consultarProduto/index";
 import ElementoProduto from './components/adm/elemento-produto/index';
-import AlterarStatus from './pages/admin/alterarStatus/index'
+import AlterarStatus from './components/adm/modal-Status/index'
 
 import BuscaUsuario from './pages/usuario/busca';
 import LoginUsuario from './pages/usuario/loginUsuario';

@@ -88,7 +88,7 @@ export default function Pagamento() {
             {
                 cupom: cupom,
                 frete: frete,
-                idEndereco: 1,
+                idEndereco: idEndereco,
                 tipoPagameno: 'Cartão',
                 cartao: {
                     nome: nome,
@@ -96,7 +96,7 @@ export default function Pagamento() {
                     vencimento: vencimento,
                     codSeguranca: cvv,
                     formaPagamento: parcela,
-                    parcelas: 3
+                    parcelas: parcela
                 },
                 produtos: produtos
             }

@@ -91,10 +91,6 @@ export default function BuscaUsuario () {
         const resposta = await buscarProdutoPorCategoria(3);
         setProdutos(resposta);
     }
-    async function filtrarEletricoCategoria(){
-        const resposta = await buscarProdutoPorCategoria(4);
-        setProdutos(resposta);
-    }
     async function filtrarTeclasCategoria(){
         const resposta = await buscarProdutoPorCategoria(5);
         setProdutos(resposta);
@@ -178,8 +174,8 @@ export default function BuscaUsuario () {
     function BotaoCatipo0(){setBotaocatipo(0)}
     function BotaoCatipo1(){setBotaocatipo(1)}
     function BotaoCatipo2(){setBotaocatipo(2)}
-    function BotaoCatipo3(){setBotaocatipo(3)}
-    function BotaoCatipo4(){setBotaocatipo(4)}
+    function BotaoCatipo3(){setBotaocatipo(3)} 
+
     function BotaoCatipo5(){setBotaocatipo(5)}
     function BotaoCatipo6(){setBotaocatipo(6)}
 
@@ -225,7 +221,6 @@ export default function BuscaUsuario () {
                             <p className={botaocatipo===1? "cada-titulo-click" : "cada-titulo"} onClick={()=>{filtrarCordaCategoria(); BotaoCatipo1()}}>Cordas</p>
                             <p className={botaocatipo===2? "cada-titulo-click" : "cada-titulo"} onClick={()=>{filtrarSoproCategoria(); BotaoCatipo2()}}>Sopro</p>
                             <p className={botaocatipo===3? "cada-titulo-click" : "cada-titulo"} onClick={()=>{filtrarPercurcaoCategoria(); BotaoCatipo3()}}>Percurssão</p>
-                            <p className={botaocatipo===4? "cada-titulo-click" : "cada-titulo"} onClick={()=>{filtrarEletricoCategoria(); BotaoCatipo4()}}>Elétricos</p>
                             <p className={botaocatipo===5? "cada-titulo-click" : "cada-titulo"} onClick={()=>{filtrarTeclasCategoria(); BotaoCatipo5()}}>Teclas</p>
                             <p className={botaocatipo===6? "cada-titulo-click" : "cada-titulo"} onClick={()=>{filtrarAcessoriosCategoria(); BotaoCatipo6()}}>Acessórios</p>
                         </div>

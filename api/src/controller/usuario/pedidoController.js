@@ -36,4 +36,14 @@ server.post('/api/pedido/:idUsuario', async (req, resp) => {
     }
 })
 
+server.get('api/acompanhar/:idPedido', async (req, resp) => {
+    try {
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
 export default server;
