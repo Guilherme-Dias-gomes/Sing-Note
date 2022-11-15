@@ -1,28 +1,33 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { buscarPedidosPorId } from '../../../api/admin/statusPedidoAPI'
+import { buscarPedidosPorId, alterarPedido } from '../../../api/admin/statusPedidoAPI'
+import { toast } from 'react-toastify'
 import './index.scss'
-
-
 
 export default function AlterarStatus(){
 
-    const [ produto, setProduto ] = useState('')
-    const [ imagem , setImagem ]   = useState('')
-    const [ nomeUsuario, setNomeUsuario ] = useState('')
-    const [ cpf, setCpf ] = useState('')
-    const [ dataPedido, setDataPedido ] = useState()
-    const [ pedido, setPedido ] = useState([]);
+    const { id } = useParams()
+    const [ idPedido, setIdPedido ] = useState()
+    const [ status, setStatus ] = useState('')
 
-    const id = useParams();
+    async function salvarStatus(){
+        try {
+            if(!id !== null){ 
+                await alterarPedido(status, id)
+                toast.dark('Status alterados!');
+            }
+        } catch (err) {
+            toast.error(err.response.data.erro);
+        }
+    }
 
     async function carregarPedidos(){
         if(!id)
             return
 
         const r = await buscarPedidosPorId(id);
-        console.log(r)
-        setProduto(r[0].produto);
+        setIdPedido(r.id)
+        setStatus(r.status);
     }
 
     useEffect(() => {
@@ -30,15 +35,15 @@ export default function AlterarStatus(){
     }, [])
 
     return(
+
         <main>
-            <h1>Produto:</h1>
-            <input value={produto} onChange={e => setProduto(e.target.value)}/>
-            {pedido.map( item =>
-                <div>
-                    {item.id}
-                </div>    
-            )}
-            hello
+            <h1>Informe a situação desse produto</h1>
+            <input 
+                type="text" 
+                value={status} 
+                onChange={e => setStatus(e.target.value)}
+                onKeyPress={e => e.key === 'Enter' ? salvarStatus() : ''}/>
+            <button onClick={salvarStatus}>Salvar Status</button>
         </main>
     )
 }

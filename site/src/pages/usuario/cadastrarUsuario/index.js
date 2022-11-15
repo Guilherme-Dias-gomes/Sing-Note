@@ -8,11 +8,6 @@ import storage from 'local-storage'
 export default function CadastroUsuario(){
 
     const infoStorage = storage('Cliente-Logado')
-
-
-
-
-
     const [ idUsuario, setIdUsuario ] = useState()
 
     const [nomeUsuario, setNomeUsuario] = useState('');

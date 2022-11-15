@@ -20,3 +20,7 @@ export async function buscarPedidosPorId(id) {
     console.log(r.produto)
     return r.data;
 }
+
+export async function alterarPedido(Status, id){
+    const resposta = await api.put('/alterar/status/' + id, { Status })
+}
