@@ -1,14 +1,124 @@
+@font-face {
+    font-family: 'right-font';
+    src: url('../../../assets/fonts/Righteous-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'ballo-font';
+    src: url('../../../assets/fonts/Baloo2-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'inter-font';
+    src: url('../../../assets/fonts/inter-font.ttf');
+}
+
+//Partes sobre menu de rolagem
+.sidenav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    background-color: #007BF1;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    border-bottom-right-radius: 20%;
+  }
+
+  .area-icones-lp{
+    margin-top: 10%;
+    width: 100%;
+  }
+
+  .tres-tracos-menu-lp{
+    font-size: 3vw;
+    position: absolute;
+    z-index: 1;
+    margin-left:1%;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .nome-e-icone-menu-lp{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+    font-size: 2.5vw;
+    font-family: 'ballo-font';
+    font-weight: bolder;
+  }
+
+  .icone-do-mano{
+    width: 13%;
+  }
+  
+  .itens-menu-lp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.3s;
+    width: 80%;
+
+    font-size: 2vw;
+  }
+  
+  .itens-menu-lp:hover {
+    text-decoration: underline;
+  }
+
+  .nome-menu-lp{
+    width: 50%;
+  }
+
+  .img-itens-menu-lp{
+    width: 12%;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .sidenav .closebtn:hover {
+    color: #55F27F;
+  }
+
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Partes referente ao inicio da landing-page
 .pagina-principal-lp{
     display: flex;
     flex-direction: column;
     height: max-content;
+    width: 100%;
+
 
     .parte-superior-musicalize{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border: red solid 1px;
     }
 
     .div-maleaveis{
@@ -22,43 +132,416 @@
         position: absolute;
         justify-self: left;
         align-self: flex-start;
-        width: 20vw;border: rgb(1, 255, 255) solid 1px;
+        width: 25vw;
     }
 
     .maleavel-inf-dir{
         position: relative;
         justify-self: left;
         align-self: flex-end;
-        height: 40vw;border: rgb(183, 255, 0) solid 1px;
+        height: 55vw;
+    }
+
+    .input-e-lupa{
+        display: flex;
+        flex-direction: row;
+        margin-top: 5%;
+        margin-left: 15%;
+        width: 70%;
     }
 
     .aba-busca-lp{
-        margin-top: 5%;
+        width: 100%;
         border: none;
         border-bottom: #888888 solid 2px;
         outline: none;
-        margin-left: 10%;
-        width: 85%;
+        
         background-color: transparent;
+        padding: 0px 2%;
+        font-family: 'inter-font';
+        font-size: 1.4vw;
+    }
+
+    .img-lupa-lp{
+        position: absolute;
+        margin-left: 67%;
+        width: 2.3%;
+    }
+
+    .titulo-musicaliza-lp{
+        font-size: 3vw;
+        width: 50%;
+        font-weight: bolder;
+
     }
 
     .musicalize-titulo-e-img{
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         width: 75%;
-        height: 40vw;
-        border: red solid 1px;
+        height: 50vw;
         position: absolute;
         
     }
+    
+    .musicaliza-propaganda-textos{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        
+        width: 40%;
+        height: max-content;
+        margin-bottom: 10vh;
+    }
+
+    .musicaliza-propaganda{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
     .textinho-inspiracional{
-        width: 20%;
-        font-size: 2vw;
+        font-size: 1.6vw;
+        width: 55%;
+    }
+
+    .violao-preto-lp{
+        width: 25%;
+        margin: 5vh;
     }
 
     .botao-cadastre-se-lp{
+        background-color: #55F27F;
+        border-style: none;
+        width: 15vw;
+        height: 3.5vw;
+        margin-top: 3vh;
+        border-radius: 0.5vw;
+        color: #fff;
+        font-family: 'right-font';
+        font-size: 1.2vw;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .botao-cadastre-se-lp:hover{
+        transform: scale(1.05);
+        box-shadow: 0px 0px 40px #55F27F, 0px 0px 10px rgba(255, 255, 255, 1);
+        border:#55F27F solid 3px;
+        background-color: #fff;
+        color: #000;
+        transition: 0.3s;
+    }
+
+    .parte-inferior-sobre-site{
+        display: flex;
+        flex-direction: column;
+        
+    }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+.aba-grande-de-conteudos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        height: max-content;
+        z-index: 1;
+    }
+
+    .preenchimento-azul{
+        background-color: #007BF1;
+        align-self: flex-end;
+        position: absolute;
+        width: 40vw;
+        height: 100%;
+        border-bottom-left-radius: 100%;
+        z-index: -1;
+    }
+
+    .preenchimento-azul3{
+        background-color: #007BF1;
+        align-self: flex-start;
+        margin-top: 100%;
+        position: absolute;
+        width: 40vw;
+        height: 105%;
+        border-top-right-radius: 100%;
+        z-index: -1;
+    }
+
+    .preenchimento-verde{
+        background-color: #55F27F;
+        height: 2vw;
+        width: 100%;
+    }
+
+    .titulo-lista-de-itens{
+        font-size: 1.8vw;
+        font-family: "inter-font";
+        font-weight: bolder;
+        margin: 5% 0px 0% 3%;
+    }
+    
+    .conteudo-de-itens{
+        width:80%;
+        border: #888888 solid 1px;
+        border-width: 1px 1px 0px 1px;
+        z-index: 1;
+        background-color: #fff;
 
     }
+
+    .lista-de-itens-lp{
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        column-count: 2;
+        width: 100%;
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    .conteudo-de-mercham{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #222222;
+        background-image: url(../../../assets/images/orquestra-lp.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+        font-family: 'inter-font';
+        color: #fff;
+        
+        width: 80%;
+        height: 40vw;
+        
+    }
+
+    .expertise-lp{
+        font-size: 2.6vw;
+        font-size: bold;
+    }
+
+    .oferecimentos-lp{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 5%;
+        padding: 0px 8%;
+    }
+
+    .oferc{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 25%;
+    }
+
+    .img-oferecimento{
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .texto-oferc{
+        margin-top: 10%;
+        font-size: 2.5vw;
+        text-align: center;
+        font-style: italic;
+        font-weight: bolder;
+    }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    .categorias-lp{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: #888888 solid 1px;
+        background-color: #fff;
+        width: 80%;
+        padding: 5% 0px;
+        
+    }
+
+    .titulo-categorias-lp{
+        font-family: 'inter-font';
+        margin-top: 5%;
+        margin-left: 5%;
+        font-weight: bolder;
+        font-size: 2vw;
+    }
+
+    .area-seletores-lp{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .quadradin-categoria-lp{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        background-color: #fff;
+        transition: 0.3s;
+        cursor: pointer;
+        width: 19vw;
+        height: 19vw;
+        margin: 2%;
+        border-radius: .3em;
+        border: 1px solid rgba(0, 0, 0, 0.13);
+        box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .quadradin-categoria-lp:hover{
+        transform: scale(1.05);
+        transition: 0.3s;
+    }
+
+
+    .img-cat-seletor-lp{
+        width: 60%;
+    }
+
+    .titulinho-cat-seletor{
+        font-size: 2vw;
+        font-style: italic;
+        font-weight: bolder;
+    }
+
+}
+
+//------------------------------------------------------------------------------------------------------------------------------------------
+//css dos cards
+
+
+.espaco-produto {
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    width: 250px;
+    border-radius: .3em;
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    margin: 3%;
+}
+
+.espaco-produto:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.imagem-coracao{
+    height: 20px;
+    width: 20px;
+    margin: 10px 0px 0px 10px;
+    opacity: 0.5;
+}
+
+.imagem-coracao:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.coracao-e-quadrado{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.quadrado-azul-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 2% 2% 0px 0px;
+    border-radius: 10px;
+    border: #007BF1 solid 2px;
+    width: 65px;
+    height: 65px;
+}
+
+.letras-restam{
+    font-family: 'inter-font';
+    font-size: 14px;
+    color: #007BF1;
+}
+
+.unidades-letras-restam{
+    font-family: 'inter-font';
+    font-size: 14px;
+    color: #007BF1;
+    font-weight: bolder;
+}
+
+
+.descricao-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.imagem-produto-card{
+    height: auto;
+    width: auto;
+}
+
+.card-produto-descricao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'inter-font';
+    font-size: 15px;
+    width: 70%;
+    margin-top: 60px;
+}
+
+.preco-card{
+    font-size: 20px;
+    color: #01BE01;
+    font-family: 'inter-font';
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.imagem-carrinho{
+    height: 20px;
+    width: 20px;
+}
+
+.botao-comprar{
+    display: flex;
+    justify-content: space-around;
+    justify-self: right;
+    align-self: center;
+    font-size: 19px;
+    color: #fff;
+    align-items: center;
+    background-color: #318CE7;
+    border-style: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.botao-comprar:hover{
+    background-color: #fff;
+    color: #318CE7;
+    border: #318CE7 solid 2px;
+    transition: 0.1s;
+    cursor: pointer;
+    .imagem-carrinho{
+    filter: invert(100%);
+}
 }
