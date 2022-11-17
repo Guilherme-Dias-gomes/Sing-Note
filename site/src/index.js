@@ -24,6 +24,7 @@ import FavoritosUsuario from './pages/usuario/favoritos-usuario';
 import Pagamento from './pages/usuario/pagamento';
 import CadastroUsuario from './pages/usuario/cadastrarUsuario';
 import HomeUsuario from './pages/usuario/home';
+import Acompanhar from './pages/usuario/acompanharPedido';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -51,6 +52,7 @@ root.render(
         <Route path="/pagamento" element={< Pagamento />} />
         <Route path="/cadastro" element={< CadastroUsuario />} />
         <Route path="/cadastro/:id" element={< CadastroUsuario />} />
+        <Route path="/acompanhar" element={< Acompanhar />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
