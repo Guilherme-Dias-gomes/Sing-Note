@@ -43,6 +43,10 @@ return(
             <img className='img-icone' src="/image/carrinho-carrinho 2.png" alt="opcao"/>
             <p className="nome-icones">Pedidos</p>
         </Link>
+        <Link to={'/lp'} className="icone-opcoes-adm-pedidos">
+            <img className='img-icone' src="" alt="LandPage"/>
+            <p className="nome-icones"></p>
+        </Link>
     </div> {/*Fim das opções*/}
     
     <div onClick={sairClick} className="icone-opcoes">
@@ -52,3 +56,7 @@ return(
 
 </div> /*Fim da aba lateral*/
 )}
+
+
+
+

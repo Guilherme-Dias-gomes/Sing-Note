@@ -52,7 +52,6 @@ export default function Login() {
         <div className='page-login'>
             <LoadingBar color='#f11946' ref={ref} />
             <form className='formulario'>
-                <p>  admin@gmail.com</p>
 
                 <h1 className='titulo-form'><span><img src='/image/img-perfilzinho.png' alt='' width='34px'></img></span>Login ADM</h1>
 

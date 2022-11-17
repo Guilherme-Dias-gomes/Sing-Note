@@ -172,6 +172,10 @@ export default function HomeUsuario() {
                         <img src='/image/truck-lp.png' className='img-itens-menu-lp' alt='entrega' />
                         <p className='nome-menu-lp'>Meus pedidos</p>
                     </Link>
+                    <Link className='itens-menu-lp' to={'/'}>
+                        <img src='' className='img-itens-menu-lp' alt='adm' />
+                        <p className='nome-menu-lp'>tela ADM</p>
+                    </Link>
                 </div>
             </div>
 
@@ -195,7 +199,10 @@ export default function HomeUsuario() {
                                 e toque notas que você jamais foi capaz de
                                 alcançar!
                             </p>
-                            <button className='botao-cadastre-se-lp'>Cadastre-se</button>
+                            <Link to={'/cadastro'}>
+                                <button className='botao-cadastre-se-lp'>Cadastre-se</button>
+                            </Link>
+                            
                         </div>
                         <img src='/image/violao-preto.png' alt='violao-preto' className='violao-preto-lp' />
                     </div>

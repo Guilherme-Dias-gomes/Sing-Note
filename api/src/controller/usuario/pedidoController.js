@@ -1,5 +1,5 @@
 import randomString from 'randomstring'
-import { inserirPagamento, inserirPedido, inserirPedidoItem } from '../../repository/usuario/pedidoRepository.js';
+import { consultarPedido, inserirPagamento, inserirPedido, inserirPedidoItem } from '../../repository/usuario/pedidoRepository.js';
 import { BuscarProdutoPorId } from '../../repository/admin/produtoRepository.js';
 import { acharCupom, criarNotaFiscal, criarNovoPedido } from '../../service/novoProdutoService.js';
 import { Router } from 'express';
@@ -10,10 +10,6 @@ server.post('/api/pedido/:idUsuario', async (req, resp) => {
     try {
         const { idUsuario } = req.params;
         const info = req.body;
-
-        console.log(info);
-
-        //throw new Error('pq eu quis...');
 
         const idCupom = await acharCupom(info.cupom)
 
@@ -36,8 +32,14 @@ server.post('/api/pedido/:idUsuario', async (req, resp) => {
     }
 })
 
-server.get('api/acompanhar/:idPedido', async (req, resp) => {
+
+server.get('/api/acompanhar/:idUsuario', async (req, resp) => {
     try {
+        const {idUsuario} = req.params
+        
+        const pedido = await consultarPedido(idUsuario)
+        
+        resp.send(pedido)
 
     } catch (err) {
         resp.status(400).send({

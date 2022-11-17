@@ -31,6 +31,7 @@ root.render(
     <BrowserRouter>
       <ToastContainer />
       <Routes>
+        <Route path="/lp" element={< HomeUsuario />} />
         <Route path="/" element={< PageHome />} />
         <Route path="/admin/login" element={< Login />} />
         <Route path="/admin/produto" element={<  CadastrarProduto />} />
@@ -41,7 +42,7 @@ root.render(
         <Route path='/admin/produto/:id' element={< CadastrarProduto />} />
         <Route path='/produto/:id/detalhes' element={< ProdutosDetalhes />} />
 
-        <Route path="/lp" element={< HomeUsuario />} />
+
         <Route path="/usuario/busca" element={< BuscaUsuario />} />
         <Route path="/login" element={< LoginUsuario />} />
         <Route path="/usuario/rodape" element={< RodapeUsuario />} />

@@ -4,13 +4,14 @@ import { useState, useRef, useEffect } from 'react'
 import { toast } from 'react-toastify'
 import LoadingBar from 'react-top-loading-bar';
 import storage from 'local-storage';
+import { Link } from 'react-router-dom';
 
 import './index.scss'
 
 export default function LoginUsuario() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-    const [ erro, setErro ] = useState('')
+    const [erro, setErro] = useState('')
     const [carregando, setCarregando] = useState(false);
 
     const navegar = useNavigate();
@@ -49,9 +50,6 @@ export default function LoginUsuario() {
         <div className='page-login-usuario'>
             <LoadingBar color='#f11946' ref={ref} />
             <form className='formulario'>
-                <p>  carloshenrique@gmail.com</p>
-                <p>  @carloshenriquesouza#*456&</p>
-
                 <h1 className='titulo-form'><span><img src='/image/img-perfilzinho.png' alt='' width='34px'></img></span>Login</h1>
 
                 <div className='form-group'>
@@ -82,6 +80,9 @@ export default function LoginUsuario() {
                     disabled={carregando}>
                     Entrar
                 </button>
+                <Link to={'/cadastro'}>
+                    <buttom>Cadastre-se</buttom>
+                </Link>
             </form>
         </div>
 

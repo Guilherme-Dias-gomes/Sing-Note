@@ -42,7 +42,7 @@ export default function FavoritosUsuario() {
                 <div className='elemento-cabecalho-favorito'>
                     <CabecalhoUSU />
                     <div className='titulo-e-barra-de-itens-favoritos'>
-                        <p className='titulo-e-coracao'><img src='/image/coracao-card.png'/> Favoritos</p>
+                        <p className='titulo-e-coracao'><img src='/image/caminhao-usu.png'/> pedidos</p>
                         <div className='card-itens-do-favorito'>
                             <div className='itens-do-favorito'>
                                 <ItemFavorito  />
