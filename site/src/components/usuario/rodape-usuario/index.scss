@@ -9,13 +9,38 @@
     padding: 2vh 1vw;
     z-index: 3;
     padding-bottom:10vh;
-    }
+    padding-left: 50px;
+
+
+
+}
+
 
     .primeira-coluna{
     display: flex;
     flex-direction: column;
     width: 24%;
     }
+
+
+    .descricao-colunas-rodape-usu{
+        padding-bottom: 15px;
+        cursor: pointer;
+
+    }
+
+    .descricao-colunas-rodape-usu-diferentao{
+        padding-bottom: 15px;
+
+
+    }
+
+
+    .descricao-colunas-rodape-usu:hover{
+        text-decoration: underline;
+
+    }
+
 
     .primeira-parte{
 
@@ -38,6 +63,7 @@
     }
     .terceira-coluna{
     width:24%;
+    cursor: wait;
 
     }
     .quarta-coluna{
@@ -60,7 +86,7 @@
         width: 70%;
     }
 
-    .bolinha-midias-sociais{
+    .bolinha-midias-sociais:hover{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -68,12 +94,24 @@
         width: 40px;
         height: 40px;
         border-radius: 100%;
+        cursor: pointer;
+
     }
+
 
     .parte-minha-conta{
         margin-top: 5%;
     }
 
+
+
+    .titulo-colunas-rodape-usu{
+        padding-bottom: 20px;
+
+    }
+
+
     .parte-fale-conosco{
         margin-top: 5%;
+
     }

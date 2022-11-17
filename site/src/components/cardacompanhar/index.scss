@@ -1,0 +1,89 @@
+.Pagina-principal-pedidos-usu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+    }
+    
+    .produto {
+        display: flex;
+        flex-direction: row;
+        box-shadow:7px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        margin-top: 100px;
+        width: 80%;
+        
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+      
+    
+    }
+    
+    
+    
+    .Imagem {
+     
+        width: 10%;
+        height: 10%;
+        margin-left: 130px
+    
+    }
+    
+    .imagem-produto-pedido{
+    width: 100%;
+    height: auto;
+    
+    }
+    
+    .textos {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    
+    margin-right: 100px;
+    
+    }
+    
+    .titulo {
+        color: rgba(0, 0, 0, 0.6);
+        width: 300px;
+        margin-right:250px;
+        padding-bottom: 40px;
+        margin-left: 100px;
+    
+    }
+    
+    
+    .Sub {
+        position: absolute;
+        color: black;
+        margin-right:250px;
+        margin-top: 40px;
+        padding-bottom: 80px;
+        font-weight: bold;
+        font-family: 'Inter';
+    
+    
+    
+    }
+    
+    
+    
+    
+    button {
+        font-size: 18px;
+        color: #FFFF;
+        background-color: #55F27F;
+        border-radius: 10px;
+        size: 80px;
+        border: 0px;
+        border: none;
+        padding: 20px 20px;
+        margin-right: 50px;
+       
+      
+        }
