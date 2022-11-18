@@ -263,7 +263,7 @@ export default function BuscaUsuario () {
                                 <div className='espaco-produto-busca-usu' >
                                     {/* {item.Id} */}
                                     <div className='coracao-e-unidades'>
-                                        <img onClick={salvarFavoritos()} className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
+                                        <img onClick={salvarFavoritos()} style={{visibility:'hidden'}} className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
                                         <div className='quadrado-unidades'>
                                             <p className='quadrado-texto'>Restam</p>
                                             <p className='quadrado-qtd-unidade'> {item.Estoque}</p>
