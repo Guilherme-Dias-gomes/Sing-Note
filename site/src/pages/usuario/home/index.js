@@ -204,154 +204,37 @@ export default function HomeUsuario() {
                     <h1 className='titulo-lista-de-itens'>PRODUTOS</h1>
                     <div className='lista-de-itens-lp'>
                         {/*--------------------Card dos itens--------------------*/}
-
                         {produto.map(item => 
                             
-                            <div className='espaco-produto'>
-                                <div className='coracao-e-quadrado'>
-                                    <img className='imagem-coracao' alt='coracao-do-card' style={{visibility:'hidden'}} src='/image/coracao-card.png' />
-                                    <div className='quadrado-azul-card'>
-                                        <p className='letras-restam'>Restam </p>
-                                        <spamn className='unidades-letras-restam'>{item.Estoque}</spamn>
-                                        <p className='letras-restam'>Unid.</p>
+                            <div className='espaco-produto-landp'>
+                                <div className='quadrado-lp'>
+                    
+                                    <div className='quadrado-azul-card-lp'>
+                                        <p className='letras-restam-lp'>Restam </p>
+                                        <spamn className='unidades-letras-restam-lp'>{item.Estoque}</spamn>
+                                        <p className='letras-restam-lp'>Unid.</p>
                                     </div>
                                 </div>
-
-                                <div className='descricao-card'>
-                                    <img className='imagem-produto-card' src={exibirImagem(item.Imagem)} alt='produto-do-card' />{/*<------ src={exibir(props.item.Imagem)}*/}
-                                    <h1 className='card-produto-descricao'>
-                                        <span>{item.Nome}</span>
-                                        <span>{item.Marca}</span>
-                                        <span>{item.Modelo}</span>
-                                    </h1>
-                                    <h1 className='preco-card'>{/*formatarPreco(props.item.preco)*/}</h1>
+                                
+                                <div className='descricao-card-lp'>
+                                    <img className='imagem-produto-card-lp' src={exibirImagem(item.Imagem)} alt='produto-do-card' />{/*<------ src={exibir(props.item.Imagem)}*/}
+                                    <div className='preco-descricao-lp'>
+                                        <div className='card-produto-descricao-lp'>
+                                            <span>{item.Nome}</span>
+                                            <span>{item.Marca}</span>
+                                            <span>{item.Modelo}</span>
+                                        </div>
+                                        <h1 className='preco-card-lp'>{item.Preco}</h1>
+                                    </div>
                                 </div>
-                                <button className='botao-comprar'>Comprar
-                                    <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card' />
-                                </button>
+                                <Link to={'/login'}>
+                                    <button className='botao-comprar-lp'>Comprar
+                                        <img className='imagem-carrinho-lp' src='/image/carrinho-card.png' alt='carrinho-do-card' />
+                                    </button>
+                                </Link>
                             </div>
                         
                         )}
-
-
-                        <div className='espaco-produto'>
-                            <div className='coracao-e-quadrado'>
-                                <img className='imagem-coracao' alt='coracao-do-card' src='/image/coracao-card.png' />
-                                <div className='quadrado-azul-card'>
-                                    <p className='letras-restam'>Restam </p>
-                                    <spamn className='unidades-letras-restam'>5</spamn>
-                                    <p className='letras-restam'>Unid.</p>
-                                </div>
-                            </div>
-                            <div className='descricao-card'>
-                                <img className='imagem-produto-card' src='/image/bateria.png' alt='produto-do-card' />{/*<------ src={exibir(props.item.Imagem)}*/}
-                                <h1 className='card-produto-descricao'>
-                                    <span>{/*props.item.Nome*/} Bateria</span>
-                                    <span>{/*{props.item.Marca}*/}Yamaha</span>
-                                    <span>{/*props.item.Modelo*/}Novo oeste</span>
-                                </h1>
-                                <h1 className='preco-card'>{/*formatarPreco(props.item.preco)*/}</h1>
-                            </div>
-                            <button className='botao-comprar'>Comprar
-                                <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card' />
-                            </button>
-                        </div>
-
-
-                        <div className='espaco-produto'>
-                            <div className='coracao-e-quadrado'>
-                                <img className='imagem-coracao' alt='coracao-do-card' src='/image/coracao-card.png' />
-                                <div className='quadrado-azul-card'>
-                                    <p className='letras-restam'>Restam </p>
-                                    <spamn className='unidades-letras-restam'>5</spamn>
-                                    <p className='letras-restam'>Unid.</p>
-                                </div>
-                            </div>
-                            <div className='descricao-card'>
-                                <img className='imagem-produto-card' src='/image/bateria.png' alt='produto-do-card' />{/*<------ src={exibir(props.item.Imagem)}*/}
-                                <h1 className='card-produto-descricao'>
-                                    <span>{/*props.item.Nome*/} Bateria</span>
-                                    <span>{/*{props.item.Marca}*/}Yamaha</span>
-                                    <span>{/*props.item.Modelo*/}Novo oeste</span>
-                                </h1>
-                                <h1 className='preco-card'>{/*formatarPreco(props.item.preco)*/}</h1>
-                            </div>
-                            <button className='botao-comprar'>Comprar
-                                <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card' />
-                            </button>
-                        </div>
-
-
-                        <div className='espaco-produto'>
-                            <div className='coracao-e-quadrado'>
-                                <img className='imagem-coracao' alt='coracao-do-card' src='/image/coracao-card.png' />
-                                <div className='quadrado-azul-card'>
-                                    <p className='letras-restam'>Restam </p>
-                                    <spamn className='unidades-letras-restam'>5</spamn>
-                                    <p className='letras-restam'>Unid.</p>
-                                </div>
-                            </div>
-                            <div className='descricao-card'>
-                                <img className='imagem-produto-card' src='/image/bateria.png' alt='produto-do-card' />{/*<------ src={exibir(props.item.Imagem)}*/}
-                                <h1 className='card-produto-descricao'>
-                                    <span>{/*props.item.Nome*/} Bateria</span>
-                                    <span>{/*{props.item.Marca}*/}Yamaha</span>
-                                    <span>{/*props.item.Modelo*/}Novo oeste</span>
-                                </h1>
-                                <h1 className='preco-card'>{/*formatarPreco(props.item.preco)*/}</h1>
-                            </div>
-                            <button className='botao-comprar'>Comprar
-                                <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card' />
-                            </button>
-                        </div>
-
-
-                        <div className='espaco-produto'>
-                            <div className='coracao-e-quadrado'>
-                                <img className='imagem-coracao' alt='coracao-do-card' src='/image/coracao-card.png' />
-                                <div className='quadrado-azul-card'>
-                                    <p className='letras-restam'>Restam </p>
-                                    <spamn className='unidades-letras-restam'>5</spamn>
-                                    <p className='letras-restam'>Unid.</p>
-                                </div>
-                            </div>
-                            <div className='descricao-card'>
-                                <img className='imagem-produto-card' src='/image/bateria.png' alt='produto-do-card' />{/*<------ src={exibir(props.item.Imagem)}*/}
-                                <h1 className='card-produto-descricao'>
-                                    <span>{/*props.item.Nome*/} Bateria</span>
-                                    <span>{/*{props.item.Marca}*/}Yamaha</span>
-                                    <span>{/*props.item.Modelo*/}Novo oeste</span>
-                                </h1>
-                                <h1 className='preco-card'>{/*formatarPreco(props.item.preco)*/}</h1>
-                            </div>
-                            <button className='botao-comprar'>Comprar
-                                <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card' />
-                            </button>
-                        </div>
-
-
-                        <div className='espaco-produto'>
-                            <div className='coracao-e-quadrado'>
-                                <img className='imagem-coracao' alt='coracao-do-card' src='/image/coracao-card.png' />
-                                <div className='quadrado-azul-card'>
-                                    <p className='letras-restam'>Restam </p>
-                                    <spamn className='unidades-letras-restam'>5</spamn>
-                                    <p className='letras-restam'>Unid.</p>
-                                </div>
-                            </div>
-                            <div className='descricao-card'>
-                                <img className='imagem-produto-card' src='/image/bateria.png' alt='produto-do-card' />{/*<------ src={exibir(props.item.Imagem)}*/}
-                                <h1 className='card-produto-descricao'>
-                                    <span>{/*props.item.Nome*/} Bateria</span>
-                                    <span>{/*{props.item.Marca}*/}Yamaha</span>
-                                    <span>{/*props.item.Modelo*/}Novo oeste</span>
-                                </h1>
-                                <h1 className='preco-card'>{/*formatarPreco(props.item.preco)*/}</h1>
-                            </div>
-                            <button className='botao-comprar'>Comprar
-                                <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card' />
-                            </button>
-                        </div>
 
                         {/*--------------------Card dos itens--------------------*/}
 
@@ -390,30 +273,41 @@ export default function HomeUsuario() {
                     <p className='titulo-categorias-lp'>Categorias</p>
 
                     <div className='area-seletores-lp'>
+
+                        <Link to={'/login'} className='link-cat-lp'>
                         <div className='quadradin-categoria-lp'>
                             <img src='/image/violao-cat.png' className='img-cat-seletor-lp' />
                             <p className='titulinho-cat-seletor'>Cordas</p>
                         </div>
-
+                        </Link>
+                        
+                        <Link to={'/login'} className='link-cat-lp'>
                         <div className='quadradin-categoria-lp'>
                             <img src='/image/trompete-cat.png' className='img-cat-seletor-lp' />
                             <p className='titulinho-cat-seletor'>Sopros</p>
                         </div>
+                        </Link>
 
+                        <Link to={'/login'} className='link-cat-lp'>
                         <div className='quadradin-categoria-lp'>
                             <img src='/image/pandeiro-cat.png' className='img-cat-seletor-lp' />
                             <p className='titulinho-cat-seletor'>Percurssão</p>
                         </div>
+                        </Link>
 
+                        <Link to={'/login'} className='link-cat-lp'>
                         <div className='quadradin-categoria-lp'>
                             <img src='/image/piano-cat.png' className='img-cat-seletor-lp' />
                             <p className='titulinho-cat-seletor'>Teclas</p>
                         </div>
+                        </Link>
 
+                        <Link to={'/login'} className='link-cat-lp'>
                         <div className='quadradin-categoria-lp'>
                             <img src='/image/paleta-cat.png' className='img-cat-seletor-lp' />
                             <p className='titulinho-cat-seletor'>Acessórios</p>
                         </div>
+                        </Link>
 
 
                     </div>

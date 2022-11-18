@@ -24,7 +24,7 @@
     z-index: 5;
     top: 0;
     left: 0;
-    background-color: #318CE7;
+    background-color: #007BF1;
     overflow-x: hidden;
     transition: 0.3s;
     padding-top: 60px;
@@ -109,7 +109,7 @@
   }
 
   .sidenav .closebtn:hover {
-    color: #2b2b2b;
+    color: #55F27F;
   }
 
   
@@ -125,6 +125,7 @@
     flex-direction: column;
     height: max-content;
     width: 100%;
+    overflow-x: hidden;
 
 
     .parte-superior-musicalize{
@@ -300,7 +301,6 @@
         width:80%;
         border: #888888 solid 1px;
         border-width: 1px 1px 0px 1px;
-        z-index: 1;
         background-color: #fff;
 
     }
@@ -308,9 +308,9 @@
     .lista-de-itens-lp{
         display: flex;
         flex-direction: row;
-        overflow-x: scroll;
-        column-count: 2;
         width: 100%;
+        overflow-x: scroll;
+        z-index: 1;
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -408,7 +408,7 @@
         cursor: pointer;
         width: 19vw;
         height: 19vw;
-        margin: 2%;
+        
         border-radius: .3em;
         border: 1px solid rgba(0, 0, 0, 0.13);
         box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -430,48 +430,45 @@
         font-weight: bolder;
     }
 
+    .link-cat-lp{
+       margin: 2%;
+       font-style: none;
+       color: #000;
+    }
+
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------------
 //css dos cards
 
 
-.espaco-produto {
+.espaco-produto-landp {
     display: flex;
     flex-direction: column;
-    height: 450px;
-    width: 250px;
-    border-radius: .3em;
+    justify-content: space-between;
+    align-items: center;
+    height: 350px;
+    min-width: 200px;
+    border-radius: 0.3em;
     border: 1px solid rgba(0, 0, 0, 0.13);
     box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
     background-color: white;
-    margin: 3%;
+    margin: 1.5%;
 }
 
-.espaco-produto:hover{
+.espaco-produto-landp:hover{
     transform: scale(1.05);
     transition: 0.3s;
 }
 
-.imagem-coracao{
-    height: 20px;
-    width: 20px;
-    margin: 10px 0px 0px 10px;
-    opacity: 0.5;
-}
-
-.imagem-coracao:hover{
-    opacity: 1;
-    cursor: pointer;
-}
-
-.coracao-e-quadrado{
+.quadrado-lp{
     display: flex;
-    flex-direction: row;
+    width: 100%;
+    flex-direction: row-reverse;
     justify-content: space-between;
 }
 
-.quadrado-azul-card{
+.quadrado-azul-card-lp{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -480,60 +477,71 @@
     margin: 2% 2% 0px 0px;
     border-radius: 10px;
     border: #007BF1 solid 2px;
-    width: 65px;
-    height: 65px;
+    width: 50px;
+    height: 50px;
 }
 
-.letras-restam{
+.letras-restam-lp{
     font-family: 'inter-font';
-    font-size: 14px;
+    font-size: 12px;
     color: #007BF1;
 }
 
-.unidades-letras-restam{
+.unidades-letras-restam-lp{
     font-family: 'inter-font';
-    font-size: 14px;
+    font-size: 12px;
     color: #007BF1;
     font-weight: bolder;
 }
 
 
-.descricao-card{
+.descricao-card-lp{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60%;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.imagem-produto-card{
-    height: auto;
-    width: auto;
+.imagem-produto-card-lp{
+    height: 50%;
+    width: 90%;
 }
 
-.card-produto-descricao{
+.preco-descricao-lp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 35%;
+}
+
+.card-produto-descricao-lp{
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: 'inter-font';
-    font-size: 15px;
-    width: 70%;
-    margin-top: 60px;
+    font-size: 14px;
+    width: 90%;
 }
 
-.preco-card{
-    font-size: 20px;
+.preco-card-lp{
+    font-size: 14px;
     color: #01BE01;
     font-family: 'inter-font';
     font-weight: bold;
-    margin-top: 10px;
 }
 
-.imagem-carrinho{
+.imagem-carrinho-lp{
     height: 20px;
     width: 20px;
 }
 
-.botao-comprar{
+.botao-comprar-lp{
     display: flex;
     justify-content: space-around;
     justify-self: right;
@@ -543,18 +551,20 @@
     align-items: center;
     background-color: #318CE7;
     border-style: none;
-    width: 150px;
-    height: 40px;
+    width: 140px;
+    height: 30px;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-.botao-comprar:hover{
+.botao-comprar-lp:hover{
     background-color: #fff;
     color: #318CE7;
     border: #318CE7 solid 2px;
     transition: 0.1s;
+    
     cursor: pointer;
-    .imagem-carrinho{
+    .imagem-carrinho-lp{
     filter: invert(100%);
 }
 }
