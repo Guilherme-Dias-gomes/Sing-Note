@@ -6,6 +6,6 @@ const api = axios.create({
 })
 
 export async function listarPedidos(idUsuario) {
-    const r = await api.get ('/api/acompanhar/:' + idUsuario );
+    const r = await api.get ('/api/acompanhar/' + idUsuario );
     return r.data
 }

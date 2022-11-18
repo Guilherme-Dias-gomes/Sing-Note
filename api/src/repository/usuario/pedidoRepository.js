@@ -78,18 +78,19 @@ export async function inserirPedidoItem(idPedido, idProduto, qtd, preco) {
 
 export async function consultarPedido(idUsuario) {
     const comando = `
-    select tb_pedido.id_pedido          id,
-				 nm_produto    nome,
-				 nm_usuario			nomeUsu,
-				 ds_modelo          modelo
-          from tb_pedido
-         inner join tb_usuario 
-            on tb_usuario.ID_USUARIO = tb_pedido.id_usuario
-         inner join tb_pedido_item 
-            on tb_pedido_item.id_pedido = tb_pedido.id_pedido
-         inner join tb_produto 
-            on tb_produto.id_produto = tb_pedido_item.id_produto
-		where tb_usuario.id_usuario = ?;
+    select tb_pedido.id_pedido      id,
+           nm_produto               nome,
+           nm_usuario		    	nomeUsu,
+           ds_status                status,
+           ds_modelo                modelo
+      from tb_pedido
+inner join tb_usuario 
+        on tb_usuario.ID_USUARIO = tb_pedido.id_usuario
+inner join tb_pedido_item 
+         on tb_pedido_item.id_pedido = tb_pedido.id_pedido
+ inner join tb_produto 
+         on tb_produto.id_produto = tb_pedido_item.id_produto
+      where tb_usuario.id_usuario = ?;
     `
 
     const [info] = await conexao.query(comando, [idUsuario]);

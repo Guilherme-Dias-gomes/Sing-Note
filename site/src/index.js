@@ -52,7 +52,7 @@ root.render(
         <Route path="/pagamento" element={< Pagamento />} />
         <Route path="/cadastro" element={< CadastroUsuario />} />
         <Route path="/cadastro/:id" element={< CadastroUsuario />} />
-        <Route path="/acompanhar" element={< Acompanhar />} />
+        <Route path="/aco" element={< Acompanhar />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
