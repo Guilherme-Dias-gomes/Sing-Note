@@ -8,7 +8,7 @@ export default function ItemCarrinho({ item: {produto: { info, imagens }, qtd },
     const [qtdProduto, setQtdProduto] = useState(qtd)
 
     function remover() {
-        removerItem(info.Id)
+        removerItem(info.id)
     }
 
     function exibirImagem() {
@@ -52,7 +52,7 @@ export default function ItemCarrinho({ item: {produto: { info, imagens }, qtd },
                             <option>4</option>
                             <option>5</option>
                         </select>
-                        <p onClick={remover}>Excluir</p>
+                        <button onClick={remover}>Excluir</button>
                     </div>
                     <h4>subTotal:{calcSubTotal()}</h4>
                 </div>

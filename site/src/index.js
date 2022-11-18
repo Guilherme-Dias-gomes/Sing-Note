@@ -20,11 +20,10 @@ import LoginUsuario from './pages/usuario/loginUsuario';
 import ProdutosDetalhes from './pages/usuario/detalhesProduto'
 import RodapeUsuario from './components/usuario/rodape-usuario';
 import CarrinhoUsuario from './pages/usuario/carrinhousuario';
-import FavoritosUsuario from './pages/usuario/favoritos-usuario';
+import AcompanharPedido from './pages/usuario/AcompanharPedido-usuario';
 import Pagamento from './pages/usuario/pagamento';
 import CadastroUsuario from './pages/usuario/cadastrarUsuario';
 import HomeUsuario from './pages/usuario/home';
-import Acompanhar from './pages/usuario/acompanharPedido';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -48,11 +47,10 @@ root.render(
         <Route path="/login" element={< LoginUsuario />} />
         <Route path="/usuario/rodape" element={< RodapeUsuario />} />
         <Route path="/carrinho" element={< CarrinhoUsuario />} />
-        <Route path="/favoritos" element={< FavoritosUsuario />} />
+        <Route path="/acompanhar/pedido" element={< AcompanharPedido />} />
         <Route path="/pagamento" element={< Pagamento />} />
         <Route path="/cadastro" element={< CadastroUsuario />} />
         <Route path="/cadastro/:id" element={< CadastroUsuario />} />
-        <Route path="/aco" element={< Acompanhar />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

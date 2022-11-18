@@ -1,5 +1,12 @@
-.component-item-carrinho {
-    background-color: bisque;
-    margin-top: 1em;
-    margin-bottom: 1em;
+.itens-carrinho{ 
+    .component-item-carrinho {
+        background-color: bisque;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .imagem-produto-no-carrinho{
+        max-height: 150%;
+        width: 10%;
+        height: auto;
+    }
 }

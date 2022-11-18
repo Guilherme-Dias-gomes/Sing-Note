@@ -84,11 +84,11 @@ export default function CarrinhoUsuario() {
                     
                     <div className='card-itens-do-carrinho-e-resultados'>
                         <div className='itens-do-carrinho-e-remover'>
-                            <div className='formatacao-btn-remover'>
+                            {/* <div className='formatacao-btn-remover'>
                                 <button className='botao-remover'>
                                     <img src='/image/lixeira.png' alt='a'/>REMOVER TODOS OS PRODUTOS
                                 </button>
-                            </div>
+                            </div> */}
                             {itens.map(item =>
                                 <ItemCarrinho item={item} removerItem={removerItem} carregarCarrinho={carregarCarrinho()}/>
                             )}

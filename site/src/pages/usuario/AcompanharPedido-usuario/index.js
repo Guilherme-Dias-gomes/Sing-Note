@@ -7,7 +7,7 @@ import AbaLateralUSU from '../../../components/usuario/aba-lateral-usu'
 import CabecalhoUSU from '../../../components/usuario/cabecalho-usu'
 import { API_URL } from '../../../api/config'
 
-export default function FavoritosUsuario() {
+export default function AcompanharPedido() {
 
     const [ pedidos, setPedidos ] = useState([])
     const [ itens, setItens ] = useState([])
@@ -44,7 +44,7 @@ export default function FavoritosUsuario() {
                 <div className='elemento-cabecalho-favorito'>
                     <CabecalhoUSU />
                     <div className='titulo-e-barra-de-itens-favoritos'>
-                        <p className='titulo-e-coracao'><img src='/image/caminhao-usu.png'/> pedidos</p>
+                        <p className='titulo-e-coracao'><img src='/image/caminhao-usu.png'/> Pedidos</p>
                         <div className='card-itens-do-favorito'>
                             <div className='itens-do-favorito'>
                             {pedidos.map( item =>
