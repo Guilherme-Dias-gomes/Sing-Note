@@ -24,6 +24,7 @@ import AcompanharPedido from './pages/usuario/AcompanharPedido-usuario';
 import Pagamento from './pages/usuario/pagamento';
 import CadastroUsuario from './pages/usuario/cadastrarUsuario';
 import HomeUsuario from './pages/usuario/home';
+import FavoritosProduto from './pages/usuario/favoritos'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -42,9 +43,10 @@ root.render(
         <Route path='/admin/produto/:id' element={< CadastrarProduto />} />
         <Route path='/produto/:id/detalhes' element={< ProdutosDetalhes />} />
 
-
+        
         <Route path="/usuario/busca" element={< BuscaUsuario />} />
         <Route path="/login" element={< LoginUsuario />} />
+        <Route path="/favoritos" element={< FavoritosProduto />} />
         <Route path="/usuario/rodape" element={< RodapeUsuario />} />
         <Route path="/carrinho" element={< CarrinhoUsuario />} />
         <Route path="/acompanhar/pedido" element={< AcompanharPedido />} />

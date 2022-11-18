@@ -19,8 +19,6 @@ export default function BuscaUsuario () {
     const [buscar, setBuscar] = useState('');
     const [quantidade, setQuantidade] = useState([]);
 
-    const [ idProduto, setIdProduto ] = useState();
-
     const navegar = useNavigate();
 
     const id = useParams()
@@ -117,30 +115,16 @@ export default function BuscaUsuario () {
         }
     }
 
-    // async function salvarUsuario(){
-    //     try{
-    //        if(!id){ 
-    //             const r = await cadastarPerfil(nomeUsuario, rg, cpf, nascimento, telefone);
-    //             await cadastarLogin(email, senha, r.id);
+    // async function FavoritosAdicionar(){
+    //     const r = await addFavoritos(lerStorage.id)
+    // }
 
-    //             toast.dark('Você está cadastrado!');
-    //         } else {
-    //             await alterarPerfil(nomeUsuario, rg, cpf, nascimento, telefone, id);
-    //             await alterarLogin(email, senha, id);
-
-    //             toast.dark('Informações alteradas com sucesso!');
-    //         }
-
-    //     } catch (err) {
-    //         toast.error(err.response.data.erro);
-    //     }
-    // } 
-
-    async function salvarFavoritos(){
+    async function salvarFavoritos(idProduto){
         try {
 
             if(!id){
                 const r = await addFavoritos(idProduto ,lerStorage.id)
+                toast.dark('Produto Adicionado aos favoritos')
             }
             
         } catch (err) {
@@ -263,7 +247,7 @@ export default function BuscaUsuario () {
                                 <div className='espaco-produto-busca-usu' >
                                     {/* {item.Id} */}
                                     <div className='coracao-e-unidades'>
-                                        <img onClick={salvarFavoritos()} style={{visibility:'hidden'}} className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
+                                        <img onClick={salvarFavoritos(item.Id)} className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
                                         <div className='quadrado-unidades'>
                                             <p className='quadrado-texto'>Restam</p>
                                             <p className='quadrado-qtd-unidade'> {item.Estoque}</p>
