@@ -92,7 +92,7 @@ export default function ConsultaProduto () {
                         onChange={e => setBuscar(e.target.value)} 
                         onKeyPress={e => e.key === 'Enter' ? filtrar() : ''}
                     />
-                    <button className='btn-buscar' onClick={filtrar}>Buscar</button>
+                    
                     {/* <p className='produto-total-adm'>Produtos no total: <span className='produto-total-adm-qtd'>10</span></p> */}
                 </div>
                 <div className='area-cards-adm'>
