@@ -56,7 +56,7 @@ export default function ItemCarrinho({ item: {produto: { info, imagens }, qtd },
 
                     </div>
                     <div className='somar-excluir'>
-                            <h4 className='somarTudo'>subTotal:{calcSubTotal()}</h4>
+                            <h4 className='somarTudo'>Total:R${calcSubTotal()}</h4>
                             <button onClick={remover}>Excluir</button>
                         </div>
                 </div>

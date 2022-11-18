@@ -4,7 +4,7 @@ export default function CardEndereco ({ item: { id, referencia, rua, cep, bairro
       
     
     return(
-        <div className='card-endereco' onClick={() => selecionar(id)} style={{borderColor: selecionado ? '#007BF1': '#a3a3a3'}}>
+        <div className='card-endereco' onClick={() => selecionar(id)} style={{backgroundColor: selecionado ? '#bde5ff': '#fbfbfb'}}>
             <div className='tipo'>{referencia}</div>
             <div>
                 <div className='endereco'>{rua}, {casa} - {complemento}</div>
