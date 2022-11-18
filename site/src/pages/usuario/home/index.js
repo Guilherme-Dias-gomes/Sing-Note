@@ -173,7 +173,7 @@ export default function HomeUsuario() {
                         <p className='nome-menu-lp'>Meus pedidos</p>
                     </Link>
                     <Link className='itens-menu-lp' to={'/'}>
-                        <img src='/image/administracao.png' className='img-itens-menu-lp' alt='entrega' />
+                        <img src='/image/administracao.png' className='img-itens-menu-lp-adm' alt='adm' />
                         <p className='nome-menu-lp'>Administração</p>
                     </Link>
                 </div>

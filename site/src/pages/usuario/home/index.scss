@@ -94,7 +94,10 @@
   .img-itens-menu-lp{
     width: 12%;
     filter: invert(1);
-    fill: white;
+  }
+
+  .img-itens-menu-lp-adm{
+    width: 12%;
   }
   
   .sidenav .closebtn {
@@ -274,9 +277,9 @@
         align-self: flex-start;
         margin-top: 100%;
         position: absolute;
-        width: 40vw;
-        height: 105%;
-        border-top-right-radius: 100%;
+        width: 25vw;
+        height: 35vw;
+        border-radius:50%;
         z-index: -1;
     }
 

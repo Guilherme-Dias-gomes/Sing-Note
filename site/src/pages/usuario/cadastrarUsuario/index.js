@@ -61,51 +61,83 @@ export default function CadastroUsuario(){
     }, [])
 
     return(
-        <div className="teste">
-            
-            <label>Nome:</label>
-            <input
-                type="text"
-                value={nomeUsuario}
-                onChange={e => setNomeUsuario(e.target.value)}/>
-            
-            <label>RG:</label>
-            <input
-                type="text"
-                value={rg}
-                onChange={e => setRg(e.target.value)}/>
-            
-            <label>CPF:</label>
-            <input
-                type="text"
-                value={cpf}
-                onChange={e => setCpf(e.target.value)}/>
-            
-            <label>Telefone:</label>
-            <input
-                type="text"
-                value={telefone}
-                onChange={e => setTelefone(e.target.value)}/>
-            {/* aaa */}
-            <label>Nascimento:</label>
-            <input
-                type="date"
-                value={nascimento}
-                onChange={e => setNascimento(e.target.value)}/>
-            
-            <label>Email:</label>
-            <input
-                type="text"
-                value={email}
-                onChange={e => setEmail(e.target.value)}/>
-            
-            <label>Senha:</label>
-            <input
-                type="text"
-                value={senha}
-                onChange={e => setSenha(e.target.value)}/>
+        <div className="pagina-cadastro-usu">
+            <h1 className='titulo-cadastro-usuario'>
+                <img src='/image/cadastro-prancheta.png' className='imagem-cadastro-usuario' alt='prancheta'/>Cadastrar
+            </h1>
+            <div className='formulario-cadastro-usu'>
+                <div className='formulario-dados-usu'>
+                    <div className='caixa-de-texto-div-1'>
+                        <label className="titulo-caixa-de-texto">Nome:</label>
+                        <input
+                            className='caixa-de-texto'
+                            type="text"
+                            value={nomeUsuario}
+                            onChange={e => setNomeUsuario(e.target.value)} />
+                    </div>
 
-            <button onClick={salvarUsuario} >Salvar</button>
+                    <div className='caixa-de-texto-div-1'>
+                        <label className="titulo-caixa-de-texto">RG:</label>
+                        <input
+                            className='caixa-de-texto'
+                            type="text"
+                            value={rg}
+                            onChange={e => setRg(e.target.value)} />
+                    </div>
+
+                    <div className='caixa-de-texto-div-1'>
+                        <label className="titulo-caixa-de-texto">CPF:</label>
+                        <input
+                            className='caixa-de-texto'
+                            type="text"
+                            value={cpf}
+                            onChange={e => setCpf(e.target.value)} />
+                    </div>
+
+                    <div className='caixa-de-texto-div-1'>
+                        <label className="titulo-caixa-de-texto">Telefone:</label>
+                        <input
+                            className='caixa-de-texto'
+                            type="text"
+                            value={telefone}
+                            onChange={e => setTelefone(e.target.value)} />
+                        {/* aaa */}
+                    </div>
+
+                    <div className='caixa-de-texto-div-1'>
+                        <label className="titulo-caixa-de-texto">Nascimento:</label>
+                        <input
+                            className='caixa-de-texto'
+                            type="date"
+                            value={nascimento}
+                            onChange={e => setNascimento(e.target.value)} />
+                    </div>
+
+                    <div className='caixa-de-texto-div-1'>
+                        <label className="titulo-caixa-de-texto">Email:</label>
+                        <input
+                            className='caixa-de-texto'
+                            type="text"
+                            value={email}
+                            onChange={e => setEmail(e.target.value)} />
+                    </div>
+
+                    <div className='caixa-de-texto-div-1'>
+                        <label className="titulo-caixa-de-texto">Senha:</label>
+                        <input
+                            className='caixa-de-texto'
+                            type="text"
+                            value={senha}
+                            onChange={e => setSenha(e.target.value)} />
+                    </div>
+
+                    <button className='botao1' onClick={salvarUsuario} >Salvar</button>
+                </div>
+
+                {/*----------------------------------------------------------------------------------------------------------------------*/}
+
+                
+            </div>
         </div>
     )
 }
