@@ -1,8 +1,24 @@
+import { useEffect, useState } from 'react'
+import { mostrarPedidosUsuario } from '../../../api/usuario/pedidoAPI'
+import storage from 'local-storage'
 import './index.scss'
 // import { API_URL } from '../../../api/config'
 
 
-export default function ItemFavorito() { 
+export default function ItemFavorito() {
+    
+    const [ pedidos, setPedidos ] = useState([])
+    const lerStorage = storage('Cliente-Logado')
+
+    async function mostrarPedidos(){
+        const r = await mostrarPedidosUsuario(lerStorage.id)
+        setPedidos(r)
+    }
+
+    useEffect(() => {
+        mostrarPedidos()
+    }, [])
+    
     //  add no paranteses da função ^^ { item: {produto: { info, imagens }, qtd } 
     // function exibirImagem() {
     //     if(imagens.length > 0) {
@@ -13,16 +29,20 @@ export default function ItemFavorito() {
     // }
 
     return (
+                
+                
                 <div className='itens-carrinho'>
-                    <img src="/image/imagespadrao.png" className='imagem-produto-no-carrinho' alt='img-produto-carrinho' /> {/*<---- add no src da imagem {exibirImagem}*/}
+                {pedidos.map( item =>
+                <div>
+                    <img src="/image/imagespadrao.png" className='imagem-produto-no-carrinho' alt='img-produto-carrinho' /> 
                     <div className='item-nome-e-detalhes-e-preco'>
                         <div className='sobre-produto-favorito'>
-                            <h1 className='nome-produto-carrinho'>nome-aqui</h1>         {/*<---- add ali {info.Nome}*/}
-                            <p className='descricao-produto-carrinho'>modelo-aqui uuuuuuuuuuuuuuuuuiiii</p>    {/*<---- add ali {info.Modelo}*/}
+                            <h1 className='nome-produto-carrinho'>{item.nome}</h1>         
+                            <p className='descricao-produto-carrinho'>{item.modelo}</p>    
                         </div>
-                        <h3>R$ 123</h3> {/*<---- add ali {info.Preco}*/}
+                        <h3>Pedido nº{item.id}</h3> 
                     </div>
-                    <div className='botao-e-lixo'>
+                     <div className='botao-e-lixo'>
                         <button className='botao-comprar-favorito'>
                             <p className='comprar-e-config-img'>
                                 <img src='/image/carrinho-card.png' className='imagem-carrinho' alt='carrinho-favorito'/>Comprar
@@ -30,8 +50,9 @@ export default function ItemFavorito() {
                         </button>
                         <img src='image/lixeira-favorito.png' className='lixo-favorito' alt='lixo-favorito'/>
 
-                    </div>
+                    </div> 
                     
-                </div>
-    )
-}
+                </div>    
+                )}
+               </div>
+)}

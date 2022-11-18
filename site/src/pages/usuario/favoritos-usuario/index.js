@@ -1,37 +1,26 @@
 import ItemFavorito from '../../../components/usuario/item-favorito'
+import { useEffect, useState } from 'react'
+import { mostrarPedidosUsuario } from '../../../api/usuario/pedidoAPI'
+import storage from 'local-storage'
 import './index.scss'
 import AbaLateralUSU from '../../../components/usuario/aba-lateral-usu'
 import CabecalhoUSU from '../../../components/usuario/cabecalho-usu'
 
 export default function FavoritosUsuario() {
+
+    const [ pedidos, setPedidos ] = useState([])
+    const [ itens, setItens ] = useState([])
+    const lerStorage = storage('Cliente-Logado')
+
+    async function mostrarPedidos(){
+        const r = await mostrarPedidosUsuario(lerStorage.id)
+        setPedidos(r)
+    }
+
+    useEffect(() => {
+        mostrarPedidos()
+    }, [])
     
-    // const [itens, setItens] = useState([]);
-
-    // async function carregarCarrinho() {
-    //     let carrinho = Storage('carrinho');
-    //     if (carrinho) {
-
-    //         let temp = [];
-
-    //         for (let produto of carrinho) {
-    //             let p = await buscarProdutoPorId(produto.id);
-
-    //             temp.push({
-    //                 produto: p,
-    //                 qtd: produto.qtd
-    //             })
-    //         }
-    //         console.log(temp)
-    //         setItens(temp)
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     carregarCarrinho();
-    // }, [])
-
-
-
     return (
         <div className='page-favorito-usu'>
             <div className='bola1favorito'></div>
@@ -45,13 +34,30 @@ export default function FavoritosUsuario() {
                         <p className='titulo-e-coracao'><img src='/image/caminhao-usu.png'/> pedidos</p>
                         <div className='card-itens-do-favorito'>
                             <div className='itens-do-favorito'>
-                                <ItemFavorito  />
-                                <ItemFavorito  />
-                                <ItemFavorito  />
-                                {/*item={item}*/}
-                                {/* {itens.map(item =>
+                            {pedidos.map( item =>
+                            <div className='itens-carrinho'>
+                                
+                                
+                                    <img src="/image/imagespadrao.png" className='imagem-produto-no-carrinho' alt='img-produto-carrinho' /> 
+                                    <div className='item-nome-e-detalhes-e-preco'>
+                                        <div className='sobre-produto-favorito'>
+                                            <h1 className='nome-produto-carrinho'>{item.nome}</h1>         
+                                            <p className='descricao-produto-carrinho'>{item.modelo}</p>    
+                                        </div>
+                                        <h3>Pedido nº{item.id}</h3> 
+                                    </div>
+                                    {/* <div className='botao-e-lixo'>
+                                        <button className='botao-comprar-favorito'>
+                                            <p className='comprar-e-config-img'>
+                                                <img src='/image/carrinho-card.png' className='imagem-carrinho' alt='carrinho-favorito'/>Comprar
+                                            </p>
+                                        </button>
+                                        <img src='image/lixeira-favorito.png' className='lixo-favorito' alt='lixo-favorito'/>
+
+                                    </div>  */}
                                     
-                                )}  --- Realizar mapeamento*/}
+                            </div>
+                            )}
                             </div> 
                         </div>
                     </div>
