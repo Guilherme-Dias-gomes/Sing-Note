@@ -18,6 +18,36 @@
     background-color: #FAFAFB;
 }
 
+.botao-voltar-cad{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007BF1;
+    width:10vw;
+    height: 3vw;
+    border-radius: 10px;
+    border: 0px;
+    color: #fff;
+    align-self: flex-end;
+    font-family: 'right-font';
+    font-size: 1vw;
+    align-self: flex-start;
+    margin-bottom: 90vh;
+    margin-left: 5%;
+    position: absolute;
+    transition: 0.3s;
+}
+
+.botao-voltar-cad:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 40px #007BF1, 0px 0px 10px rgba(255, 255, 255, 1);
+    border:#007BF1 solid 3px;
+    background-color: #fff;
+    color: #000;
+    transition: 0.3s;
+}
+
+
 .titulo-cadastro-usuario{
     display: flex;
     align-items: center;

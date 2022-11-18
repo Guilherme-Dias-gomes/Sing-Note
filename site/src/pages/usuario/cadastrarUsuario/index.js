@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { alterarLogin, alterarPerfil, buscarUsuarioPorId, cadastarLogin, cadastarPerfil } from "../../../api/usuario/usuarioLoginAPI";
 import storage from 'local-storage'
+import { Link } from 'react-router-dom';
 
 export default function CadastroUsuario(){
 
@@ -62,6 +63,7 @@ export default function CadastroUsuario(){
 
     return(
         <div className="pagina-cadastro-usu">
+            <Link to={'/lp'} className='botao-voltar-cad'>&lArr; Voltar ao menu</Link>
             <h1 className='titulo-cadastro-usuario'>
                 <img src='/image/cadastro-prancheta.png' className='imagem-cadastro-usuario' alt='prancheta'/>Cadastrar
             </h1>
