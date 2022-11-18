@@ -160,7 +160,7 @@ export default function HomeUsuario() {
 
                     <Link className='itens-menu-lp' to={"/login"}>
                         <img src='/image/cart-lp.png' className='img-itens-menu-lp' alt='carrinho' />
-                        <p className='nome-menu-lp'>Meus pedidos</p>
+                        <p className='nome-menu-lp'>Carrinho</p>
                     </Link>
 
                     {/* <Link className='itens-menu-lp' to={'/login'}>
@@ -173,7 +173,7 @@ export default function HomeUsuario() {
                         <p className='nome-menu-lp'>Meus pedidos</p>
                     </Link>
                     <Link className='itens-menu-lp' to={'/'}>
-                        <img src='/image/documento.png' className='img-itens-menu-lp' alt='adm' />
+                        <img src='/image/administracao.png' className='img-itens-menu-lp' alt='entrega' />
                         <p className='nome-menu-lp'>Administração</p>
                     </Link>
                 </div>

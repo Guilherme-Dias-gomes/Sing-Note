@@ -46,7 +46,8 @@ a {
     text-decoration: none;
 }
 
-.icone-opcoes-adm-pedidos{
+.icone-opcoes-adm-pedidos,
+.icone-opcoes-adm-lp{
     display:flex;
     flex-direction: row;
     align-items: center;
@@ -84,6 +85,10 @@ a {
 }
 
 .icone-opcoes-adm-pedidos:hover{
+    background-color: #084D6E;
+}
+
+.icone-opcoes-adm-lp:hover{
     background-color: #084D6E;
 }
 

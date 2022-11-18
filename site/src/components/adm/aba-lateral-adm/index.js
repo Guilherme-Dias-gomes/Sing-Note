@@ -17,12 +17,12 @@ export default function AbaLateralADM() {
         if(!storage('usuario-logado')){
             navegar('/admin/login');
         }
-        
+
     }, [])
 return(
 
-<div className="aba-lateral"> {/*Começo da aba lateral*/} 
-            
+<div className="aba-lateral"> {/*Começo da aba lateral*/}
+
     <div className="opcoes"> {/*Começo das opções*/}
         <Link to={'/'} className="icone-opcoes-adm-home">
             <img className='img-icone' src="/image/silhueta-negra-de-casa-sem-porta 2.png" alt="opcao"/>
@@ -38,21 +38,21 @@ return(
             <img className='img-icone' src="/image/add-button.png" alt="opcao"/>
             <p className="nome-icones">Cadastro</p>
         </Link>
-        
+
         <Link to={'/admin/pedidos'} className="icone-opcoes-adm-pedidos">
             <img className='img-icone' src="/image/carrinho-carrinho 2.png" alt="opcao"/>
             <p className="nome-icones">Pedidos</p>
         </Link>
-        <Link to={'/lp'} className="icone-opcoes-adm-pedidos">
-            <img className='img-icone-doc' src="/image/documento.png" alt="LandPage"/>
+        <Link to={'/lp'} className="icone-opcoes-adm-lp">
+            <img className='img-icone-doc' src="/image/documento.png" alt="LandPage"/> 
             <p className="nome-icones">Tela Principal</p>
         </Link>
     </div> {/*Fim das opções*/}
-    
+
     <div onClick={sairClick} className="icone-opcoes">
         <img className='img-icone' src="/image/Vector.png" alt="opcao"/>
         <p className="nome-icones">Sair</p>
-    </div> 
+    </div>
 
 </div> /*Fim da aba lateral*/
 )}
