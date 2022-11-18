@@ -44,8 +44,8 @@ return(
             <p className="nome-icones">Pedidos</p>
         </Link>
         <Link to={'/lp'} className="icone-opcoes-adm-pedidos">
-            <img className='img-icone' src="" alt="LandPage"/>
-            <p className="nome-icones"></p>
+            <img className='img-icone-doc' src="/image/documento.png" alt="LandPage"/>
+            <p className="nome-icones">Tela Principal</p>
         </Link>
     </div> {/*Fim das opções*/}
     

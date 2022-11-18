@@ -230,9 +230,30 @@ export default function Pagamento() {
                         </div>
                     </div> {/*Referente a pagamento*/}
 
-                    <div>
-                        <div>
-                            <table>
+                    
+                        
+                        <table className='tabela-pedidos-adm'>
+                            <thead className='cabecalho-tabela-pedido'>
+                                <tr className='linha-titulos-cabecalho-tabela'>
+                                    <th className='titulo-cabecalho-tabela-id'>Item</th>
+                                    <th className='titulo-cabecalho-tabela-usuario'>Quantidade</th>
+                                    <th className='titulo-cabecalho-tabela-cpf'>Preço</th>
+                                    <th className='titulo-cabecalho-tabela-status'>Total</th>
+                                </tr>
+                            </thead>
+                    
+                    {itens.map(item =>
+                        <tbody>
+                            <tr className='linha-descricao-cabecalho-tabela'>
+                                <td className='linha-cabecalho-tabela-id'><img className='imgpedido' src='/image/imagespadrao.png' alt='imagem'/></td>
+                                <td className='linha-cabecalho-tabela-status'> {item.qtd}</td>
+                                <td className='linha-cabecalho-tabela-id-data'>R${item.produto.info.Preco} </td>
+                                <td className='linha-cabecalho-tabela-id-data'>R${item.qtd * item.produto.info.Preco} </td>
+                            </tr>
+                        </tbody>
+                    )}
+
+                            {/* <table className='table-pedido-usuario'>
                                 <thead>
                                     <tr>
                                         <th>Item</th>
@@ -242,6 +263,8 @@ export default function Pagamento() {
                                     </tr>
                                 </thead>
                                 <tbody>
+
+ 
 
                                     {itens.map(item =>
                                         <tr>
@@ -266,10 +289,10 @@ export default function Pagamento() {
                                         </tr>
                                     )}
 
-                                </tbody>
+                                </tbody> */}
                             </table>
-                        </div>
-                    </div>
+                        
+                    
                     <RodapeUsuario />
                 </div>
 

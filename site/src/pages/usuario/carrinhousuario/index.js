@@ -105,13 +105,18 @@ export default function CarrinhoUsuario() {
                             <hr className='linha-abaixo-de-valor-carrinho'/>
                         </div>
                         <div className='div-botoes'>
+                        <Link to={'/pagamento'} className='efetuar-compra'>
                             <button className='botao-comprar-carrinho'>
-                                <Link to={'/pagamento'} className='efetuar-compra'>EFETUAR COMPRA</Link>
+                                EFETUAR COMPRA
                             </button>
+                        </Link>
+                        <Link to={'/usuario/busca'} className='continuar-comprando'>
                             <button className='botao-comprando-carrinho'>
-                                <Link to={'/usuario/busca'} className='continuar-comprando'>CONTINUAR COMPRANDO</Link>
+                                CONTINUAR COMPRANDO
                             </button>
+                        </Link>
                         </div>
+                    
                         </div>
                     </div><RodapeUsuario/>
                 </div>

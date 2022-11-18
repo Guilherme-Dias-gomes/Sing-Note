@@ -148,33 +148,33 @@ export default function HomeUsuario() {
                     <p className='ola-menu'>Olá, seja bem-vindo</p>
                 </div>
                 <div className='area-icones-lp'>
-                    <Link className='itens-menu-lp' to={'po'}>
+                    <Link className='itens-menu-lp' to={'/login'}>
                         <img src='/image/human-lp.png' className='img-itens-menu-lp' alt='humano' />
                         <p className='nome-menu-lp'>Minha conta</p>
                     </Link>
 
-                    <Link className='itens-menu-lp' to={"/usuario/busca"}>
+                    <Link className='itens-menu-lp' to={"/login"}>
                         <img src='/image/lupa-lp.png' className='img-itens-menu-lp' alt='lupa' />
                         <p className='nome-menu-lp'>Pesquisa</p>
                     </Link>
 
-                    <Link className='itens-menu-lp' to={"/carrinho"}>
+                    <Link className='itens-menu-lp' to={"/login"}>
                         <img src='/image/cart-lp.png' className='img-itens-menu-lp' alt='carrinho' />
                         <p className='nome-menu-lp'>Meus pedidos</p>
                     </Link>
 
-                    <Link className='itens-menu-lp' to={'/favoritos'}>
+                    {/* <Link className='itens-menu-lp' to={'/login'}>
                         <img src='/image/heart-lp.png' className='img-itens-menu-lp' alt='coracao' />
                         <p className='nome-menu-lp'>Favoritos</p>
-                    </Link>
+                    </Link> */}
 
-                    <Link className='itens-menu-lp' to={'po'}>
+                    <Link className='itens-menu-lp' to={'/login'}>
                         <img src='/image/truck-lp.png' className='img-itens-menu-lp' alt='entrega' />
                         <p className='nome-menu-lp'>Meus pedidos</p>
                     </Link>
                     <Link className='itens-menu-lp' to={'/'}>
-                        <img src='' className='img-itens-menu-lp' alt='adm' />
-                        <p className='nome-menu-lp'>tela ADM</p>
+                        <img src='/image/documento.png' className='img-itens-menu-lp' alt='adm' />
+                        <p className='nome-menu-lp'>Administração</p>
                     </Link>
                 </div>
             </div>
@@ -187,8 +187,8 @@ export default function HomeUsuario() {
                 </div>
                 <div className='musicalize-titulo-e-img'>
                     <div className='input-e-lupa'>
-                        <input className='aba-busca-lp' placeholder='Buscar'/>
-                        <img src='/image/lupa-usu-busca.png' className='img-lupa-lp'/>
+                        {/* <input className='aba-busca-lp' placeholder='Buscar'/>
+                        <img src='/image/lupa-usu-busca.png' className='img-lupa-lp'/> */}
                     </div>
                     <div className='musicaliza-propaganda'>
                         <div className='musicaliza-propaganda-textos'>
