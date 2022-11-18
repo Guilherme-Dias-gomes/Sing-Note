@@ -1,20 +1,22 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { buscarPedidosPorId, alterarPedido } from '../../../api/admin/statusPedidoAPI'
 import { toast } from 'react-toastify'
 import './index.scss'
 
-export default function AlterarStatus(){
+export default function AlterarStatus({ exibir, fechar }){
 
     const { id } = useParams()
     const [ idPedido, setIdPedido ] = useState()
     const [ status, setStatus ] = useState('')
+    const navegar = useNavigate()
 
     async function salvarStatus(){
         try {
             if(!id !== null){ 
                 await alterarPedido(status, id)
                 toast.dark('Status alterados!');
+                navegar('/admin/pedidos')
             }
         } catch (err) {
             toast.error(err.response.data.erro);
@@ -35,15 +37,20 @@ export default function AlterarStatus(){
     }, [])
 
     return(
-
-        <main>
-            <h1>Informe a situação desse produto</h1>
-            <input 
-                type="text" 
-                value={status} 
-                onChange={e => setStatus(e.target.value)}
-                onKeyPress={e => e.key === 'Enter' ? salvarStatus() : ''}/>
-            <button onClick={salvarStatus}>Salvar Status</button>
-        </main>
+      
+        <div className='modal-status'>
+            <h1 className='Titulo-Status'>Informe a situação do pedido: {id}</h1>
+            <div className='alterar'>
+                <input 
+                    type="text" 
+                    value={status} 
+                    onChange={e => setStatus(e.target.value)}
+                    onKeyPress={e => e.key === 'Enter' ? salvarStatus() : ''}/>
+                <div className='botao'>
+                    <button onClick={salvarStatus}>Salvar Status</button>
+                </div>
+            </div>
+        </div>
+      
     )
 }
