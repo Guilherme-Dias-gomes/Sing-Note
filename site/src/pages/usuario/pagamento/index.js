@@ -11,6 +11,7 @@ import { salvarNovoPedido } from '../../../api/usuario/pedidoAPI'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 import ModalEndereco from '../../../components/usuario/modal-endereco'
+import { API_URL } from '../../../api/config'
 
 
 
@@ -32,8 +33,6 @@ export default function Pagamento() {
     const [parcela, setParcela] = useState('');
 
     const navegar = useNavigate();
-
-
 
     async function carregarEnderecos() {
         const id = Storage('Cliente-Logado').id
@@ -109,6 +108,18 @@ export default function Pagamento() {
             toast.error(err.response.data.erro)
         }
 
+    }
+
+    function exibirImagem(imagem) {
+        if (!imagem) {
+            return '/image/imagespadrao.png';
+        }
+        else if (typeof (imagem) == 'string') {
+            return `${API_URL}/${imagem}`
+        }
+        else {
+            return URL.createObjectURL(imagem);
+        }
     }
 
     useEffect(() => {
@@ -247,7 +258,7 @@ export default function Pagamento() {
                                         <tr>
                                             <td>
                                                 <div>
-                                                    <img src='/image/imagespadrao.png' alt='imagem'></img>
+                                                        <img src={exibirImagem(item.produto.info.Imagem)} alt='imagem'></img>
                                                     <div>
                                                         <h3>{item.produto.info.Nome}</h3>
                                                         <h4>{item.produto.info.Modelo}</h4>
@@ -259,9 +270,6 @@ export default function Pagamento() {
                                             </td>
                                             <td>
                                                 R${item.produto.info.Preco}
-                                            </td>
-                                            <td>
-                                                R$ {item.qtd * item.produto.info.Preco}
                                             </td>
                                         </tr>
                                     )}

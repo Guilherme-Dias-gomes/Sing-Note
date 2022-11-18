@@ -5,6 +5,7 @@ import storage from 'local-storage'
 import './index.scss'
 import AbaLateralUSU from '../../../components/usuario/aba-lateral-usu'
 import CabecalhoUSU from '../../../components/usuario/cabecalho-usu'
+import { API_URL } from '../../../api/config'
 
 export default function FavoritosUsuario() {
 
@@ -15,6 +16,18 @@ export default function FavoritosUsuario() {
     async function mostrarPedidos(){
         const r = await mostrarPedidosUsuario(lerStorage.id)
         setPedidos(r)
+    }
+
+    function exibirImagem(imagem) {
+        if (!imagem) {
+            return '/image/imagespadrao.png';
+        }
+        else if (typeof (imagem) == 'string') {
+            return `${API_URL}/${imagem}`
+        }
+        else {
+            return URL.createObjectURL(imagem);
+        }
     }
 
     useEffect(() => {
@@ -38,7 +51,7 @@ export default function FavoritosUsuario() {
                             <div className='itens-carrinho'>
                                 
                                 
-                                    <img src="/image/imagespadrao.png" className='imagem-produto-no-carrinho' alt='img-produto-carrinho' /> 
+                                    <img src={exibirImagem(item.imagem)} className='imagem-produto-no-carrinho' alt='img-produto-carrinho' /> 
                                     <div className='item-nome-e-detalhes-e-preco'>
                                         <div className='sobre-produto-favorito'>
                                             <h1 className='nome-produto-carrinho'>{item.nome}</h1>         

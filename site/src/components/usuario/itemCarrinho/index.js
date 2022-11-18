@@ -11,16 +11,12 @@ export default function ItemCarrinho({ item: {produto: { info, imagens }, qtd },
         removerItem(info.Id)
     }
 
+    function exibirImagem() {
 
-    function exibirImagem(imagem) {
-        if (!imagem) {
+        if (imagens.length > 0) {
+            return API_URL + '/' + imagens[0]; 
+        } else {
             return '/image/imagespadrao.png';
-        }
-        else if (typeof (imagem) == 'string') {
-            return `${API_URL}/${imagem}`
-        }
-        else {
-            return URL.createObjectURL(imagem);
         }
     }
     function calcSubTotal () {
@@ -41,7 +37,7 @@ export default function ItemCarrinho({ item: {produto: { info, imagens }, qtd },
 
     return (
                 <div className='itens-carrinho'>
-                    <img src={exibirImagem(info.Imagem)} className='imagem-produto-no-carrinho' alt='img-produto-carrinho' />
+                    <img src={exibirImagem()} className='imagem-produto-no-carrinho' alt='img-produto-carrinho' />
                     <div className='item-nome-e-detalhes'>
                         <h1 className='nome-produto-carrinho'>{info.Nome}</h1>
                         <p className='descricao-produto-carrinho'>{info.Modelo}</p>

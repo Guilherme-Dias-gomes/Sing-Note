@@ -82,15 +82,23 @@ export async function consultarPedido(idUsuario) {
            nm_produto               nome,
            nm_usuario		    	nomeUsu,
            ds_status                status,
+       min(img_produto)             imagem,
            ds_modelo                modelo
       from tb_pedido
 inner join tb_usuario 
         on tb_usuario.ID_USUARIO = tb_pedido.id_usuario
 inner join tb_pedido_item 
-         on tb_pedido_item.id_pedido = tb_pedido.id_pedido
- inner join tb_produto 
-         on tb_produto.id_produto = tb_pedido_item.id_produto
-      where tb_usuario.id_usuario = ?;
+        on tb_pedido_item.id_pedido = tb_pedido.id_pedido
+inner join tb_produto 
+        on tb_produto.id_produto = tb_pedido_item.id_produto
+ left join tb_produto_imagem on tb_produto.id_produto = tb_produto_imagem.id_produto 
+      where tb_usuario.id_usuario = ?
+      group
+         by  tb_pedido.id_pedido,
+                nm_produto,
+                nm_usuario,
+                ds_status,
+                ds_modelo
     `
 
     const [info] = await conexao.query(comando, [idUsuario]);
