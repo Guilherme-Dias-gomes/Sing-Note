@@ -1,5 +1,5 @@
 import "./index.scss"
-
+import { Link } from "react-router-dom"
 
 export default function RodapeUsuario() {
     return (
@@ -7,13 +7,13 @@ export default function RodapeUsuario() {
             <div className="primeira-coluna">
                 <h1 className="titulo-colunas-rodape-usu">Departamentos</h1>
                 <div className="primeira-parte">
-                    <p className="descricao-colunas-rodape-usu">Violão</p>
-                    <p className="descricao-colunas-rodape-usu">Guitarra</p>
-                    <p className="descricao-colunas-rodape-usu">Bateria</p>
-                    <p className="descricao-colunas-rodape-usu">Baixo</p>
-                    <p className="descricao-colunas-rodape-usu">Piano</p>
-                    <p className="descricao-colunas-rodape-usu">Percussão</p>
-                    <p className="descricao-colunas-rodape-usu">Flauta</p>
+                    <p className="descricao-colunas-rodape-usu"><Link style={{color:'#fff'}} to={'/usuario/busca'}>Violão</Link></p>
+                    <p className="descricao-colunas-rodape-usu"><Link style={{color:'#fff'}} to={'/usuario/busca'}>Guitarra</Link></p>
+                    <p className="descricao-colunas-rodape-usu"><Link style={{color:'#fff'}} to={'/usuario/busca'}>Bateria</Link></p>
+                    <p className="descricao-colunas-rodape-usu"><Link style={{color:'#fff'}} to={'/usuario/busca'}>Baixo</Link></p>
+                    <p className="descricao-colunas-rodape-usu"><Link style={{color:'#fff'}} to={'/usuario/busca'}>Piano</Link></p>
+                    <p className="descricao-colunas-rodape-usu"><Link style={{color:'#fff'}} to={'/usuario/busca'}>Percussão</Link></p>
+                    <p className="descricao-colunas-rodape-usu"><Link style={{color:'#fff'}} to={'/usuario/busca'}>Flauta</Link></p>
                 </div>
             </div>
             <div className="segunda-coluna">
