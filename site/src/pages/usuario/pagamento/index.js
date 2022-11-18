@@ -11,8 +11,7 @@ import { salvarNovoPedido } from '../../../api/usuario/pedidoAPI'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 import ModalEndereco from '../../../components/usuario/modal-endereco'
-
-
+import { API_URL } from '../../../api/config'
 
 export default function Pagamento() {
     const [enderecos, setEnderecos] = useState([]);
@@ -74,6 +73,18 @@ export default function Pagamento() {
             total = total + item.qtd * item.produto.info.Preco
         }
         return total;
+    }
+
+    function exibirImagem(imagem) {
+        if (!imagem) {
+            return '/image/imagespadrao.png';
+        }
+        else if (typeof (imagem) == 'string') {
+            return `${API_URL}/${imagem}`
+        }
+        else {
+            return URL.createObjectURL(imagem);
+        }
     }
 
     async function salvarPedido() {
@@ -245,7 +256,7 @@ export default function Pagamento() {
                     {itens.map(item =>
                         <tbody>
                             <tr className='linha-descricao-cabecalho-tabela'>
-                                <td className='linha-cabecalho-tabela-id'><img className='imgpedido' src='/image/imagespadrao.png' alt='imagem'/></td>
+                                <td className='linha-cabecalho-tabela-id'><img className='imgpedido' src={exibirImagem(item.produto.imagens[0])} alt='imagem'/></td>
                                 <td className='linha-cabecalho-tabela-status'> {item.qtd}</td>
                                 <td className='linha-cabecalho-tabela-id-data'>R${item.produto.info.Preco} </td>
                                 <td className='linha-cabecalho-tabela-id-data'>R${item.qtd * item.produto.info.Preco} </td>
