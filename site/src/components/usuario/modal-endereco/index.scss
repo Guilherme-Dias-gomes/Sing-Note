@@ -14,14 +14,6 @@
     }
 
 
-    .form>div label {
-        min-width: 8em;
-    }
-
-    .form>div:last-child {
-        justify-content: flex-end;
-    }
-
 
     visibility: hidden;
 
@@ -42,6 +34,66 @@
         background-color: #fff;
     }
 
+    .botao-salvar-pgt{
+            background-color: #55F27F;
+            border-style: none;
+            width: 9vw;
+            height: 2.5vw;
+            margin-top: 3vh;
+            border-radius: 0.5vw;
+            color: #fff;
+            font-family: 'right-font';
+            font-size: 1vw;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
+    .botao-salvar-pgt:hover{
+        transform: scale(1.05);
+        box-shadow: 0px 0px 40px #55F27F, 0px 0px 10px rgba(255, 255, 255, 1);
+        border:#55F27F solid 3px;
+        background-color: #fff;
+        color: #000;
+        transition: 0.3s;
+    }
+
+    .formatacao-input-informacao-cartao-card{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        margin: 15px 0px;
+        height: 45px;
+        padding: 0px 5px;
+        width: 100%;
+    }
+
+    .titulo-input-pagamento-card{
+        font-family: Arial;
+        color:#7d7d7d;
+        font-size: 10px;
+        font-weight: bold;
+        background-color: #ffffff;
+        width:auto;
+        padding: 0px 0.1%;
+        margin: 0px 0px 30px 2%;
+        position: absolute;
+        width: auto;    
+    }
+
+    .input-pagamento-card{
+        height: 30px;
+        width: 100%;
+        border-radius: 8px;
+        border-style: none;
+        border: #7d7d7d solid 2px;
+        padding: 0px 10px;
+        
+    }
+
+    .titulo-card-pgt{
+        margin-top: 5%;
+    }
 }
+
+
 

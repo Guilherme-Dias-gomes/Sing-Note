@@ -11,7 +11,6 @@ import { salvarNovoPedido } from '../../../api/usuario/pedidoAPI'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 import ModalEndereco from '../../../components/usuario/modal-endereco'
-import { API_URL } from '../../../api/config'
 
 
 
@@ -33,6 +32,8 @@ export default function Pagamento() {
     const [parcela, setParcela] = useState('');
 
     const navegar = useNavigate();
+
+
 
     async function carregarEnderecos() {
         const id = Storage('Cliente-Logado').id
@@ -110,18 +111,6 @@ export default function Pagamento() {
 
     }
 
-    function exibirImagem(imagem) {
-        if (!imagem) {
-            return '/image/imagespadrao.png';
-        }
-        else if (typeof (imagem) == 'string') {
-            return `${API_URL}/${imagem}`
-        }
-        else {
-            return URL.createObjectURL(imagem);
-        }
-    }
-
     useEffect(() => {
         carregarEnderecos();
         carregarItens();
@@ -165,7 +154,7 @@ export default function Pagamento() {
                             <div className='formatacao-btn-remover'>
                                 <h1>Informações do seu pedido</h1>
                                 <h3>valor final: {carregarTotal()}</h3>
-                                <button onClick={exibirNovoEndereco}>Novo Endereço</button>
+                                <button onClick={exibirNovoEndereco} className='botao-novo-endereco-pgt'>Novo Endereço</button>
                             </div>
                             <div className='enderecos'>
 
@@ -237,7 +226,7 @@ export default function Pagamento() {
                                     </div>
                                 </div>
                             </div>
-                            <button onClick={salvarPedido}>Finalizar Compra</button>
+                            <button onClick={salvarPedido} className="botao-finalizar-pgt">Finalizar Compra</button>
                         </div>
                     </div> {/*Referente a pagamento*/}
 
@@ -258,7 +247,7 @@ export default function Pagamento() {
                                         <tr>
                                             <td>
                                                 <div>
-                                                        <img src={exibirImagem(item.produto.info.Imagem)} alt='imagem'></img>
+                                                    <img src='/image/imagespadrao.png' alt='imagem'></img>
                                                     <div>
                                                         <h3>{item.produto.info.Nome}</h3>
                                                         <h4>{item.produto.info.Modelo}</h4>
@@ -270,6 +259,9 @@ export default function Pagamento() {
                                             </td>
                                             <td>
                                                 R${item.produto.info.Preco}
+                                            </td>
+                                            <td>
+                                                R$ {item.qtd * item.produto.info.Preco}
                                             </td>
                                         </tr>
                                     )}

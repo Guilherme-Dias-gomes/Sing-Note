@@ -14,6 +14,52 @@
     flex-direction: row;
     width: auto;
     height: max-content;
+
+    .botao-novo-endereco-pgt{
+        background-color: #55F27F;
+        border-style: none;
+        width: 15vw;
+        height: 3.5vw;
+        margin-top: 3vh;
+        border-radius: 0.5vw;
+        color: #fff;
+        font-family: 'right-font';
+        font-size: 1.2vw;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .botao-novo-endereco-pgt:hover{
+        transform: scale(1.05);
+        box-shadow: 0px 0px 40px #55F27F, 0px 0px 10px rgba(255, 255, 255, 1);
+        border:#55F27F solid 3px;
+        background-color: #fff;
+        color: #000;
+        transition: 0.3s;
+    }
+
+    .botao-finalizar-pgt{
+        background-color: #55F27F;
+        border-style: none;
+        width: 15vw;
+        height: 3.5vw;
+        margin-top: 3vh;
+        border-radius: 0.5vw;
+        color: #fff;
+        font-family: 'right-font';
+        font-size: 1.2vw;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .botao-finalizar-pgt:hover{
+        transform: scale(1.05);
+        box-shadow: 0px 0px 40px #55F27F, 0px 0px 10px rgba(255, 255, 255, 1);
+        border:#55F27F solid 3px;
+        background-color: #fff;
+        color: #000;
+        transition: 0.3s;
+    }
     
 
         .bola1Pagamento{
@@ -43,7 +89,7 @@
             height: 70vh;
             background-color: #007BF1;
             border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            margin: 800px 0px 0px 10vw;
+            margin: 50% 0px 0px 10vw;
         }
 
         .elementos-pagamento-usu {
@@ -353,9 +399,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            border: red solid 1px;
-            align-self: flex-start;
-            width: 70%;
+            align-self: center;
+            width: 100%;
             background-color: #fff;
             border-radius:10px;
             padding: 20px;
@@ -372,7 +417,6 @@
             flex-direction: row;
             justify-content: space-between;
             width: 100%;
-            border: red solid 1px;
         }
 
         .formatacao-input-informacao-cartao{
@@ -382,7 +426,7 @@
             margin: 15px 0px;
             height: 45px;
             padding: 0px 5px;
-            width: 100%;border: red solid 1px;
+            width: 100%;
         }
 
         .titulo-input-pagamento{
@@ -394,7 +438,8 @@
             width:auto;
             padding: 0px 0.1%;
             margin: 0px 0px 40px 1%;
-            position: absolute;    
+            position: absolute;
+            width: auto;
         }
 
         .input-pagamento{
@@ -414,13 +459,13 @@
 
         .informacoes-cartao{
             display: flex;
-            flex-direction: column;border: red solid 1px;
+            flex-direction: column;
             width: 47%;
         }
 
         .informacoes-pagamento{
             display: flex;
-            flex-direction: column;border: red solid 1px;
+            flex-direction: column;
             width: 47%;
         }
 

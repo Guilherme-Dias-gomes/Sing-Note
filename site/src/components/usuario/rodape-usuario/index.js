@@ -1,7 +1,7 @@
 import "./index.scss"
 
 
-export default function RodapeUsuario(){
+export default function RodapeUsuario() {
     return (
         <main className="main-rodape-usu">
             <div className="primeira-coluna">
@@ -27,31 +27,31 @@ export default function RodapeUsuario(){
             </div>
             <div className="terceira-coluna">
                 <h1 className="titulo-colunas-rodape-usu-diferentao"> Atendimento</h1>
-                <p className="descricao-colunas-rodape-usu-diferentao"> Horário de Atendimento:</p> 
-                <p className="descricao-colunas-rodape-usu-diferentao"> 08:00 às 20:00 -</p> 
-                <p className="descricao-colunas-rodape-usu-diferentao"> Segunda à Sábado, </p> 
-                <p className="descricao-colunas-rodape-usu-diferentao"> horário de Brasília</p> 
+                <p className="descricao-colunas-rodape-usu-diferentao"> Horário de Atendimento:</p>
+                <p className="descricao-colunas-rodape-usu-diferentao"> 08:00 às 20:00 -</p>
+                <p className="descricao-colunas-rodape-usu-diferentao"> Segunda à Sábado, </p>
+                <p className="descricao-colunas-rodape-usu-diferentao"> horário de Brasília</p>
                 <p className="descricao-colunas-rodape-usu-diferentao">(Exceto domingo e feriados)</p>
             </div>
             <div className="quarta-coluna">
                 <h1 className="titulo-colunas-rodape-usu">Mídias sociais</h1>
                 <div className="redes-rodape-usu">
-                    <div className="bolinha-midias-sociais"> 
-                        <img src="/image/midia-facebook.png"/>
+                    <div className="bolinha-midias-sociais">
+                        <img src="/image/midia-facebook.png" className="rodape-icn-redes-fb" />
                     </div>
                     <div className="bolinha-midias-sociais">
-                        <img src="/image/midia-twitter.png"/>
+                        <img src="/image/midia-twitter.png" className="rodape-icn-redes" />
                     </div>
-                    <div className="bolinha-midias-sociais"> 
-                        <img src="/image/midia-insta.png"/>
+                    <div className="bolinha-midias-sociais">
+                        <img src="/image/midia-insta.png" className="rodape-icn-redes" />
                     </div>
-                </div>    
+                </div>
                 <div className="parte-fale-conosco">
                     <h1 className="titulo-colunas-rodape-usu">Email</h1>
                     <p className="descricao-colunas-rodape-usu">faleconosco@sgn.com.br</p>
                 </div>
             </div>
-           
+
         </main>
     )
 }

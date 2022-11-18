@@ -145,7 +145,7 @@ export default function HomeUsuario() {
 
                 <div className='nome-e-icone-menu-lp'>
                     <img src='/image/fulanodomenu.png' className='icone-do-mano' />
-                    <p>Olá Clayton</p>
+                    <p className='ola-menu'>Olá, seja bem-vindo</p>
                 </div>
                 <div className='area-icones-lp'>
                     <Link className='itens-menu-lp' to={'po'}>
@@ -430,7 +430,7 @@ export default function HomeUsuario() {
                     </div>
 
                 </div>
-            </div>
+            </div><RodapeUsuario/>
         </div>
     )
 }

@@ -45,6 +45,10 @@
     cursor: pointer;
   }
 
+  .ola-menu{
+    margin-left: 2%;
+  }
+
   .nome-e-icone-menu-lp{
     display: flex;
     flex-direction: row;
@@ -55,10 +59,13 @@
     font-size: 2.5vw;
     font-family: 'ballo-font';
     font-weight: bolder;
+    color:#fff;
   }
 
   .icone-do-mano{
     width: 13%;
+    filter: invert(1);
+    margin-right: 2%;
   }
   
   .itens-menu-lp {
@@ -71,6 +78,7 @@
     color: #ffffff;
     transition: 0.3s;
     width: 80%;
+    height: 5vw;
 
     font-size: 2vw;
   }
@@ -85,6 +93,7 @@
 
   .img-itens-menu-lp{
     width: 12%;
+    filter: invert(1);
   }
   
   .sidenav .closebtn {

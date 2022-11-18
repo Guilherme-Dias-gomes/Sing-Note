@@ -50,18 +50,18 @@
             width: 9vw;
             height: 50vw;
             background-color: #007BF1;
-            border-radius: 400% 0px 0px 500% / 50% 0% 0% 60%;
+            border-radius: 400% 200% 200% 500% / 50% 40% 40% 60%;
             margin: 200px 0px 0px 88vw;
         }
 
         .bola3{
             position: absolute;
             display: block;
+            align-self: flex-end;
             width: 45vw;
             height: 60vh;
             background-color: #007BF1;
             border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            margin: 800px 0px 0px 10vw;
         }
 
 
