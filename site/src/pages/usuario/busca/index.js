@@ -119,11 +119,11 @@ export default function BuscaUsuario () {
     //     const r = await addFavoritos(lerStorage.id)
     // }
 
-    async function salvarFavoritos(idProduto){
+    async function salvarFavoritos(/*idProduto*/){
         try {
 
             if(!id){
-                const r = await addFavoritos(idProduto ,lerStorage.id)
+                const r = await addFavoritos(2 ,lerStorage.id)
                 toast.dark('Produto Adicionado aos favoritos')
             }
             
@@ -189,7 +189,7 @@ export default function BuscaUsuario () {
                     <div className='busca-e-lupa'>
                         <input 
                             className='input-pesquisa-usu' type="search" placeholder='Buscar por nome'
-                            value={buscar}onChange={e => setBuscar(e.target.value)}
+                            value={buscar} onChange={e => setBuscar(e.target.value)}
                             onKeyPress={e => e.key === 'Enter' ? filtrar() && BotaoCatipo0(): ''}/>
                         <button className='botao-input-buscar'> 
                             <img src='/image/lupa-usu-busca.png' alt='lupa-botao' className='lupa-busca-usu'/>
@@ -229,7 +229,7 @@ export default function BuscaUsuario () {
                         <div className='resultados'> 
                             <p>
                                 Resultado de busca:
-                                <span className='resultado-valor'> {buscar}</span>
+                                <span className='resultado-valor'> {buscar.substr(0,20)}...</span>
                             </p>
 
                             {quantidade.map( item =>
@@ -247,7 +247,7 @@ export default function BuscaUsuario () {
                                 <div className='espaco-produto-busca-usu' >
                                     {/* {item.Id} */}
                                     <div className='coracao-e-unidades'>
-                                        <img onClick={salvarFavoritos(item.Id)} className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
+                                        <img onClick={salvarFavoritos(item.id)} className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
                                         <div className='quadrado-unidades'>
                                             <p className='quadrado-texto'>Restam</p>
                                             <p className='quadrado-qtd-unidade'> {item.Estoque}</p>
