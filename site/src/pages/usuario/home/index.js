@@ -2,26 +2,22 @@ import './index.scss'
 import RodapeUsuario from '../../../components/usuario/rodape-usuario'
 import { Link } from 'react-router-dom';
 
-// import { buscarProdutoPorNome, buscarProdutos } from '../../../api/admin/produtoAPI'
-// import { useEffect, useState } from 'react'
-// import { buscarProdutoPorCategoria } from '../../../api/admin/categoriaAPI'
-// import { buscarProdutoPorTipo } from '../../../api/admin/tipoAPI'
-// import { ContarProdutos } from '../../../api/usuario/usuarioLoginAPI'
-// import { API_URL } from '../../../api/config'
-// import { useNavigate } from 'react-router-dom'
+import { buscarProdutos } from '../../../api/admin/produtoAPI'
+import { useEffect, useState } from 'react'
+import { API_URL } from '../../../api/config'
+import { useNavigate } from 'react-router-dom'
 
 export default function HomeUsuario() {
 
-    // const [produtos, setProdutos] = useState([]);
-    // const [buscar, setBuscar] = useState('');
-    // const [quantidade, setQuantidade] = useState([]);
+    const [produto, setProduto] = useState([]);
+
 
     // const navegar = useNavigate();
 
-    // async function mostrarProdutos() {
-    //     const resposta = await buscarProdutos();
-    //     setProdutos(resposta);
-    // }
+    async function mostrarProdutos() {
+        const resposta = await buscarProdutos();
+        setProduto(resposta);
+    }
 
     // // ///////////////////////////////////////////////////////////////////
     // async function filtrarTipoGuitarra() {
@@ -99,34 +95,23 @@ export default function HomeUsuario() {
     //     setProdutos(resposta);
     // }
 
-    // function exibirImagem(imagem) {
-    //     if (!imagem) {
-    //         return '/image/imagespadrao.png';
-    //     }
-    //     else if (typeof (imagem) == 'string') {
-    //         return `${API_URL}/${imagem}`
-    //     }
-    //     else {
-    //         return URL.createObjectURL(imagem);
-    //     }
-    // }
+    function exibirImagem(imagem) {
+        if (!imagem) {
+            return '/image/imagespadrao.png';
+        }
+        else if (typeof (imagem) == 'string') {
+            return `${API_URL}/${imagem}`
+        }
+        else {
+            return URL.createObjectURL(imagem);
+        }
+    }
 
-    // async function mostrarQuantidade() {
-    //     const respota = await ContarProdutos()
-    //     setQuantidade(respota)
-    // }
 
-    // function abrirDetalhes(id) {
-    //     navegar('/produto/' + id + '/detalhes')
-    // }
 
-    // useEffect(() => {
-    //     mostrarQuantidade()
-    // }, [])
-
-    // useEffect(() => {
-    //     mostrarProdutos();
-    // }, [])
+    useEffect(() => {
+        mostrarProdutos();
+    }, [])
 
     function openNav() {
         document.getElementById("mySidenav").style.width = "35%";
@@ -220,29 +205,33 @@ export default function HomeUsuario() {
                     <div className='lista-de-itens-lp'>
                         {/*--------------------Card dos itens--------------------*/}
 
-                        <div className='espaco-produto'>
-                            <div className='coracao-e-quadrado'>
-                                <img className='imagem-coracao' alt='coracao-do-card' src='/image/coracao-card.png' />
-                                <div className='quadrado-azul-card'>
-                                    <p className='letras-restam'>Restam </p>
-                                    <spamn className='unidades-letras-restam'>5</spamn>
-                                    <p className='letras-restam'>Unid.</p>
+                        {produto.map(item => 
+                            
+                            <div className='espaco-produto'>
+                                <div className='coracao-e-quadrado'>
+                                    <img className='imagem-coracao' alt='coracao-do-card' style={{visibility:'hidden'}} src='/image/coracao-card.png' />
+                                    <div className='quadrado-azul-card'>
+                                        <p className='letras-restam'>Restam </p>
+                                        <spamn className='unidades-letras-restam'>{item.Estoque}</spamn>
+                                        <p className='letras-restam'>Unid.</p>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div className='descricao-card'>
-                                <img className='imagem-produto-card' src='/image/bateria.png' alt='produto-do-card' />{/*<------ src={exibir(props.item.Imagem)}*/}
-                                <h1 className='card-produto-descricao'>
-                                    <span>{/*props.item.Nome*/} Bateria</span>
-                                    <span>{/*{props.item.Marca}*/}Yamaha</span>
-                                    <span>{/*props.item.Modelo*/}Novo oeste</span>
-                                </h1>
-                                <h1 className='preco-card'>{/*formatarPreco(props.item.preco)*/}</h1>
+                                <div className='descricao-card'>
+                                    <img className='imagem-produto-card' src={exibirImagem(item.Imagem)} alt='produto-do-card' />{/*<------ src={exibir(props.item.Imagem)}*/}
+                                    <h1 className='card-produto-descricao'>
+                                        <span>{item.Nome}</span>
+                                        <span>{item.Marca}</span>
+                                        <span>{item.Modelo}</span>
+                                    </h1>
+                                    <h1 className='preco-card'>{/*formatarPreco(props.item.preco)*/}</h1>
+                                </div>
+                                <button className='botao-comprar'>Comprar
+                                    <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card' />
+                                </button>
                             </div>
-                            <button className='botao-comprar'>Comprar
-                                <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card' />
-                            </button>
-                        </div>
+                        
+                        )}
 
 
                         <div className='espaco-produto'>

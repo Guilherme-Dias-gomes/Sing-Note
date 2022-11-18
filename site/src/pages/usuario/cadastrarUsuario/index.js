@@ -63,7 +63,7 @@ export default function CadastroUsuario(){
 
     return(
         <div className="pagina-cadastro-usu">
-            <Link to={'/lp'} className='botao-voltar-cad'>&lArr; Voltar ao menu</Link>
+            <Link to={'/login'} className='botao-voltar-cad'>&lArr; Voltar ao menu</Link>
             <h1 className='titulo-cadastro-usuario'>
                 <img src='/image/cadastro-prancheta.png' className='imagem-cadastro-usuario' alt='prancheta'/>Cadastrar
             </h1>
