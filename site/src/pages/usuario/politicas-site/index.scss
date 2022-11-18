@@ -1,0 +1,31 @@
+
+.sobre-sg{
+    display: flex;
+    background-color: #FAFAFB;
+    }
+    .card{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    margin: 100px ;
+    border-radius: 5px;
+    }
+    .conjunto{
+        display: flex;
+        flex-direction: row;
+    }
+    .imagem{
+    padding-top: 32px;
+    }
+    .titulo-politica{
+    display: flex;
+    flex-direction: row;
+    font-size: 2vw;
+    }
+    .texto-politica{
+        display: flex;
+        flex-direction: row;
+        padding:  0px 70px 70px 70px;
+        font-size: 1.8vw;
+    }

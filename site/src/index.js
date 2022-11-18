@@ -24,7 +24,8 @@ import AcompanharPedido from './pages/usuario/AcompanharPedido-usuario';
 import Pagamento from './pages/usuario/pagamento';
 import CadastroUsuario from './pages/usuario/cadastrarUsuario';
 import HomeUsuario from './pages/usuario/home';
-import FavoritosProduto from './pages/usuario/favoritos'
+import FavoritosProduto from './pages/usuario/favoritos';
+import Politicas from './pages/usuario/politicas-site';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -53,6 +54,7 @@ root.render(
         <Route path="/pagamento" element={< Pagamento />} />
         <Route path="/cadastro" element={< CadastroUsuario />} />
         <Route path="/cadastro/:id" element={< CadastroUsuario />} />
+        <Route path="/politicas" element={< Politicas />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
