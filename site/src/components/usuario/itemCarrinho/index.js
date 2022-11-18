@@ -43,18 +43,22 @@ export default function ItemCarrinho({ item: {produto: { info, imagens }, qtd },
                         <p className='descricao-produto-carrinho'>{info.Modelo}</p>
                         
                     </div>
-                    <h3>R${info.Preco}</h3>
-                    <div>
-                        <select onChange={e => alterarQuantidade(e.target.value)} value={qtdProduto}>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                        <button onClick={remover}>Excluir</button>
+                    <div className='item-preco-qtd-excluir-total'>
+                        <h3 className='item-Preco'>R${info.Preco}</h3>
+                            <select className='qtd-select' onChange={e => alterarQuantidade(e.target.value)} value={qtdProduto}>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                            
+
                     </div>
-                    <h4>subTotal:{calcSubTotal()}</h4>
+                    <div className='somar-excluir'>
+                            <h4 className='somarTudo'>subTotal:{calcSubTotal()}</h4>
+                            <button onClick={remover}>Excluir</button>
+                        </div>
                 </div>
     )
 }

@@ -1,4 +1,10 @@
+@font-face {
+    font-family: 'inter-font';
+    src: url('../../../assets/fonts/inter-font.ttf');
+}
+
 .itens-carrinho{ 
+
     .component-item-carrinho {
         background-color: bisque;
         margin-top: 1em;
@@ -8,5 +14,46 @@
         max-height: 150%;
         width: 10%;
         height: auto;
+    }
+
+    .item-nome-e-detalhes{
+        left: 5rem;
+    }
+
+    .item-Preco{
+        color: rgb(2, 238, 2);
+    }
+
+    .qtd-select{
+        padding: .5rem;
+    }
+
+    .item-preco-qtd-excluir-total{
+        display: flex;
+        flex-direction: row;
+        width: 200px;
+        justify-content: space-evenly;
+    }
+
+    .qtd-select{
+        margin-bottom: 1rem;
+    }
+
+    button{
+        background-color: rgb(245, 68, 68);
+        padding: 0.2rem;
+        border-radius: 3px;
+        border: none;
+        font-family: 'inter-font';
+        font-weight: 800;
+        color: #fff;
+    }
+
+    button:hover{
+        cursor: pointer;
+    }
+
+    .somarTudo{
+        margin-bottom: 1rem;
     }
 }
