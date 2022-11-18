@@ -83,7 +83,8 @@ export async function consultarPedido(idUsuario) {
            nm_usuario		    	nomeUsu,
            ds_status                status,
        min(img_produto)             imagem,
-           ds_modelo                modelo
+           ds_modelo                modelo,
+date_format(dt_pedido, '%d/%m/%Y')  Data_Pedido
       from tb_pedido
 inner join tb_usuario 
         on tb_usuario.ID_USUARIO = tb_pedido.id_usuario
@@ -99,6 +100,8 @@ inner join tb_produto
                 nm_usuario,
                 ds_status,
                 ds_modelo
+      order 
+         by dt_pedido desc
     `
 
     const [info] = await conexao.query(comando, [idUsuario]);

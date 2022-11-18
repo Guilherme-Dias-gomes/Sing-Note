@@ -57,7 +57,8 @@ export default function AcompanharPedido() {
                                             <h1 className='nome-produto-carrinho'>{item.nome}</h1>         
                                             <p className='descricao-produto-carrinho'>{item.modelo}</p>    
                                         </div>
-                                        <h3>Pedido nº{item.id}</h3> 
+                                        <h3>Data do Pedido: {item.Data_Pedido}</h3>
+                                        <h3><span>Pedido nº </span>{item.id}</h3> 
                                     </div>
                                     {/* <div className='botao-e-lixo'>
                                         <button className='botao-comprar-favorito'>
