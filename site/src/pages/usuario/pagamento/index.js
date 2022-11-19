@@ -12,7 +12,6 @@ import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 import ModalEndereco from '../../../components/usuario/modal-endereco'
 import { API_URL } from '../../../api/config'
-
 export default function Pagamento() {
     const [enderecos, setEnderecos] = useState([]);
     const [itens, setItens] = useState([])
@@ -32,7 +31,9 @@ export default function Pagamento() {
 
     const navegar = useNavigate();
 
-
+    async function fecharModal() {
+        SetExibirEndereco(false)
+    } 
 
     async function carregarEnderecos() {
         const id = Storage('Cliente-Logado').id
@@ -40,7 +41,7 @@ export default function Pagamento() {
         setEnderecos(r)
     }
 
-    function exibirNovoEndereco() {
+    async function exibirNovoEndereco() {
         SetExibirEndereco(true);
     }
 
@@ -48,6 +49,10 @@ export default function Pagamento() {
         SetExibirEndereco(false);
         carregarEnderecos();
     }
+
+    // funcion excluirEndereco() {
+
+    // }
 
     async function carregarItens() {
         let carrinho = Storage('carrinho');
@@ -129,7 +134,7 @@ export default function Pagamento() {
 
     return (
         <div className='page-pagamento-usu'>
-            <ModalEndereco exibir={exibirEndereco} fechar={fecharNovoEndereco}/>
+            <ModalEndereco exibir={exibirEndereco} fechar={fecharNovoEndereco} />
             <div className='bola2Pagamento'></div>
             <div className='bola3Pagamento'></div>
             <AbaLateralUSU />
@@ -183,20 +188,20 @@ export default function Pagamento() {
 
                                     <div className="formatacao-input-informacao-cartao">
                                         <label className='titulo-input-pagamento'>Nome impresso no cartão</label>
-                                        <input className='input-pagamento' value={nome} onChange={e => setNome(e.target.value)} />
+                                        <input className='input-pagamento' placeholder='ex: Guilherme Dias Gomes' value={nome} onChange={e => setNome(e.target.value)} />
                                     </div>
                                     <div className="formatacao-input-informacao-cartao">
                                         <label className='titulo-input-pagamento'>Número do cartão</label>
-                                        <input className='input-pagamento' value={numero} onChange={e => setNumero(e.target.value)} />
+                                        <input className='input-pagamento' placeholder='ex: 0000 0000 0000 0000' value={numero} onChange={e => setNumero(e.target.value)} />
                                     </div>
                                     <div className='formatacao-input-informacao-cartao-pequeno'>
                                         <div className="formatacao-input-informacao-cartao">
                                             <label className='titulo-input-pagamento'>Validade</label>
-                                            <input className='input-pagamento' value={vencimento} onChange={e => setVencimento(e.target.value)} />
+                                            <input className='input-pagamento' placeholder='ex: 04/jul' value={vencimento} onChange={e => setVencimento(e.target.value)} />
                                         </div>
                                         <div className="formatacao-input-informacao-cartao">
                                             <label className='titulo-input-pagamento'>CVV</label>
-                                            <input className='input-pagamento' value={cvv} onChange={e => setCvv(e.target.value)} />
+                                            <input className='input-pagamento' placeholder='ex: 000' value={cvv} onChange={e => setCvv(e.target.value)} />
                                         </div>
                                     </div>
                                 </div>

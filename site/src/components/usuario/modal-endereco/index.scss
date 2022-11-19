@@ -21,6 +21,18 @@
         visibility: visible !important;
     }
 
+    .titulo-e-btnFechar{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .btnFechar{
+        color: #55F27F;
+        cursor: pointer;
+    }
+
     .conteudo {
         position: relative;
         top: -50px;

@@ -7,10 +7,12 @@ import Storage from 'local-storage'
 import { useState, useEffect } from 'react'
 import { buscarProdutoPorId } from '../../../api/admin/produtoAPI'
 import ItemCarrinho from '../../../components/usuario/itemCarrinho'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
+
 
 export default function CarrinhoUsuario() {
     const [itens, setItens] = useState([]);
+
 
 
     function calcValorTotal () {
@@ -43,7 +45,6 @@ export default function CarrinhoUsuario() {
                     qtd: produto.qtd
                 })
             }
-            console.log(temp)
             setItens(temp)
         }
     }

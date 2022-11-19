@@ -25,10 +25,9 @@ export default function ItemCarrinho({ item: {produto: { info, imagens }, qtd },
     }
 
     function alterarQuantidade (novaQTD) {
-        console.log(novaQTD)
         setQtdProduto(novaQTD);
         let carrinho = Storage('carrinho');
-        let itemStorage = carrinho.find(item => item.id == info.Id);
+        let itemStorage = carrinho.find(item => item.id == info.id);
         itemStorage.qtd = novaQTD;
 
         Storage('carrinho', carrinho);

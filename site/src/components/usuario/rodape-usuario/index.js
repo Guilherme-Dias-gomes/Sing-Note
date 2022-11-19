@@ -18,11 +18,17 @@ export default function RodapeUsuario() {
             </div>
             <div className="segunda-coluna">
                 <h1 className="titulo-colunas-rodape-usu"> Institucional</h1>
-                <p className="descricao-colunas-rodape-usu"> Sobre a Sing Note</p>
-                <p className="descricao-colunas-rodape-usu">Políticas do Site e Marketplace</p>
+                <Link >
+                    <p className="descricao-colunas-rodape-usu"> Sobre a Sing Note</p>
+                </Link>
+                <Link style={{color:'#fff'}} to={'/politicas'}>
+                    <p className="descricao-colunas-rodape-usu">Políticas do Site e Marketplace</p>
+                </Link>
                 <div className="parte-minha-conta">
                     <h1 className="titulo-colunas-rodape-usu">Minha Conta</h1>
-                    <p className="descricao-colunas-rodape-usu"> Meus Pedidos</p>
+                    <Link style={{color:'#fff'}} to={'/acompanhar/pedido'}>
+                        <p className="descricao-colunas-rodape-usu"> Meus Pedidos</p>
+                    </Link>
                 </div>
             </div>
             <div className="terceira-coluna">

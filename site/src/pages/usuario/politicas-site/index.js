@@ -19,7 +19,7 @@ return(
                     Qualquer dúvida entre em contato através dos nossos Canais de Atendimento disponíveis em nosso site.
                     O Cliente é o único responsável pela veracidade e legalidade dos dados e informações prestadas para
                     fins de cadastro e compras na plataforma E-commerce ...!<br/><br/>
-                    AVISO: A ...! é um E-commerce varejista, cuja venda de produtos é exclusivamente para o uso e
+                    AVISO: A SingNote'! é um E-commerce varejista, cuja venda de produtos é exclusivamente para o uso e
                     consumo, não sendo destinada a distribuição e/ou revenda em qualquer formato.
 
                 </p>

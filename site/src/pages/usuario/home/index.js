@@ -6,8 +6,12 @@ import { buscarProdutos } from '../../../api/admin/produtoAPI'
 import { useEffect, useState } from 'react'
 import { API_URL } from '../../../api/config'
 import { useNavigate } from 'react-router-dom'
+import storage from 'local-storage'
 
 export default function HomeUsuario() {
+
+    const lerStorage = storage('Cliente-Logado')
+    const navegar = useNavigate()
 
     const [produto, setProduto] = useState([]);
 
@@ -133,17 +137,17 @@ export default function HomeUsuario() {
                     <p className='ola-menu'>Olá, seja bem-vindo</p>
                 </div>
                 <div className='area-icones-lp'>
-                    <Link className='itens-menu-lp' to={'/login'}>
+                    <div className='itens-menu-lp' onClick={() => navegar('/cadastro/' + lerStorage.id)}>
                         <img src='/image/human-lp.png' className='img-itens-menu-lp' alt='humano' />
                         <p className='nome-menu-lp'>Minha conta</p>
-                    </Link>
+                    </div>
 
-                    <Link className='itens-menu-lp' to={"/login"}>
+                    <Link className='itens-menu-lp' to={"/usuario/busca"}>
                         <img src='/image/lupa-lp.png' className='img-itens-menu-lp' alt='lupa' />
                         <p className='nome-menu-lp'>Pesquisa</p>
                     </Link>
 
-                    <Link className='itens-menu-lp' to={"/login"}>
+                    <Link className='itens-menu-lp' to={"/carrinho"}>
                         <img src='/image/cart-lp.png' className='img-itens-menu-lp' alt='carrinho' />
                         <p className='nome-menu-lp'>Carrinho</p>
                     </Link>
@@ -153,7 +157,7 @@ export default function HomeUsuario() {
                         <p className='nome-menu-lp'>Favoritos</p>
                     </Link> */}
 
-                    <Link className='itens-menu-lp' to={'/login'}>
+                    <Link className='itens-menu-lp' to={'/acompanhar/pedido'}>
                         <img src='/image/truck-lp.png' className='img-itens-menu-lp' alt='entrega' />
                         <p className='nome-menu-lp'>Meus pedidos</p>
                     </Link>
