@@ -101,7 +101,7 @@ export default function CarrinhoUsuario() {
                             </div>
                         <div className='valor-total-div'>
                             <div className='valor-total-carrinho'>
-                                Valor total: <span className='valor-mostrado-carrinho'> R${calcValorTotal()}</span>
+                                Valor total: <strong className='valor-mostrado-carrinho'> R${calcValorTotal()}</strong>
                             </div>
                             <hr className='linha-abaixo-de-valor-carrinho'/>
                         </div>

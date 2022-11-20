@@ -50,7 +50,7 @@ export default function ProdutosDetalhes() {
             })
             Storage('carrinho', carrinho);
         }
-        toast.dark('Produto adicionado ao carrinho✌️🎶');
+        toast.dark('Produto adicionado ao carrinho🎶');
     }
 
 
@@ -78,7 +78,7 @@ export default function ProdutosDetalhes() {
                     
                 <div className='div-descricao-detalhes-usu'>
                     <div className='origem-e-coracao'>
-                        <img src='/image/core-usu.png' className='coracao-detalhe-usu' alt='imagem-coracao'/>
+                        <img src='/image/fundoLogo.png' className='coracao-detalhe-usu' alt='imagem-coracao'/>
                         <p className='origem-descricao'>Vendido por: <span className='origem-descricao-verde'>SingNote</span></p>
                     </div>
                     <div className='descricao-do-produto-card'>
@@ -89,7 +89,7 @@ export default function ProdutosDetalhes() {
                         
                     </div>
                     <div className='preco-botao-carrinho'>
-                        <h2 className='preco-detalhe-usu'>R$ {produto.info.Preco}</h2>
+                        <h2 className='preco-detalhe-usu'><span className='descricao-tipo'>Preço: </span> R$ {produto.info.Preco}</h2>
                         <button className='botao-add-carrinho-detalhe-usu' onClick={addNoCarrinho}>Adicionar ao carrinho
                             <img src='/image/carrinho-card.png' alt='img-carrinho' className='img-carrinho'/>
                         </button>

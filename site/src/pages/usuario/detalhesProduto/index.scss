@@ -30,6 +30,8 @@
         border-radius: 20px;
         margin-top: 2%;
         box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+        background-color: #fff;
+        border: .01px solid rgb(224, 224, 224);
     }
 
     .div-imagens-detalhes-usu{
@@ -84,14 +86,15 @@
     }
 
     .coracao-detalhe-usu{
-        height: 30px;
-        opacity: 50%;
+        height: 50px;
+        opacity: 100000000%;
     }
 
     .origem-descricao{
         font-family: 'inter-font';
         font-size: 18px;
         font-weight: bolder;
+        right: 3rem;
         color: #000;
         opacity: 50%;
         margin-left: 8%;
@@ -132,6 +135,7 @@
     .preco-detalhe-usu{
         color: #01BE01;
         font-family: 'inter-font';
+        margin-bottom: 3rem;
         font-size: 20px;
         font-weight: bold;
     }
@@ -175,11 +179,14 @@
         border-radius: 20px;
         margin-top: 2%;
         box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+        background-color: #fff;
+        border: .01px solid rgb(224, 224, 224);
     }
 
     .titulo-informacoes-tecnicas-usu{
         font-family: 'inter-font';
         font-weight: bolder;
+        
         font-size: 30px;
         column-span: all;
     }
@@ -188,8 +195,9 @@
         font-family: 'inter-font';
         font-weight: bold;
         font-size: 20px;
+        line-height: 30px;
         margin-top: 10px;
-        color: #404040;
+        color: #8d8d8d;
         -webkit-columns-: 200px 2;
         -moz-columns: 200px 2;
         columns:200px 2;

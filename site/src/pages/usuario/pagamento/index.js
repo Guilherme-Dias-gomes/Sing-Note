@@ -187,20 +187,20 @@ export default function Pagamento() {
                                 <div className='informacoes-cartao'>
 
                                     <div className="formatacao-input-informacao-cartao">
-                                        <label className='titulo-input-pagamento'>Nome impresso no cartão</label>
+                                        <label className='titulo-input-pagamento'>Nome impresso no cartão: </label>
                                         <input className='input-pagamento' placeholder='ex: Guilherme Dias Gomes' value={nome} onChange={e => setNome(e.target.value)} />
                                     </div>
                                     <div className="formatacao-input-informacao-cartao">
-                                        <label className='titulo-input-pagamento'>Número do cartão</label>
+                                        <label className='titulo-input-pagamento'>Número do cartão: </label>
                                         <input className='input-pagamento' placeholder='ex: 0000 0000 0000 0000' value={numero} onChange={e => setNumero(e.target.value)} />
                                     </div>
                                     <div className='formatacao-input-informacao-cartao-pequeno'>
                                         <div className="formatacao-input-informacao-cartao">
-                                            <label className='titulo-input-pagamento'>Validade</label>
+                                            <label className='titulo-input-pagamento'>Validade: </label>
                                             <input className='input-pagamento' placeholder='ex: 04/jul' value={vencimento} onChange={e => setVencimento(e.target.value)} />
                                         </div>
                                         <div className="formatacao-input-informacao-cartao">
-                                            <label className='titulo-input-pagamento'>CVV</label>
+                                            <label className='titulo-input-pagamento'>CVV: </label>
                                             <input className='input-pagamento' placeholder='ex: 000' value={cvv} onChange={e => setCvv(e.target.value)} />
                                         </div>
                                     </div>
@@ -210,7 +210,7 @@ export default function Pagamento() {
                                 <div className='informacoes-pagamento'>
                                     <div className='formatacao-input-informacao-cartao-pequeno'>
                                         <div className='formatacao-input-informacao-cartao'>
-                                            <label className='titulo-input-pagamento'>Tipo do Pagamento</label>
+                                            <label className='titulo-input-pagamento'>Tipo do Pagamento: </label>
                                             <select className='input-pagamento' value={tipo} onChange={e => setTipo(e.target.value)}>
                                                 <option></option>
                                                 <option>Crédito</option>
@@ -218,7 +218,7 @@ export default function Pagamento() {
                                             </select>
                                         </div>
                                         <div className='formatacao-input-informacao-cartao'>
-                                            <label className='titulo-input-pagamento'>Parcelas</label>
+                                            <label className='titulo-input-pagamento'>Parcelas: </label>
                                             <select className='input-pagamento' value={parcela} onChange={e => setParcela(e.target.value)}>
                                                 <option></option>
                                                 <option value='1'>1X á vista</option>
@@ -229,11 +229,11 @@ export default function Pagamento() {
                                         </div>
                                     </div>
                                     <div className='formatacao-input-informacao-cartao'>
-                                        <label className='titulo-input-pagamento'>Cupon</label>
+                                        <label className='titulo-input-pagamento'>Cupon: </label>
                                         <input className='input-pagamento' value={cupom} onChange={e => setCupom(e.target.value)} />
                                     </div>
                                     <div className='formatacao-input-informacao-cartao'>
-                                        <label className='titulo-input-pagamento'>Frete</label>
+                                        <label className='titulo-input-pagamento'>Frete: </label>
                                         <select className='input-pagamento' value={frete} onChange={e => setFrete(e.target.value)}>
                                             <option></option>
                                             <option value='normal'>Normal - R$10.00</option>
@@ -244,9 +244,7 @@ export default function Pagamento() {
                             </div>
                             <button onClick={salvarPedido} className="botao-finalizar-pgt">Finalizar Compra</button>
                         </div>
-                    </div> {/*Referente a pagamento*/}
-
-                    
+                    </div> {/*Referente a pagamento*/}                    
                         
                         <table className='tabela-pedidos-adm'>
                             <thead className='cabecalho-tabela-pedido'>
@@ -268,45 +266,7 @@ export default function Pagamento() {
                             </tr>
                         </tbody>
                     )}
-
-                            {/* <table className='table-pedido-usuario'>
-                                <thead>
-                                    <tr>
-                                        <th>Item</th>
-                                        <th>Quantidade</th>
-                                        <th>Preço </th>
-                                        <th>Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
- 
-
-                                    {itens.map(item =>
-                                        <tr>
-                                            <td>
-                                                <div>
-                                                    <img src='/image/imagespadrao.png' alt='imagem'></img>
-                                                    <div>
-                                                        <h3>{item.produto.info.Nome}</h3>
-                                                        <h4>{item.produto.info.Modelo}</h4>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                {item.qtd}
-                                            </td>
-                                            <td>
-                                                R${item.produto.info.Preco}
-                                            </td>
-                                            <td>
-                                                R$ {item.qtd * item.produto.info.Preco}
-                                            </td>
-                                        </tr>
-                                    )}
-
-                                </tbody> */}
-                            </table>
+                </table>
                         
                     
                     <RodapeUsuario />

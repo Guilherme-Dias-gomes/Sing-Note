@@ -1,4 +1,5 @@
 import ItemFavorito from '../../../components/usuario/item-favorito'
+import RodapeUsuario from '../../../components/usuario/rodape-usuario'
 import { useEffect, useState } from 'react'
 import { mostrarPedidosUsuario } from '../../../api/usuario/pedidoAPI'
 import storage from 'local-storage'
@@ -79,7 +80,7 @@ export default function AcompanharPedido() {
                         </div>
                     </div>
                 </div>
-            </div>
+             </div>{/*<RodapeUsuario/> */}
         </div>
     )
 }

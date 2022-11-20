@@ -40,32 +40,37 @@ export default function ModalEndereco({ exibir, fechar }) {
                         <h1 className='btnFechar' onClick={fechar}>X</h1>
                     </div>
                     <div className='form'>
-                        <div className='formatacao-input-informacao-cartao-card'>
-                            <label className='titulo-input-pagamento-card'> Referência: </label>
-                            <input className='input-pagamento-card' type='text' value={referencia} onChange={e => setReferencia(e.target.value)} />
-                        </div>
 
-                        <div className='formatacao-input-informacao-cartao-card'>
-                            <label className='titulo-input-pagamento-card'>CEP:</label>
-                            <input className='input-pagamento-card' type='text' value={cep} onChange={e => setCEP(e.target.value)} />
-                        </div>
                         <div className='formatacao-input-informacao-cartao-card'>
                             <label className='titulo-input-pagamento-card'> Rua: </label>
                             <input className='input-pagamento-card' type='text' value={rua} onChange={e => setRua(e.target.value)} />
                         </div>
+                        
                         <div className='formatacao-input-informacao-cartao-card'>
                             <label className='titulo-input-pagamento-card'> Número: </label>
                             <input className='input-pagamento-card' type='text' value={casa} onChange={e => setCasa(e.target.value)} />
                         </div>
+
                         <div className='formatacao-input-informacao-cartao-card'>
                             <label className='titulo-input-pagamento-card'> Complemento: </label>
                             <input className='input-pagamento-card' type='text' value={complemento} onChange={e => setComplemento(e.target.value)} />
                         </div>
 
                         <div className='formatacao-input-informacao-cartao-card'>
+                            <label className='titulo-input-pagamento-card'>CEP:</label>
+                            <input className='input-pagamento-card' type='text' value={cep} onChange={e => setCEP(e.target.value)} />
+                        </div>
+
+                        <div className='formatacao-input-informacao-cartao-card'>
                             <label className='titulo-input-pagamento-card'> Bairro: </label>
                             <input className='input-pagamento-card' type='text' value={bairro} onChange={e => setBairro(e.target.value)} />
                         </div>
+
+                        <div className='formatacao-input-informacao-cartao-card'>
+                            <label className='titulo-input-pagamento-card'> Referência: </label>
+                            <input className='input-pagamento-card' type='text' value={referencia} onChange={e => setReferencia(e.target.value)} />
+                        </div>
+
                         <div className='formatacao-input-informacao-cartao-card'>
                             <label className='titulo-input-pagamento-card'> Cidade: </label>
                             <input className='input-pagamento-card' type='text' value={cidade} onChange={e => setCidade(e.target.value)} />

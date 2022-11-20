@@ -81,7 +81,7 @@ export default function LoginUsuario() {
                     Entrar
                 </button>
                 <Link to={'/cadastro'}>
-                    <buttom>Cadastre-se</buttom>
+                    <buttom className='btn-cadas'>Cadastre-se</buttom>
                 </Link>
             </form>
         </div>

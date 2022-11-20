@@ -19,7 +19,7 @@ export default function PagePedidos() {
     }
 
     async function alterarStatus(id){
-        navegar(`/admin/pedidos/status/${id}`)
+        navegar(`/admin/pedidos/${id}`)
     }
 
     async function filtrarPedido(){
