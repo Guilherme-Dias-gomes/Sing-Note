@@ -19,7 +19,7 @@ export default function PagePedidos() {
     }
 
     async function alterarStatus(id){
-        navegar(`/admin/pedidos/${id}`)
+        navegar(`/admin/pedidos/status/${id}`)
     }
 
     async function filtrarPedido(){
@@ -68,9 +68,9 @@ export default function PagePedidos() {
                         <tbody>
                             <tr className='linha-descricao-cabecalho-tabela'>
                                 <td className='linha-cabecalho-tabela-id'>{item.ID}</td>
-                                <td className='linha-cabecalho-tabela-usuario'>{item.Nome.substr(0,70)}</td>
+                                <td className='linha-cabecalho-tabela-usuario'>{item.Nome}</td>
                                 <td className='linha-cabecalho-tabela-cpf'>{item.CPF}</td>
-                                <td className='linha-cabecalho-tabela-status'>{item.Situacao_do_Pedido.substr(0,30)}...</td>
+                                <td className='linha-cabecalho-tabela-status'>{item.Situacao_do_Pedido}...</td>
                                 <td className='linha-cabecalho-tabela-id-data'>
                                     {item.Data_do_Pedido.substr(0, 10)} 
                                     <img src='/image/lapis.png' onClick={() => alterarStatus(item.ID)} alt='lapis'/>
