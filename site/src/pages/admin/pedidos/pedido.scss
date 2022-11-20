@@ -75,6 +75,13 @@
     border-radius: 0.8rem;
     color: white;
     border: none;
+    cursor: pointer;
+}
+
+.btn-buscar:hover {
+    border: #6AA9E9 solid 2px;
+    background-color: #fff;
+    color: #000;
 }
 
 .div-table {

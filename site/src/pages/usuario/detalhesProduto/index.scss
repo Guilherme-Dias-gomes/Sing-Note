@@ -219,13 +219,15 @@
         font-size: 30px;
     }
 
-    .items-que-pode-gostar{
+    .itens-que-pode-gostar{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        align-items: center;
+        overflow-x: scroll;
         
         width: 100%;
-        height: auto;
+        height: 500px;
         margin-top: 40px;
     }
 
@@ -237,8 +239,9 @@
         flex-direction: column;
         align-items: center;
         height: 450px;
-        width: 250px;
+        min-width: 250px;
         border-radius: .3em;
+        margin: 0px 1%;
         border: 1px solid rgba(0, 0, 0, 0.13);
         box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
         background-color: white;
@@ -291,6 +294,31 @@
         font-size: 15px;
         width: 120%;
         height: 80px;
+    }
+
+    .quadrado-unidades{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 3px 3px 0px 0px;
+        align-self: flex-end;
+        border: #007BF1 solid 1px;
+        border-radius: 10px;
+        width: 50px;
+        height: 50px;
+        color: #007BF1;
+    }
+
+    .quadrado-texto{
+        font-weight: bold;
+        font-family: "inter-font";
+        font-size: 10px;
+    }
+
+    .quadrado-qtd-unidade{
+        font-weight: 1000;
+        font-family: "inter-font";
     }
     
     .preco-card{

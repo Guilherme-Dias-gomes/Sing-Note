@@ -1,16 +1,58 @@
 
-.sobre-sg{
+.bola1politica{
+    position: absolute;
+    width: 20vw;
+    height: 35vw;
+    background-color: #007BF1;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    margin: 5% 0px 0px 3vw;
+    z-index: 1;
+}
+
+.bola2politica{
+    position: absolute;
+    width: 9vw;
+    height: 50vw;
+    background-color: #007BF1;
+    border-radius: 400% 200% 200% 500% / 50% 40% 40% 60%;
+    margin: 10% 0px 0px 88vw;
+    z-index: 1;
+}
+
+.bola3politica{
+    position: absolute;
+    width: 45vw;
+    height: 60vh;
+    background-color: #007BF1;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    margin-top: 50%;
+    z-index: 1;
+}
+
+.elementos-consulta-politica {
     display: flex;
-    background-color: #FAFAFB;
-    }
+    flex-direction: column;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding-left: 100px;
+}
+
+.elemento-cabecalho-politica{
+    width: 100%;
+    z-index: 1;
+}
+
+
     .card{
     display: flex;
     flex-direction: column;
     box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25);
     background-color: #ffffff;
-    margin: 100px ;
+    margin: 5% ;
     border-radius: 5px;
+    z-index: 2;
     }
+    
     .conjunto{
         display: flex;
         flex-direction: row;
@@ -21,11 +63,13 @@
     .titulo-politica{
     display: flex;
     flex-direction: row;
-    font-size: 2vw;
+    font-size: 1.9vw;
+    margin: 2% 0px 0px 5%;
     }
     .texto-politica{
         display: flex;
         flex-direction: row;
-        padding:  0px 70px 70px 70px;
+        padding:  2% 5% 10% 5%;
         font-size: 1.8vw;
+       
     }

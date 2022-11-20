@@ -229,7 +229,7 @@ export default function BuscaUsuario () {
                         <div className='resultados'> 
                             <p>
                                 Resultado de busca:
-                                <span className='resultado-valor'> {buscar.substr(0,20)}...</span>
+                                <span className='resultado-valor'> {buscar.substr(0,20)} ...</span>
                             </p>
 
                             {quantidade.map( item =>

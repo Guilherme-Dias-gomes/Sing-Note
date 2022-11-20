@@ -71,7 +71,7 @@ export default function CarrinhoUsuario() {
                                 <div className='Circulo-porcento3'><h1 className='percentual-bolinha-carrinho'>25%</h1></div>
                                 <div className='Circulo-porcento2'></div>
                             </div>
-                            <img src='/image/carrinho-procedimento.png' className='icones-procedimento' alt='icn-carrinhos' />
+                            <img src='/image/carrinho-procedimento.png' className='icones-procedimentoright' alt='icn-carrinhos' />
                             <img src='/image/setinha.png' className='setinha-procedimento' alt='icn-carrinho-setas' />
                             <img src='/image/user-usu.png' className='icones-procedimento' alt='icn-carrinhos' />
                             <img src='/image/setinha.png' className='setinha-procedimento' alt='icn-carrinho-setas' />

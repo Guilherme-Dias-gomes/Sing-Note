@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { API_URL } from '../../../api/config.js';
+import { buscarProdutos } from '../../../api/admin/produtoAPI'
 import { buscarProdutoPorId } from '../../../api/usuario/usuarioProdutoAPI.js'
 import Storage from 'local-storage'
 import './index.scss'
@@ -58,6 +59,29 @@ export default function ProdutosDetalhes() {
         carregarPagina()
     }, [])
 
+    const [produto1, setProduto1] = useState([]);
+
+    function exibirImagem(imagem) {
+        if (!imagem) {
+            return '/image/imagespadrao.png';
+        }
+        else if (typeof (imagem) == 'string') {
+            return `${API_URL}/${imagem}`
+        }
+        else {
+            return URL.createObjectURL(imagem);
+        }
+    }
+
+    async function mostrarProdutos() {
+        const resposta = await buscarProdutos();
+        setProduto1(resposta);
+    }
+
+    useEffect(() => {
+        mostrarProdutos();
+    }, [])
+
 
     return (
         <div className='Pagina-detalhes-produto-usu'>
@@ -103,75 +127,36 @@ export default function ProdutosDetalhes() {
             <div className='Caixa-voce-tambem-pode-gostar'>
                 <h1 className='titulo-voce-tambem-pode-gostar'>você também pode gostar disso:</h1>
 
-                <div className='items-que-pode-gostar'> 
+                <div className='itens-que-pode-gostar'> 
                 
                 {/* cards dos itens */}
-
+                    {produto1.map(item=>
                     <div className='espaco-produto'>
-                        <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
+                        <div className='quadrado-unidades'>
+                            <p className='quadrado-texto'>Restam</p>
+                            <p className='quadrado-qtd-unidade'> {item.Estoque}</p>
+                            <p className='quadrado-texto'>Unid.</p>
+                        </div>
                         <div className='formatacao-img-produto'>
-                            <img src='/image/guitar 1.png' className="ImagemProdutoUsu" alt='teste'/>
+                            <img src={exibirImagem(item.Imagem)} className="ImagemProdutoUsu" alt='teste'/>
                         </div>
 
                         <div className='descricao-card'>
                         
                             <h1 className='card-produto-descricao'>
-                            {<span>{/* props.item.Nome*/} Guitarra solador</span> }
-                            <span>{/* props.item.Marca*/} Spamuscular</span>
-                            <span>{/* props.item.Modelo*/}terceiro elemento</span>
+                            {<span>{item.Nome} Guitarra solador</span> }
+                            <span>{item.Marca} Spamuscular</span>
+                            <span>{item.Modelo}terceiro elemento</span>
                             </h1>
-                            <h1 className='preco-card'>R$ 7878</h1>
+                            <h1 className='preco-card'>R$ {item.Preco}</h1>
                             <button className='botao-comprar'>
                                 Comprar
                             <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card'/>
                             </button>
                         </div>
 
-                    </div> 
+                    </div> )}
 
-                    <div className='espaco-produto'>
-                        <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
-                        <div className='formatacao-img-produto'>
-                            <img src='/image/bateria.png' className="ImagemProdutoUsu" alt='teste'/>
-                        </div>
-
-                        <div className='descricao-card'>
-                        
-                            <h1 className='card-produto-descricao'>
-                            {<span>{/* props.item.Nome*/} Guitarra solador</span> }
-                            <span>{/* props.item.Marca*/} Spamuscular</span>
-                            <span>{/* props.item.Modelo*/}terceiro elemento</span>
-                            </h1>
-                            <h1 className='preco-card'>R$ 7878</h1>
-                            <button className='botao-comprar'>
-                                Comprar
-                            <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card'/>
-                            </button>
-                        </div>
-
-                    </div> 
-
-                    <div className='espaco-produto'>
-                        <img className='imagem-coracao' src='/image/coracao-card.png' alt='coracao-do-card'/>
-                        <div className='formatacao-img-produto'>
-                            <img src='/image/imagespadrao.png' className="ImagemProdutoUsu" alt='teste'/>
-                        </div>
-
-                        <div className='descricao-card'>
-                        
-                            <h1 className='card-produto-descricao'>
-                            {<span>{/* props.item.Nome*/} Guitarra solador</span> }
-                            <span>{/* props.item.Marca*/} Spamuscular</span>
-                            <span>{/* props.item.Modelo*/}terceiro elemento</span>
-                            </h1>
-                            <h1 className='preco-card'>R$ 7878</h1>
-                            <button className='botao-comprar'>
-                                Comprar
-                            <img className='imagem-carrinho' src='/image/carrinho-card.png' alt='carrinho-do-card'/>
-                            </button>
-                        </div>
-
-                    </div> 
                     {/* fim dos cards dos itens */}
                 </div>
 

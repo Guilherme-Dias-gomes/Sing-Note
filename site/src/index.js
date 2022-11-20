@@ -26,6 +26,7 @@ import CadastroUsuario from './pages/usuario/cadastrarUsuario';
 import HomeUsuario from './pages/usuario/home';
 import FavoritosProduto from './pages/usuario/favoritos';
 import Politicas from './pages/usuario/politicas-site';
+import SobreNos from './pages/usuario/sobre-nos';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -55,6 +56,7 @@ root.render(
         <Route path="/cadastro" element={< CadastroUsuario />} />
         <Route path="/cadastro/:id" element={< CadastroUsuario />} />
         <Route path="/politicas" element={< Politicas />} />
+        <Route path="/sobre-nos" element={< SobreNos />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
