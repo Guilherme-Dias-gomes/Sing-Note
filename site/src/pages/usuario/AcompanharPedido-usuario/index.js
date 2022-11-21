@@ -56,11 +56,13 @@ export default function AcompanharPedido() {
                                         <img src={exibirImagem(item.imagem)} className='imagem-produto-no-carrinho' alt='img-produto-carrinho' />
                                         <div className='item-nome-e-detalhes-e-preco'>
                                             <div className='sobre-produto-favorito'>
-                                                <h1 className='nome-produto-pedido'>{item.nome}</h1>
+                                                <h1 className='nome-produto-pedido'>{item.nome.substr(0,15)}</h1>
                                                 <p className='descricao-produto-pedido'>{item.modelo}</p>
                                             </div>
-                                            <h3 className='titulo-situacao-pedido'>Situação: <span className='corDiferente-pedido'>{item.status.substr(0, 25)}...</span> </h3>
                                             <div>
+                                            <h3 className='titulo-situacao-pedido'>Situação: <span className='corDiferente-pedido'>{item.status.substr(0, 25)}...</span> </h3>
+                                            </div>
+                                            <div className='Data-Pedido'>
                                                 <h3 className='titulo-data-pedido'>Data do Pedido: <span className='corDiferente'>{item.Data_Pedido}</span></h3>
                                                 <h3 className='titulo-data-pedido'>Pedido nº <span className='corDiferente'>{item.id}</span></h3>
                                             </div>

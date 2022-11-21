@@ -21,7 +21,7 @@ export default function ProdutosDetalhes() {
 
     async function carregarPagina() {
         const resposta = await buscarProdutoPorId(id)
-        console.log(resposta)
+
         setProduto(resposta)
     }
 
@@ -144,9 +144,9 @@ export default function ProdutosDetalhes() {
                         <div className='descricao-card'>
                         
                             <h1 className='card-produto-descricao'>
-                            {<span>{item.Nome} Guitarra solador</span> }
-                            <span>{item.Marca} Spamuscular</span>
-                            <span>{item.Modelo}terceiro elemento</span>
+                            {<span>{item.Nome.substr(0,15)}</span> }
+                            <span>{item.Marca}</span>
+                            <span>{item.Modelo.substr(0,15)}</span>
                             </h1>
                             <h1 className='preco-card'>R$ {item.Preco}</h1>
                             <button className='botao-comprar'>

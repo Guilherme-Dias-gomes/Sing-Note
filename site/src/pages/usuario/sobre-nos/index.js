@@ -24,20 +24,20 @@ export default function SobreNos() {
                             </div>
                         </div>
                         <div className="texto-sobre">
-                            <p> Fundado em 2003, a sing note! foi um dos pioneiros no comércio isntrumental 
+                            <p> Fundado em 2003, a Sing Note! foi um dos pioneiros no comércio instrumental 
                                 brasileiro e hoje é o maior e-commerce do segmento instrumental na América 
                                 Latina. Desde sua criação, a empresa é formada por histórias e conquistas de 
                                 um time obcecado por agilidade, qualidade de atendimento, velocidade de 
                                 entrega e respeito pelo consumidor. <br/><br/>
 
-                                Com preços imbatíveis e mais de 20 mil produtos em seu catálogo, a sing note 
+                                Com preços imbatíveis e mais de 20 mil produtos em seu catálogo, a Sing Note 
                                 está sempre à frente e traz em primeira mão os melhores lançamentos do mercado 
                                 mundial. São mais de 8 milhões de pessoas atendidas e entregas realizadas em 
                                 todas as regiões do país, totalizando mais de 5.000 cidades. <br/><br/>
 
                                 O e-commerce é um dos sites mais acessados do país e lidera o ranking das 
                                 lojas virtuais mais recomendadas pelos consumidores brasileiros, no segmento 
-                                de instrumentos musicais*, com os principais índices de avaliação e selos de 
+                                de instrumentos musicais, com os principais índices de avaliação e selos de 
                                 qualidade da internet. <br/><br/>
 
                                 Procuramos acima de tudo oferecer o que há de melhor, os melhores 

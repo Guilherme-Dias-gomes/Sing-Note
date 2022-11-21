@@ -41,7 +41,7 @@ export function criarNovoPedido(idUsario, idCupom, info) {
         notaFiscal: notaFiscal,
         tipoFrete: info.frete,
         valorFrete: valorFrete,
-        status: 'Pagamendo Realizado',
+        status: 'Pagamento Feito',
         tipoPagamento: 'Cartão'
     }
 }

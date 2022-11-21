@@ -52,8 +52,7 @@ server.put('/alterar/status/:idPedido', async (req, resp) => {
         const pedido = req.body
 
         const r = await alterarStatusPedido(pedido, idPedido)
-
-        console.log(r)
+        
         if(r != 1)
             throw new Error('❌Pedido não encontrado')
         else 

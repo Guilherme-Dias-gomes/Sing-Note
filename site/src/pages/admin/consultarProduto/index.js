@@ -115,9 +115,9 @@ export default function ConsultaProduto () {
                             </div>
                             <img src={exibirImagem(item.Imagem)} className="ImagemProduto" alt='teste'/>
                             <div className='Info-Nome_Marca_Modelo'>
-                                <span>{item.Nome}</span>
+                                <span>{item.Nome.substr(0,15)}</span>
                                 <span>{item.Marca}</span>
-                                <span>{item.Modelo}</span>
+                                <span>{item.Modelo.substr(0,15)}</span>
                             </div>
                             <h2 className='Preco-Produto'>R$ <span>{item.Preco}</span></h2>          
                         </div>

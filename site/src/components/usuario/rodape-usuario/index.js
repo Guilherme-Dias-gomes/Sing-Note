@@ -18,7 +18,7 @@ export default function RodapeUsuario() {
             </div>
             <div className="segunda-coluna">
                 <h1 className="titulo-colunas-rodape-usu"> Institucional</h1>
-                <Link style={{color:'#fff'}}>
+                <Link style={{color:'#fff'}} to={'/sobre-nos'}>
                     <p className="descricao-colunas-rodape-usu"> Sobre a Sing Note</p>
                 </Link>
                 <Link style={{color:'#fff'}} to={'/politicas'}>

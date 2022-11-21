@@ -261,9 +261,9 @@ export default function BuscaUsuario () {
                                     <div className='descricao-card'>
                                     
                                         <div className='card-produto-descricao'>
-                                            <p className='descricao-produto-card-usu'>{item.Nome}</p>
+                                            <p className='descricao-produto-card-usu'>{item.Nome.substr(0,15)}</p>
                                             <p className='descricao-produto-card-usu'>{item.Marca}</p>
-                                            <p className='descricao-produto-card-usu'>{item.Modelo}</p>
+                                            <p className='descricao-produto-card-usu'>{item.Modelo.substr(0,15)}</p>
                                         </div>
                                         <h1 className='preco-card'>R$ {item.Preco}</h1>
                                         <button className='botao-comprar' onClick={() => abrirDetalhes(item.Id)}>

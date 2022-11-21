@@ -224,9 +224,9 @@ export default function HomeUsuario() {
                                     <img className='imagem-produto-card-lp' src={exibirImagem(item.Imagem)} alt='produto-do-card' />{/*<------ src={exibir(props.item.Imagem)}*/}
                                     <div className='preco-descricao-lp'>
                                         <div className='card-produto-descricao-lp'>
-                                            <span>{item.Nome}</span>
+                                            <span>{item.Nome.substr(0,15)}</span>
                                             <span>{item.Marca}</span>
-                                            <span>{item.Modelo}</span>
+                                            <span>{item.Modelo.substr(0,15)}</span>
                                         </div>
                                         <h1 className='preco-card-lp'>{item.Preco}</h1>
                                     </div>
